@@ -2,11 +2,12 @@
 import argparse
 import asyncio
 import os
-import re
-from datetime import datetime, timezone
-from typing import Dict, List, Optional, Tuple
+import xml.etree.ElementTree as ET
+from datetime import datetime, timezone, date
+from typing import Dict, List, Optional
 
 import aiohttp
+from email.utils import parsedate_to_datetime
 
 from common import (
     RateLimiter,
@@ -14,108 +15,124 @@ from common import (
     build_doc_id,
     default_session_headers,
     ensure_dir,
-    extract_title,
     now_iso,
     sha256_hex,
     strip_tracking_params,
+    extract_title,
     try_parse_date_from_meta,
-    write_bytes,
-    write_json,
-    file_exists,
     coerce_date,
+    write_json,
+    write_bytes,
+    file_exists,
+    domain_of,
 )
 
+from common import fetch_with_retries
 
-START_URL = "https://investor.salesforce.com/news/default.aspx?languageid=1"
+
+IR_RSS_URL = "https://investor.salesforce.com/rss/pressrelease.aspx"
 
 
-def within_window(date_str: Optional[str], since: Optional[str], until: Optional[str]) -> bool:
-    if not date_str:
+def to_iso_date_from_rfc822(rfc: Optional[str]) -> Optional[str]:
+    if not rfc:
+        return None
+    try:
+        dt = parsedate_to_datetime(rfc)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc).date().isoformat()
+    except Exception:
+        return coerce_date(rfc)
+
+
+def within_window(iso_day: Optional[str], since: Optional[str], until: Optional[str]) -> bool:
+    if not iso_day:
         return True
     try:
-        d = datetime.fromisoformat(date_str)
+        d = date.fromisoformat(iso_day)
     except Exception:
         return True
     if since:
-        ds = datetime.fromisoformat(since)
-        if d < ds:
-            return False
+        try:
+            if d < date.fromisoformat(since):
+                return False
+        except Exception:
+            pass
     if until:
-        du = datetime.fromisoformat(until)
-        if d > du:
-            return False
+        try:
+            if d > date.fromisoformat(until):
+                return False
+        except Exception:
+            pass
     return True
 
 
-async def fetch_listing(session: aiohttp.ClientSession, limiter: RateLimiter, url: str) -> str:
-    from common import fetch_with_retries
+def parse_rss_items(rss_xml: str) -> List[Dict[str, str]]:
+    items: List[Dict[str, str]] = []
+    try:
+        root = ET.fromstring(rss_xml)
+    except Exception:
+        return items
+    for it in root.findall(".//item"):
+        link_el = it.find("link")
+        title_el = it.find("title")
+        pub_el = it.find("pubDate")
+        link = strip_tracking_params((link_el.text or "").strip()) if link_el is not None else ""
+        title = (title_el.text or "").strip() if title_el is not None else ""
+        pub = (pub_el.text or "").strip() if pub_el is not None else ""
+        iso = to_iso_date_from_rfc822(pub)
+        if link:
+            items.append({"link": link, "title": title, "pub_iso": iso or "", "pub_raw": pub})
+    return items
 
-    res = await fetch_with_retries(session, limiter, url)
-    return (res.body or b"").decode("utf-8", errors="replace")
 
-
-def extract_article_links(html: str) -> List[str]:
-    # Look for anchors containing /news/ and ending with .aspx or details page
-    links = set()
-    for m in re.finditer(r"<a[^>]+href=\"([^\"]+)\"[^>]*>", html, re.IGNORECASE):
-        href = m.group(1)
-        if "/news/" in href and href.startswith("/"):
-            links.add("https://investor.salesforce.com" + href)
-        elif href.startswith("https://investor.salesforce.com/") and "/news/" in href:
-            links.add(href)
-    return list(links)
-
-
-async def fetch_and_save(session: aiohttp.ClientSession, limiter: RateLimiter, url: str, out_dir: str, dry_run: bool, logger, run_iso: str) -> Optional[str]:
-    from common import fetch_with_retries
+async def fetch_and_write_article(session: aiohttp.ClientSession, limiter: RateLimiter, item: Dict[str, str], dry_run: bool, logger, run_iso: str) -> Optional[str]:
+    url = item["link"]
+    rss_iso = item.get("pub_iso") or None
+    title_hint = item.get("title") or None
 
     res = await fetch_with_retries(session, limiter, url, logger=logger)
-    content_type = res.content_type
-    raw_bytes = res.body if res.body is not None else b""
+    raw_bytes = res.body or b""
     text = raw_bytes.decode("utf-8", errors="replace") if raw_bytes else ""
-    title = extract_title(text) if text else None
+    visible_title = extract_title(text) if text else title_hint
     visible_date = try_parse_date_from_meta(text) if text else None
-    # Additional pattern: dates like Month DD, YYYY near title
-    if not visible_date and text:
-        m = re.search(r"([A-Z][a-z]+\s+\d{1,2},\s+\d{4})", text)
-        if m:
-            visible_date = coerce_date(m.group(1))
 
     doctype = "press"
-    doc_id = build_doc_id(doctype, visible_date, title or url, res.final_url or url)
-    raw_path = os.path.join(out_dir, f"{doc_id}.raw.html")
-    meta_path = os.path.join(out_dir, f"{doc_id}.meta.json")
+    date_for_id = rss_iso or visible_date
+    doc_id = build_doc_id(doctype, date_for_id, visible_title or url, res.final_url or url)
 
-    # Skip if exists
+    raw_path = os.path.join("data/raw/investor_news", f"{doc_id}.raw.html")
+    meta_path = os.path.join("data/raw/investor_news", f"{doc_id}.meta.json")
+
     if file_exists(meta_path):
         return None
 
-    from common import domain_of
     meta = {
         "doc_id": doc_id,
         "source_domain": domain_of(res.final_url or url) or "investor.salesforce.com",
         "source_bucket": "investor_news",
         "doctype": doctype,
-        "requested_url": strip_tracking_params(url),
-        "final_url": res.final_url,
-        "redirect_chain": res.redirect_chain,
+        "requested_url": url,
+        "final_url": res.final_url or url,
+        "redirect_chain": res.redirect_chain or [],
         "http_status": res.status,
-        "content_type": content_type,
+        "content_type": res.content_type,
         "content_length": len(raw_bytes) if raw_bytes else None,
         "fetched_at": run_iso,
         "sha256_raw": sha256_hex(raw_bytes) if raw_bytes else "",
-        "visible_title": title,
+        "visible_title": visible_title,
         "visible_date": visible_date,
-        "rss_pubdate": None,
-        "headline": title,
-        "notes": None,
+        "rss_pubdate": rss_iso,
+        "headline": visible_title,
+        "notes": "feed=ir_rss",
         "latency_ms": res.latency_ms,
     }
 
     if dry_run:
-        logger.info(f"[DRY] Would write {raw_path} and {meta_path} (status {res.status})")
+        logger.info(f"[DRY] Would write {raw_path} and {meta_path}")
         return doc_id
 
+    ensure_dir("data/raw/investor_news")
     if res.status == 200 and raw_bytes:
         write_bytes(raw_path, raw_bytes)
     write_json(meta_path, meta)
@@ -132,32 +149,25 @@ async def main_async(args):
     run_iso = now_iso()
 
     async with aiohttp.ClientSession(headers=headers, connector=connector) as session:
-        listing_html = await fetch_listing(session, limiter, START_URL)
-        links = extract_article_links(listing_html)
-        # Keep order stable
-        links = sorted(set(links))
-        picked: List[str] = []
+        rss_res = await fetch_with_retries(session, limiter, IR_RSS_URL, logger=logger)
+        rss_xml = (rss_res.body or b"").decode("utf-8", errors="replace")
+        items = parse_rss_items(rss_xml)
+        filtered = [it for it in items if within_window(it.get("pub_iso"), args.since, args.until)]
+        selected = filtered[: max(0, args.limit)]
 
-        # Filter by window after peeking at page dates if embedded
-        for href in links:
-            if len(picked) >= args.limit:
-                break
-            # We'll fetch detail pages and apply window; optimistic pick first
-            picked.append(href)
+        sem = asyncio.Semaphore(args.concurrency)
+        async def worker(it):
+            async with sem:
+                return await fetch_and_write_article(session, limiter, it, args.dry_run, logger, run_iso)
 
-        tasks = []
-        saved = 0
-        for url in picked:
-            tasks.append(fetch_and_save(session, limiter, url, "data/raw/investor_news", args.dry_run, logger, run_iso))
-        results = await asyncio.gather(*tasks)
+        results = await asyncio.gather(*(worker(it) for it in selected))
+        saved = len([r for r in results if r])
 
-        # Window filter is applied via doc_id presence; we cannot easily drop here without reading metas.
-        logger.info(f"Fetched IR items attempted: {len(picked)}; saved: {len([r for r in results if r])}. Logs: {log_path}")
-        return len([r for r in results if r])
+        logger.info(f"Fetched IR items attempted: {len(selected)}; saved: {saved}. Logs: {log_path}")
 
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Crawl Salesforce Investor Relations news and fetch articles")
+    p = argparse.ArgumentParser(description="Fetch Salesforce Investor Relations press releases via RSS")
     p.add_argument("--dry-run", action="store_true", help="Log actions without writing files")
     p.add_argument("--limit", type=int, default=20, help="Max articles to fetch")
     p.add_argument("--since", type=str, default="2024-01-01", help="Lower bound date (YYYY-MM-DD)")

@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-07-09::salesforce-appoints-amy-chang-and-david-b-kirk-to-its-board-of-directors::3531f138",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Appoints-Amy-Chang-and-David-B--Kirk-to-its-Board-of-Directors/default.aspx",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Appoints-Amy-Chang-and-David-B--Kirk-to-its-Board-of-Directors/default.aspx",
+  "redirect_chain": [],
+  "http_status": 403,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": null,
+  "fetched_at": "2025-09-07T17:31:14.579821+00:00",
+  "sha256_raw": "",
+  "visible_title": "Salesforce Appoints Amy Chang and David B. Kirk to its Board of Directors",
+  "visible_date": null,
+  "rss_pubdate": "2025-07-09",
+  "headline": "Salesforce Appoints Amy Chang and David B. Kirk to its Board of Directors",
+  "notes": "feed=ir_rss",
+  "latency_ms": 313.8068749685772
+}

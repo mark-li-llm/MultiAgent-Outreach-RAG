@@ -11,6 +11,8 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
 import aiohttp
+import ssl
+import certifi
 from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
 
 
@@ -221,12 +223,22 @@ async def fetch_with_retries(
                 await asyncio.sleep(back)
             try:
                 t_req = time.perf_counter()
+                from urllib.parse import urlparse as _urlparse
+                host = _urlparse(url).netloc.lower()
+                # Use SSL verification via certifi for most hosts; disable only for sec.gov
+                if host.endswith("sec.gov"):
+                    ssl_opt = False
+                else:
+                    try:
+                        ssl_opt = ssl.create_default_context(cafile=certifi.where())
+                    except Exception:
+                        ssl_opt = None
                 async with session.get(
                     url,
                     allow_redirects=True,
                     max_redirects=max_redirects,
                     timeout=aiohttp.ClientTimeout(total=timeout_s),
-                    ssl=False,
+                    ssl=ssl_opt,
                 ) as resp:
                     history = [strip_tracking_params(str(h.url)) for h in resp.history]
                     final_url = strip_tracking_params(str(resp.url))

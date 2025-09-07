@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-08-26::salesforce-grants-equity-awards-to-convergence-ai-employees-under-its-inducement::6ee41a37",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Grants-Equity-Awards-to-Convergence-ai-Employees-Under-Its-Inducement-Equity-Incentive-Plan/default.aspx",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Grants-Equity-Awards-to-Convergence-ai-Employees-Under-Its-Inducement-Equity-Incentive-Plan/default.aspx",
+  "redirect_chain": [],
+  "http_status": 403,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": null,
+  "fetched_at": "2025-09-07T17:31:14.579821+00:00",
+  "sha256_raw": "",
+  "visible_title": "Salesforce Grants Equity Awards to Convergence.ai Employees Under Its Inducement Equity Incentive Plan",
+  "visible_date": null,
+  "rss_pubdate": "2025-08-26",
+  "headline": "Salesforce Grants Equity Awards to Convergence.ai Employees Under Its Inducement Equity Incentive Plan",
+  "notes": "feed=ir_rss",
+  "latency_ms": 283.4267090074718
+}
