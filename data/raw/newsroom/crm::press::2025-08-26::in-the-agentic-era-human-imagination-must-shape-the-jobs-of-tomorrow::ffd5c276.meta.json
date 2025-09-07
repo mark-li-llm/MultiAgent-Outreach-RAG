@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-08-26::in-the-agentic-era-human-imagination-must-shape-the-jobs-of-tomorrow::ffd5c276",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/imagination-shapes-future-work-agentic-ai/",
+  "final_url": "https://www.salesforce.com/news/stories/imagination-shapes-future-work-agentic-ai/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/imagination-shapes-future-work-agentic-ai/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 301175,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "1a6fcb85857a2eb46e78f838a42c0024c3b35e6898af69fc3fa952b793d9e7e2",
+  "visible_title": "In the Agentic Era, Human Imagination Must Shape the Jobs of Tomorrow",
+  "visible_date": "2025-08-26",
+  "rss_pubdate": null,
+  "headline": "In the Agentic Era, Human Imagination Must Shape the Jobs of Tomorrow",
+  "notes": "feed=index",
+  "latency_ms": 421.48220795206726
+}

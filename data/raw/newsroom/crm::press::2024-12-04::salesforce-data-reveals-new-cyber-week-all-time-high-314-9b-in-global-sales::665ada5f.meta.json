@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2024-12-04::salesforce-data-reveals-new-cyber-week-all-time-high-314-9b-in-global-sales::665ada5f",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2024/12/04/cyber-week-ai-sales/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2024/12/04/cyber-week-ai-sales/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2024/12/04/cyber-week-ai-sales/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 250777,
+  "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+  "sha256_raw": "4969a1f5070a84c98933833fc978b2fe2f922cf9c838a5c0f555e478cb819787",
+  "visible_title": "Salesforce Data Reveals New Cyber Week All-Time High: $314.9B in Global Sales",
+  "visible_date": "2024-12-04",
+  "rss_pubdate": null,
+  "headline": "Salesforce Data Reveals New Cyber Week All-Time High: $314.9B in Global Sales",
+  "notes": "feed=product",
+  "latency_ms": 407.9589170287363
+}

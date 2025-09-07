@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-08-21::how-agentic-ai-can-help-overcome-the-child-welfare-information-crisis::4c43853a",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/agentic-ai-revolutionizes-child-welfare/",
+  "final_url": "https://www.salesforce.com/news/stories/agentic-ai-revolutionizes-child-welfare/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/agentic-ai-revolutionizes-child-welfare/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 259693,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "a19c16b927d0867cba7e0e42b0477bd41a99f023846fd5abad0ab175b4149122",
+  "visible_title": "How Agentic AI Can Help Overcome the Child Welfare Information Crisis",
+  "visible_date": "2025-08-21",
+  "rss_pubdate": null,
+  "headline": "How Agentic AI Can Help Overcome the Child Welfare Information Crisis",
+  "notes": "feed=index",
+  "latency_ms": 309.1541670146398
+}

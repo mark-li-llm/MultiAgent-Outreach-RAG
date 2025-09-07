@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2023-09-07::new-ai-usage-data-shows-who-s-using-ai-and-uncovers-a-population-of-super-users::2f093480",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2023/09/07/ai-usage-research/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2023/09/07/ai-usage-research/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2023/09/07/ai-usage-research/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 249284,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "54241b3da7df61a569691aeec6f096fbccb06d739ce2b8a73b67d972fa84fdd0",
+  "visible_title": "New AI Usage Data Shows Who’s Using AI — and Uncovers a Population of ‘Super-Users’",
+  "visible_date": "2023-09-07",
+  "rss_pubdate": null,
+  "headline": "New AI Usage Data Shows Who’s Using AI — and Uncovers a Population of ‘Super-Users’",
+  "notes": "feed=index",
+  "latency_ms": 364.0106249949895
+}

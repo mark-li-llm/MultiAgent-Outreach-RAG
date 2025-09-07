@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-08-26::all-news-amp-press::4ea28483",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/all-news/",
+  "final_url": "https://www.salesforce.com/news/all-news/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/all-news/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 245294,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "b864f9f2ec74151692d14bd7d7869e5642156da66a680067a963ed0d9354fad8",
+  "visible_title": "All News &amp; Press",
+  "visible_date": "2025-08-26",
+  "rss_pubdate": null,
+  "headline": "All News &amp; Press",
+  "notes": "feed=index",
+  "latency_ms": 301.861249958165
+}

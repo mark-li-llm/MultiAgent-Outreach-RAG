@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-08-26::salesforce-life-sciences-cloud-now-selected-by-more-than-70-industry-leading-cus::ca509334",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/industry-leaders-choose-life-sciences-cloud/",
+  "final_url": "https://www.salesforce.com/news/stories/industry-leaders-choose-life-sciences-cloud/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/industry-leaders-choose-life-sciences-cloud/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 261874,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "5ef79daecb8a624f9f881dc1dba928dded535e5b393f82d0e4a25c792bdc95bf",
+  "visible_title": "Salesforce Life Sciences Cloud Now Selected by More than 70 Industry-Leading Customers to Scale Engagement and Improve Patient Outcomes",
+  "visible_date": "2025-08-26",
+  "rss_pubdate": null,
+  "headline": "Salesforce Life Sciences Cloud Now Selected by More than 70 Industry-Leading Customers to Scale Engagement and Improve Patient Outcomes",
+  "notes": "feed=index",
+  "latency_ms": 213.26775004854426
+}

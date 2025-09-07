@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::product::unknown::salesforce-data-cloud::ceadcc95",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "product",
+  "doctype": "product",
+  "requested_url": "https://www.salesforce.com/data/",
+  "final_url": "https://www.salesforce.com/data/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/data/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 560599,
+  "fetched_at": "2025-09-07T16:44:56.314500+00:00",
+  "sha256_raw": "d311385341349e69bbe3cd8e7dd94de5fc94ed35ab52078dfdd9a909fa821fdd",
+  "visible_title": "Salesforce Data Cloud",
+  "visible_date": null,
+  "rss_pubdate": null,
+  "headline": "Salesforce Data Cloud",
+  "notes": null,
+  "latency_ms": 479.4760840013623
+}

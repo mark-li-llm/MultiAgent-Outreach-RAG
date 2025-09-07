@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2023-08-04::salesforce-launches-byom-to-make-it-easy-for-businesses-to-use-proprietary-data-::61063b9d",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/einstein-studio-ai-news/",
+  "final_url": "https://www.salesforce.com/news/stories/einstein-studio-ai-news/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/einstein-studio-ai-news/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 260587,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "370346c48f60c603ca786ee86fcfaef7388b9089d942c14da126198bb4681f05",
+  "visible_title": "Salesforce Launches BYOM to Make It Easy for Businesses to Use Proprietary Data to Build and Deploy AI Models",
+  "visible_date": "2023-08-04",
+  "rss_pubdate": null,
+  "headline": "Salesforce Launches BYOM to Make It Easy for Businesses to Use Proprietary Data to Build and Deploy AI Models",
+  "notes": "feed=index",
+  "latency_ms": 358.9754169806838
+}

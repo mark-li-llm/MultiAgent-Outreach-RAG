@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::product::unknown::what-is-salesforce::9818feb8",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "product",
+  "doctype": "product",
+  "requested_url": "https://www.salesforce.com/products/what-is-salesforce/",
+  "final_url": "https://www.salesforce.com/products/what-is-salesforce/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/products/what-is-salesforce/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 461633,
+  "fetched_at": "2025-09-07T16:54:31.897200+00:00",
+  "sha256_raw": "842693a5c3c22084d3ebbd4ad67433c9670afb670d1ba09205d41ddc9a1ba30c",
+  "visible_title": "What is Salesforce?",
+  "visible_date": null,
+  "rss_pubdate": null,
+  "headline": "What is Salesforce?",
+  "notes": null,
+  "latency_ms": 2415.9577079699375
+}

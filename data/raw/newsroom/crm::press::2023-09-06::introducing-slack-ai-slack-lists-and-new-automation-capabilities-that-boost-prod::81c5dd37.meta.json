@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/slack-news-dreamforce-2023/",
+  "final_url": "https://www.salesforce.com/news/stories/slack-news-dreamforce-2023/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/slack-news-dreamforce-2023/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 266010,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "eab919952b29c71bda1039bca3d388598916c630d2edd1fc51c23d570a8a85a5",
+  "visible_title": "Introducing Slack AI, Slack Lists, and New Automation Capabilities that Boost Productivity and Transform How Teams Work",
+  "visible_date": "2023-09-06",
+  "rss_pubdate": null,
+  "headline": "Introducing Slack AI, Slack Lists, and New Automation Capabilities that Boost Productivity and Transform How Teams Work",
+  "notes": "feed=index",
+  "latency_ms": 1177.5775420246646
+}

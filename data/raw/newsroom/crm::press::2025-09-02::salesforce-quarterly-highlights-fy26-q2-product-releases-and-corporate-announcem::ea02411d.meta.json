@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-09-02::salesforce-quarterly-highlights-fy26-q2-product-releases-and-corporate-announcem::ea02411d",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/fy26-q2-highlights/",
+  "final_url": "https://www.salesforce.com/news/stories/fy26-q2-highlights/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/fy26-q2-highlights/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 252658,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "6ebe8bbf4401125d7cf6fcae54b62df4fe8a75ce9c82569ef852dc0e15f6d8e4",
+  "visible_title": "Salesforce Quarterly Highlights: FY26 Q2 Product Releases and Corporate Announcements",
+  "visible_date": "2025-09-02",
+  "rss_pubdate": null,
+  "headline": "Salesforce Quarterly Highlights: FY26 Q2 Product Releases and Corporate Announcements",
+  "notes": "feed=index",
+  "latency_ms": 260.3987919865176
+}

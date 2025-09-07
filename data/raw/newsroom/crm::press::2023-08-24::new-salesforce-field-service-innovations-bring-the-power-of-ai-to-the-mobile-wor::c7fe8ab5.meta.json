@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2023-08-24::new-salesforce-field-service-innovations-bring-the-power-of-ai-to-the-mobile-wor::c7fe8ab5",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/ai-for-field-service/",
+  "final_url": "https://www.salesforce.com/news/stories/ai-for-field-service/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/ai-for-field-service/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 241064,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "75a31ba1917cdf8c3f82a5c945432ff4896cddba5fa1d387beb1c02f5ea2e354",
+  "visible_title": "New Salesforce Field Service Innovations Bring the Power of AI to the Mobile Workforce",
+  "visible_date": "2023-08-24",
+  "rss_pubdate": null,
+  "headline": "New Salesforce Field Service Innovations Bring the Power of AI to the Mobile Workforce",
+  "notes": "feed=index",
+  "latency_ms": 483.2271250197664
+}

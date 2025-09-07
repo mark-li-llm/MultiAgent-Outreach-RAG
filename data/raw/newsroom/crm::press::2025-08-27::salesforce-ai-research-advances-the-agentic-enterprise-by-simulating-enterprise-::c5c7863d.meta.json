@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-08-27::salesforce-ai-research-advances-the-agentic-enterprise-by-simulating-enterprise-::c5c7863d",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/ai-research-advances-enterprise-agentic-readiness/",
+  "final_url": "https://www.salesforce.com/news/stories/ai-research-advances-enterprise-agentic-readiness/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/ai-research-advances-enterprise-agentic-readiness/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 241652,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "a391d3203e78733ce72e79c91fd348244c1497a992ff707706e993bb2495b971",
+  "visible_title": "Salesforce AI Research Advances the Agentic Enterprise by Simulating Enterprise Environments, Measuring Agent Readiness, and Consolidating Duplicative Data",
+  "visible_date": "2025-08-27",
+  "rss_pubdate": null,
+  "headline": "Salesforce AI Research Advances the Agentic Enterprise by Simulating Enterprise Environments, Measuring Agent Readiness, and Consolidating Duplicative Data",
+  "notes": "feed=index",
+  "latency_ms": 237.18850000295788
+}

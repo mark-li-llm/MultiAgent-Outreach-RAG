@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::product::unknown::agentforce-the-ai-agent-platform::c8dd3707",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "product",
+  "doctype": "product",
+  "requested_url": "https://www.salesforce.com/agentforce/",
+  "final_url": "https://www.salesforce.com/agentforce/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/agentforce/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 631817,
+  "fetched_at": "2025-09-07T16:44:56.314500+00:00",
+  "sha256_raw": "46ab36dd138b84a790aa5ad4494403ab3ada750420df4a2c771540c0a8695124",
+  "visible_title": "Agentforce: The AI Agent Platform",
+  "visible_date": null,
+  "rss_pubdate": null,
+  "headline": "Agentforce: The AI Agent Platform",
+  "notes": null,
+  "latency_ms": 1090.2560000540689
+}

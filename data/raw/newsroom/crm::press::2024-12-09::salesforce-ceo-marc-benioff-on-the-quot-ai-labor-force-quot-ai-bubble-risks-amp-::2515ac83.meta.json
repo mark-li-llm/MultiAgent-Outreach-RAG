@@ -1,0 +1,23 @@
+{
+  "doc_id": "crm::press::2024-12-09::salesforce-ceo-marc-benioff-on-the-quot-ai-labor-force-quot-ai-bubble-risks-amp-::2515ac83",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/salesforce-in-the-news/salesforce-ceo-marc-benioff-on-the-ai-labor-force-ai-bubble-risks-tech-in-the-new-government/",
+  "final_url": "https://podcasts.apple.com/us/podcast/salesforce-ceo-marc-benioff-on-the-ai-labor-force-ai/id1733328960?i=1000679742977",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/salesforce-in-the-news/salesforce-ceo-marc-benioff-on-the-ai-labor-force-ai-bubble-risks-tech-in-the-new-government/",
+    "https://www.salesforce.com/news/salesforce-in-the-news/salesforce-ceo-marc-benioff-on-the-ai-labor-force-ai-bubble-risks-tech-in-the-new-government/?bc=DB"
+  ],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 135688,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "d065325355fbcc13aeb7528eab6e06d6bd48140e73f6d2ed9532977caa1cee83",
+  "visible_title": "Salesforce CEO Marc Benioff on the &quot;AI Labor Force,&quot; AI Bubble Risks, &amp; Tech in the New Government",
+  "visible_date": "2024-12-09",
+  "rss_pubdate": null,
+  "headline": "Salesforce CEO Marc Benioff on the &quot;AI Labor Force,&quot; AI Bubble Risks, &amp; Tech in the New Government",
+  "notes": "feed=index",
+  "latency_ms": 715.4856250272132
+}

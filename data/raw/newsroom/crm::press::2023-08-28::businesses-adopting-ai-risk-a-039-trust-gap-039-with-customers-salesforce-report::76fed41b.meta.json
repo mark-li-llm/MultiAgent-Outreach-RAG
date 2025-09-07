@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/customer-engagement-research-2023/",
+  "final_url": "https://www.salesforce.com/news/stories/customer-engagement-research-2023/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/customer-engagement-research-2023/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 260332,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "6a217f71e52302063ab798a755d9959a41811e54cf5869d4197934909c84ddf2",
+  "visible_title": "Businesses Adopting AI Risk a &#039;Trust Gap&#039; with Customers - Salesforce Report",
+  "visible_date": "2023-08-28",
+  "rss_pubdate": null,
+  "headline": "Businesses Adopting AI Risk a &#039;Trust Gap&#039; with Customers - Salesforce Report",
+  "notes": "feed=index",
+  "latency_ms": 389.03912500245497
+}

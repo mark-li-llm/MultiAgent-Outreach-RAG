@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-01-06::holiday-shoppers-spend-a-record-1-2t-online-salesforce-data-shows::63c14f26",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/01/06/2024-holiday-shopping-data/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/01/06/2024-holiday-shopping-data/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/01/06/2024-holiday-shopping-data/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 249486,
+  "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+  "sha256_raw": "d2473e2ea27b05c63a29709e37e62e5845c1aa1db8cac7468f118b71603840f8",
+  "visible_title": "Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows",
+  "visible_date": "2025-01-06",
+  "rss_pubdate": null,
+  "headline": "Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows",
+  "notes": "feed=product",
+  "latency_ms": 279.3229999952018
+}

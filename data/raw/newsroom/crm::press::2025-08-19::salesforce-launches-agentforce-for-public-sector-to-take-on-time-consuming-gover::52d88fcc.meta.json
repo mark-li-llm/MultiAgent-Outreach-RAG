@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-08-19::salesforce-launches-agentforce-for-public-sector-to-take-on-time-consuming-gover::52d88fcc",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/agentforce-for-public-sector-announcement/",
+  "final_url": "https://www.salesforce.com/news/stories/agentforce-for-public-sector-announcement/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/agentforce-for-public-sector-announcement/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 258475,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "698ed4c9fe57fa6e83fa2d890f06903344a61007c084910799027fe97dcc1527",
+  "visible_title": "Salesforce Launches Agentforce for Public Sector to Take on Time-Consuming Government Work, from Compliance to Constituent Support",
+  "visible_date": "2025-08-19",
+  "rss_pubdate": null,
+  "headline": "Salesforce Launches Agentforce for Public Sector to Take on Time-Consuming Government Work, from Compliance to Constituent Support",
+  "notes": "feed=index",
+  "latency_ms": 302.7493329718709
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-03-04::salesforce-launches-agentexchange-the-trusted-marketplace-for-agentforce::0b206de3",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/03/04/agentexchange-announcement/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/03/04/agentexchange-announcement/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/03/04/agentexchange-announcement/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 272717,
+  "fetched_at": "2025-09-07T16:44:46.090490+00:00",
+  "sha256_raw": "a30669d604dae6fd76867d2eb5127e4b8eb5d55b391b8952fd69351210f9144e",
+  "visible_title": "Salesforce Launches AgentExchange: the Trusted Marketplace for Agentforce",
+  "visible_date": "2025-03-04",
+  "rss_pubdate": null,
+  "headline": "Salesforce Launches AgentExchange: the Trusted Marketplace for Agentforce",
+  "notes": "feed=product",
+  "latency_ms": 275.4567919764668
+}

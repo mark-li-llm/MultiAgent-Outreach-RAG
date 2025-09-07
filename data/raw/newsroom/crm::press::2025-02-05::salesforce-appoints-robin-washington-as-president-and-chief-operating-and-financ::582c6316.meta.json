@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-02-05::salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financ::582c6316",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/05/salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financial-officer/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/02/05/salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financial-officer/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/02/05/salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financial-officer/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 227756,
+  "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+  "sha256_raw": "33190a7d4146971369d4a6b3e9cbccc9ccf5c06c4ce25736349dc721471f15b7",
+  "visible_title": "Salesforce Appoints Robin Washington as President and Chief Operating and Financial Officer",
+  "visible_date": "2025-02-05",
+  "rss_pubdate": null,
+  "headline": "Salesforce Appoints Robin Washington as President and Chief Operating and Financial Officer",
+  "notes": "feed=corporate",
+  "latency_ms": 373.66699997801334
+}

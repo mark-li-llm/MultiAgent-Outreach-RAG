@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+  "source_domain": "sec.gov",
+  "source_bucket": "sec",
+  "doctype": "ars_pdf",
+  "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "content_length": 4448958,
+  "fetched_at": "2025-09-07T16:43:40.025646+00:00",
+  "sha256_raw": "1f56fbe8d3e3e4e9d0f879a42ed01d43cdf455786d7efa9833a2001349550001",
+  "visible_title": null,
+  "visible_date": null,
+  "rss_pubdate": null,
+  "headline": null,
+  "notes": null,
+  "latency_ms": 1304.4155419920571
+}

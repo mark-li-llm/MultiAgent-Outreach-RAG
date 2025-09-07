@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
+  "source_domain": "sec.gov",
+  "source_bucket": "sec",
+  "doctype": "10-K",
+  "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 2454201,
+  "fetched_at": "2025-09-07T16:43:40.025646+00:00",
+  "sha256_raw": "4b181008a668650f4722d04347eb71ffa058ccc62a2e44f7b992d2b5261f9eaf",
+  "visible_title": "crm-20250131",
+  "visible_date": "2025-03-05",
+  "rss_pubdate": null,
+  "headline": "crm-20250131",
+  "notes": null,
+  "latency_ms": 314.85287501709536
+}

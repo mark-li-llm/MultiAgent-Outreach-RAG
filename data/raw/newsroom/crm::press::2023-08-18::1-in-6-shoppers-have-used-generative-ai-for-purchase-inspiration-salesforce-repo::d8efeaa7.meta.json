@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2023-08-18::1-in-6-shoppers-have-used-generative-ai-for-purchase-inspiration-salesforce-repo::d8efeaa7",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/trends-in-retail-2023/",
+  "final_url": "https://www.salesforce.com/news/stories/trends-in-retail-2023/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/trends-in-retail-2023/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 248316,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "f2e5d8ed27a1f8fa6d6523d0f5600de6ab8208e4b4775da7e2343782cafca2f8",
+  "visible_title": "1 in 6 Shoppers Have Used Generative AI for Purchase Inspiration - Salesforce Report",
+  "visible_date": "2023-08-18",
+  "rss_pubdate": null,
+  "headline": "1 in 6 Shoppers Have Used Generative AI for Purchase Inspiration - Salesforce Report",
+  "notes": "feed=index",
+  "latency_ms": 985.8475420041941
+}

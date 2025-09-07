@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-09-05::why-agentic-ai-requires-a-smarter-cloud-infrastructure::9780ec57",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/scaling-cloud-infrastructure-for-agentic-enterprise/",
+  "final_url": "https://www.salesforce.com/news/stories/scaling-cloud-infrastructure-for-agentic-enterprise/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/scaling-cloud-infrastructure-for-agentic-enterprise/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 250331,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "64aedd87de81a5a184a7a7224024dddec687eecd088cfb703f432ac927d635df",
+  "visible_title": "Why Agentic AI Requires a Smarter Cloud Infrastructure",
+  "visible_date": "2025-09-05",
+  "rss_pubdate": null,
+  "headline": "Why Agentic AI Requires a Smarter Cloud Infrastructure",
+  "notes": "feed=index",
+  "latency_ms": 190.87645900435746
+}

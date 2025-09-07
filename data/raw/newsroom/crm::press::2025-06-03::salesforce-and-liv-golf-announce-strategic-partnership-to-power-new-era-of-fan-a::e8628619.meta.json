@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-06-03::salesforce-and-liv-golf-announce-strategic-partnership-to-power-new-era-of-fan-a::e8628619",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/06/03/liv-golf-agentforce-experiences/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/06/03/liv-golf-agentforce-experiences/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/06/03/liv-golf-agentforce-experiences/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 237537,
+  "fetched_at": "2025-09-07T16:44:46.090490+00:00",
+  "sha256_raw": "0133e9e6077e6890d75f04ee2241229e34cfb85cdc8661cf9a7bf615699f1bd7",
+  "visible_title": "Salesforce and LIV Golf Announce Strategic Partnership to Power New Era of Fan and Player Experiences with Agentforce",
+  "visible_date": "2025-06-03",
+  "rss_pubdate": null,
+  "headline": "Salesforce and LIV Golf Announce Strategic Partnership to Power New Era of Fan and Player Experiences with Agentforce",
+  "notes": "feed=corporate",
+  "latency_ms": 313.0634999834001
+}

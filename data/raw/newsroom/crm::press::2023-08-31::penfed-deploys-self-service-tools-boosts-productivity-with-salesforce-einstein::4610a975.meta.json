@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2023-08-31::penfed-deploys-self-service-tools-boosts-productivity-with-salesforce-einstein::4610a975",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/penfed-generative-ai-customer/",
+  "final_url": "https://www.salesforce.com/news/stories/penfed-generative-ai-customer/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/penfed-generative-ai-customer/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 244273,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "fca56bd8ecfa7d2d8b86577fe7e3c49a90a129aa4bd7d5783bce260a547a1228",
+  "visible_title": "PenFed Deploys Self-Service Tools, Boosts Productivity with Salesforce Einstein",
+  "visible_date": "2023-08-31",
+  "rss_pubdate": null,
+  "headline": "PenFed Deploys Self-Service Tools, Boosts Productivity with Salesforce Einstein",
+  "notes": "feed=index",
+  "latency_ms": 510.1394170196727
+}

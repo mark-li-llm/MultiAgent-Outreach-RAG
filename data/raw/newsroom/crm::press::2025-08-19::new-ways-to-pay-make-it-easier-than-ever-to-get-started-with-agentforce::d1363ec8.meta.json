@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-08-19::new-ways-to-pay-make-it-easier-than-ever-to-get-started-with-agentforce::d1363ec8",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/new-agentforce-payment-options/",
+  "final_url": "https://www.salesforce.com/news/stories/new-agentforce-payment-options/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/new-agentforce-payment-options/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 218472,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "693d97c905b9b9bfb8d33172c83a92f4c33422ce03603bc663b07d8c04ee794c",
+  "visible_title": "New Ways to Pay Make It Easier than Ever to Get Started with Agentforce",
+  "visible_date": "2025-08-19",
+  "rss_pubdate": null,
+  "headline": "New Ways to Pay Make It Easier than Ever to Get Started with Agentforce",
+  "notes": "feed=index",
+  "latency_ms": 386.37874997220933
+}

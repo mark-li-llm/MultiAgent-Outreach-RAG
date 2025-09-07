@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::dev_docs::unknown::get-started-with-agentforce-agents::5ac08bad",
+  "source_domain": "developer.salesforce.com",
+  "source_bucket": "dev_docs",
+  "doctype": "dev_docs",
+  "requested_url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
+  "final_url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 57612,
+  "fetched_at": "2025-09-07T16:54:41.096450+00:00",
+  "sha256_raw": "55dfcbd356cf8c5d66fb9c60b77c6463611d6f2d4b1061e01a9a50da5164e0b8",
+  "visible_title": "Get Started with Agentforce Agents",
+  "visible_date": null,
+  "rss_pubdate": null,
+  "headline": "Get Started with Agentforce Agents",
+  "notes": null,
+  "latency_ms": 45.72287498740479
+}

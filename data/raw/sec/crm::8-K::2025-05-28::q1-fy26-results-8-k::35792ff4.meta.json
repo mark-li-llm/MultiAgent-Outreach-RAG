@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4",
+  "source_domain": "sec.gov",
+  "source_bucket": "sec",
+  "doctype": "8-K",
+  "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-20250528.htm",
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-20250528.htm",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 29080,
+  "fetched_at": "2025-09-07T16:43:40.025646+00:00",
+  "sha256_raw": "ff27198e7169f961fc1033c2560b80d11e182ae320135f7b3f7610ff500ee55d",
+  "visible_title": "crm-20250528",
+  "visible_date": "2025-05-28",
+  "rss_pubdate": null,
+  "headline": "crm-20250528",
+  "notes": null,
+  "latency_ms": 66.11554202390835
+}

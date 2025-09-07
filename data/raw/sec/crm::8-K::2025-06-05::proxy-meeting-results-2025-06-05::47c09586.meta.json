@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586",
+  "source_domain": "sec.gov",
+  "source_bucket": "sec",
+  "doctype": "8-K",
+  "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000033/crm-20250605.htm",
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000033/crm-20250605.htm",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 63682,
+  "fetched_at": "2025-09-07T16:43:40.025646+00:00",
+  "sha256_raw": "34575aaa445dc0c550cb1cded276214c065e1ab40072b325bfe0e5a3324495ab",
+  "visible_title": "crm-20250605",
+  "visible_date": "2025-06-05",
+  "rss_pubdate": null,
+  "headline": "crm-20250605",
+  "notes": null,
+  "latency_ms": 71.9821669626981
+}

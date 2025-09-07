@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-08-28::speaking-ai-why-fluency-is-the-next-essential-skill-for-workers::84dcf885",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/ai-fluency-for-agent-human-collaboration/",
+  "final_url": "https://www.salesforce.com/news/stories/ai-fluency-for-agent-human-collaboration/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/ai-fluency-for-agent-human-collaboration/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 248496,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "1ada6c72a6140aa202f4e3a0a9134b759de5be010c180dc2f61075ca3197e1c8",
+  "visible_title": "Speaking AI: Why Fluency is the Next Essential Skill for Workers",
+  "visible_date": "2025-08-28",
+  "rss_pubdate": null,
+  "headline": "Speaking AI: Why Fluency is the Next Essential Skill for Workers",
+  "notes": "feed=index",
+  "latency_ms": 200.70858299732208
+}

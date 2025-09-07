@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2024-12-17::introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w::601f3f45",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 280459,
+  "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+  "sha256_raw": "0681953831348eb0780847230d302abcba59a61f836a78b60bef23edd0ec7323",
+  "visible_title": "Introducing Agentforce 2.0: The Digital Labor Platform for Building a Limitless Workforce",
+  "visible_date": "2024-12-17",
+  "rss_pubdate": null,
+  "headline": "Introducing Agentforce 2.0: The Digital Labor Platform for Building a Limitless Workforce",
+  "notes": "feed=product",
+  "latency_ms": 321.8195419758558
+}

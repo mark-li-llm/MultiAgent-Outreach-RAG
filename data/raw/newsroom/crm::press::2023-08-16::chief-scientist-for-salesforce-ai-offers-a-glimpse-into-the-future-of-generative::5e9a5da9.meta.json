@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2023-08-16::chief-scientist-for-salesforce-ai-offers-a-glimpse-into-the-future-of-generative::5e9a5da9",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/generative-ai-research-team-salesforce/",
+  "final_url": "https://www.salesforce.com/news/stories/generative-ai-research-team-salesforce/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/generative-ai-research-team-salesforce/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 249794,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "4090df68ae5af7b0e40381b0f6b8f54b758006caa4d5000cb9fb88a3bfd59c1e",
+  "visible_title": "Chief Scientist for Salesforce AI Offers a Glimpse into the Future of Generative AI",
+  "visible_date": "2023-08-16",
+  "rss_pubdate": null,
+  "headline": "Chief Scientist for Salesforce AI Offers a Glimpse into the Future of Generative AI",
+  "notes": "feed=index",
+  "latency_ms": 821.2858340120874
+}

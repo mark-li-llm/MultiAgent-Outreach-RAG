@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::43678369",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 235875,
+  "fetched_at": "2025-09-07T16:44:46.090490+00:00",
+  "sha256_raw": "a3057aef2dc98280e092ad68b357601f252df36ac7fc7b54448b5e1ee8a58db8",
+  "visible_title": "Salesforce Reports Record Second Quarter Fiscal 2026 Results",
+  "visible_date": "2025-09-03",
+  "rss_pubdate": null,
+  "headline": "Salesforce Reports Record Second Quarter Fiscal 2026 Results",
+  "notes": "feed=corporate",
+  "latency_ms": 159.46483396692201
+}

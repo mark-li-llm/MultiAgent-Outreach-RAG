@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-02-10::salesforce-announces-500m-investment-in-saudi-arabia-to-drive-ai-innovation-and-::a3201e3f",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/10/saudi-arabia-investment/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/02/10/saudi-arabia-investment/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/02/10/saudi-arabia-investment/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 221461,
+  "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+  "sha256_raw": "54611baaf6c34849bf99b1f1cf2afea24e30a8147c90861df86b99f12b1300a9",
+  "visible_title": "Salesforce Announces $500M Investment in Saudi Arabia to Drive AI Innovation and Growth",
+  "visible_date": "2025-02-10",
+  "rss_pubdate": null,
+  "headline": "Salesforce Announces $500M Investment in Saudi Arabia to Drive AI Innovation and Growth",
+  "notes": "feed=corporate",
+  "latency_ms": 257.4671250185929
+}

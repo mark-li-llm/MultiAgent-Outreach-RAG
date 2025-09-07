@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::dev_docs::unknown::get-started-with-the-agent-api::202f14da",
+  "source_domain": "developer.salesforce.com",
+  "source_bucket": "dev_docs",
+  "doctype": "dev_docs",
+  "requested_url": "https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-get-started.html",
+  "final_url": "https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-get-started.html",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": 64015,
+  "fetched_at": "2025-09-07T16:45:04.178973+00:00",
+  "sha256_raw": "f39129ac728625df60ef814b36da6f83eb3f075c112ece41c35413a5dddd27ad",
+  "visible_title": "Get Started with the Agent API",
+  "visible_date": null,
+  "rss_pubdate": null,
+  "headline": "Get Started with the Agent API",
+  "notes": null,
+  "latency_ms": 185.14562502969056
+}

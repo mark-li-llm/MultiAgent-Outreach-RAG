@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-08-21::manufacturers-gain-new-ai-workforce-salesforce-s-agentforce-for-manufacturing-op::9ce1b982",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/agentforce-for-manufacturing-announcement/",
+  "final_url": "https://www.salesforce.com/news/stories/agentforce-for-manufacturing-announcement/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/agentforce-for-manufacturing-announcement/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 254777,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "d6441b7d4a146add50dd0e18c2c5d2bb13c1b76d8f0dea18e3af69ed23d6a188",
+  "visible_title": "Manufacturers Gain New AI Workforce: Salesforce’s Agentforce for Manufacturing Optimizes Production, Boosts Sales, and Cuts Downtime",
+  "visible_date": "2025-08-21",
+  "rss_pubdate": null,
+  "headline": "Manufacturers Gain New AI Workforce: Salesforce’s Agentforce for Manufacturing Optimizes Production, Boosts Sales, and Cuts Downtime",
+  "notes": "feed=index",
+  "latency_ms": 422.843084030319
+}

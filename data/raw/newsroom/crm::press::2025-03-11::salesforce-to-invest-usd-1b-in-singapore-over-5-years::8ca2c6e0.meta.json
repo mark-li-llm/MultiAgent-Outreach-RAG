@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-03-11::salesforce-to-invest-usd-1b-in-singapore-over-5-years::8ca2c6e0",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/03/11/singapore-investment/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/03/11/singapore-investment/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/03/11/singapore-investment/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 247874,
+  "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+  "sha256_raw": "f561a671275f4f2fc2a462b7160b1b9dd775f30cc58e80e032ec7ff6f583bda2",
+  "visible_title": "Salesforce to Invest USD $1B in Singapore over 5 Years",
+  "visible_date": "2025-03-11",
+  "rss_pubdate": null,
+  "headline": "Salesforce to Invest USD $1B in Singapore over 5 Years",
+  "notes": "feed=corporate",
+  "latency_ms": 243.60962497303262
+}

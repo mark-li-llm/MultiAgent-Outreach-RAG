@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2023-09-11::new-study-finds-salesforce-economy-powered-by-ai-will-create-a-net-gain-of-11-6m::7f3f5e4c",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/idc-salesforce-economy-ai/",
+  "final_url": "https://www.salesforce.com/news/stories/idc-salesforce-economy-ai/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/stories/idc-salesforce-economy-ai/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 253272,
+  "fetched_at": "2025-09-07T16:47:36.869295+00:00",
+  "sha256_raw": "7fdd14286d50065f28e77d8ea11cd639af9ae866a4f3a20dcdbf31c25977339b",
+  "visible_title": "New Study Finds Salesforce Economy, Powered by AI, Will Create a Net Gain of 11.6M Jobs and $2.02T in Business Revenues Between 2022 and 2028",
+  "visible_date": "2023-09-11",
+  "rss_pubdate": null,
+  "headline": "New Study Finds Salesforce Economy, Powered by AI, Will Create a Net Gain of 11.6M Jobs and $2.02T in Business Revenues Between 2022 and 2028",
+  "notes": "feed=index",
+  "latency_ms": 280.25929199066013
+}

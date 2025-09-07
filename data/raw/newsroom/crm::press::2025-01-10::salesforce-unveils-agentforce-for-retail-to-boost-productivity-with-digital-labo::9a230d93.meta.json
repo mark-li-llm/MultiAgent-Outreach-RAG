@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-01-10::salesforce-unveils-agentforce-for-retail-to-boost-productivity-with-digital-labo::9a230d93",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/01/10/agentforce-retail-cloud-pos-announcement/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/01/10/agentforce-retail-cloud-pos-announcement/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/01/10/agentforce-retail-cloud-pos-announcement/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 248150,
+  "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+  "sha256_raw": "1714a79f1ab6c735869c750f0063269d8b118bf7c10e04808e28ff747bdbc10a",
+  "visible_title": "Salesforce Unveils Agentforce for Retail to Boost Productivity with Digital Labor and Retail Cloud to Unite In-Store and Digital Shopping",
+  "visible_date": "2025-01-10",
+  "rss_pubdate": null,
+  "headline": "Salesforce Unveils Agentforce for Retail to Boost Productivity with Digital Labor and Retail Cloud to Unite In-Store and Digital Shopping",
+  "notes": "feed=product",
+  "latency_ms": 282.982999982778
+}

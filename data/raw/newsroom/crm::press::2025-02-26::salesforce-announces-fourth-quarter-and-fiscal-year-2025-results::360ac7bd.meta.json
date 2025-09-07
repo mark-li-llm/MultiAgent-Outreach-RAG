@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-02-26::salesforce-announces-fourth-quarter-and-fiscal-year-2025-results::360ac7bd",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/26/fy25-q4-earnings/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/02/26/fy25-q4-earnings/?bc=DB",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/02/26/fy25-q4-earnings/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 243118,
+  "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+  "sha256_raw": "6821f46bd43b20c932ec6ec3a88a2b2980fe70e8f628ef123194cffa5d584d8c",
+  "visible_title": "Salesforce Announces Fourth Quarter and Fiscal Year 2025 Results",
+  "visible_date": "2025-02-26",
+  "rss_pubdate": null,
+  "headline": "Salesforce Announces Fourth Quarter and Fiscal Year 2025 Results",
+  "notes": "feed=corporate",
+  "latency_ms": 293.4552500373684
+}
