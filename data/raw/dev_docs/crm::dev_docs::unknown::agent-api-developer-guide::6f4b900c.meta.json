@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c",
+  "source_domain": "developer.salesforce.com",
+  "source_bucket": "dev_docs",
+  "doctype": "dev_docs",
+  "requested_url": "https://developer.salesforce.com/docs/einstein/genai/guide/agent-api.html",
+  "final_url": "https://developer.salesforce.com/docs/einstein/genai/guide/agent-api.html",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 48292,
+  "fetched_at": "2025-09-07T20:32:23.176246+00:00",
+  "sha256_raw": "973046c25d367988623b21e44a2d7f5989a36f95f81d51ebe455f610ded74229",
+  "visible_title": "Agent API Developer Guide",
+  "visible_date": null,
+  "rss_pubdate": null,
+  "headline": "Agent API Developer Guide",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

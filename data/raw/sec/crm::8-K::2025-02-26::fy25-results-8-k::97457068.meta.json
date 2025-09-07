@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::8-K::2025-02-26::fy25-results-8-k::97457068",
+  "source_domain": "www.sec.gov",
+  "source_bucket": "sec",
+  "doctype": "8-K",
+  "requested_url": "https://www.sec.gov/ix?doc=%2FArchives%2Fedgar%2Fdata%2F1108524%2F000110852425000002%2Fcrm-20250226.htm",
+  "final_url": "https://www.sec.gov/ix?doc=%2FArchives%2Fedgar%2Fdata%2F1108524%2F000110852425000002%2Fcrm-20250226.htm",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/xml",
+  "content_length": 6356,
+  "fetched_at": "2025-09-07T20:33:02.831859+00:00",
+  "sha256_raw": "c154b0c606e928280771b4baa5f4177d293bfac8cdb70a6f005792b8fbe6fdf9",
+  "visible_title": null,
+  "visible_date": "2025-02-26",
+  "rss_pubdate": null,
+  "headline": null,
+  "notes": null,
+  "latency_ms": 1850.7191250100732
+}
