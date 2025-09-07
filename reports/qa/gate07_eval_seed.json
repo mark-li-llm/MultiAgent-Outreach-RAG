@@ -1,0 +1,133 @@
+{
+  "gate": "G07_EVAL_SEED",
+  "computed_at": "2025-09-07T23:09:38.525683+00:00",
+  "summary": {
+    "total_items": 45,
+    "referential_integrity_ratio": 1.0,
+    "keyphrase_presence_ratio": 1.0,
+    "persona_share": {
+      "vp_customer_experience": 0.3333,
+      "cio": 0.3333,
+      "vp_sales_ops": 0.3333
+    },
+    "counts_by_source_type": {
+      "SEC": 5,
+      "press_ir": 10,
+      "press_newsroom": 21,
+      "prod_dev_help": 8,
+      "wiki": 1
+    },
+    "within_24mo_ratio": 0.9677,
+    "within_12mo_ratio": 0.871,
+    "difficulty_dist": {
+      "easy": 15,
+      "medium": 15,
+      "hard": 15
+    },
+    "duplicate_expected_chunk_ratio": 1.0
+  },
+  "checks": [
+    {
+      "id": "EVAL-001",
+      "metric": "total_items",
+      "actual": 45,
+      "threshold": ">=40",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-002",
+      "metric": "referential_integrity_ratio",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-003",
+      "metric": "keyphrase_presence_ratio",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-004",
+      "metric": "counts_SEC",
+      "actual": 5,
+      "threshold": ">=10",
+      "status": "FAIL"
+    },
+    {
+      "id": "EVAL-005",
+      "metric": "counts_press_ir",
+      "actual": 10,
+      "threshold": ">=10",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-006",
+      "metric": "counts_press_newsroom",
+      "actual": 21,
+      "threshold": ">=10",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-007",
+      "metric": "counts_prod_dev_help",
+      "actual": 8,
+      "threshold": ">=8",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-008",
+      "metric": "counts_wiki",
+      "actual": 1,
+      "threshold": ">=2",
+      "status": "FAIL"
+    },
+    {
+      "id": "EVAL-009",
+      "metric": "persona_min_share",
+      "actual": 0.3333,
+      "threshold": ">=0.30",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-010",
+      "metric": "within_24mo_ratio",
+      "actual": 0.9677,
+      "threshold": ">=0.70",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-011",
+      "metric": "within_12mo_ratio",
+      "actual": 0.871,
+      "threshold": ">=0.40",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-012",
+      "metric": "duplicate_expected_chunk_ratio",
+      "actual": 1.0,
+      "threshold": ">=0.90",
+      "status": "PASS"
+    },
+    {
+      "id": "EVAL-013",
+      "metric": "difficulty_mix_min_each",
+      "actual": 15,
+      "threshold": ">=20% of total",
+      "status": "PASS"
+    }
+  ],
+  "status": "FAIL",
+  "evidence": {
+    "broken_refs": [],
+    "missing_keyphrases": [],
+    "underrepresented_persona": "vp_customer_experience",
+    "underfilled_buckets": [
+      "SEC",
+      "wiki"
+    ],
+    "log_path": "logs/eval"
+  }
+}
