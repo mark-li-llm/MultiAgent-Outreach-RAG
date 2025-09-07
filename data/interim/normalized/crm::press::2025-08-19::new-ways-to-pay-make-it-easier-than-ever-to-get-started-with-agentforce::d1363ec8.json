@@ -3,13 +3,15 @@
   "company": "Salesforce",
   "doctype": "press",
   "title": "New Ways to Pay Make It Easier than Ever to Get Started with Agentforce",
-  "publish_date": "",
+  "publish_date": "2025-08-19",
   "url": "https://www.salesforce.com/news/stories/new-agentforce-payment-options/?bc=DB",
   "final_url": "https://www.salesforce.com/news/stories/new-agentforce-payment-options/?bc=DB",
   "source_domain": "www.salesforce.com",
   "section": "body",
-  "topic": "",
-  "persona_tags": [],
+  "topic": "Agentforce|Data Cloud|Partnership|Industry Solutions|AI",
+  "persona_tags": [
+    "cio"
+  ],
   "language": "en",
   "text": "H1: New Ways to Pay Make It Easier than Ever to Get Started with Agentforce To help every business become an agentic enterprise, we’re lowering the barriers to entry and offering more flexibility in how customers work with Salesforce. Earlier this year, we introduced consumption-based pricing , allowing customers to pay for the exact actions their agents perform using Flex Credits, as well as new user licenses with Agentforce usage included, and a Flex Agreement that allows customers to convert licenses into credits. This flexible approach is helping to fuel agentic AI experimentation and deployments. Today, we’re expanding our payment options, offering three distinct ways to pay for Agentforce usage. This gives every customer the freedom to choose the billing model that best fits their unique needs: Pay-as-you-go (NEW): No up-front commitment; pay monthly for Flex Credits used. Pre-commit (NEW): Make an up-front commitment to unlock more favorable pricing, and pay monthly for Flex Credits used. The bigger the commitment, the bigger the savings, allowing you to drive greater ROI as you scale. Pre-purchase: Save the most by paying up front, ideal for businesses with predictable, consistent usage. There’s incredible demand from businesses of all sizes to experiment with and deploy agentic AI as we infuse all of our apps with dynamic, conversational, and context-aware agentic capabilities. Bill Patterson, EVP of Corporate Strategy “There’s incredible demand from businesses of all sizes to experiment with and deploy agentic AI as we infuse all of our apps with dynamic, conversational, and context-aware agentic capabilities,” said Bill Patterson, EVP of Corporate Strategy at Salesforce. “We’re removing the friction and lowering the barrier to entry so every company, whether they’re a long-time customer or trying Salesforce for the first time, can get started and see immediate value from digital labor with Agentforce.” Pay-as-you-go: Pay-as-you-go pricing is generally available starting today, so customers can get started with Agentforce quickly and easily, with no up-front commitment, and pay monthly based on the number of Flex Credits used. This flexible option is ideal for running pilots, testing new use cases, and managing unpredictable workloads. Pre-commit: We’re also introducing a new pre-commit option in limited release that allows customers to unlock more favorable pricing when they make an up-front commitment. The bigger the commitment, the bigger the savings, meaning ROI improves as customers scale digital labor across their organizations. Pre-commit will be more widely available later this year. Pre-purchase: For the best overall rate, our existing pre-purchase option allows customers to pay up front for a set amount of usage over their contract term and draw from that balance as they go. This is how most of our customers pay today and works well for businesses with predictable workloads and consistent demand. No matter how customers choose to pay, they can monitor, manage, and optimize their Agentforce usage with Digital Wallet , which provides businesses with near-real-time data, proactive usage alerts, and trend analysis for consumption-based Salesforce products. Contact your account representative to sign up for pay-as-you-go or pre-purchase, see if you’re eligible for pre-commit, or contact us for more information. Related Learn more: Learn more about our flexible pricing and how your organization can use Flex Credits to experiment and deploy AI Explore Sales Cloud , Service Cloud , Field Service , or Industries to learn more about Agentforce add-ons and Agentforce 1 Editions Check out the latest capabilities included in Agentforce 3 Get started fast with our Agentforce guide Register for Dreamforce 2025 This article may include references to services or features that are still in development and are unreleased. Customers should make their purchase decision based on fully released and available features. H2: Share article H3: Build and customize autonomous AI agents to support your employees and customers 24/7. Discover Agentforce H2: Share article H3: Build and customize autonomous AI agents to support your employees and customers 24/7. Discover Agentforce August 19, 2025 3 min read H3: Why Agentic AI Requires a Smarter Cloud Infrastructure 4 min read H3: Leading AI Innovator Smarsh Leverages Salesforce’s Agentforce, Deploys AI Customer Service Agents for Financial Services Support",
   "word_count": 719,
@@ -22,5 +24,7 @@
   "byline": null,
   "press_location": null,
   "ticker_mentions": [],
-  "pdf_page_map": null
+  "pdf_page_map": null,
+  "is_within_12mo": true,
+  "is_within_24mo": true
 }

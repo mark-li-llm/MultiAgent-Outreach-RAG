@@ -55,7 +55,7 @@ def find_sidecar(doc_id: str) -> Optional[str]:
     return None
 
 
-def pick_title(d: Dict[str, Any]) -> str:
+def pick_title(d: Dict[str, Any], side: Optional[Dict[str, Any]]) -> str:
     # Precedence: html_title -> existing title -> first H1
     title = (d.get("html_title") or "").strip()
     if title:
@@ -63,7 +63,18 @@ def pick_title(d: Dict[str, Any]) -> str:
     if d.get("title"):
         return d["title"]
     h1 = extract_h1_from_text(d.get("text") or "")
-    return h1 or ""
+    if h1:
+        return h1
+    vt = (side or {}).get("visible_title") if side else None
+    if vt and vt.strip():
+        return vt.strip()
+    # Last resort: derive from doc_id slug
+    doc_id = d.get("doc_id") or ""
+    parts = doc_id.split("::")
+    if len(parts) >= 5:
+        slug = parts[3]
+        return slug.replace("-", " ").title()
+    return ""
 
 
 def pick_publish_date(d: Dict[str, Any], side: Optional[Dict[str, Any]]) -> Optional[str]:
@@ -74,6 +85,14 @@ def pick_publish_date(d: Dict[str, Any], side: Optional[Dict[str, Any]]) -> Opti
             iso = coerce_date_iso(side.get(key) if side else None)
             if iso:
                 return iso
+        # fallback to fetched_at date part
+        fa = (side or {}).get("fetched_at")
+        if fa:
+            try:
+                dt = datetime.fromisoformat(fa.replace("Z", "+00:00"))
+                return dt.date().isoformat()
+            except Exception:
+                pass
         return None
     elif doctype == "press":
         # Press: meta_published_time -> visible_date -> rss_pubdate
@@ -95,7 +114,16 @@ def pick_publish_date(d: Dict[str, Any], side: Optional[Dict[str, Any]]) -> Opti
             if iso:
                 return iso
         iso = coerce_date_iso((side or {}).get("last_modified_http"))
-        return iso
+        if iso:
+            return iso
+        fa = (side or {}).get("fetched_at")
+        if fa:
+            try:
+                dt = datetime.fromisoformat(fa.replace("Z", "+00:00"))
+                return dt.date().isoformat()
+            except Exception:
+                return None
+        return None
     elif doctype == "wiki":
         iso = coerce_date_iso((side or {}).get("last_modified_http"))
         return iso
@@ -171,7 +199,7 @@ def main():
         side_path = find_sidecar(doc_id)
         side = json.load(open(side_path, "r", encoding="utf-8")) if side_path else {}
 
-        title = pick_title(d)
+        title = pick_title(d, side)
         pub = pick_publish_date(d, side)
         # Enforce date sanity
         if pub:
@@ -234,4 +262,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -11,11 +11,11 @@ from common import ensure_dir, now_iso
 
 
 ITEM_PATTERNS = [
-    ("Item 1", r"^\s*item\s*\xa0*\s*1\.?\s*(.*)$"),
-    ("Item 1A", r"^\s*item\s*\xa0*\s*1\s*a\.?\s*(.*)$"),
-    ("Item 7", r"^\s*item\s*\xa0*\s*7\.?\s*(.*)$"),
-    ("Item 7A", r"^\s*item\s*\xa0*\s*7\s*a\.?\s*(.*)$"),
-    ("Item 8", r"^\s*item\s*\xa0*\s*8\.?\s*(.*)$"),
+    ("Item 1", r"(^|\b)item\s*[\xa0\s]*1(?![0-9])\.?\s*(.*)$"),
+    ("Item 1A", r"(^|\b)item\s*[\xa0\s]*1\s*a\.?\s*(.*)$"),
+    ("Item 7", r"(^|\b)item\s*[\xa0\s]*7(?![0-9])\.?\s*(.*)$"),
+    ("Item 7A", r"(^|\b)item\s*[\xa0\s]*7\s*a\.?\s*(.*)$"),
+    ("Item 8", r"(^|\b)item\s*[\xa0\s]*8(?![0-9])\.?\s*(.*)$"),
 ]
 
 
@@ -30,14 +30,24 @@ def find_item_spans(text: str) -> Tuple[List[Dict], float]:
     lines = text.splitlines()
     spans: List[Tuple[str, str, int]] = []  # (label, title, start_char)
     offset = 0
+    general_pat = re.compile(r"(^|\b)item\s*[\xa0\s]*(\d+(?:\.\d+)?)\.?\s*(.*)$", re.IGNORECASE)
     for line in lines:
         lowered = line.lower()
+        # Prefer canonical patterns first
+        matched = False
         for label, pat in ITEM_PATTERNS:
-            if re.search(pat, lowered, flags=re.IGNORECASE):
-                m = re.search(pat, lowered, flags=re.IGNORECASE)
+            m = re.search(pat, lowered, flags=re.IGNORECASE)
+            if m:
                 title = m.group(1).strip() if m and m.group(1) else ""
                 spans.append((label, title, offset))
+                matched = True
                 break
+        if not matched:
+            gm = general_pat.search(lowered)
+            if gm:
+                num = gm.group(2)
+                title = (gm.group(3) or "").strip()
+                spans.append((f"Item {num}", title, offset))
         offset += len(line) + 1  # +1 for newline
 
     if not spans:
@@ -108,4 +118,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
