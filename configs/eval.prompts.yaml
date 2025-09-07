@@ -1,0 +1,23 @@
+personas:
+  vp_customer_experience:
+    - nps
+    - csat
+    - contact center
+    - omnichannel
+    - agent productivity
+    - self-service
+    - first contact resolution
+  cio:
+    - data integration
+    - governance
+    - security
+    - tco
+    - platform
+    - apis
+    - real-time
+  vp_sales_ops:
+    - pipeline
+    - forecast accuracy
+    - win rate
+    - productivity
+    - automation
