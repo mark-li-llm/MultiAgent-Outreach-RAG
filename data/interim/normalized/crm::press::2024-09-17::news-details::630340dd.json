@@ -27,5 +27,9 @@
   "ticker_mentions": [],
   "pdf_page_map": null,
   "is_within_12mo": true,
-  "is_within_24mo": true
+  "is_within_24mo": true,
+  "link_ok": false,
+  "status_code": 403,
+  "redirect_chain": [],
+  "link_checked_at": "2025-09-07T22:41:15.745693+00:00"
 }

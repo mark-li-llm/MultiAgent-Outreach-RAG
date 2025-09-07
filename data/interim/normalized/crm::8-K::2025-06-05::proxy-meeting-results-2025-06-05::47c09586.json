@@ -20,7 +20,7 @@
   "hash_sha256": "e82b3a8e8cb857ad3d7b52108673b36dcc169a682c5db703aec79d0c0ed2a0d4",
   "html_title": "crm-20250605",
   "meta_published_time": null,
-  "last_modified_http": null,
+  "last_modified_http": "Mon, 09 Jun 2025 20:18:40 GMT",
   "byline": null,
   "press_location": null,
   "ticker_mentions": [],
@@ -33,5 +33,9 @@
       "end_char": 5679
     }
   ],
-  "sec_item_coverage_ratio": 0.996831
+  "sec_item_coverage_ratio": 0.996831,
+  "link_ok": true,
+  "status_code": 200,
+  "redirect_chain": [],
+  "link_checked_at": "2025-09-07T22:41:13.736726+00:00"
 }

@@ -1,0 +1,69 @@
+{
+  "gate": "G06_LINK_HEALTH",
+  "computed_at": "2025-09-07T22:42:10.921796+00:00",
+  "summary": {
+    "docs_total": 75,
+    "link_ok_ratio": 0.76,
+    "https_ratio": 1.0,
+    "allowlisted_domain_ratio": 0.92,
+    "canonical_collisions": 2
+  },
+  "checks": [
+    {
+      "id": "LNK-001",
+      "metric": "link_ok_ratio",
+      "actual": 0.76,
+      "threshold": "==1.0",
+      "status": "FAIL"
+    },
+    {
+      "id": "LNK-002",
+      "metric": "canonical_collisions",
+      "actual": 2,
+      "threshold": "==0",
+      "status": "FAIL"
+    },
+    {
+      "id": "LNK-003",
+      "metric": "allowlisted_domain_ratio",
+      "actual": 0.92,
+      "threshold": "==1.0",
+      "status": "FAIL"
+    }
+  ],
+  "status": "FAIL",
+  "evidence": {
+    "broken_docs": [
+      "crm::press::2024-01-31::news-details::9a8b3ba9",
+      "crm::press::2024-04-25::news-details::65e3c0b7",
+      "crm::press::2024-04-30::news-details::05db958d",
+      "crm::press::2024-05-22::news-details::2d2829a8",
+      "crm::press::2024-07-31::news-details::9b19c384",
+      "crm::press::2024-09-05::news-details::e32cfe52",
+      "crm::press::2024-09-17::news-details::630340dd",
+      "crm::press::2024-10-31::news-details::c5011c5a",
+      "crm::press::2024-11-20::news-details::a75c5c49",
+      "crm::press::2025-01-06::news-details::ec6a2e76",
+      "crm::press::2025-01-31::news-details::9711c8f6",
+      "crm::press::2025-02-24::news-details::dbd232c6",
+      "crm::press::2025-03-05::news-details::fc26a97d",
+      "crm::press::2025-03-21::news-details::bd69b744",
+      "crm::press::2025-05-27::news-details::56b542ba",
+      "crm::press::2025-05-28::news-details::e526586e",
+      "crm::press::2025-06-23::news-details::1ee81dec",
+      "crm::press::2025-09-03::news-details::2014af2d"
+    ],
+    "collision_sets": [
+      [
+        "crm::press::2024-12-17::introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w::96d74ad9",
+        "crm::press::2024-12-17::introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w::601f3f45"
+      ],
+      [
+        "crm::press::2025-06-23::salesforce-launches-agentforce-3-to-solve-the-biggest-blockers-to-scaling-ai-age::b1bdb2c2",
+        "crm::press::2025-06-23::salesforce-launches-agentforce-3-to-solve-the-biggest-blockers-to-scaling-ai-age::9aa8f4e2"
+      ]
+    ],
+    "non_https_urls": [],
+    "log_path": "logs/link"
+  }
+}

@@ -5,7 +5,7 @@
   "title": "Introducing Agentforce 2.0: The Digital Labor Platform for Building a Limitless Workforce",
   "publish_date": "2024-12-17",
   "url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/",
-  "final_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/?bc=DB",
   "source_domain": "www.salesforce.com",
   "section": "body",
   "topic": "Agentforce|Data Cloud|Earnings|Partnership|Executive|Security|Platform|AI",
@@ -28,5 +28,11 @@
   "ticker_mentions": [],
   "pdf_page_map": null,
   "is_within_12mo": true,
-  "is_within_24mo": true
+  "is_within_24mo": true,
+  "link_ok": true,
+  "status_code": 200,
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/"
+  ],
+  "link_checked_at": "2025-09-07T22:41:15.215713+00:00"
 }

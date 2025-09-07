@@ -25,5 +25,9 @@
   "byline": null,
   "press_location": null,
   "ticker_mentions": [],
-  "pdf_page_map": null
+  "pdf_page_map": null,
+  "link_ok": true,
+  "status_code": 200,
+  "redirect_chain": [],
+  "link_checked_at": "2025-09-07T22:41:15.563458+00:00"
 }

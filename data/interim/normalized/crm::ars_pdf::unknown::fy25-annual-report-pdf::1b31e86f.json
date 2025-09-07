@@ -21,11 +21,15 @@
   "hash_sha256": "24cdc160c21ecc11cc4ee454bc68db64e800d9e94389405bb7ce88d9f6f2e1dd",
   "html_title": null,
   "meta_published_time": null,
-  "last_modified_http": null,
+  "last_modified_http": "Fri, 25 Apr 2025 10:02:20 GMT",
   "byline": null,
   "press_location": null,
   "ticker_mentions": [],
   "pdf_page_map": null,
   "sec_item_spans": [],
-  "sec_item_coverage_ratio": 0.0
+  "sec_item_coverage_ratio": 0.0,
+  "link_ok": true,
+  "status_code": 200,
+  "redirect_chain": [],
+  "link_checked_at": "2025-09-07T22:41:43.442181+00:00"
 }
