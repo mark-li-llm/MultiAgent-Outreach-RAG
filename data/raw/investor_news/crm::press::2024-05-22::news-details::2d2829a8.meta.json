@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2024-05-22::news-details::2d2829a8",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-New-Einstein-1-Marketing-and-Commerce-Innovations-to-Power-the-Complete-Customer-Journey-with-Unified-Data-and-Trusted-AI",
+  "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-New-Einstein-1-Marketing-and-Commerce-Innovations-to-Power-the-Complete-Customer-Journey-with-Unified-Data-and-Trusted-AI",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 95720,
+  "fetched_at": "2025-09-07T19:58:26.863931+00:00",
+  "sha256_raw": "4fa20d394e917f184ce0d85dc925a71a90f11f0d311d577e0bd853e34054f986",
+  "visible_title": "News Details",
+  "visible_date": "2024-05-22",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

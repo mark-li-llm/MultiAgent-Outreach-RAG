@@ -210,13 +210,29 @@ def normalize_one(item: Tuple[str, str, Dict], rules: Dict, out_dir: str, log: l
             text, pdf_page_map, before_len, after_len = extract_pdf_text(raw_path)
         elif raw_path.endswith(".raw.html") or raw_path.endswith(".html"):
             raw_bytes = open(raw_path, "rb").read()
-            html_title, meta_published_time = html_extract_title(raw_bytes.decode("utf-8", errors="replace"))
-            # Domain-specific relaxation: for help/dev/newsroom pages, use lighter stripping (fewer removals)
+            html_str = raw_bytes.decode("utf-8", errors="replace")
+            html_title, meta_published_time = html_extract_title(html_str)
+            # Domain-specific relaxation rules
             domain_rules = dict(rules)
-            if source_domain and any(k in source_domain for k in ["help.salesforce.com", "developer.salesforce.com", "salesforce.com"]):
-                domain_rules = dict(rules)
-                domain_rules["remove_selectors"] = [sel for sel in rules.get("remove_selectors", []) if sel not in [".sidebar", ".breadcrumb"]]
+            if source_domain:
+                if "investor.salesforce.com" in source_domain:
+                    # Keep almost everything for IR pages (remove only scripts/styles)
+                    domain_rules["remove_selectors"] = ["script", "style", "[aria-label*=\"cookie\"]"]
+                elif any(k in source_domain for k in ["help.salesforce.com", "developer.salesforce.com", "salesforce.com"]):
+                    domain_rules["remove_selectors"] = [sel for sel in rules.get("remove_selectors", []) if sel not in [".sidebar", ".breadcrumb"]]
             text, before_len, after_len, _ = normalize_html_bytes(raw_bytes, domain_rules)
+            # Fallback for help docs: if content is too short, use full-page text
+            if (meta.get("doctype") == "help_docs"):
+                wc_tmp = len(re.findall(r"\b\w+\b", text))
+                if wc_tmp < 200:
+                    from bs4 import BeautifulSoup
+                    soup_all = BeautifulSoup(html_str, "html.parser")
+                    full_text = soup_all.get_text("\n")
+                    full_text = re.sub(r"\s+", " ", full_text)
+                    full_text = re.sub(r"(\s*\n\s*)+", "\n", full_text)
+                    full_text = re.sub(r"\n{3,}", "\n\n", full_text).strip()
+                    text = full_text
+                    after_len = len(text)
         elif raw_path.endswith(".json"):
             raw_json = json.load(open(raw_path, "r", encoding="utf-8"))
             text = json.dumps(raw_json, ensure_ascii=False, indent=2)
@@ -242,6 +258,10 @@ def normalize_one(item: Tuple[str, str, Dict], rules: Dict, out_dir: str, log: l
     if lang != "en":
         log.info(f"DROPPED_NON_EN {doc_id} lang={lang}")
         return doc_id, "DROPPED_NON_EN", lang, before_len, after_len, None
+
+    # Ensure at least one heading marker by prepending html_title if none detected
+    if text and ("H1:" not in text and html_title):
+        text = f"H1: {html_title}\n\n" + text
 
     word_count = len(re.findall(r"\b\w+\b", text))
     token_count = cl100k_token_count(text)

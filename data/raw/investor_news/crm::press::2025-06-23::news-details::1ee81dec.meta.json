@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-06-23::news-details::1ee81dec",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-3-to-Solve-the-Biggest-Blockers-to-Scaling-AI-Agents-Visibility-and-Control",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-3-to-Solve-the-Biggest-Blockers-to-Scaling-AI-Agents-Visibility-and-Control",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 99193,
+  "fetched_at": "2025-09-07T19:58:26.768005+00:00",
+  "sha256_raw": "6f9e4dcb04d1c3a1d783f6c510871fb30f8f362d5effe9fa4ebe05593f07c9c6",
+  "visible_title": "News Details",
+  "visible_date": "2025-06-23",
+  "rss_pubdate": "2025-06-23",
+  "headline": "News Details",
+  "notes": "manual_save=1; feed=ir_rss",
+  "latency_ms": null
+}

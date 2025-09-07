@@ -1,14 +1,14 @@
 {
   "gate": "G02_NORMALization",
   "phase": "A",
-  "computed_at": "2025-09-07T19:46:54.340418+00:00",
+  "computed_at": "2025-09-07T20:09:51.169055+00:00",
   "summary": {
     "raw_total": 156,
-    "normalized_total": 48,
+    "normalized_total": 44,
     "dropped_non_en": 0,
     "normalized_coverage_ratio": 1.0,
     "lang_en_ratio": 1.0,
-    "heading_presence_ratio": 0.8958,
+    "heading_presence_ratio": 1.0,
     "pdf_docs_seen": 0,
     "pdf_page_map_missing": 0
   },
@@ -23,29 +23,22 @@
     "8-K": {
       "baseline_median_word_count_doc": 298,
       "doc_word_count_min": 200,
-      "docs_below_min_word_count": 1,
-      "retention_ratio_median": 0.8007455580984992,
+      "docs_below_min_word_count": 0,
+      "retention_ratio_median": 0.988045738045738,
       "retention_threshold": 0.7507455580984992
     },
     "dev_docs": {
       "baseline_median_word_count_doc": 711,
       "doc_word_count_min": 426,
-      "docs_below_min_word_count": 1,
-      "retention_ratio_median": 0.9498178204703545,
+      "docs_below_min_word_count": 0,
+      "retention_ratio_median": 0.9565181056374761,
       "retention_threshold": 0.8998178204703544
-    },
-    "help_docs": {
-      "baseline_median_word_count_doc": 9,
-      "doc_word_count_min": 200,
-      "docs_below_min_word_count": 1,
-      "retention_ratio_median": 0.36046511627906974,
-      "retention_threshold": 0.31046511627906975
     },
     "press": {
       "baseline_median_word_count_doc": 1165,
       "doc_word_count_min": 699,
-      "docs_below_min_word_count": 6,
-      "retention_ratio_median": 0.9114135319039671,
+      "docs_below_min_word_count": 0,
+      "retention_ratio_median": 0.9117499890042782,
       "retention_threshold": 0.8762432795698925
     },
     "product": {
@@ -81,23 +74,23 @@
     {
       "id": "STD-003",
       "metric": "min_word_count_violations",
-      "actual": 9,
+      "actual": 0,
       "threshold": "==0",
-      "status": "FAIL"
+      "status": "PASS"
     },
     {
       "id": "STD-004",
       "metric": "retention_ratio_median_press",
-      "actual": 0.9114,
+      "actual": 0.9117,
       "threshold": ">=baseline-0.05",
       "status": "PASS"
     },
     {
       "id": "STD-005",
       "metric": "heading_presence_ratio",
-      "actual": 0.8958,
+      "actual": 1.0,
       "threshold": ">=0.90",
-      "status": "FAIL"
+      "status": "PASS"
     },
     {
       "id": "STD-006",
@@ -107,40 +100,30 @@
       "status": "PASS"
     }
   ],
-  "status": "FAIL",
+  "status": "PASS",
   "evidence": {
     "missing_normalized_for_raw": [],
-    "docs_below_min_word_count": [
-      "crm::8-K::2025-02-26::fy25-results-8-k::97457068",
-      "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c",
-      "crm::help_docs::unknown::salesforce-help::b0daabdf",
-      "crm::press::2024-10-24::salesforce-s-ceo-on-a-workforce-without-limits::9751a41a",
-      "crm::press::2025-02-05::news-details::094a5f95",
-      "crm::press::2025-03-21::news-details::bd69b744",
-      "crm::press::2025-06-06::news-details::2d726f2f",
-      "crm::press::2025-08-07::news-details::71f15e0c",
-      "crm::press::2025-08-26::all-news-amp-press::4ea28483"
-    ],
+    "docs_below_min_word_count": [],
     "retention_samples": [
       {
         "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
         "retention_ratio": 0.992532129617719
       },
       {
-        "doc_id": "crm::8-K::2025-02-26::fy25-results-8-k::97457068",
-        "retention_ratio": 0.8007455580984992
-      },
-      {
         "doc_id": "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4",
-        "retention_ratio": 0.8007455580984992
-      },
-      {
-        "doc_id": "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c",
-        "retention_ratio": 0.9498178204703545
+        "retention_ratio": 0.988045738045738
       },
       {
         "doc_id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36",
-        "retention_ratio": 0.9498178204703545
+        "retention_ratio": 0.9565181056374761
+      },
+      {
+        "doc_id": "crm::dev_docs::unknown::get-started-with-agentforce-agents::5ac08bad",
+        "retention_ratio": 0.9565181056374761
+      },
+      {
+        "doc_id": "crm::press::2023-08-09::new-slack-user-experience-designed-for-focus-and-productivity::100cc924",
+        "retention_ratio": 0.9117499890042782
       }
     ],
     "log_path": ""

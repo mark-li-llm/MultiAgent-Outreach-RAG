@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2024-11-20::news-details::a75c5c49",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Introduces-Agentforce-Testing-Center-First-of-Its-Kind-AI-Agent-Lifecycle-Management-Tooling-for-Testing-Autonomous-AI-Agents-at-Scale",
+  "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Introduces-Agentforce-Testing-Center-First-of-Its-Kind-AI-Agent-Lifecycle-Management-Tooling-for-Testing-Autonomous-AI-Agents-at-Scale",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 105072,
+  "fetched_at": "2025-09-07T19:58:26.757089+00:00",
+  "sha256_raw": "c4be530df04d689e838ab571137b10701a0a59b16d332e8ec08980b893ad2026",
+  "visible_title": "News Details",
+  "visible_date": "2024-11-20",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

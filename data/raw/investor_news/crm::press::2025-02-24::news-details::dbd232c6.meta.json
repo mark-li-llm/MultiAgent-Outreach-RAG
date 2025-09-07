@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-02-24::news-details::dbd232c6",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-and-Google-Bring-Gemini-to-Agentforce-Enable-More-Customer-Choice-in-Major-Partnership-Expansion",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-and-Google-Bring-Gemini-to-Agentforce-Enable-More-Customer-Choice-in-Major-Partnership-Expansion",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 90861,
+  "fetched_at": "2025-09-07T19:58:26.874066+00:00",
+  "sha256_raw": "364ed6f8cd961657aac4b1b8bee123a1f5d882665576f5faa9c61f65aa29b5ee",
+  "visible_title": "News Details",
+  "visible_date": "2025-02-24",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

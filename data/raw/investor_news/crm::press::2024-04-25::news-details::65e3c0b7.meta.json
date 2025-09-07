@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+  "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 94443,
+  "fetched_at": "2025-09-07T19:58:26.869358+00:00",
+  "sha256_raw": "0a4c899d336ba85ff723d033eca4e9b00a49543cd4ab0219f259a30c78f6089e",
+  "visible_title": "News Details",
+  "visible_date": "2024-04-25",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

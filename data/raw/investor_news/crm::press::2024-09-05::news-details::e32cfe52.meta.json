@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2024-09-05::news-details::e32cfe52",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Signs-Definitive-Agreement-to-Acquire-Own-Company",
+  "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Signs-Definitive-Agreement-to-Acquire-Own-Company",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 81226,
+  "fetched_at": "2025-09-07T19:58:26.859096+00:00",
+  "sha256_raw": "7ee112f8546809e989d570cc965d5f206bb3e1389bc781ae809dc0925b4a8b27",
+  "visible_title": "News Details",
+  "visible_date": "2024-09-05",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}
