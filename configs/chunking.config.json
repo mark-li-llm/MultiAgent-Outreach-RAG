@@ -1,0 +1,7 @@
+{
+  "tokenizer": "cl100k_base",
+  "target_tokens": 800,
+  "overlap_tokens": 120,
+  "short_doc_threshold_tokens": 350,
+  "boundary_tolerance_chars": 50
+}
