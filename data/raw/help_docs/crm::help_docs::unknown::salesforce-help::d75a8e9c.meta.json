@@ -1,5 +1,5 @@
 {
-  "doc_id": "crm::help_docs::unknown::salesforce-help::7451854b",
+  "doc_id": "crm::help_docs::unknown::salesforce-help::d75a8e9c",
   "source_domain": "help.salesforce.com",
   "source_bucket": "help_docs",
   "doctype": "help_docs",
@@ -9,8 +9,8 @@
   "http_status": 200,
   "content_type": "text/html",
   "content_length": 336159,
-  "fetched_at": "2025-09-07T20:32:23.291375+00:00",
-  "sha256_raw": "4e9ab226906e94fa08ea0bcdaab2631c2e208ec8be4b214c0d3653616d375553",
+  "fetched_at": "2025-09-07T21:15:00.487868+00:00",
+  "sha256_raw": "8525e7913efbb568c7145031a63c97ac3e998adb9455155e0ef1828ca6f4ee2a",
   "visible_title": "Salesforce Help",
   "visible_date": null,
   "rss_pubdate": null,

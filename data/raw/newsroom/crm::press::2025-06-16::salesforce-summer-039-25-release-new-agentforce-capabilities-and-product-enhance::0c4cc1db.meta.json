@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-06-16::salesforce-summer-039-25-release-new-agentforce-capabilities-and-product-enhance::0c4cc1db",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/stories/summer-2025-product-release-announcement/",
+  "final_url": "https://www.salesforce.com/news/stories/summer-2025-product-release-announcement/",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 241528,
+  "fetched_at": "2025-09-07T21:15:00.611839+00:00",
+  "sha256_raw": "d3021828152e72822bd93951f8406fff046838924bab4cf426c79a92ee8244d8",
+  "visible_title": "Salesforce Summer &#039;25 Release: New Agentforce Capabilities and Product Enhancements to Create Richer Customer Experiences",
+  "visible_date": "2025-06-16",
+  "rss_pubdate": null,
+  "headline": "Salesforce Summer &#039;25 Release: New Agentforce Capabilities and Product Enhancements to Create Richer Customer Experiences",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

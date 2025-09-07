@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-06-23::salesforce-launches-agentforce-3-to-solve-the-biggest-blockers-to-scaling-ai-age::b1bdb2c2",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 276616,
+  "fetched_at": "2025-09-07T21:15:00.610245+00:00",
+  "sha256_raw": "2e53019f3d071348cbb4391e4448f30610e75cbbafe5da7cf19c8342016fa0e1",
+  "visible_title": "Salesforce Launches Agentforce 3 to Solve the Biggest Blockers to Scaling AI Agents: Visibility and Control",
+  "visible_date": "2025-06-23",
+  "rss_pubdate": null,
+  "headline": "Salesforce Launches Agentforce 3 to Solve the Biggest Blockers to Scaling AI Agents: Visibility and Control",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

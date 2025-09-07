@@ -45,15 +45,16 @@ def doctype_for_bucket(bucket: str) -> str:
         "help_docs": "help_docs",
         "product": "product",
         "wikipedia": "wiki",
+        "newsroom": "press",
     }
     return mapping.get(bucket, bucket)
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Ingest manually saved HTML into raw buckets (dev_docs/help_docs/product/wiki)")
+    ap = argparse.ArgumentParser(description="Ingest manually saved HTML into raw buckets (dev_docs/help_docs/product/wiki/newsroom)")
     ap.add_argument("--inbox", required=True, help="Folder containing *.html saved from browser")
     ap.add_argument("--dest", required=True, help="Destination folder under data/raw/<bucket>")
-    ap.add_argument("--bucket", required=True, choices=["dev_docs", "help_docs", "product", "wikipedia"], help="Target bucket name")
+    ap.add_argument("--bucket", required=True, choices=["dev_docs", "help_docs", "product", "wikipedia", "newsroom"], help="Target bucket name")
     args = ap.parse_args()
 
     inbox = Path(args.inbox)
@@ -86,7 +87,10 @@ def main():
         raw_path.write_bytes(raw)
         meta = {
             "doc_id": doc_id,
-            "source_domain": domain_of(url_norm) or ("developer.salesforce.com" if dtype == "dev_docs" else ("help.salesforce.com" if dtype == "help_docs" else "")),
+            "source_domain": domain_of(url_norm) or (
+                "developer.salesforce.com" if dtype == "dev_docs" else (
+                "help.salesforce.com" if dtype == "help_docs" else (
+                "www.salesforce.com" if args.bucket == "newsroom" else ""))),
             "source_bucket": args.bucket,
             "doctype": dtype,
             "requested_url": url_norm or "",
@@ -113,4 +117,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

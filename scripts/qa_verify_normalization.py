@@ -230,18 +230,22 @@ def compute_metrics(phase: str) -> Dict[str, Any]:
     norm_paths = list_normalized()
     normalized_all = [load_json(p) for p in norm_paths]
 
-    # Parse latest normalize log for drops
+    # Parse logs for drops (non-en and short). Normalizer currently logs to logs/fetch via build_logger.
     latest_log = None
+    dropped_non_en = 0
     try:
-        logs = sorted(glob.glob("logs/normalize/*.log"))
-        latest_log = logs[-1] if logs else None
-        dropped_non_en = 0
-        if latest_log:
-            for line in open(latest_log, "r", encoding="utf-8", errors="ignore"):
-                if "DROPPED_NON_EN" in line:
-                    dropped_non_en += 1
+        cand = sorted(glob.glob("logs/normalize/*.log") + glob.glob("logs/fetch/*.log"))
+        latest_log = cand[-1] if cand else None
+        for lp in cand[-5:]:  # scan a few latest logs
+            try:
+                with open(lp, "r", encoding="utf-8", errors="ignore") as f:
+                    for line in f:
+                        if ("DROPPED_NON_EN" in line) or ("DROPPED_SHORT" in line):
+                            dropped_non_en += 1
+            except Exception:
+                continue
     except Exception:
-        dropped_non_en = 0
+        pass
 
     # Build Phase A subset doc_ids deterministically (same selector as normalizer)
     import hashlib

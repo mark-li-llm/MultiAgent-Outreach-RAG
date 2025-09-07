@@ -1,15 +1,15 @@
 {
   "gate": "G02_NORMALization",
-  "phase": "A",
-  "computed_at": "2025-09-07T20:38:02.969190+00:00",
+  "phase": "B",
+  "computed_at": "2025-09-07T21:25:32.019195+00:00",
   "summary": {
-    "raw_total": 162,
-    "normalized_total": 46,
-    "dropped_non_en": 0,
-    "normalized_coverage_ratio": 1.0,
+    "raw_total": 156,
+    "normalized_total": 75,
+    "dropped_non_en": 4,
+    "normalized_coverage_ratio": 1.0135,
     "lang_en_ratio": 1.0,
-    "heading_presence_ratio": 1.0,
-    "pdf_docs_seen": 0,
+    "heading_presence_ratio": 0.9867,
+    "pdf_docs_seen": 1,
     "pdf_page_map_missing": 0
   },
   "per_doctype": {
@@ -20,25 +20,39 @@
       "retention_ratio_median": 0.992532129617719,
       "retention_threshold": 0.9425321296177189
     },
+    "10-Q": {
+      "baseline_median_word_count_doc": 44571,
+      "doc_word_count_min": 26742,
+      "docs_below_min_word_count": 0,
+      "retention_ratio_median": 0.9930016571484274,
+      "retention_threshold": 0.9430016571484273
+    },
     "8-K": {
       "baseline_median_word_count_doc": 298,
       "doc_word_count_min": 200,
-      "docs_below_min_word_count": 1,
-      "retention_ratio_median": 0.8007455580984992,
+      "docs_below_min_word_count": 0,
+      "retention_ratio_median": 0.9886934963162466,
       "retention_threshold": 0.7507455580984992
+    },
+    "ars_pdf": {
+      "baseline_median_word_count_doc": 370740,
+      "doc_word_count_min": 222444,
+      "docs_below_min_word_count": 0,
+      "retention_ratio_median": 0.9964521521328242,
+      "retention_threshold": 0.9464521521328242
     },
     "dev_docs": {
       "baseline_median_word_count_doc": 711,
       "doc_word_count_min": 426,
-      "docs_below_min_word_count": 1,
-      "retention_ratio_median": 0.9498178204703545,
+      "docs_below_min_word_count": 0,
+      "retention_ratio_median": 0.9523085429914293,
       "retention_threshold": 0.8998178204703544
     },
     "press": {
       "baseline_median_word_count_doc": 1165,
       "doc_word_count_min": 699,
       "docs_below_min_word_count": 0,
-      "retention_ratio_median": 0.9117499890042782,
+      "retention_ratio_median": 0.9142174096470257,
       "retention_threshold": 0.8762432795698925
     },
     "product": {
@@ -60,7 +74,7 @@
     {
       "id": "STD-001",
       "metric": "normalized_coverage_ratio",
-      "actual": 1.0,
+      "actual": 1.0135,
       "threshold": ">=0.98",
       "status": "PASS"
     },
@@ -74,21 +88,21 @@
     {
       "id": "STD-003",
       "metric": "min_word_count_violations",
-      "actual": 2,
+      "actual": 0,
       "threshold": "==0",
-      "status": "FAIL"
+      "status": "PASS"
     },
     {
       "id": "STD-004",
       "metric": "retention_ratio_median_press",
-      "actual": 0.9117,
+      "actual": 0.9142,
       "threshold": ">=baseline-0.05",
       "status": "PASS"
     },
     {
       "id": "STD-005",
       "metric": "heading_presence_ratio",
-      "actual": 1.0,
+      "actual": 0.9867,
       "threshold": ">=0.90",
       "status": "PASS"
     },
@@ -100,35 +114,39 @@
       "status": "PASS"
     }
   ],
-  "status": "FAIL",
+  "status": "PASS",
   "evidence": {
-    "missing_normalized_for_raw": [],
-    "docs_below_min_word_count": [
+    "missing_normalized_for_raw": [
+      "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c",
+      "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c",
+      "crm::help_docs::unknown::salesforce-help::d75a8e9c",
+      "crm::help_docs::unknown::salesforce-help::d75a8e9c",
       "crm::8-K::2025-02-26::fy25-results-8-k::97457068",
-      "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c"
+      "crm::8-K::2025-02-26::fy25-results-8-k::97457068"
     ],
+    "docs_below_min_word_count": [],
     "retention_samples": [
       {
         "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
         "retention_ratio": 0.992532129617719
       },
       {
-        "doc_id": "crm::8-K::2025-02-26::fy25-results-8-k::97457068",
-        "retention_ratio": 0.8007455580984992
+        "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866",
+        "retention_ratio": 0.9930016571484274
       },
       {
         "doc_id": "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4",
-        "retention_ratio": 0.8007455580984992
+        "retention_ratio": 0.9886934963162466
       },
       {
-        "doc_id": "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c",
-        "retention_ratio": 0.9498178204703545
+        "doc_id": "crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586",
+        "retention_ratio": 0.9886934963162466
       },
       {
-        "doc_id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36",
-        "retention_ratio": 0.9498178204703545
+        "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+        "retention_ratio": 0.9964521521328242
       }
     ],
-    "log_path": ""
+    "log_path": "logs/fetch/20250907_171909.log"
   }
 }
