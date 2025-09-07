@@ -1,0 +1,25 @@
+fields:
+  doc_id: {type: string}
+  company: {type: string}
+  doctype: {type: string}
+  title: {type: string}
+  publish_date: {type: string, nullable: true}
+  url: {type: string}
+  final_url: {type: string}
+  source_domain: {type: string}
+  section: {type: string}
+  topic: {type: string}
+  persona_tags: {type: array}
+  language: {type: string}
+  text: {type: string}
+  word_count: {type: integer}
+  token_count: {type: integer}
+  ingestion_ts: {type: string}
+  hash_sha256: {type: string}
+  html_title: {type: string, optional: true}
+  meta_published_time: {type: string, optional: true}
+  last_modified_http: {type: string, optional: true}
+  byline: {type: string, optional: true}
+  press_location: {type: string, optional: true}
+  ticker_mentions: {type: array, optional: true}
+  pdf_page_map: {type: any, optional: true}

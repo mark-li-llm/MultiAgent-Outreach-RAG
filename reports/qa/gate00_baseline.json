@@ -1,0 +1,104 @@
+{
+  "computed_at": "2025-09-07T19:46:11.603080+00:00",
+  "baselines": {
+    "10-K": {
+      "median_word_count_doc": 64308,
+      "median_token_count_doc": 87327,
+      "median_chunks_per_doc": 1,
+      "median_chunk_tokens": 87327,
+      "sec_item_coverage_ratio_median": 1.0,
+      "date_presence_rate": 0.0,
+      "title_presence_rate": 1.0,
+      "persona_tag_assignment_rate": 0.0,
+      "raw_to_normalized_retention_ratio_median": 0.992532129617719
+    },
+    "10-Q": {
+      "median_word_count_doc": 44571,
+      "median_token_count_doc": 59861,
+      "median_chunks_per_doc": 1,
+      "median_chunk_tokens": 59861,
+      "sec_item_coverage_ratio_median": 1.0,
+      "date_presence_rate": 0.0,
+      "title_presence_rate": 1.0,
+      "persona_tag_assignment_rate": 0.0,
+      "raw_to_normalized_retention_ratio_median": 0.9930016571484274
+    },
+    "8-K": {
+      "median_word_count_doc": 298,
+      "median_token_count_doc": 440,
+      "median_chunks_per_doc": 1,
+      "median_chunk_tokens": 440,
+      "sec_item_coverage_ratio_median": 1.0,
+      "date_presence_rate": 0.0,
+      "title_presence_rate": 1.0,
+      "persona_tag_assignment_rate": 0.0,
+      "raw_to_normalized_retention_ratio_median": 0.8007455580984992
+    },
+    "ars_pdf": {
+      "median_word_count_doc": 370740,
+      "median_token_count_doc": 710719,
+      "median_chunks_per_doc": 1,
+      "median_chunk_tokens": 710719,
+      "sec_item_coverage_ratio_median": 0.0,
+      "date_presence_rate": 0.0,
+      "title_presence_rate": 1.0,
+      "persona_tag_assignment_rate": 0.0,
+      "raw_to_normalized_retention_ratio_median": 0.9964521521328242
+    },
+    "dev_docs": {
+      "median_word_count_doc": 711,
+      "median_token_count_doc": 844,
+      "median_chunks_per_doc": 1,
+      "median_chunk_tokens": 844,
+      "sec_item_coverage_ratio_median": 0.0,
+      "date_presence_rate": 0.0,
+      "title_presence_rate": 1.0,
+      "persona_tag_assignment_rate": 0.0,
+      "raw_to_normalized_retention_ratio_median": 0.9498178204703545
+    },
+    "help_docs": {
+      "median_word_count_doc": 9,
+      "median_token_count_doc": 11,
+      "median_chunks_per_doc": 1,
+      "median_chunk_tokens": 11,
+      "sec_item_coverage_ratio_median": 0.0,
+      "date_presence_rate": 0.0,
+      "title_presence_rate": 1.0,
+      "persona_tag_assignment_rate": 0.0,
+      "raw_to_normalized_retention_ratio_median": 0.36046511627906974
+    },
+    "press": {
+      "median_word_count_doc": 1165,
+      "median_token_count_doc": 1456,
+      "median_chunks_per_doc": 1,
+      "median_chunk_tokens": 1456,
+      "sec_item_coverage_ratio_median": 0.0,
+      "date_presence_rate": 0.0,
+      "title_presence_rate": 1.0,
+      "persona_tag_assignment_rate": 0.0,
+      "raw_to_normalized_retention_ratio_median": 0.9262432795698925
+    },
+    "product": {
+      "median_word_count_doc": 981,
+      "median_token_count_doc": 1238,
+      "median_chunks_per_doc": 1,
+      "median_chunk_tokens": 1238,
+      "sec_item_coverage_ratio_median": 0.0,
+      "date_presence_rate": 0.0,
+      "title_presence_rate": 1.0,
+      "persona_tag_assignment_rate": 0.0,
+      "raw_to_normalized_retention_ratio_median": 0.6492135971588027
+    },
+    "wiki": {
+      "median_word_count_doc": 7605,
+      "median_token_count_doc": 13384,
+      "median_chunks_per_doc": 1,
+      "median_chunk_tokens": 13384,
+      "sec_item_coverage_ratio_median": 0.0,
+      "date_presence_rate": 0.0,
+      "title_presence_rate": 1.0,
+      "persona_tag_assignment_rate": 0.0,
+      "raw_to_normalized_retention_ratio_median": 0.9328002320984968
+    }
+  }
+}

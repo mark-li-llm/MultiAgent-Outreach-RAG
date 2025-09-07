@@ -1,0 +1,26 @@
+remove_selectors:
+  - nav
+  - footer
+  - '[aria-label*="cookie"]'
+  - '.share'
+  - '.social'
+  - '.newsletter'
+  - '.breadcrumb'
+  - '.sidebar'
+  - script
+  - style
+preserve_selectors:
+  - article
+  - main
+  - '.content'
+  - '.entry-content'
+  - '#content'
+newline_blocks:
+  - p
+  - div
+  - section
+  - li
+heading_levels:
+  - h1
+  - h2
+  - h3
