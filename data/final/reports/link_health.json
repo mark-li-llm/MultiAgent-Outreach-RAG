@@ -1,13 +1,183 @@
 [
   {
-    "doc_id": "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4",
-    "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-20250528.htm",
-    "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-20250528.htm",
+    "doc_id": "crm::press::2024-01-31::news-details::9a8b3ba9",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Strong-Fourth-Quarter-Fiscal-2024-Results",
+    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Strong-Fourth-Quarter-Fiscal-2024-Results",
     "status_code": 200,
     "link_ok": true,
     "redirect_chain": [],
-    "last_modified": "Wed, 28 May 2025 20:06:16 GMT",
-    "checked_at": "2025-09-07T22:41:13.709828+00:00"
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.929278+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.929668+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-04-30::news-details::05db958d",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-First-Quarter-Fiscal-2025-Results",
+    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-First-Quarter-Fiscal-2025-Results",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.930029+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-05-22::news-details::2d2829a8",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-New-Einstein-1-Marketing-and-Commerce-Innovations-to-Power-the-Complete-Customer-Journey-with-Unified-Data-and-Trusted-AI",
+    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-New-Einstein-1-Marketing-and-Commerce-Innovations-to-Power-the-Complete-Customer-Journey-with-Unified-Data-and-Trusted-AI",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.930237+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-07-31::news-details::9b19c384",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Second-Quarter-Fiscal-2025-Results",
+    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Second-Quarter-Fiscal-2025-Results",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.930398+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-09-05::news-details::e32cfe52",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Signs-Definitive-Agreement-to-Acquire-Own-Company",
+    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Signs-Definitive-Agreement-to-Acquire-Own-Company",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.930577+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-09-17::news-details::630340dd",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Data-Cloud-Momentum-Soars-with-Rising-Adoption-and-New-Innovation-That-Brings-Trusted-Data-to-Agentforce",
+    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Data-Cloud-Momentum-Soars-with-Rising-Adoption-and-New-Innovation-That-Brings-Trusted-Data-to-Agentforce",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.930802+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-10-31::news-details::c5011c5a",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Third-Quarter-Fiscal-2025-Results",
+    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Third-Quarter-Fiscal-2025-Results",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.931390+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-11-20::news-details::a75c5c49",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Introduces-Agentforce-Testing-Center-First-of-Its-Kind-AI-Agent-Lifecycle-Management-Tooling-for-Testing-Autonomous-AI-Agents-at-Scale",
+    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Introduces-Agentforce-Testing-Center-First-of-Its-Kind-AI-Agent-Lifecycle-Management-Tooling-for-Testing-Autonomous-AI-Agents-at-Scale",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.931484+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-01-06::news-details::ec6a2e76",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Holiday-Shoppers-Spend-a-Record-1.2T-Online-Salesforce-Data-Shows",
+    "final_url": "https://investor.salesforce.com/news/news-details/2025/Holiday-Shoppers-Spend-a-Record-1.2T-Online-Salesforce-Data-Shows",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.985602+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-01-31::news-details::9711c8f6",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Results",
+    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Results",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:16.999342+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-02-24::news-details::dbd232c6",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-and-Google-Bring-Gemini-to-Agentforce-Enable-More-Customer-Choice-in-Major-Partnership-Expansion",
+    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-and-Google-Bring-Gemini-to-Agentforce-Enable-More-Customer-Choice-in-Major-Partnership-Expansion",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:17.026165+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-03-05::news-details::fc26a97d",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx-with-New-Capabilities-to-Embed-Proactive-Agentic-AI-into-Any-Workflow-Create-Multimodal-Experiences-and-Extend-Digital-Labor-Throughout-the-Enterprise",
+    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx-with-New-Capabilities-to-Embed-Proactive-Agentic-AI-into-Any-Workflow-Create-Multimodal-Experiences-and-Extend-Digital-Labor-Throughout-the-Enterprise",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:17.067242+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-03-21::news-details::bd69b744",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Appoints-Robin-Washington-as-President-and-Chief-Operating-and-Financial-Officer",
+    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Appoints-Robin-Washington-as-President-and-Chief-Operating-and-Financial-Officer",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:17.094199+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-05-27::news-details::56b542ba",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Signs-Definitive-Agreement-to-Acquire-Informatica",
+    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Signs-Definitive-Agreement-to-Acquire-Informatica",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:17.120960+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-05-28::news-details::e526586e",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-First-Quarter-Fiscal-2026-Results",
+    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-First-Quarter-Fiscal-2026-Results",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:17.134501+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-06-23::news-details::1ee81dec",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-3-to-Solve-the-Biggest-Blockers-to-Scaling-AI-Agents-Visibility-and-Control",
+    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-3-to-Solve-the-Biggest-Blockers-to-Scaling-AI-Agents-Visibility-and-Control",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:17.188630+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-09-03::news-details::2014af2d",
+    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-Second-Quarter-Fiscal-2026-Results",
+    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-Second-Quarter-Fiscal-2026-Results",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:17.355940+00:00"
   },
   {
     "doc_id": "crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586",
@@ -17,483 +187,7 @@
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": "Mon, 09 Jun 2025 20:18:40 GMT",
-    "checked_at": "2025-09-07T22:41:13.736735+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-06-23::salesforce-launches-agentforce-3-to-solve-the-biggest-blockers-to-scaling-ai-age::9aa8f4e2",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:13.994976+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-02-05::salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financ::582c6316",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/05/salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financial-officer/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/02/05/salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financial-officer/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.012845+00:00"
-  },
-  {
-    "doc_id": "crm::press::2023-08-24::new-salesforce-field-service-innovations-bring-the-power-of-ai-to-the-mobile-wor::c7fe8ab5",
-    "requested_url": "https://www.salesforce.com/news/stories/ai-for-field-service/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/ai-for-field-service/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.160685+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-09-02::salesforce-quarterly-highlights-fy26-q2-product-releases-and-corporate-announcem::ea02411d",
-    "requested_url": "https://www.salesforce.com/news/stories/fy26-q2-highlights/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/fy26-q2-highlights/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.165676+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-01-06::holiday-shoppers-spend-a-record-1-2t-online-salesforce-data-shows::63c14f26",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/01/06/2024-holiday-shopping-data/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/01/06/2024-holiday-shopping-data/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.165817+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-09-05::why-agentic-ai-requires-a-smarter-cloud-infrastructure::9780ec57",
-    "requested_url": "https://www.salesforce.com/news/stories/scaling-cloud-infrastructure-for-agentic-enterprise/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/scaling-cloud-infrastructure-for-agentic-enterprise/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.173633+00:00"
-  },
-  {
-    "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866",
-    "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
-    "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": "Thu, 29 May 2025 10:01:32 GMT",
-    "checked_at": "2025-09-07T22:41:14.176367+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-08-26::salesforce-life-sciences-cloud-now-selected-by-more-than-70-industry-leading-cus::ca509334",
-    "requested_url": "https://www.salesforce.com/news/stories/industry-leaders-choose-life-sciences-cloud/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/industry-leaders-choose-life-sciences-cloud/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.207400+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-05-28::salesforce-reports-record-first-quarter-fiscal-2026-results-exceeds-guidance-acr::589e1fcc",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/28/fy26-q1-earnings/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/28/fy26-q1-earnings/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.214866+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-08-20::from-research-to-runtime-delivering-enterprise-ai-with-confidence::82cd1c96",
-    "requested_url": "https://www.salesforce.com/in/news/stories/agentic-ai-enterprise-research/?bc=DB",
-    "final_url": "https://www.salesforce.com/in/news/stories/agentic-ai-enterprise-research/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.215548+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-12-04::salesforce-data-reveals-new-cyber-week-all-time-high-314-9b-in-global-sales::665ada5f",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2024/12/04/cyber-week-ai-sales/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2024/12/04/cyber-week-ai-sales/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.217157+00:00"
-  },
-  {
-    "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
-    "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
-    "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": "Wed, 05 Mar 2025 21:17:13 GMT",
-    "checked_at": "2025-09-07T22:41:14.233428+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-08-19::salesforce-launches-agentforce-for-public-sector-to-take-on-time-consuming-gover::52d88fcc",
-    "requested_url": "https://www.salesforce.com/news/stories/agentforce-for-public-sector-announcement/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/agentforce-for-public-sector-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.235013+00:00"
-  },
-  {
-    "doc_id": "crm::press::2023-08-31::penfed-deploys-self-service-tools-boosts-productivity-with-salesforce-einstein::4610a975",
-    "requested_url": "https://www.salesforce.com/news/stories/penfed-generative-ai-customer/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/penfed-generative-ai-customer/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.261054+00:00"
-  },
-  {
-    "doc_id": "crm::press::2023-08-04::salesforce-launches-byom-to-make-it-easy-for-businesses-to-use-proprietary-data-::61063b9d",
-    "requested_url": "https://www.salesforce.com/news/stories/einstein-studio-ai-news/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/einstein-studio-ai-news/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.265870+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-08-27::salesforce-ai-research-advances-the-agentic-enterprise-by-simulating-enterprise-::c5c7863d",
-    "requested_url": "https://www.salesforce.com/news/stories/ai-research-advances-enterprise-agentic-readiness/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/ai-research-advances-enterprise-agentic-readiness/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.268355+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-03-11::salesforce-to-invest-usd-1b-in-singapore-over-5-years::8ca2c6e0",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/03/11/singapore-investment/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/03/11/singapore-investment/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.286037+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-02-10::salesforce-announces-500m-investment-in-saudi-arabia-to-drive-ai-innovation-and-::a3201e3f",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/10/saudi-arabia-investment/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/02/10/saudi-arabia-investment/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.298164+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-08-21::manufacturers-gain-new-ai-workforce-salesforce-s-agentforce-for-manufacturing-op::9ce1b982",
-    "requested_url": "https://www.salesforce.com/news/stories/agentforce-for-manufacturing-announcement/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/agentforce-for-manufacturing-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.306221+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-02-26::salesforce-announces-fourth-quarter-and-fiscal-year-2025-results::360ac7bd",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/26/fy25-q4-earnings/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/02/26/fy25-q4-earnings/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.393461+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-08-26::in-the-agentic-era-human-imagination-must-shape-the-jobs-of-tomorrow::ffd5c276",
-    "requested_url": "https://www.salesforce.com/news/stories/imagination-shapes-future-work-agentic-ai/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/imagination-shapes-future-work-agentic-ai/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.394257+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-01-10::salesforce-unveils-agentforce-for-retail-to-boost-productivity-with-digital-labo::9a230d93",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/01/10/agentforce-retail-cloud-pos-announcement/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/01/10/agentforce-retail-cloud-pos-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.469890+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-05-08::salesforce-unveils-life-sciences-partner-network-to-accelerate-digital-labor-and::2b31368e",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/08/partner-network-for-life-sciences-announcement/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/08/partner-network-for-life-sciences-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.577456+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-06-16::salesforce-summer-039-25-release-new-agentforce-capabilities-and-product-enhance::0c4cc1db",
-    "requested_url": "https://www.salesforce.com/news/stories/summer-2025-product-release-announcement/",
-    "final_url": "https://www.salesforce.com/news/stories/summer-2025-product-release-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [
-      "https://www.salesforce.com/news/stories/summer-2025-product-release-announcement/"
-    ],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.597156+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-02-24::salesforce-and-google-bring-gemini-to-agentforce-enable-more-customer-choice-in-::d17b9df1",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/24/google-partnership-expansion-gemini-agentforce/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/02/24/google-partnership-expansion-gemini-agentforce/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.906899+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-12-17::introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w::601f3f45",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.909503+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-02-24::news-details::dbd232c6",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-and-Google-Bring-Gemini-to-Agentforce-Enable-More-Customer-Choice-in-Major-Partnership-Expansion",
-    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-and-Google-Bring-Gemini-to-Agentforce-Enable-More-Customer-Choice-in-Major-Partnership-Expansion",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:14.910206+00:00"
-  },
-  {
-    "doc_id": "crm::press::2023-09-11::new-study-finds-salesforce-economy-powered-by-ai-will-create-a-net-gain-of-11-6m::7f3f5e4c",
-    "requested_url": "https://www.salesforce.com/news/stories/idc-salesforce-economy-ai/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/idc-salesforce-economy-ai/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.059838+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::43678369",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.137971+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-12-17::introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w::96d74ad9",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/",
-    "final_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [
-      "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/"
-    ],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.215729+00:00"
-  },
-  {
-    "doc_id": "crm::product::unknown::agentforce-the-ai-agent-platform::c8dd3707",
-    "requested_url": "https://www.salesforce.com/agentforce/?bc=DB",
-    "final_url": "https://www.salesforce.com/agentforce/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.477818+00:00"
-  },
-  {
-    "doc_id": "crm::press::2023-08-09::new-slack-user-experience-designed-for-focus-and-productivity::100cc924",
-    "requested_url": "https://www.salesforce.com/news/stories/slack-redesign-availability/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/slack-redesign-availability/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.520329+00:00"
-  },
-  {
-    "doc_id": "crm::product::unknown::salesforce-data-cloud::ceadcc95",
-    "requested_url": "https://www.salesforce.com/data/?bc=DB",
-    "final_url": "https://www.salesforce.com/data/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.563482+00:00"
-  },
-  {
-    "doc_id": "crm::product::unknown::what-is-salesforce::9818feb8",
-    "requested_url": "https://www.salesforce.com/products/what-is-salesforce/?bc=DB",
-    "final_url": "https://www.salesforce.com/products/what-is-salesforce/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.708265+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-09-17::news-details::630340dd",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Data-Cloud-Momentum-Soars-with-Rising-Adoption-and-New-Innovation-That-Brings-Trusted-Data-to-Agentforce",
-    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Data-Cloud-Momentum-Soars-with-Rising-Adoption-and-New-Innovation-That-Brings-Trusted-Data-to-Agentforce",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.745707+00:00"
-  },
-  {
-    "doc_id": "crm::press::2023-08-18::1-in-6-shoppers-have-used-generative-ai-for-purchase-inspiration-salesforce-repo::d8efeaa7",
-    "requested_url": "https://www.salesforce.com/news/stories/trends-in-retail-2023/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/trends-in-retail-2023/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.781410+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-03-04::salesforce-launches-agentexchange-the-trusted-marketplace-for-agentforce::0b206de3",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/03/04/agentexchange-announcement/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/03/04/agentexchange-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.804723+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-08-19::new-ways-to-pay-make-it-easier-than-ever-to-get-started-with-agentforce::d1363ec8",
-    "requested_url": "https://www.salesforce.com/news/stories/new-agentforce-payment-options/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/new-agentforce-payment-options/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:15.952513+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::d581dd97",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/27/salesforce-signs-definitive-agreement-to-acquire-informatica/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/27/salesforce-signs-definitive-agreement-to-acquire-informatica/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.008469+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-04-30::news-details::05db958d",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-First-Quarter-Fiscal-2025-Results",
-    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-First-Quarter-Fiscal-2025-Results",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.016996+00:00"
-  },
-  {
-    "doc_id": "crm::wiki::unknown::salesforce-wikipedia::6b727edd",
-    "requested_url": "https://en.wikipedia.org/wiki/Salesforce",
-    "final_url": "https://en.wikipedia.org/wiki/Salesforce",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": "Sat, 06 Sep 2025 10:52:54 GMT",
-    "checked_at": "2025-09-07T22:41:16.043269+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-07-31::news-details::9b19c384",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Second-Quarter-Fiscal-2025-Results",
-    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Second-Quarter-Fiscal-2025-Results",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.136157+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-11-20::news-details::a75c5c49",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Introduces-Agentforce-Testing-Center-First-of-Its-Kind-AI-Agent-Lifecycle-Management-Tooling-for-Testing-Autonomous-AI-Agents-at-Scale",
-    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Introduces-Agentforce-Testing-Center-First-of-Its-Kind-AI-Agent-Lifecycle-Management-Tooling-for-Testing-Autonomous-AI-Agents-at-Scale",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.182594+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-10-31::news-details::c5011c5a",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Third-Quarter-Fiscal-2025-Results",
-    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Third-Quarter-Fiscal-2025-Results",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.296138+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-11-25::how-new-digital-workers-will-lead-to-an-unlimited-age::88c1752e",
-    "requested_url": "https://time.com/7178872/agents-unlimited-age/",
-    "final_url": "https://time.com/7178872/agents-unlimited-age/",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.298734+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-06-23::salesforce-launches-agentforce-3-to-solve-the-biggest-blockers-to-scaling-ai-age::b1bdb2c2",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [
-      "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/"
-    ],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.334042+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-08-28::speaking-ai-why-fluency-is-the-next-essential-skill-for-workers::84dcf885",
-    "requested_url": "https://www.salesforce.com/news/stories/ai-fluency-for-agent-human-collaboration/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/ai-fluency-for-agent-human-collaboration/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.335805+00:00"
+    "checked_at": "2025-09-07T23:00:17.756155+00:00"
   },
   {
     "doc_id": "crm::press::2025-08-21::how-agentic-ai-can-help-overcome-the-child-welfare-information-crisis::4c43853a",
@@ -503,127 +197,27 @@
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.434036+00:00"
+    "checked_at": "2025-09-07T23:00:18.023586+00:00"
   },
   {
-    "doc_id": "crm::press::2024-09-05::news-details::e32cfe52",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Signs-Definitive-Agreement-to-Acquire-Own-Company",
-    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Signs-Definitive-Agreement-to-Acquire-Own-Company",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.437338+00:00"
-  },
-  {
-    "doc_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b",
-    "requested_url": "https://www.salesforce.com/news/stories/customer-engagement-research-2023/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/customer-engagement-research-2023/?bc=DB",
+    "doc_id": "crm::press::2025-06-16::salesforce-summer-039-25-release-new-agentforce-capabilities-and-product-enhance::0c4cc1db",
+    "requested_url": "https://www.salesforce.com/news/stories/summer-2025-product-release-announcement/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/summer-2025-product-release-announcement/?bc=DB",
     "status_code": 200,
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.440035+00:00"
+    "checked_at": "2025-09-07T23:00:18.025277+00:00"
   },
   {
-    "doc_id": "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37",
-    "requested_url": "https://www.salesforce.com/news/stories/slack-news-dreamforce-2023/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/slack-news-dreamforce-2023/?bc=DB",
+    "doc_id": "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4",
+    "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-20250528.htm",
+    "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-20250528.htm",
     "status_code": 200,
     "link_ok": true,
     "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.448515+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-05-28::news-details::e526586e",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-First-Quarter-Fiscal-2026-Results",
-    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-First-Quarter-Fiscal-2026-Results",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.450818+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-05-22::news-details::2d2829a8",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-New-Einstein-1-Marketing-and-Commerce-Innovations-to-Power-the-Complete-Customer-Journey-with-Unified-Data-and-Trusted-AI",
-    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-New-Einstein-1-Marketing-and-Commerce-Innovations-to-Power-the-Complete-Customer-Journey-with-Unified-Data-and-Trusted-AI",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.480026+00:00"
-  },
-  {
-    "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
-    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.485277+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-05-15::salesforce-introduces-new-flexible-agentforce-pricing-to-accelerate-the-digital-::eb594704",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.492188+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-03-05::salesforce-launches-agentforce-2dx-new-capabilities-embed-proactive-agentic-ai-i::55567343",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/03/05/agentforce-2dx-news/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/03/05/agentforce-2dx-news/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.539956+00:00"
-  },
-  {
-    "doc_id": "crm::dev_docs::unknown::get-started-with-agentforce-agents::5ac08bad",
-    "requested_url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
-    "final_url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.540195+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-01-06::news-details::ec6a2e76",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Holiday-Shoppers-Spend-a-Record-1.2T-Online-Salesforce-Data-Shows",
-    "final_url": "https://investor.salesforce.com/news/news-details/2025/Holiday-Shoppers-Spend-a-Record-1.2T-Online-Salesforce-Data-Shows",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.606982+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-01-31::news-details::9711c8f6",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Results",
-    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Results",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.622879+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-03-21::news-details::bd69b744",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Appoints-Robin-Washington-as-President-and-Chief-Operating-and-Financial-Officer",
-    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Appoints-Robin-Washington-as-President-and-Chief-Operating-and-Financial-Officer",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.630332+00:00"
+    "last_modified": "Wed, 28 May 2025 20:06:16 GMT",
+    "checked_at": "2025-09-07T23:00:18.032817+00:00"
   },
   {
     "doc_id": "crm::press::2025-06-03::salesforce-and-liv-golf-announce-strategic-partnership-to-power-new-era-of-fan-a::e8628619",
@@ -633,57 +227,177 @@
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.644170+00:00"
+    "checked_at": "2025-09-07T23:00:18.093653+00:00"
   },
   {
-    "doc_id": "crm::press::2025-06-23::news-details::1ee81dec",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-3-to-Solve-the-Biggest-Blockers-to-Scaling-AI-Agents-Visibility-and-Control",
-    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-3-to-Solve-the-Biggest-Blockers-to-Scaling-AI-Agents-Visibility-and-Control",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.656499+00:00"
-  },
-  {
-    "doc_id": "crm::dev_docs::unknown::get-started-with-the-agent-api::202f14da",
-    "requested_url": "https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-get-started.html",
-    "final_url": "https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-get-started.html",
+    "doc_id": "crm::press::2023-08-18::1-in-6-shoppers-have-used-generative-ai-for-purchase-inspiration-salesforce-repo::d8efeaa7",
+    "requested_url": "https://www.salesforce.com/news/stories/trends-in-retail-2023/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/trends-in-retail-2023/?bc=DB",
     "status_code": 200,
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.856158+00:00"
+    "checked_at": "2025-09-07T23:00:18.099191+00:00"
   },
   {
-    "doc_id": "crm::press::2025-09-03::news-details::2014af2d",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-Second-Quarter-Fiscal-2026-Results",
-    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-Second-Quarter-Fiscal-2026-Results",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.887767+00:00"
-  },
-  {
-    "doc_id": "crm::press::2023-08-16::chief-scientist-for-salesforce-ai-offers-a-glimpse-into-the-future-of-generative::5e9a5da9",
-    "requested_url": "https://www.salesforce.com/news/stories/generative-ai-research-team-salesforce/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/stories/generative-ai-research-team-salesforce/?bc=DB",
+    "doc_id": "crm::press::2025-05-28::salesforce-reports-record-first-quarter-fiscal-2026-results-exceeds-guidance-acr::589e1fcc",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/28/fy26-q1-earnings/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/28/fy26-q1-earnings/?bc=DB",
     "status_code": 200,
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.903622+00:00"
+    "checked_at": "2025-09-07T23:00:18.106233+00:00"
   },
   {
-    "doc_id": "crm::press::2025-05-28::salesforce-partners-with-ferrari-to-elevate-the-client-039-s-journey-worldwide::0dc28eff",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/28/ferrari-agentforce-crm-elevates-client-experience/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/28/ferrari-agentforce-crm-elevates-client-experience/?bc=DB",
+    "doc_id": "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37",
+    "requested_url": "https://www.salesforce.com/news/stories/slack-news-dreamforce-2023/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/slack-news-dreamforce-2023/?bc=DB",
     "status_code": 200,
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:16.914731+00:00"
+    "checked_at": "2025-09-07T23:00:18.145469+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-03-05::salesforce-launches-agentforce-2dx-new-capabilities-embed-proactive-agentic-ai-i::55567343",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/03/05/agentforce-2dx-news/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/03/05/agentforce-2dx-news/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.163542+00:00"
+  },
+  {
+    "doc_id": "crm::press::2023-08-09::new-slack-user-experience-designed-for-focus-and-productivity::100cc924",
+    "requested_url": "https://www.salesforce.com/news/stories/slack-redesign-availability/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/slack-redesign-availability/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.280196+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-08-19::salesforce-launches-agentforce-for-public-sector-to-take-on-time-consuming-gover::52d88fcc",
+    "requested_url": "https://www.salesforce.com/news/stories/agentforce-for-public-sector-announcement/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/agentforce-for-public-sector-announcement/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.304966+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-08-21::manufacturers-gain-new-ai-workforce-salesforce-s-agentforce-for-manufacturing-op::9ce1b982",
+    "requested_url": "https://www.salesforce.com/news/stories/agentforce-for-manufacturing-announcement/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/agentforce-for-manufacturing-announcement/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.313356+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-12-17::introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w::601f3f45",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2024/12/17/agentforce-2-0-announcement/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.321866+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-01-06::holiday-shoppers-spend-a-record-1-2t-online-salesforce-data-shows::63c14f26",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/01/06/2024-holiday-shopping-data/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/01/06/2024-holiday-shopping-data/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.323267+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-06-23::salesforce-launches-agentforce-3-to-solve-the-biggest-blockers-to-scaling-ai-age::b1bdb2c2",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.330565+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-09-05::why-agentic-ai-requires-a-smarter-cloud-infrastructure::9780ec57",
+    "requested_url": "https://www.salesforce.com/news/stories/scaling-cloud-infrastructure-for-agentic-enterprise/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/scaling-cloud-infrastructure-for-agentic-enterprise/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.333701+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-03-11::salesforce-to-invest-usd-1b-in-singapore-over-5-years::8ca2c6e0",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/03/11/singapore-investment/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/03/11/singapore-investment/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.354893+00:00"
+  },
+  {
+    "doc_id": "crm::product::unknown::what-is-salesforce::9818feb8",
+    "requested_url": "https://www.salesforce.com/products/what-is-salesforce/?bc=DB",
+    "final_url": "https://www.salesforce.com/products/what-is-salesforce/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.359313+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-03-04::salesforce-launches-agentexchange-the-trusted-marketplace-for-agentforce::0b206de3",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/03/04/agentexchange-announcement/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/03/04/agentexchange-announcement/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.373159+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-09-02::salesforce-quarterly-highlights-fy26-q2-product-releases-and-corporate-announcem::ea02411d",
+    "requested_url": "https://www.salesforce.com/news/stories/fy26-q2-highlights/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/fy26-q2-highlights/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.416321+00:00"
+  },
+  {
+    "doc_id": "crm::product::unknown::salesforce-data-cloud::ceadcc95",
+    "requested_url": "https://www.salesforce.com/data/?bc=DB",
+    "final_url": "https://www.salesforce.com/data/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.469470+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-02-26::salesforce-announces-fourth-quarter-and-fiscal-year-2025-results::360ac7bd",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/26/fy25-q4-earnings/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/02/26/fy25-q4-earnings/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:18.524624+00:00"
   },
   {
     "doc_id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36",
@@ -693,27 +407,7 @@
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:17.304466+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-03-05::news-details::fc26a97d",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx-with-New-Capabilities-to-Embed-Proactive-Agentic-AI-into-Any-Workflow-Create-Multimodal-Experiences-and-Extend-Digital-Labor-Throughout-the-Enterprise",
-    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx-with-New-Capabilities-to-Embed-Proactive-Agentic-AI-into-Any-Workflow-Create-Multimodal-Experiences-and-Extend-Digital-Labor-Throughout-the-Enterprise",
-    "status_code": 403,
-    "link_ok": false,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:17.794831+00:00"
-  },
-  {
-    "doc_id": "crm::press::2025-07-09::salesforce-appoints-amy-chang-and-david-b-kirk-to-its-board-of-directors::cee511f3",
-    "requested_url": "https://www.salesforce.com/news/press-releases/2025/07/09/salesforce-appoints-amy-chang-and-david-b-kirk-to-its-board-of-directors/?bc=DB",
-    "final_url": "https://www.salesforce.com/news/press-releases/2025/07/09/salesforce-appoints-amy-chang-and-david-b-kirk-to-its-board-of-directors/?bc=DB",
-    "status_code": 200,
-    "link_ok": true,
-    "redirect_chain": [],
-    "last_modified": null,
-    "checked_at": "2025-09-07T22:41:17.839582+00:00"
+    "checked_at": "2025-09-07T23:00:18.607201+00:00"
   },
   {
     "doc_id": "crm::press::2023-09-07::new-ai-usage-data-shows-who-s-using-ai-and-uncovers-a-population-of-super-users::2f093480",
@@ -723,27 +417,57 @@
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:17.875313+00:00"
+    "checked_at": "2025-09-07T23:00:19.037242+00:00"
   },
   {
-    "doc_id": "crm::press::2024-01-31::news-details::9a8b3ba9",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Strong-Fourth-Quarter-Fiscal-2024-Results",
-    "final_url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Strong-Fourth-Quarter-Fiscal-2024-Results",
-    "status_code": 403,
-    "link_ok": false,
+    "doc_id": "crm::press::2024-12-04::salesforce-data-reveals-new-cyber-week-all-time-high-314-9b-in-global-sales::665ada5f",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2024/12/04/cyber-week-ai-sales/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2024/12/04/cyber-week-ai-sales/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:17.891361+00:00"
+    "checked_at": "2025-09-07T23:00:19.317178+00:00"
   },
   {
-    "doc_id": "crm::press::2025-05-27::news-details::56b542ba",
-    "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Signs-Definitive-Agreement-to-Acquire-Informatica",
-    "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Signs-Definitive-Agreement-to-Acquire-Informatica",
-    "status_code": 403,
-    "link_ok": false,
+    "doc_id": "crm::press::2023-08-16::chief-scientist-for-salesforce-ai-offers-a-glimpse-into-the-future-of-generative::5e9a5da9",
+    "requested_url": "https://www.salesforce.com/news/stories/generative-ai-research-team-salesforce/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/generative-ai-research-team-salesforce/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
     "redirect_chain": [],
     "last_modified": null,
-    "checked_at": "2025-09-07T22:41:19.585322+00:00"
+    "checked_at": "2025-09-07T23:00:19.624115+00:00"
+  },
+  {
+    "doc_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b",
+    "requested_url": "https://www.salesforce.com/news/stories/customer-engagement-research-2023/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/customer-engagement-research-2023/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:19.706333+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-01-10::salesforce-unveils-agentforce-for-retail-to-boost-productivity-with-digital-labo::9a230d93",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/01/10/agentforce-retail-cloud-pos-announcement/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/01/10/agentforce-retail-cloud-pos-announcement/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:19.707662+00:00"
+  },
+  {
+    "doc_id": "crm::press::2023-08-31::penfed-deploys-self-service-tools-boosts-productivity-with-salesforce-einstein::4610a975",
+    "requested_url": "https://www.salesforce.com/news/stories/penfed-generative-ai-customer/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/penfed-generative-ai-customer/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:19.713125+00:00"
   },
   {
     "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
@@ -753,6 +477,256 @@
     "link_ok": true,
     "redirect_chain": [],
     "last_modified": "Fri, 25 Apr 2025 10:02:20 GMT",
-    "checked_at": "2025-09-07T22:41:43.442203+00:00"
+    "checked_at": "2025-09-07T23:00:19.720371+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-08-27::salesforce-ai-research-advances-the-agentic-enterprise-by-simulating-enterprise-::c5c7863d",
+    "requested_url": "https://www.salesforce.com/news/stories/ai-research-advances-enterprise-agentic-readiness/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/ai-research-advances-enterprise-agentic-readiness/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:19.971584+00:00"
+  },
+  {
+    "doc_id": "crm::dev_docs::unknown::get-started-with-agentforce-agents::5ac08bad",
+    "requested_url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
+    "final_url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.048838+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-08-28::speaking-ai-why-fluency-is-the-next-essential-skill-for-workers::84dcf885",
+    "requested_url": "https://www.salesforce.com/news/stories/ai-fluency-for-agent-human-collaboration/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/ai-fluency-for-agent-human-collaboration/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.095135+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-07-09::salesforce-appoints-amy-chang-and-david-b-kirk-to-its-board-of-directors::cee511f3",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/07/09/salesforce-appoints-amy-chang-and-david-b-kirk-to-its-board-of-directors/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/07/09/salesforce-appoints-amy-chang-and-david-b-kirk-to-its-board-of-directors/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.141672+00:00"
+  },
+  {
+    "doc_id": "crm::press::2023-08-04::salesforce-launches-byom-to-make-it-easy-for-businesses-to-use-proprietary-data-::61063b9d",
+    "requested_url": "https://www.salesforce.com/news/stories/einstein-studio-ai-news/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/einstein-studio-ai-news/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.148654+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-02-05::salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financ::582c6316",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/05/salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financial-officer/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/02/05/salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financial-officer/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.183202+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-08-26::in-the-agentic-era-human-imagination-must-shape-the-jobs-of-tomorrow::ffd5c276",
+    "requested_url": "https://www.salesforce.com/news/stories/imagination-shapes-future-work-agentic-ai/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/imagination-shapes-future-work-agentic-ai/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.215308+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-08-26::salesforce-life-sciences-cloud-now-selected-by-more-than-70-industry-leading-cus::ca509334",
+    "requested_url": "https://www.salesforce.com/news/stories/industry-leaders-choose-life-sciences-cloud/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/industry-leaders-choose-life-sciences-cloud/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.252071+00:00"
+  },
+  {
+    "doc_id": "crm::wiki::unknown::salesforce-wikipedia::6b727edd",
+    "requested_url": "https://en.wikipedia.org/wiki/Salesforce",
+    "final_url": "https://en.wikipedia.org/wiki/Salesforce",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": "Sat, 06 Sep 2025 10:52:54 GMT",
+    "checked_at": "2025-09-07T23:00:20.297087+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-05-28::salesforce-partners-with-ferrari-to-elevate-the-client-039-s-journey-worldwide::0dc28eff",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/28/ferrari-agentforce-crm-elevates-client-experience/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/28/ferrari-agentforce-crm-elevates-client-experience/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.352442+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-08-20::from-research-to-runtime-delivering-enterprise-ai-with-confidence::82cd1c96",
+    "requested_url": "https://www.salesforce.com/in/news/stories/agentic-ai-enterprise-research/?bc=DB",
+    "final_url": "https://www.salesforce.com/in/news/stories/agentic-ai-enterprise-research/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.382309+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-02-10::salesforce-announces-500m-investment-in-saudi-arabia-to-drive-ai-innovation-and-::a3201e3f",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/10/saudi-arabia-investment/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/02/10/saudi-arabia-investment/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.545560+00:00"
+  },
+  {
+    "doc_id": "crm::press::2023-09-11::new-study-finds-salesforce-economy-powered-by-ai-will-create-a-net-gain-of-11-6m::7f3f5e4c",
+    "requested_url": "https://www.salesforce.com/news/stories/idc-salesforce-economy-ai/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/idc-salesforce-economy-ai/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.589567+00:00"
+  },
+  {
+    "doc_id": "crm::dev_docs::unknown::get-started-with-the-agent-api::202f14da",
+    "requested_url": "https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-get-started.html",
+    "final_url": "https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-get-started.html",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.604422+00:00"
+  },
+  {
+    "doc_id": "crm::product::unknown::agentforce-the-ai-agent-platform::c8dd3707",
+    "requested_url": "https://www.salesforce.com/agentforce/?bc=DB",
+    "final_url": "https://www.salesforce.com/agentforce/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.757904+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-02-24::salesforce-and-google-bring-gemini-to-agentforce-enable-more-customer-choice-in-::d17b9df1",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/24/google-partnership-expansion-gemini-agentforce/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/02/24/google-partnership-expansion-gemini-agentforce/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.766363+00:00"
+  },
+  {
+    "doc_id": "crm::press::2024-11-25::how-new-digital-workers-will-lead-to-an-unlimited-age::88c1752e",
+    "requested_url": "https://time.com/7178872/agents-unlimited-age/",
+    "final_url": "https://www.salesforce.com/news/salesforce-in-the-news/how-the-rise-of-new-digital-workers-will-lead-to-an-unlimited-age/",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.811903+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::d581dd97",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/27/salesforce-signs-definitive-agreement-to-acquire-informatica/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/27/salesforce-signs-definitive-agreement-to-acquire-informatica/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.831671+00:00"
+  },
+  {
+    "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
+    "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+    "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": "Wed, 05 Mar 2025 21:17:13 GMT",
+    "checked_at": "2025-09-07T23:00:20.876857+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::43678369",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.886439+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-05-08::salesforce-unveils-life-sciences-partner-network-to-accelerate-digital-labor-and::2b31368e",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/08/partner-network-for-life-sciences-announcement/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/08/partner-network-for-life-sciences-announcement/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:20.913115+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-05-15::salesforce-introduces-new-flexible-agentforce-pricing-to-accelerate-the-digital-::eb594704",
+    "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:21.162638+00:00"
+  },
+  {
+    "doc_id": "crm::press::2023-08-24::new-salesforce-field-service-innovations-bring-the-power-of-ai-to-the-mobile-wor::c7fe8ab5",
+    "requested_url": "https://www.salesforce.com/news/stories/ai-for-field-service/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/ai-for-field-service/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:21.208248+00:00"
+  },
+  {
+    "doc_id": "crm::press::2025-08-19::new-ways-to-pay-make-it-easier-than-ever-to-get-started-with-agentforce::d1363ec8",
+    "requested_url": "https://www.salesforce.com/news/stories/new-agentforce-payment-options/?bc=DB",
+    "final_url": "https://www.salesforce.com/news/stories/new-agentforce-payment-options/?bc=DB",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": null,
+    "checked_at": "2025-09-07T23:00:21.244571+00:00"
+  },
+  {
+    "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866",
+    "requested_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
+    "final_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
+    "status_code": 200,
+    "link_ok": true,
+    "redirect_chain": [],
+    "last_modified": "Thu, 29 May 2025 10:01:32 GMT",
+    "checked_at": "2025-09-07T23:00:21.291855+00:00"
   }
 ]

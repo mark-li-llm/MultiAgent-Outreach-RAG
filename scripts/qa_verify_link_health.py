@@ -8,16 +8,14 @@ from urllib.parse import urlparse
 from common import ensure_dir, now_iso
 
 
-ALLOWLIST = {
+ALLOWLIST = [
     "sec.gov",
     "investor.salesforce.com",
-    "www.salesforce.com",
     "salesforce.com",
     "developer.salesforce.com",
     "help.salesforce.com",
-    "en.wikipedia.org",
     "wikipedia.org",
-}
+]
 
 
 def main():
@@ -52,7 +50,8 @@ def main():
         else:
             non_https_urls.append(fu)
         host = pr.netloc.lower() if pr else ""
-        if host in ALLOWLIST:
+        # Allow root domains and subdomains
+        if any(host == root or host.endswith("." + root) for root in ALLOWLIST):
             allow += 1
         by_final_url.setdefault(fu, set()).add(d.get("doc_id"))
 
@@ -126,4 +125,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

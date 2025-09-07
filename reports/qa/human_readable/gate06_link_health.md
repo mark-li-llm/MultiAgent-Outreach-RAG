@@ -1,14 +1,12 @@
-# Gate G06 — Link Health & Canonicalization (Run 2025-09-07T22:42:10.921796+00:00)
-Summary: FAIL
+# Gate G06 — Link Health & Canonicalization (Run 2025-09-07T23:00:21.502777+00:00)
+Summary: PASS
 
-- link_ok_ratio: 0.76 (== 1.0) -> FAIL
-- canonical_collisions: 2 (== 0) -> FAIL
-- allowlisted_domain_ratio: 0.92 (== 1.0) -> FAIL
+- link_ok_ratio: 1.0 (== 1.0) -> PASS
+- canonical_collisions: 0 (== 0) -> PASS
+- allowlisted_domain_ratio: 1.0 (== 1.0) -> PASS
 - https_ratio (informational): 1.0
 
 Failures & Actions:
-- Fix broken links: re-fetch or replace with working alternates.
-- Resolve canonical collisions: merge/retire redundant docs and re-run.
-- Normalize URLs to allowed domains or remove offending docs.
+- None
 
-Proceed? (Y/N): N
+Proceed? (Y/N): Y

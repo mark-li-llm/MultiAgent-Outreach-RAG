@@ -31,8 +31,6 @@
   "is_within_24mo": true,
   "link_ok": true,
   "status_code": 200,
-  "redirect_chain": [
-    "https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/"
-  ],
-  "link_checked_at": "2025-09-07T22:41:16.334018+00:00"
+  "redirect_chain": [],
+  "link_checked_at": "2025-09-07T23:00:18.330548+00:00"
 }
