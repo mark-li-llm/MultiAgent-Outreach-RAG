@@ -1,10 +1,10 @@
 {
   "gate": "G02_NORMALization",
   "phase": "A",
-  "computed_at": "2025-09-07T20:09:51.169055+00:00",
+  "computed_at": "2025-09-07T20:38:02.969190+00:00",
   "summary": {
-    "raw_total": 156,
-    "normalized_total": 44,
+    "raw_total": 162,
+    "normalized_total": 46,
     "dropped_non_en": 0,
     "normalized_coverage_ratio": 1.0,
     "lang_en_ratio": 1.0,
@@ -23,15 +23,15 @@
     "8-K": {
       "baseline_median_word_count_doc": 298,
       "doc_word_count_min": 200,
-      "docs_below_min_word_count": 0,
-      "retention_ratio_median": 0.988045738045738,
+      "docs_below_min_word_count": 1,
+      "retention_ratio_median": 0.8007455580984992,
       "retention_threshold": 0.7507455580984992
     },
     "dev_docs": {
       "baseline_median_word_count_doc": 711,
       "doc_word_count_min": 426,
-      "docs_below_min_word_count": 0,
-      "retention_ratio_median": 0.9565181056374761,
+      "docs_below_min_word_count": 1,
+      "retention_ratio_median": 0.9498178204703545,
       "retention_threshold": 0.8998178204703544
     },
     "press": {
@@ -74,9 +74,9 @@
     {
       "id": "STD-003",
       "metric": "min_word_count_violations",
-      "actual": 0,
+      "actual": 2,
       "threshold": "==0",
-      "status": "PASS"
+      "status": "FAIL"
     },
     {
       "id": "STD-004",
@@ -100,30 +100,33 @@
       "status": "PASS"
     }
   ],
-  "status": "PASS",
+  "status": "FAIL",
   "evidence": {
     "missing_normalized_for_raw": [],
-    "docs_below_min_word_count": [],
+    "docs_below_min_word_count": [
+      "crm::8-K::2025-02-26::fy25-results-8-k::97457068",
+      "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c"
+    ],
     "retention_samples": [
       {
         "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
         "retention_ratio": 0.992532129617719
       },
       {
+        "doc_id": "crm::8-K::2025-02-26::fy25-results-8-k::97457068",
+        "retention_ratio": 0.8007455580984992
+      },
+      {
         "doc_id": "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4",
-        "retention_ratio": 0.988045738045738
+        "retention_ratio": 0.8007455580984992
+      },
+      {
+        "doc_id": "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c",
+        "retention_ratio": 0.9498178204703545
       },
       {
         "doc_id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36",
-        "retention_ratio": 0.9565181056374761
-      },
-      {
-        "doc_id": "crm::dev_docs::unknown::get-started-with-agentforce-agents::5ac08bad",
-        "retention_ratio": 0.9565181056374761
-      },
-      {
-        "doc_id": "crm::press::2023-08-09::new-slack-user-experience-designed-for-focus-and-productivity::100cc924",
-        "retention_ratio": 0.9117499890042782
+        "retention_ratio": 0.9498178204703545
       }
     ],
     "log_path": ""

@@ -247,7 +247,7 @@ def compute_metrics(phase: str) -> Dict[str, Any]:
     import hashlib
     all_raw_ids = [m.get("doc_id") for m in raw_metas]
     if phase == "A":
-        subset_ids = set([doc_id for doc_id in all_raw_ids if int(hashlib.sha1(doc_id.encode("utf-8")).hexdigest()[-1], 16) % 2 == 0])
+        subset_ids = set([doc_id for doc_id in all_raw_ids if int(hashlib.sha1(doc_id.encode("utf-8")).hexdigest()[-1], 16) % 2 == 1])
     else:
         subset_ids = set(all_raw_ids)
 

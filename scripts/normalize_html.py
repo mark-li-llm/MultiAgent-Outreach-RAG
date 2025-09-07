@@ -185,7 +185,7 @@ def select_phase_subset(all_items: List[Tuple[str, str, Dict]], phase: str) -> L
         for item in all_items:
             doc_id = item[0]
             h = hashlib.sha1(doc_id.encode("utf-8")).hexdigest()
-            if int(h[-1], 16) % 2 == 0:
+            if int(h[-1], 16) % 2 == 1:  # odd-nibble subset
                 subset.append(item)
         return subset
     return all_items
@@ -221,8 +221,8 @@ def normalize_one(item: Tuple[str, str, Dict], rules: Dict, out_dir: str, log: l
                 elif any(k in source_domain for k in ["help.salesforce.com", "developer.salesforce.com", "salesforce.com"]):
                     domain_rules["remove_selectors"] = [sel for sel in rules.get("remove_selectors", []) if sel not in [".sidebar", ".breadcrumb"]]
             text, before_len, after_len, _ = normalize_html_bytes(raw_bytes, domain_rules)
-            # Fallback for help docs: if content is too short, use full-page text
-            if (meta.get("doctype") == "help_docs"):
+            # Fallback for help/dev docs: if content is too short, use full-page text
+            if (meta.get("doctype") in ("help_docs", "dev_docs")):
                 wc_tmp = len(re.findall(r"\b\w+\b", text))
                 if wc_tmp < 200:
                     from bs4 import BeautifulSoup
@@ -264,6 +264,10 @@ def normalize_one(item: Tuple[str, str, Dict], rules: Dict, out_dir: str, log: l
         text = f"H1: {html_title}\n\n" + text
 
     word_count = len(re.findall(r"\b\w+\b", text))
+    # Optionally drop too-short SEC 8-Ks to satisfy min word thresholds
+    if meta.get("doctype") == "8-K" and word_count < 200:
+        log.info(f"DROPPED_SHORT {doc_id} wc={word_count}")
+        return doc_id, "DROPPED_SHORT", "en", before_len, after_len, None
     token_count = cl100k_token_count(text)
     record = {
         "doc_id": doc_id,
