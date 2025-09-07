@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-08-07::news-details::71f15e0c",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Timing-of-its-Second-Quarter-Fiscal-2026-Results-Conference-Call",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Timing-of-its-Second-Quarter-Fiscal-2026-Results-Conference-Call",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 73755,
+  "fetched_at": "2025-09-07T19:00:55.462811+00:00",
+  "sha256_raw": "3c16a8edca9b98e76d64dc738b792e0b2bda94553bca571ecc413a022dfdf34d",
+  "visible_title": "News Details",
+  "visible_date": "2025-09-03",
+  "rss_pubdate": "2025-08-07",
+  "headline": "News Details",
+  "notes": "manual_save=1; feed=ir_rss",
+  "latency_ms": null
+}

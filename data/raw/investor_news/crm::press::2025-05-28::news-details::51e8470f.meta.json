@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-05-28::news-details::51e8470f",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Timing-of-its-First-Quarter-Fiscal-2026-Results-Conference-Call",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Timing-of-its-First-Quarter-Fiscal-2026-Results-Conference-Call",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 73399,
+  "fetched_at": "2025-09-07T19:13:18.359958+00:00",
+  "sha256_raw": "8d3ce5ff54a1f710eec2960fd599220e1031f739c62006bdca39fa87c88e3167",
+  "visible_title": "News Details",
+  "visible_date": "2025-05-28",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

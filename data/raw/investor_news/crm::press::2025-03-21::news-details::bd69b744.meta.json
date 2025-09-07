@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-03-21::news-details::bd69b744",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Appoints-Robin-Washington-as-President-and-Chief-Operating-and-Financial-Officer",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Appoints-Robin-Washington-as-President-and-Chief-Operating-and-Financial-Officer",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 77765,
+  "fetched_at": "2025-09-07T19:13:18.375986+00:00",
+  "sha256_raw": "ef6941104e68bec3d17f0b5581a0ba8dd69ef63b5c13c92b42374cb28ada49bb",
+  "visible_title": "News Details",
+  "visible_date": "2025-03-21",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

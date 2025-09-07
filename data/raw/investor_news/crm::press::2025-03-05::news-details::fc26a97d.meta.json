@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-03-05::news-details::fc26a97d",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx-with-New-Capabilities-to-Embed-Proactive-Agentic-AI-into-Any-Workflow-Create-Multimodal-Experiences-and-Extend-Digital-Labor-Throughout-the-Enterprise",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-2dx-with-New-Capabilities-to-Embed-Proactive-Agentic-AI-into-Any-Workflow-Create-Multimodal-Experiences-and-Extend-Digital-Labor-Throughout-the-Enterprise",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 105431,
+  "fetched_at": "2025-09-07T19:00:55.468298+00:00",
+  "sha256_raw": "8f86822f48028386f3f1b2a60c1c394e106a2ae23e71ecaf0680f74216457b5f",
+  "visible_title": "News Details",
+  "visible_date": "2025-03-05",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

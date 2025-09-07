@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-05-27::news-details::56b542ba",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Signs-Definitive-Agreement-to-Acquire-Informatica",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Signs-Definitive-Agreement-to-Acquire-Informatica",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 91610,
+  "fetched_at": "2025-09-07T19:00:55.556761+00:00",
+  "sha256_raw": "f50bb0eb86a6f2081174c36e12db9cdb366a503f7f69589f350f5bae156fd7d0",
+  "visible_title": "News Details",
+  "visible_date": "2025-05-27",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

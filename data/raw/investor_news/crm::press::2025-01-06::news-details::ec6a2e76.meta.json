@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-01-06::news-details::ec6a2e76",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Holiday-Shoppers-Spend-a-Record-1.2T-Online-Salesforce-Data-Shows",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Holiday-Shoppers-Spend-a-Record-1.2T-Online-Salesforce-Data-Shows",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 96623,
+  "fetched_at": "2025-09-07T19:13:18.136781+00:00",
+  "sha256_raw": "3566e7848ad4468b6cbf6a579c440ff1d609720cbe6495eb33971a967977d5cb",
+  "visible_title": "News Details",
+  "visible_date": "2025-01-06",
+  "rss_pubdate": null,
+  "headline": "News Details",
+  "notes": "manual_save=1",
+  "latency_ms": null
+}

@@ -1,10 +1,10 @@
 {
   "gate": "G01_COLLECTION",
   "phase": "B",
-  "computed_at": "2025-09-07T16:58:13.545888+00:00",
+  "computed_at": "2025-09-07T19:14:39.188325+00:00",
   "summary": {
     "sec_count": 6,
-    "ir_count": 1,
+    "ir_count": 17,
     "newsroom_total_count": 46,
     "newsroom_corporate_count": 10,
     "newsroom_product_count": 10,
@@ -14,8 +14,8 @@
     "wikipedia_count": 1,
     "http_200_ratio": 1.0,
     "raw_exact_duplicate_rate": 0.0,
-    "within_12_months_ratio": 0.7826,
-    "within_24_months_ratio": 0.8043,
+    "within_12_months_ratio": 0.8065,
+    "within_24_months_ratio": 0.8548,
     "missing_date_count": 1
   },
   "checks": [
@@ -30,9 +30,9 @@
     {
       "id": "COL-002",
       "metric": "ir_docs_count",
-      "actual": 1,
+      "actual": 17,
       "threshold": ">=16",
-      "status": "FAIL"
+      "status": "PASS"
     },
     {
       "id": "COL-003",
@@ -73,19 +73,19 @@
     {
       "id": "COL-008",
       "metric": "pr_within_24mo_ratio",
-      "actual": 0.8043,
+      "actual": 0.8548,
       "threshold": ">=0.70",
       "status": "PASS"
     },
     {
       "id": "COL-009",
       "metric": "pr_within_12mo_ratio",
-      "actual": 0.7826,
+      "actual": 0.8065,
       "threshold": ">=0.40",
       "status": "PASS"
     }
   ],
-  "status": "FAIL",
+  "status": "PASS",
   "evidence": {
     "failed_urls": [],
     "duplicate_clusters": [],
@@ -94,9 +94,9 @@
       "sec.gov": 6,
       "help.salesforce.com": 1,
       "www.salesforce.com": 49,
-      "investor.salesforce.com": 1,
+      "investor.salesforce.com": 17,
       "developer.salesforce.com": 4
     },
-    "log_path": "logs/fetch/20250907_125447.log"
+    "log_path": "logs/fetch/20250907_133434.log"
   }
 }

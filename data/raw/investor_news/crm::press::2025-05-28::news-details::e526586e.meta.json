@@ -1,0 +1,20 @@
+{
+  "doc_id": "crm::press::2025-05-28::news-details::e526586e",
+  "source_domain": "investor.salesforce.com",
+  "source_bucket": "investor_news",
+  "doctype": "press",
+  "requested_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-First-Quarter-Fiscal-2026-Results",
+  "final_url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-First-Quarter-Fiscal-2026-Results",
+  "redirect_chain": [],
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 363274,
+  "fetched_at": "2025-09-07T19:00:55.502401+00:00",
+  "sha256_raw": "83cf0f0d454f633d80616b19cd526cac4e23ae42daddf0321420c4225eeb897c",
+  "visible_title": "News Details",
+  "visible_date": "2025-04-30",
+  "rss_pubdate": "2025-05-28",
+  "headline": "News Details",
+  "notes": "manual_save=1; feed=ir_rss",
+  "latency_ms": null
+}
