@@ -3,7 +3,7 @@
   "docs_with_dates": 97,
   "chunks_total": 1566,
   "duplicates_removed": 97,
-  "link_ok_pct": 0.9897,
+  "link_ok_pct": 1.0,
   "by_doctype_counts": {
     "10-K": 1,
     "10-Q": 1,

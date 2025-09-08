@@ -150,9 +150,11 @@ def main():
 
     status = "PASS" if all(c.get("status") == "PASS" for c in checks) else "FAIL"
 
+    # Prepare machine summary
+    computed = now_iso()
     machine = {
         "gate": "G08_DAY1_SIGNOFF",
-        "computed_at": now_iso(),
+        "computed_at": computed,
         "summary": summary,
         "checks": checks,
         "status": status,
@@ -160,9 +162,24 @@ def main():
             "failed_checks": [c for c in checks if c.get("status") == "FAIL"],
             "domain_breakdown": dict(Counter([ (d.get("source_domain") or "").lower() for d in docs])),
             "inventory_sample": inv_ids[:10] if (inv_ids := inv_ids if 'inv_ids' in locals() else []) else [],
-            "log_path": "logs/signoff",
+            "log_path": "",
         },
     }
+
+    # Write a timestamped sign-off log
+    ensure_dir("logs/signoff")
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    log_path = os.path.join("logs", "signoff", f"{ts}.log")
+    try:
+        with open(log_path, "w", encoding="utf-8") as lf:
+            lf.write(f"G08 computed_at: {computed}\n")
+            lf.write(f"Status: {status}\n")
+            lf.write(json.dumps({"summary": summary, "checks": checks}, ensure_ascii=False, indent=2))
+            lf.write("\n")
+        machine["evidence"]["log_path"] = log_path
+    except Exception:
+        # Fall back to directory if write fails
+        machine["evidence"]["log_path"] = "logs/signoff"
 
     ensure_dir("reports/qa/human_readable")
     with open("reports/qa/gate08_day1_signoff.json", "w", encoding="utf-8") as f:
@@ -224,4 +241,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

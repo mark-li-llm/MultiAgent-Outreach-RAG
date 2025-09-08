@@ -1,4 +1,4 @@
-# Gate G08 — Day‑1 Sign‑off QA (Run 2025-09-08T00:32:21.783159+00:00)
+# Gate G08 — Day‑1 Sign‑off QA (Run 2025-09-08T00:45:57.690667+00:00)
 Summary: PASS
 
 Coverage & Cap:
