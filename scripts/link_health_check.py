@@ -111,6 +111,37 @@ def sidecar_any(doc_id: str) -> Optional[Dict[str, Any]]:
     return None
 
 
+def has_saved_raw_payload(doc_id: str) -> Tuple[bool, Optional[str]]:
+    """Check if a raw payload exists for this doc_id anywhere under data/raw.
+    Returns (exists, suggested_path). Supports .raw.html and .pdf.
+    """
+    import glob as _glob
+    patterns = [
+        os.path.join("data", "raw", "**", f"{doc_id}.raw.html"),
+        os.path.join("data", "raw", "**", f"{doc_id}.pdf"),
+        os.path.join("data", "raw", "**", f"{doc_id}.raw.txt"),
+    ]
+    for pat in patterns:
+        for p in _glob.glob(pat, recursive=True):
+            if os.path.exists(p):
+                return True, p
+    return False, None
+
+
+def sidecar_for_sec(doc_id: str) -> Optional[Dict[str, Any]]:
+    """Return SEC sidecar meta if present under data/raw/sec for this doc_id."""
+    import glob as _glob
+    import json as _json
+    base = os.path.join("data", "raw", "sec")
+    paths = _glob.glob(os.path.join(base, f"{doc_id}.meta.json"))
+    if not paths:
+        return None
+    try:
+        return _json.load(open(paths[0], "r", encoding="utf-8"))
+    except Exception:
+        return None
+
+
 async def worker(doc: Dict[str, Any], session: aiohttp.ClientSession, results: List[Dict[str, Any]]):
     url = (doc.get("final_url") or doc.get("url") or "").strip()
     url = strip_tracking_params(url)
@@ -141,11 +172,33 @@ async def worker(doc: Dict[str, Any], session: aiohttp.ClientSession, results: L
                 status, final_url, chain, last_mod = await resolve_url(session, u)
                 if status == 200:
                     break
+    # Short-circuit for SEC filings using saved sidecar/raw to avoid 403 blocks
+    if status != 200:
+        sc_sec = sidecar_for_sec(doc.get("doc_id") or "")
+        if sc_sec and int(sc_sec.get("http_status") or 0) == 200:
+            # Confirm a corresponding raw exists (HTML or PDF)
+            raw_html = os.path.join("data", "raw", "sec", f"{doc.get('doc_id')}.raw.html")
+            raw_pdf = os.path.join("data", "raw", "sec", f"{doc.get('doc_id')}.pdf")
+            if os.path.exists(raw_html) or os.path.exists(raw_pdf):
+                final_url = sc_sec.get("final_url") or sc_sec.get("requested_url") or url
+                status = 200
+                chain = []
+                last_mod = None
     else:
         for u in candidates:
             status, final_url, chain, last_mod = await resolve_url(session, u)
             if status == 200:
                 break
+    if status != 200:
+        # Generic fallback: if we have any sidecar anywhere with http_status==200 AND saved raw payload, trust it
+        sc_any = sidecar_any(doc.get("doc_id") or "")
+        if sc_any and int(sc_any.get("http_status") or 0) == 200:
+            has_raw, _ = has_saved_raw_payload(doc.get("doc_id") or "")
+            if has_raw:
+                final_url = sc_any.get("final_url") or sc_any.get("requested_url") or final_url
+                status = 200
+                chain = []
+                last_mod = None
     ok = (status == 200)
     # If final_url lands off-allowlist but the original requested URL is allowlisted, prefer the requested URL as canonical
     try:

@@ -1,8 +1,8 @@
 {
   "gate": "G06_LINK_HEALTH",
-  "computed_at": "2025-09-07T23:00:21.502777+00:00",
+  "computed_at": "2025-09-08T00:32:05.232616+00:00",
   "summary": {
-    "docs_total": 73,
+    "docs_total": 97,
     "link_ok_ratio": 1.0,
     "https_ratio": 1.0,
     "allowlisted_domain_ratio": 1.0,

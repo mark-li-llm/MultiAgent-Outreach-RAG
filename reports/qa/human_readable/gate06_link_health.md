@@ -1,4 +1,4 @@
-# Gate G06 — Link Health & Canonicalization (Run 2025-09-07T23:00:21.502777+00:00)
+# Gate G06 — Link Health & Canonicalization (Run 2025-09-08T00:32:05.232616+00:00)
 Summary: PASS
 
 - link_ok_ratio: 1.0 (== 1.0) -> PASS
