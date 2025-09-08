@@ -1,0 +1,30 @@
+{
+  "pinecone": {
+    "upserted": 1566,
+    "failed": 0
+  },
+  "weaviate": {
+    "inserted": 1566,
+    "failed": 0
+  },
+  "faiss": {
+    "count": 1566,
+    "roundtrip_error_max": 0.0
+  },
+  "metadata": {
+    "pct_missing_required": 0.0
+  },
+  "sanity_search": {
+    "pinecone": {
+      "min_topk": 10
+    },
+    "weaviate": {
+      "min_topk": 10
+    },
+    "faiss": {
+      "min_topk": 10
+    }
+  },
+  "baseline_chunks": 1566,
+  "embedding_rows": 1566
+}

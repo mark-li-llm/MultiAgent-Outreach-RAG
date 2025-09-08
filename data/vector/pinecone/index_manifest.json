@@ -1,0 +1,11 @@
+{
+  "config": {
+    "index_name": "demo-index",
+    "namespace": "default",
+    "metric": "cosine",
+    "notes": "simulated manifest only (no network)"
+  },
+  "upserted": 1566,
+  "failed": 0,
+  "failed_ids": []
+}

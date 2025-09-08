@@ -4,3 +4,19 @@ embedding:
   batch_size: 256
   notes: deterministic hash-based embedding for QA
 
+faiss:
+  type: HNSW
+  metric: L2
+  M: 32
+  efConstruction: 200
+  efSearch: 128
+
+pinecone:
+  index_name: demo-index
+  namespace: default
+  metric: cosine
+  notes: simulated manifest only (no network)
+
+weaviate:
+  class_name: Doc
+  notes: schema-only manifest (simulated)
