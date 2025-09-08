@@ -1,0 +1,22 @@
+tools:
+  kb.search:
+    host: 127.0.0.1
+    port: 7801
+    timeout_ms: 2000
+  web.fetch:
+    host: 127.0.0.1
+    port: 7802
+    timeout_ms: 2000
+  link.resolve:
+    host: 127.0.0.1
+    port: 7803
+    timeout_ms: 2000
+  crm.lookup:
+    host: 127.0.0.1
+    port: 7804
+    timeout_ms: 2000
+  safety.check:
+    host: 127.0.0.1
+    port: 7805
+    timeout_ms: 2000
+
