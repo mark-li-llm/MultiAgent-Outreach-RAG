@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-03-05::salesforce-launches-agentforce-2dx-new-capabilities-embed-proactive-agentic-ai-i::5aab8dce",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/03/05/agentforce-2dx-news/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/03/05/agentforce-2dx-news/?bc=OTH",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/03/05/agentforce-2dx-news/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 284349,
+  "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+  "sha256_raw": "e4ef5c92993d1e833cbac13ace3f183112e853237f82c1ba0c8f9f81194f2278",
+  "visible_title": "Salesforce Launches Agentforce 2dx: New Capabilities Embed Proactive Agentic AI into Any Workflow, Create Multimodal Experiences, Extend Digital Labor",
+  "visible_date": "2025-03-05",
+  "rss_pubdate": null,
+  "headline": "Salesforce Launches Agentforce 2dx: New Capabilities Embed Proactive Agentic AI into Any Workflow, Create Multimodal Experiences, Extend Digital Labor",
+  "notes": "feed=product",
+  "latency_ms": 529.2872499558143
+}

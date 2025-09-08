@@ -194,36 +194,8 @@ def chunk_doc(d: Dict[str, Any], cfg: Dict[str, Any]) -> List[Dict[str, Any]]:
         if seg_s not in cands_seg:
             cands_seg = [seg_s] + cands_seg
         slices: List[Tuple[int, int]] = []
-        if doctype in ("10-k", "10-q", "8-k", "ars_pdf") and cands_seg:
-            # SEC: use only boundary candidates as starts
-            seg = text[seg_s : seg_e + 1]
-            seg_tokens = max(1, cl100k_token_count(seg))
-            chars_per_token = len(seg) / seg_tokens
-            step_chars = int(max(1, round(chars_per_token * (target - overlap))))
-            win_chars = int(max(1, round(chars_per_token * target)))
-            i = 0
-            s = cands_seg[0]
-            while s <= seg_e:
-                e = min(seg_e, s + win_chars - 1)
-                slices.append((s, e))
-                if e == seg_e:
-                    break
-                # pick next candidate at or after s + step_chars - tol
-                threshold = s + step_chars - tol_chars
-                next_idx = None
-                for j in range(i + 1, len(cands_seg)):
-                    if cands_seg[j] >= threshold:
-                        next_idx = j
-                        break
-                if next_idx is None:
-                    # no more candidates; finish with last window reaching end
-                    s = seg_e + 1
-                else:
-                    i = next_idx
-                    s = cands_seg[i]
-        else:
-            # Non-SEC: sliding with boundary snapping
-            slices = plan_slices_with_boundaries(text, seg_s, seg_e, target, overlap, list(boundary_candidates), tol_chars)
+        # Sliding with boundary snapping (works for SEC and non-SEC; SEC still snaps to item/H2/H3 starts)
+        slices = plan_slices_with_boundaries(text, seg_s, seg_e, target, overlap, list(boundary_candidates), tol_chars)
         # Merge tiny residuals if last slice < 120 tokens
         adjusted: List[Tuple[int, int]] = []
         for i, (s, e) in enumerate(slices):

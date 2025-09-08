@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/27/salesforce-signs-definitive-agreement-to-acquire-informatica/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/05/27/salesforce-signs-definitive-agreement-to-acquire-informatica/?bc=OTH",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/05/27/salesforce-signs-definitive-agreement-to-acquire-informatica/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 247343,
+  "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+  "sha256_raw": "20600e5124fa5b383a6bd5cf777068c45ffc3b5528083134250bdbc59380714a",
+  "visible_title": "Salesforce Signs Definitive Agreement to Acquire Informatica",
+  "visible_date": "2025-05-27",
+  "rss_pubdate": null,
+  "headline": "Salesforce Signs Definitive Agreement to Acquire Informatica",
+  "notes": "feed=corporate",
+  "latency_ms": 641.466916014906
+}

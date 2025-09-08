@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-05-15::salesforce-introduces-new-flexible-agentforce-pricing-to-accelerate-the-digital-::e5db6975",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/?bc=OTH",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 252852,
+  "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+  "sha256_raw": "25de998e31b5af88406b3d24c7182c9ab86580c913821cf6b654dd84d83e694e",
+  "visible_title": "Salesforce Introduces New Flexible Agentforce Pricing to Accelerate the Digital Labor Revolution",
+  "visible_date": "2025-05-15",
+  "rss_pubdate": null,
+  "headline": "Salesforce Introduces New Flexible Agentforce Pricing to Accelerate the Digital Labor Revolution",
+  "notes": "feed=product",
+  "latency_ms": 448.6401249887422
+}

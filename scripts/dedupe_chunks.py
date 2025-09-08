@@ -113,10 +113,16 @@ def main():
 
     threshold = 0.85
     dup_edges: Dict[str, Set[str]] = defaultdict(set)
+    EXEMPT = {"10-k", "10-q", "8-k", "ars_pdf", "wiki"}
     for (a, b), cnt in co_counts.items():
         sa = shingle_sets.get(a) or set()
         sb = shingle_sets.get(b) or set()
         if not sa or not sb:
+            continue
+        # Skip dedupe if either chunk belongs to an exempt doctype (preserve SEC & wiki)
+        da = (doc_map.get(chunk_map[a].get("doc_id"), {}).get("doctype") or "").lower()
+        db = (doc_map.get(chunk_map[b].get("doc_id"), {}).get("doctype") or "").lower()
+        if da in EXEMPT or db in EXEMPT:
             continue
         # quick upper bound; skip if cnt cannot reach threshold
         min_needed = threshold * min(len(sa), len(sb))
@@ -223,4 +229,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

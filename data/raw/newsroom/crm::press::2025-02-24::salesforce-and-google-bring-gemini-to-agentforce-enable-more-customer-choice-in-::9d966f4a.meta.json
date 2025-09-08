@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-02-24::salesforce-and-google-bring-gemini-to-agentforce-enable-more-customer-choice-in-::9d966f4a",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/02/24/google-partnership-expansion-gemini-agentforce/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/02/24/google-partnership-expansion-gemini-agentforce/?bc=OTH",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/02/24/google-partnership-expansion-gemini-agentforce/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 258558,
+  "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+  "sha256_raw": "0daf58d06cc52cac26a9399629f221d1c858fbbb618a39bb7f45ad05e3cdad23",
+  "visible_title": "Salesforce and Google Bring Gemini to Agentforce, Enable More Customer Choice in Major Partnership Expansion",
+  "visible_date": "2025-02-24",
+  "rss_pubdate": null,
+  "headline": "Salesforce and Google Bring Gemini to Agentforce, Enable More Customer Choice in Major Partnership Expansion",
+  "notes": "feed=product",
+  "latency_ms": 407.41766698192805
+}

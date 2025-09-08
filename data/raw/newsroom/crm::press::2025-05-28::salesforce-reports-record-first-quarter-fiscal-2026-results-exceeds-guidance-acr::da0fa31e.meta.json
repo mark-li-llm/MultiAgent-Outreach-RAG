@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-05-28::salesforce-reports-record-first-quarter-fiscal-2026-results-exceeds-guidance-acr::da0fa31e",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/28/fy26-q1-earnings/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/05/28/fy26-q1-earnings/?bc=OTH",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/05/28/fy26-q1-earnings/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 242475,
+  "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+  "sha256_raw": "3668852526d2855ea822cc8761609006617d34ddccebad1daf2d5b58882a6885",
+  "visible_title": "Salesforce Reports Record First Quarter Fiscal 2026 Results Exceeds Guidance Across All Metrics; cRPO up 12% Y/Y",
+  "visible_date": "2025-05-28",
+  "rss_pubdate": null,
+  "headline": "Salesforce Reports Record First Quarter Fiscal 2026 Results Exceeds Guidance Across All Metrics; cRPO up 12% Y/Y",
+  "notes": "feed=corporate",
+  "latency_ms": 648.7231249921024
+}

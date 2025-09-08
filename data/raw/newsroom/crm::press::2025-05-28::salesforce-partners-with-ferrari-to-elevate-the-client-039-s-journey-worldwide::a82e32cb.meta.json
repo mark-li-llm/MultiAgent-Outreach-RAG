@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-05-28::salesforce-partners-with-ferrari-to-elevate-the-client-039-s-journey-worldwide::a82e32cb",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/28/ferrari-agentforce-crm-elevates-client-experience/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/05/28/ferrari-agentforce-crm-elevates-client-experience/?bc=OTH",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/05/28/ferrari-agentforce-crm-elevates-client-experience/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 244986,
+  "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+  "sha256_raw": "ba210976bdc8de415f83f45ccb12e28c25e4a70dfd1085d92a36a447deea0530",
+  "visible_title": "Salesforce Partners with Ferrari to Elevate the Client&#039;s Journey Worldwide",
+  "visible_date": "2025-05-28",
+  "rss_pubdate": null,
+  "headline": "Salesforce Partners with Ferrari to Elevate the Client&#039;s Journey Worldwide",
+  "notes": "feed=corporate",
+  "latency_ms": 1045.8506669965573
+}

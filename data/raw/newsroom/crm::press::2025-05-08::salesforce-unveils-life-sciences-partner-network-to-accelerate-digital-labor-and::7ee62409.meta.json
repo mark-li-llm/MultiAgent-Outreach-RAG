@@ -1,0 +1,22 @@
+{
+  "doc_id": "crm::press::2025-05-08::salesforce-unveils-life-sciences-partner-network-to-accelerate-digital-labor-and::7ee62409",
+  "source_domain": "www.salesforce.com",
+  "source_bucket": "newsroom",
+  "doctype": "press",
+  "requested_url": "https://www.salesforce.com/news/press-releases/2025/05/08/partner-network-for-life-sciences-announcement/",
+  "final_url": "https://www.salesforce.com/news/press-releases/2025/05/08/partner-network-for-life-sciences-announcement/?bc=OTH",
+  "redirect_chain": [
+    "https://www.salesforce.com/news/press-releases/2025/05/08/partner-network-for-life-sciences-announcement/"
+  ],
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "content_length": 266463,
+  "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+  "sha256_raw": "4a78aa99598fbe2ea66d47786979ed95af8417cf46689e59f6b7d444845af1b7",
+  "visible_title": "Salesforce Unveils Life Sciences Partner Network to Accelerate Digital Labor and Data Programs",
+  "visible_date": "2025-05-08",
+  "rss_pubdate": null,
+  "headline": "Salesforce Unveils Life Sciences Partner Network to Accelerate Digital Labor and Data Programs",
+  "notes": "feed=product",
+  "latency_ms": 477.28433401789516
+}

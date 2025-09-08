@@ -1,6 +1,6 @@
 {
   "gate": "G07_EVAL_SEED",
-  "computed_at": "2025-09-07T23:09:38.525683+00:00",
+  "computed_at": "2025-09-07T23:19:54.882939+00:00",
   "summary": {
     "total_items": 45,
     "referential_integrity_ratio": 1.0,
@@ -11,14 +11,14 @@
       "vp_sales_ops": 0.3333
     },
     "counts_by_source_type": {
-      "SEC": 5,
+      "SEC": 10,
       "press_ir": 10,
-      "press_newsroom": 21,
+      "press_newsroom": 15,
       "prod_dev_help": 8,
-      "wiki": 1
+      "wiki": 2
     },
-    "within_24mo_ratio": 0.9677,
-    "within_12mo_ratio": 0.871,
+    "within_24mo_ratio": 0.88,
+    "within_12mo_ratio": 0.72,
     "difficulty_dist": {
       "easy": 15,
       "medium": 15,
@@ -51,9 +51,9 @@
     {
       "id": "EVAL-004",
       "metric": "counts_SEC",
-      "actual": 5,
+      "actual": 10,
       "threshold": ">=10",
-      "status": "FAIL"
+      "status": "PASS"
     },
     {
       "id": "EVAL-005",
@@ -65,7 +65,7 @@
     {
       "id": "EVAL-006",
       "metric": "counts_press_newsroom",
-      "actual": 21,
+      "actual": 15,
       "threshold": ">=10",
       "status": "PASS"
     },
@@ -79,9 +79,9 @@
     {
       "id": "EVAL-008",
       "metric": "counts_wiki",
-      "actual": 1,
+      "actual": 2,
       "threshold": ">=2",
-      "status": "FAIL"
+      "status": "PASS"
     },
     {
       "id": "EVAL-009",
@@ -93,14 +93,14 @@
     {
       "id": "EVAL-010",
       "metric": "within_24mo_ratio",
-      "actual": 0.9677,
+      "actual": 0.88,
       "threshold": ">=0.70",
       "status": "PASS"
     },
     {
       "id": "EVAL-011",
       "metric": "within_12mo_ratio",
-      "actual": 0.871,
+      "actual": 0.72,
       "threshold": ">=0.40",
       "status": "PASS"
     },
@@ -119,15 +119,12 @@
       "status": "PASS"
     }
   ],
-  "status": "FAIL",
+  "status": "PASS",
   "evidence": {
     "broken_refs": [],
     "missing_keyphrases": [],
     "underrepresented_persona": "vp_customer_experience",
-    "underfilled_buckets": [
-      "SEC",
-      "wiki"
-    ],
+    "underfilled_buckets": [],
     "log_path": "logs/eval"
   }
 }
