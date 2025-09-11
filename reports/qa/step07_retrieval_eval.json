@@ -1,0 +1,91 @@
+{
+  "step": "step07_retrieval_eval",
+  "status": "RED",
+  "checks": [
+    {
+      "id": "G7-01",
+      "metric": "recall@10",
+      "actual": 0.0,
+      "threshold": ">=0.80",
+      "status": "FAIL",
+      "evidence": "reports/eval/retrieval_failures.jsonl"
+    },
+    {
+      "id": "G7-02",
+      "metric": "nDCG@5",
+      "actual": 0.0,
+      "threshold": ">=0.60",
+      "status": "FAIL",
+      "evidence": "reports/eval/retrieval_failures.jsonl"
+    },
+    {
+      "id": "G7-03",
+      "metric": "coverage_unique_domains_top10_mean",
+      "actual": 2.422,
+      "threshold": ">=3.0",
+      "status": "FAIL"
+    },
+    {
+      "id": "G7-04",
+      "metric": "freshness_mean_age_days",
+      "actual": 69.18,
+      "threshold": "<=540",
+      "status": "PASS"
+    },
+    {
+      "id": "G7-05",
+      "metric": "latency_budgets",
+      "actual": {
+        "faiss": {
+          "p50": 12.1,
+          "p95": 14.61,
+          "budget_p95": 15.662
+        },
+        "weaviate": {
+          "p50": 67.02,
+          "p95": 82.92,
+          "budget_p95": 81.997
+        },
+        "pinecone": {
+          "p50": 125.04,
+          "p95": 161.59,
+          "budget_p95": 154.778
+        }
+      },
+      "threshold": "p50,p95 <= budget_p95 per backend",
+      "status": "FAIL"
+    }
+  ],
+  "summary": {
+    "recall@10": 0.0,
+    "nDCG@5": 0.0,
+    "coverage_unique_domains_top10_mean": 2.422,
+    "freshness_mean_age_days": 69.18,
+    "latency": [
+      {
+        "backend": "faiss",
+        "p50": 12.1,
+        "p95": 14.61,
+        "budget_p95": 15.662,
+        "status": "PASS"
+      },
+      {
+        "backend": "weaviate",
+        "p50": 67.02,
+        "p95": 82.92,
+        "budget_p95": 81.997,
+        "status": "FAIL"
+      },
+      {
+        "backend": "pinecone",
+        "p50": 125.04,
+        "p95": 161.59,
+        "budget_p95": 154.778,
+        "status": "FAIL"
+      }
+    ],
+    "queries": 45
+  },
+  "next_action": "fix_and_rerun",
+  "timestamp": "2025-09-11T22:13:25.054953+00:00"
+}

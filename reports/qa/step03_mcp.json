@@ -55,9 +55,9 @@
       "id": "G3-03-pinecone",
       "metric": "pinecone_latency_budget",
       "actual": {
-        "p50": 127.515,
-        "p95": 167.525,
-        "budget_p95": 201.03
+        "p50": 106.555,
+        "p95": 128.982,
+        "budget_p95": 154.778
       },
       "threshold": "p50,p95 <= budget",
       "status": "PASS",
@@ -67,9 +67,9 @@
       "id": "G3-03-weaviate",
       "metric": "weaviate_latency_budget",
       "actual": {
-        "p50": 56.909,
-        "p95": 82.993,
-        "budget_p95": 99.592
+        "p50": 54.323,
+        "p95": 68.331,
+        "budget_p95": 81.997
       },
       "threshold": "p50,p95 <= budget",
       "status": "PASS",
@@ -79,9 +79,9 @@
       "id": "G3-03-faiss",
       "metric": "faiss_latency_budget",
       "actual": {
-        "p50": 11.673,
-        "p95": 13.455,
-        "budget_p95": 16.146
+        "p50": 10.249,
+        "p95": 13.052,
+        "budget_p95": 15.662
       },
       "threshold": "p50,p95 <= budget",
       "status": "PASS",
@@ -97,5 +97,5 @@
     }
   ],
   "next_action": "continue",
-  "timestamp": "2025-09-08T01:32:17.002319+00:00"
+  "timestamp": "2025-09-11T22:08:21.595245+00:00"
 }

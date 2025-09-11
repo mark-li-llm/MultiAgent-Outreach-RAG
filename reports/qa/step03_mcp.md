@@ -7,9 +7,9 @@ Checks:
 - G3-02-link_resolve: contract_ok_rate_link.resolve = 1.0 (threshold ==1.0) -> PASS
 - G3-02-crm_lookup: contract_ok_rate_crm.lookup = 1.0 (threshold ==1.0) -> PASS
 - G3-02-safety_check: contract_ok_rate_safety.check = 1.0 (threshold ==1.0) -> PASS
-- G3-03-pinecone: pinecone_latency_budget = {'p50': 127.515, 'p95': 167.525, 'budget_p95': 201.03} (threshold p50,p95 <= budget) -> PASS
-- G3-03-weaviate: weaviate_latency_budget = {'p50': 56.909, 'p95': 82.993, 'budget_p95': 99.592} (threshold p50,p95 <= budget) -> PASS
-- G3-03-faiss: faiss_latency_budget = {'p50': 11.673, 'p95': 13.455, 'budget_p95': 16.146} (threshold p50,p95 <= budget) -> PASS
+- G3-03-pinecone: pinecone_latency_budget = {'p50': 106.555, 'p95': 128.982, 'budget_p95': 154.778} (threshold p50,p95 <= budget) -> PASS
+- G3-03-weaviate: weaviate_latency_budget = {'p50': 54.323, 'p95': 68.331, 'budget_p95': 81.997} (threshold p50,p95 <= budget) -> PASS
+- G3-03-faiss: faiss_latency_budget = {'p50': 10.249, 'p95': 13.052, 'budget_p95': 15.662} (threshold p50,p95 <= budget) -> PASS
 - G3-04: timeout_rate = 0.0 (threshold ==0.0) -> PASS
 
 Go/No-Go: Go
