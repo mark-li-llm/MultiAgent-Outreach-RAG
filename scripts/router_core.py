@@ -110,11 +110,19 @@ def _days_since(iso_date: Optional[str]) -> Optional[int]:
         return None
 
 
-def rerank(results: List[Dict[str, Any]], docmeta: Dict[str, DocMeta], weights: Optional[Dict[str, float]] = None) -> List[Dict[str, Any]]:
-    """Apply light re-rank on results using recency and domain diversity bonuses.
+def rerank(
+    results: List[Dict[str, Any]],
+    docmeta: Dict[str, DocMeta],
+    weights: Optional[Dict[str, float]] = None,
+    *,
+    top_k: int = 10,
+    domain_cap: int = 2,
+) -> List[Dict[str, Any]]:
+    """Re-rank with recency and domain-aware diversity.
 
-    Expects each result to include: chunk_id, doc_id, score (negative L2 from stub).
-    Returns a new list sorted by combined score (desc).
+    - Scores each result: similarity + recency + diversity bonus.
+    - Enforces a per-domain cap within the top_k window (default 2) to increase diversity.
+    - Returns reordered list: diversified top_k followed by remaining results in score order.
     """
     w = {"similarity": 0.6, "recency": 0.3, "diversity": 0.1}
     if weights:
@@ -153,6 +161,24 @@ def rerank(results: List[Dict[str, Any]], docmeta: Dict[str, DocMeta], weights: 
             seen_domains.add(dom)
 
     rescored.sort(key=lambda x: x[0], reverse=True)
-    return [r for _s, r in rescored]
 
+    # Domain-aware selection for top_k
+    selected: List[Dict[str, Any]] = []
+    used_idx: set = set()
+    domain_counts: Dict[str, int] = {}
+    for i, (_s, r) in enumerate(rescored):
+        if len(selected) >= max(1, top_k):
+            break
+        did = r.get("doc_id")
+        dm = docmeta.get(did)
+        dom = (dm.source_domain or "") if dm else ""
+        cnt = domain_counts.get(dom, 0)
+        if domain_cap <= 0 or cnt < domain_cap:
+            selected.append(r)
+            used_idx.add(i)
+            domain_counts[dom] = cnt + 1
+
+    # Append remainder in score order
+    tail = [r for i, (_s, r) in enumerate(rescored) if i not in used_idx]
+    return selected + tail
 
