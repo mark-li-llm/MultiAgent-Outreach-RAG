@@ -128,7 +128,29 @@ async def main_async(args):
         try:
             await start_stub_servers(state_env, {"tools": tools_cfg})  # type: ignore
         except Exception:
-            use_offline = True
+            # Try to use external service before falling back to offline mode
+            print("Failed to start internal stub servers, checking external service...")
+            try:
+                connector = aiohttp.TCPConnector(limit_per_host=8)
+                async with aiohttp.ClientSession(connector=connector) as test_session:
+                    base = tools_cfg.get("kb.search") or {}
+                    host = base.get("host", "127.0.0.1")
+                    port = int(base.get("port", 7801))
+                    url = f"http://{host}:{port}/invoke"
+                    payload = {"method": "search", "params": {"query": "test", "backend": "faiss", "top_k": 1}}
+                    async with test_session.post(url, json=payload, timeout=2.0) as resp:
+                        if resp.status == 200:
+                            result = await resp.json()
+                            if "results" in result:
+                                print(f"✓ External service available at {url}")
+                                use_offline = False
+                            else:
+                                use_offline = True
+                        else:
+                            use_offline = True
+            except Exception as e:
+                print(f"External service test failed: {e}")
+                use_offline = True
 
     # Offline index if needed
     chunks_index: List[Dict[str, Any]] = []
