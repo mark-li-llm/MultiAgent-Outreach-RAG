@@ -1,0 +1,19 @@
+nodes:
+  - Intake
+  - Planner
+  - Retriever
+  - Synthesizer
+  - Consolidator
+  - Stylist
+  - A2A
+  - Assembler
+timeouts_ms:
+  Intake: 2000
+  Planner: 2000
+  Retriever: 10000
+  Synthesizer: 5000
+  Consolidator: 3000
+  Stylist: 3000
+  A2A: 3000
+  Assembler: 2000
+

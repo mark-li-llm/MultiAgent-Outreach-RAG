@@ -1,0 +1,77 @@
+{
+  "step": "step05_graph",
+  "status": "GREEN",
+  "checks": [
+    {
+      "id": "G5-01",
+      "metric": "nodes_executed",
+      "actual": [
+        "Intake",
+        "Planner",
+        "Retriever",
+        "Synthesizer",
+        "Consolidator",
+        "Stylist",
+        "A2A",
+        "Assembler"
+      ],
+      "threshold": "== all 8 in order",
+      "status": "PASS",
+      "evidence": "state/session-05b1a905f6f9.json"
+    },
+    {
+      "id": "G5-02",
+      "metric": "total_runtime_ms",
+      "actual": 1434,
+      "threshold": "<=30000",
+      "status": "PASS",
+      "evidence": "outputs/05b1a905f6f9/timing.json"
+    },
+    {
+      "id": "G5-03",
+      "metric": "insight_cards",
+      "actual": 5,
+      "threshold": "==5",
+      "status": "PASS",
+      "evidence": "outputs/05b1a905f6f9/insights.json"
+    },
+    {
+      "id": "G5-04",
+      "metric": "distinct_sources",
+      "actual": 4,
+      "threshold": ">=4",
+      "status": "PASS",
+      "evidence": "outputs/05b1a905f6f9/insights.json"
+    },
+    {
+      "id": "G5-05",
+      "metric": "insights_within_12mo",
+      "actual": 5,
+      "threshold": ">=2",
+      "status": "PASS",
+      "evidence": "outputs/05b1a905f6f9/insights.json"
+    },
+    {
+      "id": "G5-06",
+      "metric": "email_schema_ok",
+      "actual": true,
+      "threshold": "==true",
+      "status": "PASS",
+      "evidence": "outputs/05b1a905f6f9/email.json"
+    },
+    {
+      "id": "G5-07",
+      "metric": "proof_points_resolve",
+      "actual": true,
+      "threshold": "==true",
+      "status": "PASS",
+      "evidence": "outputs/05b1a905f6f9/email.json"
+    }
+  ],
+  "timestamp": "2025-09-11T19:53:18.222639+00:00",
+  "evidence": {
+    "session_id": "05b1a905f6f9",
+    "out_dir": "outputs/05b1a905f6f9",
+    "state": "state/session-05b1a905f6f9.json"
+  }
+}

@@ -1,0 +1,12 @@
+required_fields:
+  - subject
+  - body
+  - unsubscribe_block
+  - company_info_block
+  - proof_points
+style:
+  tone: friendly-professional
+  constraints:
+    - must include unsubscribe language
+    - must include sender company information
+

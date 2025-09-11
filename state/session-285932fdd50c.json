@@ -1,0 +1,1329 @@
+{
+  "company": "Salesforce",
+  "persona": "vp_customer_experience",
+  "queries": [
+    "What does this document say about crm-20250430?",
+    "What does this document say about fy25?",
+    "Summarize key points regarding fy25",
+    "What does this document say about salesforce.com,?",
+    "Summarize key points regarding salesforce.com,"
+  ],
+  "retrieved_chunks": [
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0256",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.719291448154979,
+      "snippet": "Fy25 Annual Report Pdf\n\n67)V(cid:1)VWbW(cid:67)V(cid:1)a(cid:67)(cid:1)agd(cid:1)egbbadf(cid:1)adYS(cid:67)(cid:62)lSf(cid:62)a(cid:67)(cid:1)fa(cid:1)dWea(cid:65)hW(cid:1)fWUZ(cid:67)(cid:62)US(cid:65)(cid:1)(cid:62)eegWe(cid:1)dW(cid:65)Sf(cid:62)(cid:67)Y(cid:1)fa(cid:1)agd(ci"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0604",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7783577729443183,
+      "snippet": "Fy25 Annual Report Pdf\n\n:67)fe(cid:1)dW(cid:65)SfWV(cid:1)fa(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)(cid:62)(cid:67)fS(cid:67)Y(cid:62)T(cid:65)W(cid:1)SeeWfe(cid:1)SUcg(cid:62)dWV(cid:1)fZdagYZ(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)Ua(cid:66)T(cid:62)(cid:67)"
+    },
+    {
+      "chunk_id": "crm::press::2025-01-31::news-details::9711c8f6::chunk0009",
+      "doc_id": "crm::press::2025-01-31::news-details::9711c8f6",
+      "score": -1.815011508039685,
+      "snippet": "Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results\n\ns 132 0 156 4 Unearned revenue, end of period $ 20,743 $ 19,003 $ 20,743 $ 19,003 (1) Other includes, for example, the impact of foreign currency translation. Disaggregation of Revenue Subscription an"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0372",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7820960330521995,
+      "snippet": "Fy25 Annual Report Pdf\n\nd:43)NE(cid:32)(cid:1)BFI(cid:29)B(cid:46)(cid:1)(cid:43)N(cid:46)(cid:1)(cid:29)(cid:30)BEBMR(cid:1)M(cid:43)(cid:1)(cid:31)(cid:43)FI(cid:33)M(cid:33)(cid:1)BG(cid:1) BGM(cid:33)(cid:46)G(cid:29)MB(cid:43)G(cid:29)E(cid:1)F(cid:29)(cid:46)D(cid:33)ML(cid"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0487",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7826240326710017,
+      "snippet": "Fy25 Annual Report Pdf\n\nk(cid:1)aX(cid:1) efS(cid:64)WZa(cid:65)VWde)(cid:1)(cid:62)(cid:67)U(cid:65)gV(cid:62)(cid:67)Y(cid:1)bWdea(cid:67)(cid:67)W(cid:65)(cid:1)bdah(cid:62)V(cid:62)(cid:67)Y(cid:1)fWUZ(cid:67)(cid:62)US(cid:65))(cid:1)abWdSf(cid:62)a(cid:67)S(cid:65))(cid:1)W"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk1008",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7978069922706983,
+      "snippet": "Fy25 Annual Report Pdf\n\n62)(cid:66)(cid:62)fSf(cid:62)a(cid:67)e(cid:1)(cid:62)(cid:67)(cid:1)S(cid:65)(cid:65)(cid:1)Ua(cid:67)fda(cid:65)(cid:1)ekefW(cid:66)e)(cid:1)(cid:67)a(cid:1)WhS(cid:65)gSf(cid:62)a(cid:67)(cid:1)aX(cid:1) Ua(cid:67)fda(cid:65)e(cid:1)US(cid:67)(cid:1)bd"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0616",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.801949687657704,
+      "snippet": "Fy25 Annual Report Pdf\n\n:1)SUdaee(cid:1)S(cid:65)(cid:65)(cid:1)dWY(cid:62)a(cid:67)e(cid:1)iSe(cid:1)bd(cid:62)(cid:66)Sd(cid:62)(cid:65)k(cid:1)VgW(cid:1)fa(cid:1)fZW(cid:1)Ua(cid:67)f(cid:62)(cid:67)gWV(cid:1)WjWUgf(cid:62)a(cid:67)(cid:1)aX(cid:1)agd(cid:1) Tge(cid:62)(cid:67"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0351",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.808943065705719,
+      "snippet": "Fy25 Annual Report Pdf\n\nid:62)(cid:67)Y(cid:1)W(cid:67)f(cid:62)f(cid:62)We(cid:1)S(cid:67)V(cid:1) (cid:67)a(cid:67)*bdSUf(cid:62)U(cid:62)(cid:67)Y(cid:1)W(cid:67)f(cid:62)f(cid:62)We)(cid:1)U(cid:65)S(cid:62)(cid:66)(cid:62)(cid:67)Y(cid:1)fZSf(cid:1)iW(cid:1)ZShW(cid:1)(cid:6"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0087",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8092543589104362,
+      "snippet": "Fy25 Annual Report Pdf\n\ncid:66)S(cid:64)W(cid:1)bdWV(cid:62)Uf(cid:62)a(cid:67)e(cid:1)i(cid:62)fZ(cid:1)bWdhSe(cid:62)hW(cid:1)9A)(cid:1)Sgfa(cid:66)SfW(cid:1)fSe(cid:64)e(cid:1)S(cid:67)V(cid:1)bWdea(cid:67)S(cid:65)(cid:62)lW(cid:1)WhWdk(cid:1)(cid:62)(cid:67)fWdSUf(cid:62)a(c"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0593",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8191899280245718,
+      "snippet": "Fy25 Annual Report Pdf\n\nd:1)XgfgdW(cid:1)(cid:66)Sd(cid:64)Wf(cid:1)Ua(cid:67)V(cid:62)f(cid:62)a(cid:67)e(cid:1)S(cid:67)V(cid:1)fZW(cid:1)ST(cid:62)(cid:65)(cid:62)fk(cid:1)fa(cid:1)egUUWeeXg(cid:65)(cid:65)k(cid:1)WjWUgfW(cid:1) agd(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)b(cid:65)"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0093",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7356274161973597,
+      "snippet": "Fy25 Annual Report Pdf\n\n66)Wde(cid:1)(cid:62)(cid:67)(cid:1)(cid:67)Wi(cid:1)dWY(cid:62)a(cid:67)e+(cid:1)OW(cid:1)i(cid:62)(cid:65)(cid:65)(cid:1)Ua(cid:67)f(cid:62)(cid:67)gW(cid:1)fa(cid:1)bgdegW(cid:1)Tge(cid:62)(cid:67)WeeWe(cid:1)aX(cid:1)S(cid:65)(cid:65)(cid:1)e(cid:62)lW"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0170",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7806068416922518,
+      "snippet": "Fy25 Annual Report Pdf\n\nd:1)Tk(cid:1)TSV(cid:1)SUfade)(cid:1)iZ(cid:62)UZ(cid:1)SdW(cid:1)YW(cid:67)WdS(cid:65)(cid:65)k(cid:1)(cid:67)af(cid:1)dWUaY(cid:67)(cid:62)lWV(cid:1)g(cid:67)f(cid:62)(cid:65)(cid:1)(cid:65)Sg(cid:67)UZWV(cid:1)SYS(cid:62)(cid:67)ef(cid:1)S(cid:1)fSdYWf)"
+    },
+    {
+      "chunk_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6::chunk0003",
+      "doc_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6",
+      "score": -1.7950355276187042,
+      "snippet": "Salesforce Signs Definitive Agreement to Acquire Informatica\n\ns include, among other things, statements regarding the expected benefits to Salesforce, Informatica and their respective customers from completing the transaction, plans for future investment and capital allocation, t"
+    },
+    {
+      "chunk_id": "crm::press::2025-05-28::news-details::e526586e::chunk0003",
+      "doc_id": "crm::press::2025-05-28::news-details::e526586e",
+      "score": -1.7944642194772908,
+      "snippet": "Salesforce.com, Inc. - Salesforce Reports Record First Quarter Fiscal 2026 Results\n\nplay details of the event will be available on the Salesforce Investor Relations website at www.salesforce.com/investor . To learn more about our newest innovations and product release highlights,"
+    },
+    {
+      "chunk_id": "crm::press::2025-01-06::news-details::ec6a2e76::chunk0000",
+      "doc_id": "crm::press::2025-01-06::news-details::ec6a2e76",
+      "score": -1.7978353434753225,
+      "snippet": "Salesforce.com, Inc. - Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows\n\nH1: Salesforce.com, Inc. - Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows\n\nOverview Financials Quarterly Results Annual Reports SEC Filings Tax Forms Safe Harbor IAC F"
+    },
+    {
+      "chunk_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b::chunk0002",
+      "doc_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b",
+      "score": -1.817397304793099,
+      "snippet": "Businesses Adopting AI Risk a &#039;Trust Gap&#039; with Customers - Salesforce Report\n\n min read Artificial Intelligence 89% of customers say it’s important to know when they’re communicating with AI or a human Show more … Artificial Intelligence 80% of customers say it’s import"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0020",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7845116373749184,
+      "snippet": "Fy25 Annual Report Pdf\n\n:62)(cid:67)UadbadSfWV(cid:1)Tk(cid:1)dWXWdW(cid:67)UW(cid:1)(cid:62)(cid:67)(cid:1)fZ(cid:62)e(cid:1) (cid:33)ad(cid:66)(cid:1).-*C)(cid:1)fZW(cid:1)Hdajk(cid:1)KfSfW(cid:66)W(cid:67)f(cid:1)(cid:62)e(cid:1)(cid:67)af(cid:1)VWW(cid:66)WV(cid:1)fa(cid:1)TW"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0430",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7869610496340058,
+      "snippet": "Fy25 Annual Report Pdf\n\n:62)f(cid:62)We(cid:1)S(cid:67)S(cid:65)kefe(cid:1)S(cid:67)V(cid:1) (cid:62)(cid:67)hWefade(cid:1)ZShW(cid:1)Wef(cid:62)(cid:66)SfWe(cid:1)S(cid:67)V(cid:1)XadWUSefe(cid:1)aX(cid:1)agd(cid:1)XgfgdW(cid:1)bWdXad(cid:66)S(cid:67)UW(cid:1)fZSf(cid:1)SdW(cid:"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0784",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8075760551293203,
+      "snippet": "Fy25 Annual Report Pdf\n\nid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)abWdSfWe(cid:1) ad(cid:1)afZWd(cid:1)WhW(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)iag(cid:65)V(cid:1)(cid:62)(cid:67)V(cid:62)USfW(cid:1)fZSf(cid:1)(cid:62)fe(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)bWd(cid:62"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0282",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.807909562060188,
+      "snippet": "Fy25 Annual Report Pdf\n\nd:1)eWdh(cid:62)UWe)(cid:1)ad(cid:1)iW(cid:1)(cid:66)Sk(cid:1)W(cid:67)fWd(cid:1) (cid:67)Wi(cid:1)(cid:66)Sd(cid:64)Wfe(cid:1)fZSf(cid:1)(cid:66)Sk(cid:1)TW(cid:1)SUUa(cid:66)bS(cid:67)(cid:62)WV(cid:1)Tk(cid:1)(cid:62)(cid:67)(cid:62)f(cid:62)S(cid:65)(c"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0262",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7682789689202796,
+      "snippet": "Fy25 Annual Report Pdf\n\n62)d(cid:1) UgddW(cid:67)f(cid:1)ea(cid:65)gf(cid:62)a(cid:67)(cid:1)fa(cid:1)S(cid:1)V(cid:62)XXWdW(cid:67)f(cid:1)W(cid:67)fWdbd(cid:62)eW(cid:1)eaXfiSdW(cid:1)eWdh(cid:62)UW+(cid:1)9VV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:65)k)(cid:1)fZ(cid:62)dV*bSdf"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0917",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8102401696836778,
+      "snippet": "Fy25 Annual Report Pdf\n\ncid:1)/(cid:1)(cid:65)(cid:62)ST(cid:62)(cid:65)(cid:62)f(cid:62)We(cid:1)i(cid:62)fZ(cid:62)(cid:67)(cid:1)fZW(cid:1)XS(cid:62)d(cid:1)hS(cid:65)gW(cid:1)(cid:66)WSegdW(cid:66)W(cid:67)f(cid:1)XdS(cid:66)Wiad(cid:64)+ 5/ LZW(cid:1)Ua(cid:67)fdSUfgS(cid:65"
+    },
+    {
+      "chunk_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0078",
+      "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866",
+      "score": -1.836181658242203,
+      "snippet": "crm-20250430\n\ng services; the impact of foreign currency exchange rate fluctuations; changing interest rates and inflation; the growing complexity of our business, including the use of multiple pricing and packaging models and the increasing amount of revenue from term software l"
+    },
+    {
+      "chunk_id": "crm::press::2024-10-31::news-details::c5011c5a::chunk0003",
+      "doc_id": "crm::press::2024-10-31::news-details::c5011c5a",
+      "score": -1.8380122478453684,
+      "snippet": "Salesforce.com, Inc. - Salesforce Announces Third Quarter Fiscal 2025 Results\n\nevelopment investments made over multiple years, designed to help customers drive cost savings, boost efficiency, and build trust. To view our major product releases and other highlights as part of the"
+    },
+    {
+      "chunk_id": "crm::press::2024-04-25::news-details::65e3c0b7::chunk0003",
+      "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
+      "score": -1.823085530940914,
+      "snippet": "Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zero Copy Integration with Salesforce Data Cloud\n\ning data transfers, Zero Copy lets you seamlessly leverage Heroku Postgres data for powerful insights and innovat"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0440",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8146181967789612,
+      "snippet": "Fy25 Annual Report Pdf\n\n(cid:65)(cid:1)SVhWdeW(cid:1)(cid:62)(cid:66)bSUfe(cid:1)fa(cid:1)agd(cid:1)abWdSf(cid:62)(cid:67)Y(cid:1)USeZ(cid:1)X(cid:65)aie(cid:1)ad(cid:1)dWeg(cid:65)fe(cid:1)aX(cid:1)abWdSf(cid:62)a(cid:67)e(cid:1)Xad(cid:1)S(cid:1)Y(cid:62)hW(cid:67)(cid:1)bWd(ci"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0608",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8257670909852783,
+      "snippet": "Fy25 Annual Report Pdf\n\nid:67)L(cid:64)d(cid:1)(cid:14))$(cid:1)(cid:13)((cid:13)-(cid:1)LYO(cid:1)(cid:13)((cid:13), 2(cid:33)O(cid:33)GN(cid:33)L (cid:5)TY(cid:1)XTWWT(cid:61)Y(cid:65)(cid:6) KgTeUd(cid:62)bf(cid:62)a(cid:67)(cid:1)S(cid:67)V(cid:1)egbbadf HdaXWee(cid:62)a(cid:"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0034",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8301594435342694,
+      "snippet": "Fy25 Annual Report Pdf\n\n(cid:64)L(cid:66)P(cid:1)9(cid:61)aP(cid:64)YLYNP(cid:1)(cid:1)(cid:1)(cid:1)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0026",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8326116307444025,
+      "snippet": "Fy25 Annual Report Pdf\n\n(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid"
+    },
+    {
+      "chunk_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0081",
+      "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
+      "score": -1.8152091029009827,
+      "snippet": "crm-20250131\n\n the change in unearned revenue of $1.6 billion, partially offset by the changes in accounts receivable, net of $659 million and the change in accounts payable and accrued expenses and other liabilities of $478 million. Investing Activities The net cash used in inve"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0784",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.785027628465385,
+      "snippet": "Fy25 Annual Report Pdf\n\nid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)abWdSfWe(cid:1) ad(cid:1)afZWd(cid:1)WhW(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)iag(cid:65)V(cid:1)(cid:62)(cid:67)V(cid:62)USfW(cid:1)fZSf(cid:1)(cid:62)fe(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)bWd(cid:62"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0426",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7958890459552839,
+      "snippet": "Fy25 Annual Report Pdf\n\nd:1)(cid:65)WSeWe(cid:1)S(cid:67)V(cid:1)agd(cid:1)VSfS(cid:1)UW(cid:67)fWd(cid:1)USbSU(cid:62)fk(cid:1)S(cid:67)V(cid:1)WjbS(cid:67)e(cid:62)a(cid:67)8 f(cid:62)(cid:66)(cid:62)(cid:67)Y(cid:1)aX(cid:1)SVV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:1)(cid:62)"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0849",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8010690071299682,
+      "snippet": "Fy25 Annual Report Pdf\n\ncid:1)(cid:31)LY(cid:67)L(cid:64)d(cid:1)(cid:14))$ (cid:13)((cid:13)- (cid:13)((cid:13), (cid:13)((cid:13)(cid:14) (cid:4)(cid:1) 5)0//(cid:1) (cid:4)(cid:1) 4)25-(cid:1) (cid:4)(cid:1) 6)-21(cid:1) 4)/14(cid:1) 2)/5.(cid:1) 2)442(cid:1) 5)/12(cid:1) 3)3."
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0880",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8089155346482302,
+      "snippet": "Fy25 Annual Report Pdf\n\n:67))(cid:1)ShS(cid:62)(cid:65)ST(cid:65)W(cid:1)fa(cid:1)fZW(cid:1);a(cid:66)bS(cid:67)k(cid:1)Xda(cid:66)(cid:1)(cid:62)(cid:67)hWefWW(cid:1)Ua(cid:66)bS(cid:67)(cid:62)We)(cid:1)(cid:62)e(cid:1) egbb(cid:65)W(cid:66)W(cid:67)fWV(cid:1)i(cid:62)fZ(cid:1)"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0318",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8096493079642655,
+      "snippet": "Fy25 Annual Report Pdf\n\n1)Ugefa(cid:66)Wde(cid:1)S(cid:67)V(cid:1) afZWde(cid:1)S(cid:67)V(cid:1)Xad(cid:1)VWXS(cid:66)Sf(cid:62)a(cid:67)(cid:1)S(cid:67)V(cid:1)afZWd(cid:1)fadfe(cid:1)Sd(cid:62)e(cid:62)(cid:67)Y(cid:1)Xda(cid:66)(cid:1)(cid:62)(cid:67)Xad(cid:66)Sf(cid:62)a(ci"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0678",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.819265929775175,
+      "snippet": "Fy25 Annual Report Pdf\n\n(cid:1)(cid:62)(cid:66)(cid:66)WV(cid:62)SfW(cid:1)(cid:62)(cid:67)UdWSeW(cid:1)ad(cid:1)VWUdWSeW(cid:1)(cid:62)(cid:67)(cid:1)(cid:62)(cid:67)fWdWef(cid:1)dSfWe(cid:1)aX(cid:1).--(cid:1) TSe(cid:62)e(cid:1)ba(cid:62)(cid:67)fe(cid:1)Sf(cid:1)BS(cid:67)gSd"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0121",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8234146942122704,
+      "snippet": "Fy25 Annual Report Pdf\n\nd:1)fZWk(cid:1)dWXWd+(cid:1)OW(cid:1)Ua(cid:67)f(cid:62)(cid:67)gW(cid:1)fa(cid:1)(cid:62)(cid:67)hWef(cid:1)(cid:62)(cid:67)(cid:1)VWhW(cid:65)ab(cid:62)(cid:67)Y(cid:1)SVV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:1) V(cid:62)efd(cid:62)Tgf(cid:62)a(cid:67)"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0410",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8311907749441088,
+      "snippet": "Fy25 Annual Report Pdf\n\n)ge(cid:1)fa(cid:1) eWdh(cid:62)UW(cid:1)agd(cid:1)VWTf(cid:1)ad(cid:1)Ua(cid:67)fdSUfgS(cid:65)(cid:1)aT(cid:65)(cid:62)YSf(cid:62)a(cid:67)e(cid:1)dWeg(cid:65)f(cid:62)(cid:67)Y(cid:1)Xda(cid:66)(cid:1)agd(cid:1)(cid:65)WSeWe+(cid:1)AX(cid:1)iW(cid:1)XS("
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0684",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.8342718177958028,
+      "snippet": "Fy25 Annual Report Pdf\n\ncid:66)W(cid:67)fe)(cid:1)iZ(cid:62)UZ(cid:1)dWVgUW(cid:1)UdWV(cid:62)f(cid:1)d(cid:62)e(cid:64)(cid:1)Tk(cid:1)bWd(cid:66)(cid:62)ff(cid:62)(cid:67)Y(cid:1)(cid:67)Wf(cid:1)eWff(cid:65)W(cid:66)W(cid:67)f(cid:1)aX(cid:1)fdS(cid:67)eSUf(cid:62)a(cid:67)e(c"
+    },
+    {
+      "chunk_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0087",
+      "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
+      "score": -1.8038454514906772,
+      "snippet": "crm-20250131\n\nnded January 31, 2025, in conformity with U.S. generally accepted accounting principles. We also have audited, in accordance with the standards of the Public Company Accounting Oversight Board (United States) (PCAOB), the Company's internal control over financial re"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0807",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7722341965802577,
+      "snippet": "Fy25 Annual Report Pdf\n\n)W(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)Ua(cid:67)fS(cid:62)(cid:67)(cid:1)TafZ(cid:1)(cid:65)WSeW(cid:1)S(cid:67)V(cid:1)(cid:67)a(cid:67)*(cid:65)WSeW(cid:1) Ua(cid:66)ba(cid:67)W(cid:67)fe)(cid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)ZSe(cid:1)W(cid:65)WUfWV"
+    },
+    {
+      "chunk_id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36::chunk0000",
+      "doc_id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36",
+      "score": -1.8179443662875423,
+      "snippet": "Examples | Agentforce Agents | Agentforce Developer Guide | Salesforce Developers\nAgent API Examples This section provides examples using the Agent API endpoints. To onboard, see Get Started with Agent API . The quickest way to get started with the Agent API is with our Postman c"
+    },
+    {
+      "chunk_id": "crm::press::2025-08-28::speaking-ai-why-fluency-is-the-next-essential-skill-for-workers::84dcf885::chunk0001",
+      "doc_id": "crm::press::2025-08-28::speaking-ai-why-fluency-is-the-next-essential-skill-for-workers::84dcf885",
+      "score": -1.7748176047037347,
+      "snippet": "Speaking AI: Why Fluency is the Next Essential Skill for Workers\n\ns are legally required to provide expertise and oversight to any automated advice. But most fields will benefit from the ability to weave AI reasoning together with human insight. Take our customer 1-800Accountant."
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0602",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7839061313524318,
+      "snippet": "Fy25 Annual Report Pdf\n\nbWdSf(cid:62)a(cid:67)e DaeeWe(cid:1)a(cid:67)(cid:1)efdSfWY(cid:62)U(cid:1)(cid:62)(cid:67)hWef(cid:66)W(cid:67)fe)(cid:1)(cid:67)Wf(cid:1) GfZWd(cid:1)(cid:62)(cid:67)Ua(cid:66)W(cid:1)%WjbW(cid:67)eW& A(cid:67)Ua(cid:66)W(cid:1)TWXadW(cid:1)bdah(cid:62)"
+    },
+    {
+      "chunk_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0076",
+      "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866",
+      "score": -1.796028083887766,
+      "snippet": "crm-20250430\n\nations, and significant changes in the contracting or fiscal policies of such government organizations could adversely affect our business and operating results. Contracting with federal, state, local and foreign governments or state-owned entities subjects us to va"
+    },
+    {
+      "chunk_id": "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37::chunk0002",
+      "doc_id": "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37",
+      "score": -1.7766400714717163,
+      "snippet": "Introducing Slack AI, Slack Lists, and New Automation Capabilities that Boost Productivity and Transform How Teams Work\n\ns the main productivity platform for Spotify’s advertising business.” – Spotify Advertising team Analyst reaction to the news: “How we work is rapidly evolving"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0374",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.78577842565914,
+      "snippet": "Fy25 Annual Report Pdf\n\nd:1)(cid:65)aee(cid:1)aX(cid:1)fdSVW(cid:1)bd(cid:62)h(cid:62)(cid:65)WYWe8(cid:1)X(cid:62)(cid:67)We)(cid:1)iZ(cid:62)UZ(cid:1)(cid:66)Sk(cid:1)TW(cid:1)(cid:62)(cid:66)baeWV(cid:1)a(cid:67)(cid:1) ge(cid:1)S(cid:67)V(cid:1)dWeba(cid:67)e(cid:62)T(cid:65)"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0495",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7938632797890046,
+      "snippet": "Fy25 Annual Report Pdf\n\n7)V(cid:1)afZWd(cid:1)(cid:65)Sieg(cid:62)fe)(cid:1) S(cid:67)V(cid:1)fZW(cid:1)V(cid:62)ebae(cid:62)f(cid:62)a(cid:67)(cid:1)aX(cid:1)egUZ(cid:1)U(cid:65)S(cid:62)(cid:66)e(cid:1)S(cid:67)V(cid:1)(cid:65)Sieg(cid:62)fe)(cid:1)iZWfZWd(cid:1)fZdagYZ(cid:1)e"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0483",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.7974330396709162,
+      "snippet": "Fy25 Annual Report Pdf\n\nh(cid:62)VW(cid:1) (cid:66)S(cid:67)SYW(cid:66)W(cid:67)f(cid:1)i(cid:62)fZ(cid:1)h(cid:62)e(cid:62)T(cid:62)(cid:65)(cid:62)fk(cid:1)S(cid:67)V(cid:1)bd(cid:62)ad(cid:62)f(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)d(cid:62)e(cid:64)(cid:1)(cid:66)(cid:62"
+    },
+    {
+      "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0776",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "score": -1.808832781417907,
+      "snippet": "Fy25 Annual Report Pdf\n\n)(cid:67)Y(cid:1)aT(cid:63)WUf(cid:62)hWe(cid:1)S(cid:67)V(cid:1)(cid:66)Sd(cid:64)Wf(cid:1)Ua(cid:67)V(cid:62)f(cid:62)a(cid:67)e+(cid:1)K(cid:62)Y(cid:67)(cid:62)X(cid:62)US(cid:67)f(cid:1)bd(cid:62)U(cid:62)(cid:67)Y(cid:1) bdSUf(cid:62)UWe(cid:1)fS(cid"
+    }
+  ],
+  "retrieval_logs": [
+    {
+      "query": "What does this document say about crm-20250430?",
+      "results": [
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0256",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.719291448154979,
+          "snippet": "Fy25 Annual Report Pdf\n\n67)V(cid:1)VWbW(cid:67)V(cid:1)a(cid:67)(cid:1)agd(cid:1)egbbadf(cid:1)adYS(cid:67)(cid:62)lSf(cid:62)a(cid:67)(cid:1)fa(cid:1)dWea(cid:65)hW(cid:1)fWUZ(cid:67)(cid:62)US(cid:65)(cid:1)(cid:62)eegWe(cid:1)dW(cid:65)Sf(cid:62)(cid:67)Y(cid:1)fa(cid:1)agd(ci"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0604",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7783577729443183,
+          "snippet": "Fy25 Annual Report Pdf\n\n:67)fe(cid:1)dW(cid:65)SfWV(cid:1)fa(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)(cid:62)(cid:67)fS(cid:67)Y(cid:62)T(cid:65)W(cid:1)SeeWfe(cid:1)SUcg(cid:62)dWV(cid:1)fZdagYZ(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)Ua(cid:66)T(cid:62)(cid:67)"
+        },
+        {
+          "chunk_id": "crm::press::2025-01-31::news-details::9711c8f6::chunk0009",
+          "doc_id": "crm::press::2025-01-31::news-details::9711c8f6",
+          "score": -1.815011508039685,
+          "snippet": "Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results\n\ns 132 0 156 4 Unearned revenue, end of period $ 20,743 $ 19,003 $ 20,743 $ 19,003 (1) Other includes, for example, the impact of foreign currency translation. Disaggregation of Revenue Subscription an"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0372",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7820960330521995,
+          "snippet": "Fy25 Annual Report Pdf\n\nd:43)NE(cid:32)(cid:1)BFI(cid:29)B(cid:46)(cid:1)(cid:43)N(cid:46)(cid:1)(cid:29)(cid:30)BEBMR(cid:1)M(cid:43)(cid:1)(cid:31)(cid:43)FI(cid:33)M(cid:33)(cid:1)BG(cid:1) BGM(cid:33)(cid:46)G(cid:29)MB(cid:43)G(cid:29)E(cid:1)F(cid:29)(cid:46)D(cid:33)ML(cid"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0487",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7826240326710017,
+          "snippet": "Fy25 Annual Report Pdf\n\nk(cid:1)aX(cid:1) efS(cid:64)WZa(cid:65)VWde)(cid:1)(cid:62)(cid:67)U(cid:65)gV(cid:62)(cid:67)Y(cid:1)bWdea(cid:67)(cid:67)W(cid:65)(cid:1)bdah(cid:62)V(cid:62)(cid:67)Y(cid:1)fWUZ(cid:67)(cid:62)US(cid:65))(cid:1)abWdSf(cid:62)a(cid:67)S(cid:65))(cid:1)W"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk1008",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7978069922706983,
+          "snippet": "Fy25 Annual Report Pdf\n\n62)(cid:66)(cid:62)fSf(cid:62)a(cid:67)e(cid:1)(cid:62)(cid:67)(cid:1)S(cid:65)(cid:65)(cid:1)Ua(cid:67)fda(cid:65)(cid:1)ekefW(cid:66)e)(cid:1)(cid:67)a(cid:1)WhS(cid:65)gSf(cid:62)a(cid:67)(cid:1)aX(cid:1) Ua(cid:67)fda(cid:65)e(cid:1)US(cid:67)(cid:1)bd"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0616",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.801949687657704,
+          "snippet": "Fy25 Annual Report Pdf\n\n:1)SUdaee(cid:1)S(cid:65)(cid:65)(cid:1)dWY(cid:62)a(cid:67)e(cid:1)iSe(cid:1)bd(cid:62)(cid:66)Sd(cid:62)(cid:65)k(cid:1)VgW(cid:1)fa(cid:1)fZW(cid:1)Ua(cid:67)f(cid:62)(cid:67)gWV(cid:1)WjWUgf(cid:62)a(cid:67)(cid:1)aX(cid:1)agd(cid:1) Tge(cid:62)(cid:67"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0351",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.808943065705719,
+          "snippet": "Fy25 Annual Report Pdf\n\nid:62)(cid:67)Y(cid:1)W(cid:67)f(cid:62)f(cid:62)We(cid:1)S(cid:67)V(cid:1) (cid:67)a(cid:67)*bdSUf(cid:62)U(cid:62)(cid:67)Y(cid:1)W(cid:67)f(cid:62)f(cid:62)We)(cid:1)U(cid:65)S(cid:62)(cid:66)(cid:62)(cid:67)Y(cid:1)fZSf(cid:1)iW(cid:1)ZShW(cid:1)(cid:6"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0087",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8092543589104362,
+          "snippet": "Fy25 Annual Report Pdf\n\ncid:66)S(cid:64)W(cid:1)bdWV(cid:62)Uf(cid:62)a(cid:67)e(cid:1)i(cid:62)fZ(cid:1)bWdhSe(cid:62)hW(cid:1)9A)(cid:1)Sgfa(cid:66)SfW(cid:1)fSe(cid:64)e(cid:1)S(cid:67)V(cid:1)bWdea(cid:67)S(cid:65)(cid:62)lW(cid:1)WhWdk(cid:1)(cid:62)(cid:67)fWdSUf(cid:62)a(c"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0593",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8191899280245718,
+          "snippet": "Fy25 Annual Report Pdf\n\nd:1)XgfgdW(cid:1)(cid:66)Sd(cid:64)Wf(cid:1)Ua(cid:67)V(cid:62)f(cid:62)a(cid:67)e(cid:1)S(cid:67)V(cid:1)fZW(cid:1)ST(cid:62)(cid:65)(cid:62)fk(cid:1)fa(cid:1)egUUWeeXg(cid:65)(cid:65)k(cid:1)WjWUgfW(cid:1) agd(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)b(cid:65)"
+        }
+      ]
+    },
+    {
+      "query": "What does this document say about fy25?",
+      "results": [
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0093",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7356274161973597,
+          "snippet": "Fy25 Annual Report Pdf\n\n66)Wde(cid:1)(cid:62)(cid:67)(cid:1)(cid:67)Wi(cid:1)dWY(cid:62)a(cid:67)e+(cid:1)OW(cid:1)i(cid:62)(cid:65)(cid:65)(cid:1)Ua(cid:67)f(cid:62)(cid:67)gW(cid:1)fa(cid:1)bgdegW(cid:1)Tge(cid:62)(cid:67)WeeWe(cid:1)aX(cid:1)S(cid:65)(cid:65)(cid:1)e(cid:62)lW"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0170",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7806068416922518,
+          "snippet": "Fy25 Annual Report Pdf\n\nd:1)Tk(cid:1)TSV(cid:1)SUfade)(cid:1)iZ(cid:62)UZ(cid:1)SdW(cid:1)YW(cid:67)WdS(cid:65)(cid:65)k(cid:1)(cid:67)af(cid:1)dWUaY(cid:67)(cid:62)lWV(cid:1)g(cid:67)f(cid:62)(cid:65)(cid:1)(cid:65)Sg(cid:67)UZWV(cid:1)SYS(cid:62)(cid:67)ef(cid:1)S(cid:1)fSdYWf)"
+        },
+        {
+          "chunk_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6::chunk0003",
+          "doc_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6",
+          "score": -1.7950355276187042,
+          "snippet": "Salesforce Signs Definitive Agreement to Acquire Informatica\n\ns include, among other things, statements regarding the expected benefits to Salesforce, Informatica and their respective customers from completing the transaction, plans for future investment and capital allocation, t"
+        },
+        {
+          "chunk_id": "crm::press::2025-05-28::news-details::e526586e::chunk0003",
+          "doc_id": "crm::press::2025-05-28::news-details::e526586e",
+          "score": -1.7944642194772908,
+          "snippet": "Salesforce.com, Inc. - Salesforce Reports Record First Quarter Fiscal 2026 Results\n\nplay details of the event will be available on the Salesforce Investor Relations website at www.salesforce.com/investor . To learn more about our newest innovations and product release highlights,"
+        },
+        {
+          "chunk_id": "crm::press::2025-01-06::news-details::ec6a2e76::chunk0000",
+          "doc_id": "crm::press::2025-01-06::news-details::ec6a2e76",
+          "score": -1.7978353434753225,
+          "snippet": "Salesforce.com, Inc. - Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows\n\nH1: Salesforce.com, Inc. - Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows\n\nOverview Financials Quarterly Results Annual Reports SEC Filings Tax Forms Safe Harbor IAC F"
+        },
+        {
+          "chunk_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b::chunk0002",
+          "doc_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b",
+          "score": -1.817397304793099,
+          "snippet": "Businesses Adopting AI Risk a &#039;Trust Gap&#039; with Customers - Salesforce Report\n\n min read Artificial Intelligence 89% of customers say it’s important to know when they’re communicating with AI or a human Show more … Artificial Intelligence 80% of customers say it’s import"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0020",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7845116373749184,
+          "snippet": "Fy25 Annual Report Pdf\n\n:62)(cid:67)UadbadSfWV(cid:1)Tk(cid:1)dWXWdW(cid:67)UW(cid:1)(cid:62)(cid:67)(cid:1)fZ(cid:62)e(cid:1) (cid:33)ad(cid:66)(cid:1).-*C)(cid:1)fZW(cid:1)Hdajk(cid:1)KfSfW(cid:66)W(cid:67)f(cid:1)(cid:62)e(cid:1)(cid:67)af(cid:1)VWW(cid:66)WV(cid:1)fa(cid:1)TW"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0430",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7869610496340058,
+          "snippet": "Fy25 Annual Report Pdf\n\n:62)f(cid:62)We(cid:1)S(cid:67)S(cid:65)kefe(cid:1)S(cid:67)V(cid:1) (cid:62)(cid:67)hWefade(cid:1)ZShW(cid:1)Wef(cid:62)(cid:66)SfWe(cid:1)S(cid:67)V(cid:1)XadWUSefe(cid:1)aX(cid:1)agd(cid:1)XgfgdW(cid:1)bWdXad(cid:66)S(cid:67)UW(cid:1)fZSf(cid:1)SdW(cid:"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0784",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8075760551293203,
+          "snippet": "Fy25 Annual Report Pdf\n\nid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)abWdSfWe(cid:1) ad(cid:1)afZWd(cid:1)WhW(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)iag(cid:65)V(cid:1)(cid:62)(cid:67)V(cid:62)USfW(cid:1)fZSf(cid:1)(cid:62)fe(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)bWd(cid:62"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0282",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.807909562060188,
+          "snippet": "Fy25 Annual Report Pdf\n\nd:1)eWdh(cid:62)UWe)(cid:1)ad(cid:1)iW(cid:1)(cid:66)Sk(cid:1)W(cid:67)fWd(cid:1) (cid:67)Wi(cid:1)(cid:66)Sd(cid:64)Wfe(cid:1)fZSf(cid:1)(cid:66)Sk(cid:1)TW(cid:1)SUUa(cid:66)bS(cid:67)(cid:62)WV(cid:1)Tk(cid:1)(cid:62)(cid:67)(cid:62)f(cid:62)S(cid:65)(c"
+        }
+      ]
+    },
+    {
+      "query": "Summarize key points regarding fy25",
+      "results": [
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0262",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7682789689202796,
+          "snippet": "Fy25 Annual Report Pdf\n\n62)d(cid:1) UgddW(cid:67)f(cid:1)ea(cid:65)gf(cid:62)a(cid:67)(cid:1)fa(cid:1)S(cid:1)V(cid:62)XXWdW(cid:67)f(cid:1)W(cid:67)fWdbd(cid:62)eW(cid:1)eaXfiSdW(cid:1)eWdh(cid:62)UW+(cid:1)9VV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:65)k)(cid:1)fZ(cid:62)dV*bSdf"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0917",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8102401696836778,
+          "snippet": "Fy25 Annual Report Pdf\n\ncid:1)/(cid:1)(cid:65)(cid:62)ST(cid:62)(cid:65)(cid:62)f(cid:62)We(cid:1)i(cid:62)fZ(cid:62)(cid:67)(cid:1)fZW(cid:1)XS(cid:62)d(cid:1)hS(cid:65)gW(cid:1)(cid:66)WSegdW(cid:66)W(cid:67)f(cid:1)XdS(cid:66)Wiad(cid:64)+ 5/ LZW(cid:1)Ua(cid:67)fdSUfgS(cid:65"
+        },
+        {
+          "chunk_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0078",
+          "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866",
+          "score": -1.836181658242203,
+          "snippet": "crm-20250430\n\ng services; the impact of foreign currency exchange rate fluctuations; changing interest rates and inflation; the growing complexity of our business, including the use of multiple pricing and packaging models and the increasing amount of revenue from term software l"
+        },
+        {
+          "chunk_id": "crm::press::2024-10-31::news-details::c5011c5a::chunk0003",
+          "doc_id": "crm::press::2024-10-31::news-details::c5011c5a",
+          "score": -1.8380122478453684,
+          "snippet": "Salesforce.com, Inc. - Salesforce Announces Third Quarter Fiscal 2025 Results\n\nevelopment investments made over multiple years, designed to help customers drive cost savings, boost efficiency, and build trust. To view our major product releases and other highlights as part of the"
+        },
+        {
+          "chunk_id": "crm::press::2024-04-25::news-details::65e3c0b7::chunk0003",
+          "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
+          "score": -1.823085530940914,
+          "snippet": "Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zero Copy Integration with Salesforce Data Cloud\n\ning data transfers, Zero Copy lets you seamlessly leverage Heroku Postgres data for powerful insights and innovat"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0440",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8146181967789612,
+          "snippet": "Fy25 Annual Report Pdf\n\n(cid:65)(cid:1)SVhWdeW(cid:1)(cid:62)(cid:66)bSUfe(cid:1)fa(cid:1)agd(cid:1)abWdSf(cid:62)(cid:67)Y(cid:1)USeZ(cid:1)X(cid:65)aie(cid:1)ad(cid:1)dWeg(cid:65)fe(cid:1)aX(cid:1)abWdSf(cid:62)a(cid:67)e(cid:1)Xad(cid:1)S(cid:1)Y(cid:62)hW(cid:67)(cid:1)bWd(ci"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0608",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8257670909852783,
+          "snippet": "Fy25 Annual Report Pdf\n\nid:67)L(cid:64)d(cid:1)(cid:14))$(cid:1)(cid:13)((cid:13)-(cid:1)LYO(cid:1)(cid:13)((cid:13), 2(cid:33)O(cid:33)GN(cid:33)L (cid:5)TY(cid:1)XTWWT(cid:61)Y(cid:65)(cid:6) KgTeUd(cid:62)bf(cid:62)a(cid:67)(cid:1)S(cid:67)V(cid:1)egbbadf HdaXWee(cid:62)a(cid:"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0034",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8301594435342694,
+          "snippet": "Fy25 Annual Report Pdf\n\n(cid:64)L(cid:66)P(cid:1)9(cid:61)aP(cid:64)YLYNP(cid:1)(cid:1)(cid:1)(cid:1)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0026",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8326116307444025,
+          "snippet": "Fy25 Annual Report Pdf\n\n(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid"
+        },
+        {
+          "chunk_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0081",
+          "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
+          "score": -1.8152091029009827,
+          "snippet": "crm-20250131\n\n the change in unearned revenue of $1.6 billion, partially offset by the changes in accounts receivable, net of $659 million and the change in accounts payable and accrued expenses and other liabilities of $478 million. Investing Activities The net cash used in inve"
+        }
+      ]
+    },
+    {
+      "query": "What does this document say about salesforce.com,?",
+      "results": [
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0784",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.785027628465385,
+          "snippet": "Fy25 Annual Report Pdf\n\nid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)abWdSfWe(cid:1) ad(cid:1)afZWd(cid:1)WhW(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)iag(cid:65)V(cid:1)(cid:62)(cid:67)V(cid:62)USfW(cid:1)fZSf(cid:1)(cid:62)fe(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)bWd(cid:62"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0426",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7958890459552839,
+          "snippet": "Fy25 Annual Report Pdf\n\nd:1)(cid:65)WSeWe(cid:1)S(cid:67)V(cid:1)agd(cid:1)VSfS(cid:1)UW(cid:67)fWd(cid:1)USbSU(cid:62)fk(cid:1)S(cid:67)V(cid:1)WjbS(cid:67)e(cid:62)a(cid:67)8 f(cid:62)(cid:66)(cid:62)(cid:67)Y(cid:1)aX(cid:1)SVV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:1)(cid:62)"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0849",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8010690071299682,
+          "snippet": "Fy25 Annual Report Pdf\n\ncid:1)(cid:31)LY(cid:67)L(cid:64)d(cid:1)(cid:14))$ (cid:13)((cid:13)- (cid:13)((cid:13), (cid:13)((cid:13)(cid:14) (cid:4)(cid:1) 5)0//(cid:1) (cid:4)(cid:1) 4)25-(cid:1) (cid:4)(cid:1) 6)-21(cid:1) 4)/14(cid:1) 2)/5.(cid:1) 2)442(cid:1) 5)/12(cid:1) 3)3."
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0880",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8089155346482302,
+          "snippet": "Fy25 Annual Report Pdf\n\n:67))(cid:1)ShS(cid:62)(cid:65)ST(cid:65)W(cid:1)fa(cid:1)fZW(cid:1);a(cid:66)bS(cid:67)k(cid:1)Xda(cid:66)(cid:1)(cid:62)(cid:67)hWefWW(cid:1)Ua(cid:66)bS(cid:67)(cid:62)We)(cid:1)(cid:62)e(cid:1) egbb(cid:65)W(cid:66)W(cid:67)fWV(cid:1)i(cid:62)fZ(cid:1)"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0318",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8096493079642655,
+          "snippet": "Fy25 Annual Report Pdf\n\n1)Ugefa(cid:66)Wde(cid:1)S(cid:67)V(cid:1) afZWde(cid:1)S(cid:67)V(cid:1)Xad(cid:1)VWXS(cid:66)Sf(cid:62)a(cid:67)(cid:1)S(cid:67)V(cid:1)afZWd(cid:1)fadfe(cid:1)Sd(cid:62)e(cid:62)(cid:67)Y(cid:1)Xda(cid:66)(cid:1)(cid:62)(cid:67)Xad(cid:66)Sf(cid:62)a(ci"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0678",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.819265929775175,
+          "snippet": "Fy25 Annual Report Pdf\n\n(cid:1)(cid:62)(cid:66)(cid:66)WV(cid:62)SfW(cid:1)(cid:62)(cid:67)UdWSeW(cid:1)ad(cid:1)VWUdWSeW(cid:1)(cid:62)(cid:67)(cid:1)(cid:62)(cid:67)fWdWef(cid:1)dSfWe(cid:1)aX(cid:1).--(cid:1) TSe(cid:62)e(cid:1)ba(cid:62)(cid:67)fe(cid:1)Sf(cid:1)BS(cid:67)gSd"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0121",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8234146942122704,
+          "snippet": "Fy25 Annual Report Pdf\n\nd:1)fZWk(cid:1)dWXWd+(cid:1)OW(cid:1)Ua(cid:67)f(cid:62)(cid:67)gW(cid:1)fa(cid:1)(cid:62)(cid:67)hWef(cid:1)(cid:62)(cid:67)(cid:1)VWhW(cid:65)ab(cid:62)(cid:67)Y(cid:1)SVV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:1) V(cid:62)efd(cid:62)Tgf(cid:62)a(cid:67)"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0410",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8311907749441088,
+          "snippet": "Fy25 Annual Report Pdf\n\n)ge(cid:1)fa(cid:1) eWdh(cid:62)UW(cid:1)agd(cid:1)VWTf(cid:1)ad(cid:1)Ua(cid:67)fdSUfgS(cid:65)(cid:1)aT(cid:65)(cid:62)YSf(cid:62)a(cid:67)e(cid:1)dWeg(cid:65)f(cid:62)(cid:67)Y(cid:1)Xda(cid:66)(cid:1)agd(cid:1)(cid:65)WSeWe+(cid:1)AX(cid:1)iW(cid:1)XS("
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0684",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.8342718177958028,
+          "snippet": "Fy25 Annual Report Pdf\n\ncid:66)W(cid:67)fe)(cid:1)iZ(cid:62)UZ(cid:1)dWVgUW(cid:1)UdWV(cid:62)f(cid:1)d(cid:62)e(cid:64)(cid:1)Tk(cid:1)bWd(cid:66)(cid:62)ff(cid:62)(cid:67)Y(cid:1)(cid:67)Wf(cid:1)eWff(cid:65)W(cid:66)W(cid:67)f(cid:1)aX(cid:1)fdS(cid:67)eSUf(cid:62)a(cid:67)e(c"
+        },
+        {
+          "chunk_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0087",
+          "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
+          "score": -1.8038454514906772,
+          "snippet": "crm-20250131\n\nnded January 31, 2025, in conformity with U.S. generally accepted accounting principles. We also have audited, in accordance with the standards of the Public Company Accounting Oversight Board (United States) (PCAOB), the Company's internal control over financial re"
+        }
+      ]
+    },
+    {
+      "query": "Summarize key points regarding salesforce.com,",
+      "results": [
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0807",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7722341965802577,
+          "snippet": "Fy25 Annual Report Pdf\n\n)W(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)Ua(cid:67)fS(cid:62)(cid:67)(cid:1)TafZ(cid:1)(cid:65)WSeW(cid:1)S(cid:67)V(cid:1)(cid:67)a(cid:67)*(cid:65)WSeW(cid:1) Ua(cid:66)ba(cid:67)W(cid:67)fe)(cid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)ZSe(cid:1)W(cid:65)WUfWV"
+        },
+        {
+          "chunk_id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36::chunk0000",
+          "doc_id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36",
+          "score": -1.8179443662875423,
+          "snippet": "Examples | Agentforce Agents | Agentforce Developer Guide | Salesforce Developers\nAgent API Examples This section provides examples using the Agent API endpoints. To onboard, see Get Started with Agent API . The quickest way to get started with the Agent API is with our Postman c"
+        },
+        {
+          "chunk_id": "crm::press::2025-08-28::speaking-ai-why-fluency-is-the-next-essential-skill-for-workers::84dcf885::chunk0001",
+          "doc_id": "crm::press::2025-08-28::speaking-ai-why-fluency-is-the-next-essential-skill-for-workers::84dcf885",
+          "score": -1.7748176047037347,
+          "snippet": "Speaking AI: Why Fluency is the Next Essential Skill for Workers\n\ns are legally required to provide expertise and oversight to any automated advice. But most fields will benefit from the ability to weave AI reasoning together with human insight. Take our customer 1-800Accountant."
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0602",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7839061313524318,
+          "snippet": "Fy25 Annual Report Pdf\n\nbWdSf(cid:62)a(cid:67)e DaeeWe(cid:1)a(cid:67)(cid:1)efdSfWY(cid:62)U(cid:1)(cid:62)(cid:67)hWef(cid:66)W(cid:67)fe)(cid:1)(cid:67)Wf(cid:1) GfZWd(cid:1)(cid:62)(cid:67)Ua(cid:66)W(cid:1)%WjbW(cid:67)eW& A(cid:67)Ua(cid:66)W(cid:1)TWXadW(cid:1)bdah(cid:62)"
+        },
+        {
+          "chunk_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0076",
+          "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866",
+          "score": -1.796028083887766,
+          "snippet": "crm-20250430\n\nations, and significant changes in the contracting or fiscal policies of such government organizations could adversely affect our business and operating results. Contracting with federal, state, local and foreign governments or state-owned entities subjects us to va"
+        },
+        {
+          "chunk_id": "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37::chunk0002",
+          "doc_id": "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37",
+          "score": -1.7766400714717163,
+          "snippet": "Introducing Slack AI, Slack Lists, and New Automation Capabilities that Boost Productivity and Transform How Teams Work\n\ns the main productivity platform for Spotify’s advertising business.” – Spotify Advertising team Analyst reaction to the news: “How we work is rapidly evolving"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0374",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.78577842565914,
+          "snippet": "Fy25 Annual Report Pdf\n\nd:1)(cid:65)aee(cid:1)aX(cid:1)fdSVW(cid:1)bd(cid:62)h(cid:62)(cid:65)WYWe8(cid:1)X(cid:62)(cid:67)We)(cid:1)iZ(cid:62)UZ(cid:1)(cid:66)Sk(cid:1)TW(cid:1)(cid:62)(cid:66)baeWV(cid:1)a(cid:67)(cid:1) ge(cid:1)S(cid:67)V(cid:1)dWeba(cid:67)e(cid:62)T(cid:65)"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0495",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7938632797890046,
+          "snippet": "Fy25 Annual Report Pdf\n\n7)V(cid:1)afZWd(cid:1)(cid:65)Sieg(cid:62)fe)(cid:1) S(cid:67)V(cid:1)fZW(cid:1)V(cid:62)ebae(cid:62)f(cid:62)a(cid:67)(cid:1)aX(cid:1)egUZ(cid:1)U(cid:65)S(cid:62)(cid:66)e(cid:1)S(cid:67)V(cid:1)(cid:65)Sieg(cid:62)fe)(cid:1)iZWfZWd(cid:1)fZdagYZ(cid:1)e"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0483",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.7974330396709162,
+          "snippet": "Fy25 Annual Report Pdf\n\nh(cid:62)VW(cid:1) (cid:66)S(cid:67)SYW(cid:66)W(cid:67)f(cid:1)i(cid:62)fZ(cid:1)h(cid:62)e(cid:62)T(cid:62)(cid:65)(cid:62)fk(cid:1)S(cid:67)V(cid:1)bd(cid:62)ad(cid:62)f(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)d(cid:62)e(cid:64)(cid:1)(cid:66)(cid:62"
+        },
+        {
+          "chunk_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0776",
+          "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+          "score": -1.808832781417907,
+          "snippet": "Fy25 Annual Report Pdf\n\n)(cid:67)Y(cid:1)aT(cid:63)WUf(cid:62)hWe(cid:1)S(cid:67)V(cid:1)(cid:66)Sd(cid:64)Wf(cid:1)Ua(cid:67)V(cid:62)f(cid:62)a(cid:67)e+(cid:1)K(cid:62)Y(cid:67)(cid:62)X(cid:62)US(cid:67)f(cid:1)bd(cid:62)U(cid:62)(cid:67)Y(cid:1) bdSUf(cid:62)UWe(cid:1)fS(cid"
+        }
+      ]
+    }
+  ],
+  "insight_candidates": [
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0256",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n67)V(cid:1)VWbW(cid:67)V(cid:1)a(cid:67)(cid:1)agd(cid:1)egbbadf(cid:1)adYS(cid:67)(cid:62)lSf(cid:62)a(cid:67)(cid:1)fa(cid:1)dWea(cid:65)hW(cid:1)fWUZ(cid:67)(cid:62)US(cid:65)(cid:1)(cid:62)eegWe(cid:1)dW(cid:65)Sf(cid:62)(cid:67)Y(cid:1)fa(cid:1)agd(ci",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n67)V(cid:1)VWbW(cid:67)V(cid:1)a(cid:67)(cid:1)agd(cid:1)egbbadf(cid:1)adYS(cid:67)(cid:62)lSf(cid:62)a(cid:67)(cid:1)fa(cid:1)dWea(cid:65)hW(cid:1)fWUZ(cid:67)(cid:62)US(cid:65)(cid:1)(cid:62)eegWe(cid:1)dW(cid:65)Sf(cid:62)(cid:67)Y(cid:1)fa(cid:1)agd(ci",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0604",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n:67)fe(cid:1)dW(cid:65)SfWV(cid:1)fa(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)(cid:62)(cid:67)fS(cid:67)Y(cid:62)T(cid:65)W(cid:1)SeeWfe(cid:1)SUcg(cid:62)dWV(cid:1)fZdagYZ(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)Ua(cid:66)T(cid:62)(cid:67)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n:67)fe(cid:1)dW(cid:65)SfWV(cid:1)fa(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)(cid:62)(cid:67)fS(cid:67)Y(cid:62)T(cid:65)W(cid:1)SeeWfe(cid:1)SUcg(cid:62)dWV(cid:1)fZdagYZ(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)Ua(cid:66)T(cid:62)(cid:67)",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::press::2025-01-31::news-details::9711c8f6::chunk0009",
+      "title": "Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results",
+      "summary": "Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results\n\ns 132 0 156 4 Unearned revenue, end of period $ 20,743 $ 19,003 $ 20,743 $ 19,003 (1) Other includes, for example, the impact of foreign currency translation. Disaggregation of Revenue Subscription an",
+      "url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Results",
+      "date": "2025-01-31",
+      "evidence_snippet": "Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results\n\ns 132 0 156 4 Unearned revenue, end of period $ 20,743 $ 19,003 $ 20,743 $ 19,003 (1) Other includes, for example, the impact of foreign currency translation. Disaggregation of Revenue Subscription an",
+      "confidence": 0.7,
+      "source_domain": "investor.salesforce.com",
+      "doc_id": "crm::press::2025-01-31::news-details::9711c8f6"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0372",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nd:43)NE(cid:32)(cid:1)BFI(cid:29)B(cid:46)(cid:1)(cid:43)N(cid:46)(cid:1)(cid:29)(cid:30)BEBMR(cid:1)M(cid:43)(cid:1)(cid:31)(cid:43)FI(cid:33)M(cid:33)(cid:1)BG(cid:1) BGM(cid:33)(cid:46)G(cid:29)MB(cid:43)G(cid:29)E(cid:1)F(cid:29)(cid:46)D(cid:33)ML(cid",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nd:43)NE(cid:32)(cid:1)BFI(cid:29)B(cid:46)(cid:1)(cid:43)N(cid:46)(cid:1)(cid:29)(cid:30)BEBMR(cid:1)M(cid:43)(cid:1)(cid:31)(cid:43)FI(cid:33)M(cid:33)(cid:1)BG(cid:1) BGM(cid:33)(cid:46)G(cid:29)MB(cid:43)G(cid:29)E(cid:1)F(cid:29)(cid:46)D(cid:33)ML(cid",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0487",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nk(cid:1)aX(cid:1) efS(cid:64)WZa(cid:65)VWde)(cid:1)(cid:62)(cid:67)U(cid:65)gV(cid:62)(cid:67)Y(cid:1)bWdea(cid:67)(cid:67)W(cid:65)(cid:1)bdah(cid:62)V(cid:62)(cid:67)Y(cid:1)fWUZ(cid:67)(cid:62)US(cid:65))(cid:1)abWdSf(cid:62)a(cid:67)S(cid:65))(cid:1)W",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nk(cid:1)aX(cid:1) efS(cid:64)WZa(cid:65)VWde)(cid:1)(cid:62)(cid:67)U(cid:65)gV(cid:62)(cid:67)Y(cid:1)bWdea(cid:67)(cid:67)W(cid:65)(cid:1)bdah(cid:62)V(cid:62)(cid:67)Y(cid:1)fWUZ(cid:67)(cid:62)US(cid:65))(cid:1)abWdSf(cid:62)a(cid:67)S(cid:65))(cid:1)W",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk1008",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n62)(cid:66)(cid:62)fSf(cid:62)a(cid:67)e(cid:1)(cid:62)(cid:67)(cid:1)S(cid:65)(cid:65)(cid:1)Ua(cid:67)fda(cid:65)(cid:1)ekefW(cid:66)e)(cid:1)(cid:67)a(cid:1)WhS(cid:65)gSf(cid:62)a(cid:67)(cid:1)aX(cid:1) Ua(cid:67)fda(cid:65)e(cid:1)US(cid:67)(cid:1)bd",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n62)(cid:66)(cid:62)fSf(cid:62)a(cid:67)e(cid:1)(cid:62)(cid:67)(cid:1)S(cid:65)(cid:65)(cid:1)Ua(cid:67)fda(cid:65)(cid:1)ekefW(cid:66)e)(cid:1)(cid:67)a(cid:1)WhS(cid:65)gSf(cid:62)a(cid:67)(cid:1)aX(cid:1) Ua(cid:67)fda(cid:65)e(cid:1)US(cid:67)(cid:1)bd",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0616",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n:1)SUdaee(cid:1)S(cid:65)(cid:65)(cid:1)dWY(cid:62)a(cid:67)e(cid:1)iSe(cid:1)bd(cid:62)(cid:66)Sd(cid:62)(cid:65)k(cid:1)VgW(cid:1)fa(cid:1)fZW(cid:1)Ua(cid:67)f(cid:62)(cid:67)gWV(cid:1)WjWUgf(cid:62)a(cid:67)(cid:1)aX(cid:1)agd(cid:1) Tge(cid:62)(cid:67",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n:1)SUdaee(cid:1)S(cid:65)(cid:65)(cid:1)dWY(cid:62)a(cid:67)e(cid:1)iSe(cid:1)bd(cid:62)(cid:66)Sd(cid:62)(cid:65)k(cid:1)VgW(cid:1)fa(cid:1)fZW(cid:1)Ua(cid:67)f(cid:62)(cid:67)gWV(cid:1)WjWUgf(cid:62)a(cid:67)(cid:1)aX(cid:1)agd(cid:1) Tge(cid:62)(cid:67",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0351",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nid:62)(cid:67)Y(cid:1)W(cid:67)f(cid:62)f(cid:62)We(cid:1)S(cid:67)V(cid:1) (cid:67)a(cid:67)*bdSUf(cid:62)U(cid:62)(cid:67)Y(cid:1)W(cid:67)f(cid:62)f(cid:62)We)(cid:1)U(cid:65)S(cid:62)(cid:66)(cid:62)(cid:67)Y(cid:1)fZSf(cid:1)iW(cid:1)ZShW(cid:1)(cid:6",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nid:62)(cid:67)Y(cid:1)W(cid:67)f(cid:62)f(cid:62)We(cid:1)S(cid:67)V(cid:1) (cid:67)a(cid:67)*bdSUf(cid:62)U(cid:62)(cid:67)Y(cid:1)W(cid:67)f(cid:62)f(cid:62)We)(cid:1)U(cid:65)S(cid:62)(cid:66)(cid:62)(cid:67)Y(cid:1)fZSf(cid:1)iW(cid:1)ZShW(cid:1)(cid:6",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0087",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\ncid:66)S(cid:64)W(cid:1)bdWV(cid:62)Uf(cid:62)a(cid:67)e(cid:1)i(cid:62)fZ(cid:1)bWdhSe(cid:62)hW(cid:1)9A)(cid:1)Sgfa(cid:66)SfW(cid:1)fSe(cid:64)e(cid:1)S(cid:67)V(cid:1)bWdea(cid:67)S(cid:65)(cid:62)lW(cid:1)WhWdk(cid:1)(cid:62)(cid:67)fWdSUf(cid:62)a(c",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\ncid:66)S(cid:64)W(cid:1)bdWV(cid:62)Uf(cid:62)a(cid:67)e(cid:1)i(cid:62)fZ(cid:1)bWdhSe(cid:62)hW(cid:1)9A)(cid:1)Sgfa(cid:66)SfW(cid:1)fSe(cid:64)e(cid:1)S(cid:67)V(cid:1)bWdea(cid:67)S(cid:65)(cid:62)lW(cid:1)WhWdk(cid:1)(cid:62)(cid:67)fWdSUf(cid:62)a(c",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0593",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nd:1)XgfgdW(cid:1)(cid:66)Sd(cid:64)Wf(cid:1)Ua(cid:67)V(cid:62)f(cid:62)a(cid:67)e(cid:1)S(cid:67)V(cid:1)fZW(cid:1)ST(cid:62)(cid:65)(cid:62)fk(cid:1)fa(cid:1)egUUWeeXg(cid:65)(cid:65)k(cid:1)WjWUgfW(cid:1) agd(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)b(cid:65)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nd:1)XgfgdW(cid:1)(cid:66)Sd(cid:64)Wf(cid:1)Ua(cid:67)V(cid:62)f(cid:62)a(cid:67)e(cid:1)S(cid:67)V(cid:1)fZW(cid:1)ST(cid:62)(cid:65)(cid:62)fk(cid:1)fa(cid:1)egUUWeeXg(cid:65)(cid:65)k(cid:1)WjWUgfW(cid:1) agd(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)b(cid:65)",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0093",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n66)Wde(cid:1)(cid:62)(cid:67)(cid:1)(cid:67)Wi(cid:1)dWY(cid:62)a(cid:67)e+(cid:1)OW(cid:1)i(cid:62)(cid:65)(cid:65)(cid:1)Ua(cid:67)f(cid:62)(cid:67)gW(cid:1)fa(cid:1)bgdegW(cid:1)Tge(cid:62)(cid:67)WeeWe(cid:1)aX(cid:1)S(cid:65)(cid:65)(cid:1)e(cid:62)lW",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n66)Wde(cid:1)(cid:62)(cid:67)(cid:1)(cid:67)Wi(cid:1)dWY(cid:62)a(cid:67)e+(cid:1)OW(cid:1)i(cid:62)(cid:65)(cid:65)(cid:1)Ua(cid:67)f(cid:62)(cid:67)gW(cid:1)fa(cid:1)bgdegW(cid:1)Tge(cid:62)(cid:67)WeeWe(cid:1)aX(cid:1)S(cid:65)(cid:65)(cid:1)e(cid:62)lW",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0170",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nd:1)Tk(cid:1)TSV(cid:1)SUfade)(cid:1)iZ(cid:62)UZ(cid:1)SdW(cid:1)YW(cid:67)WdS(cid:65)(cid:65)k(cid:1)(cid:67)af(cid:1)dWUaY(cid:67)(cid:62)lWV(cid:1)g(cid:67)f(cid:62)(cid:65)(cid:1)(cid:65)Sg(cid:67)UZWV(cid:1)SYS(cid:62)(cid:67)ef(cid:1)S(cid:1)fSdYWf)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nd:1)Tk(cid:1)TSV(cid:1)SUfade)(cid:1)iZ(cid:62)UZ(cid:1)SdW(cid:1)YW(cid:67)WdS(cid:65)(cid:65)k(cid:1)(cid:67)af(cid:1)dWUaY(cid:67)(cid:62)lWV(cid:1)g(cid:67)f(cid:62)(cid:65)(cid:1)(cid:65)Sg(cid:67)UZWV(cid:1)SYS(cid:62)(cid:67)ef(cid:1)S(cid:1)fSdYWf)",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6::chunk0003",
+      "title": "Salesforce Signs Definitive Agreement to Acquire Informatica",
+      "summary": "Salesforce Signs Definitive Agreement to Acquire Informatica\n\ns include, among other things, statements regarding the expected benefits to Salesforce, Informatica and their respective customers from completing the transaction, plans for future investment and capital allocation, t",
+      "url": "https://www.salesforce.com/news/press-releases/2025/05/27/salesforce-signs-definitive-agreement-to-acquire-informatica/?bc=OTH",
+      "date": "2025-05-27",
+      "evidence_snippet": "Salesforce Signs Definitive Agreement to Acquire Informatica\n\ns include, among other things, statements regarding the expected benefits to Salesforce, Informatica and their respective customers from completing the transaction, plans for future investment and capital allocation, t",
+      "confidence": 0.7,
+      "source_domain": "www.salesforce.com",
+      "doc_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6"
+    },
+    {
+      "id": "crm::press::2025-05-28::news-details::e526586e::chunk0003",
+      "title": "Salesforce.com, Inc. - Salesforce Reports Record First Quarter Fiscal 2026 Results",
+      "summary": "Salesforce.com, Inc. - Salesforce Reports Record First Quarter Fiscal 2026 Results\n\nplay details of the event will be available on the Salesforce Investor Relations website at www.salesforce.com/investor . To learn more about our newest innovations and product release highlights,",
+      "url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Reports-Record-First-Quarter-Fiscal-2026-Results",
+      "date": "2025-04-30",
+      "evidence_snippet": "Salesforce.com, Inc. - Salesforce Reports Record First Quarter Fiscal 2026 Results\n\nplay details of the event will be available on the Salesforce Investor Relations website at www.salesforce.com/investor . To learn more about our newest innovations and product release highlights,",
+      "confidence": 0.7,
+      "source_domain": "investor.salesforce.com",
+      "doc_id": "crm::press::2025-05-28::news-details::e526586e"
+    },
+    {
+      "id": "crm::press::2025-01-06::news-details::ec6a2e76::chunk0000",
+      "title": "Salesforce.com, Inc. - Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows",
+      "summary": "Salesforce.com, Inc. - Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows\n\nH1: Salesforce.com, Inc. - Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows\n\nOverview Financials Quarterly Results Annual Reports SEC Filings Tax Forms Safe Harbor IAC F",
+      "url": "https://investor.salesforce.com/news/news-details/2025/Holiday-Shoppers-Spend-a-Record-1.2T-Online-Salesforce-Data-Shows",
+      "date": "2025-01-06",
+      "evidence_snippet": "Salesforce.com, Inc. - Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows\n\nH1: Salesforce.com, Inc. - Holiday Shoppers Spend a Record $1.2T Online, Salesforce Data Shows\n\nOverview Financials Quarterly Results Annual Reports SEC Filings Tax Forms Safe Harbor IAC F",
+      "confidence": 0.7,
+      "source_domain": "investor.salesforce.com",
+      "doc_id": "crm::press::2025-01-06::news-details::ec6a2e76"
+    },
+    {
+      "id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b::chunk0002",
+      "title": "Businesses Adopting AI Risk a &#039;Trust Gap&#039; with Customers - Salesforce Report",
+      "summary": "Businesses Adopting AI Risk a &#039;Trust Gap&#039; with Customers - Salesforce Report\n\n min read Artificial Intelligence 89% of customers say it’s important to know when they’re communicating with AI or a human Show more … Artificial Intelligence 80% of customers say it’s import",
+      "url": "https://www.salesforce.com/news/stories/customer-engagement-research-2023/?bc=DB",
+      "date": "2023-08-28",
+      "evidence_snippet": "Businesses Adopting AI Risk a &#039;Trust Gap&#039; with Customers - Salesforce Report\n\n min read Artificial Intelligence 89% of customers say it’s important to know when they’re communicating with AI or a human Show more … Artificial Intelligence 80% of customers say it’s import",
+      "confidence": 0.7,
+      "source_domain": "www.salesforce.com",
+      "doc_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0020",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n:62)(cid:67)UadbadSfWV(cid:1)Tk(cid:1)dWXWdW(cid:67)UW(cid:1)(cid:62)(cid:67)(cid:1)fZ(cid:62)e(cid:1) (cid:33)ad(cid:66)(cid:1).-*C)(cid:1)fZW(cid:1)Hdajk(cid:1)KfSfW(cid:66)W(cid:67)f(cid:1)(cid:62)e(cid:1)(cid:67)af(cid:1)VWW(cid:66)WV(cid:1)fa(cid:1)TW",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n:62)(cid:67)UadbadSfWV(cid:1)Tk(cid:1)dWXWdW(cid:67)UW(cid:1)(cid:62)(cid:67)(cid:1)fZ(cid:62)e(cid:1) (cid:33)ad(cid:66)(cid:1).-*C)(cid:1)fZW(cid:1)Hdajk(cid:1)KfSfW(cid:66)W(cid:67)f(cid:1)(cid:62)e(cid:1)(cid:67)af(cid:1)VWW(cid:66)WV(cid:1)fa(cid:1)TW",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0430",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n:62)f(cid:62)We(cid:1)S(cid:67)S(cid:65)kefe(cid:1)S(cid:67)V(cid:1) (cid:62)(cid:67)hWefade(cid:1)ZShW(cid:1)Wef(cid:62)(cid:66)SfWe(cid:1)S(cid:67)V(cid:1)XadWUSefe(cid:1)aX(cid:1)agd(cid:1)XgfgdW(cid:1)bWdXad(cid:66)S(cid:67)UW(cid:1)fZSf(cid:1)SdW(cid:",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n:62)f(cid:62)We(cid:1)S(cid:67)S(cid:65)kefe(cid:1)S(cid:67)V(cid:1) (cid:62)(cid:67)hWefade(cid:1)ZShW(cid:1)Wef(cid:62)(cid:66)SfWe(cid:1)S(cid:67)V(cid:1)XadWUSefe(cid:1)aX(cid:1)agd(cid:1)XgfgdW(cid:1)bWdXad(cid:66)S(cid:67)UW(cid:1)fZSf(cid:1)SdW(cid:",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0784",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)abWdSfWe(cid:1) ad(cid:1)afZWd(cid:1)WhW(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)iag(cid:65)V(cid:1)(cid:62)(cid:67)V(cid:62)USfW(cid:1)fZSf(cid:1)(cid:62)fe(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)bWd(cid:62",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)abWdSfWe(cid:1) ad(cid:1)afZWd(cid:1)WhW(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)iag(cid:65)V(cid:1)(cid:62)(cid:67)V(cid:62)USfW(cid:1)fZSf(cid:1)(cid:62)fe(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)bWd(cid:62",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0282",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nd:1)eWdh(cid:62)UWe)(cid:1)ad(cid:1)iW(cid:1)(cid:66)Sk(cid:1)W(cid:67)fWd(cid:1) (cid:67)Wi(cid:1)(cid:66)Sd(cid:64)Wfe(cid:1)fZSf(cid:1)(cid:66)Sk(cid:1)TW(cid:1)SUUa(cid:66)bS(cid:67)(cid:62)WV(cid:1)Tk(cid:1)(cid:62)(cid:67)(cid:62)f(cid:62)S(cid:65)(c",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nd:1)eWdh(cid:62)UWe)(cid:1)ad(cid:1)iW(cid:1)(cid:66)Sk(cid:1)W(cid:67)fWd(cid:1) (cid:67)Wi(cid:1)(cid:66)Sd(cid:64)Wfe(cid:1)fZSf(cid:1)(cid:66)Sk(cid:1)TW(cid:1)SUUa(cid:66)bS(cid:67)(cid:62)WV(cid:1)Tk(cid:1)(cid:62)(cid:67)(cid:62)f(cid:62)S(cid:65)(c",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0262",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n62)d(cid:1) UgddW(cid:67)f(cid:1)ea(cid:65)gf(cid:62)a(cid:67)(cid:1)fa(cid:1)S(cid:1)V(cid:62)XXWdW(cid:67)f(cid:1)W(cid:67)fWdbd(cid:62)eW(cid:1)eaXfiSdW(cid:1)eWdh(cid:62)UW+(cid:1)9VV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:65)k)(cid:1)fZ(cid:62)dV*bSdf",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n62)d(cid:1) UgddW(cid:67)f(cid:1)ea(cid:65)gf(cid:62)a(cid:67)(cid:1)fa(cid:1)S(cid:1)V(cid:62)XXWdW(cid:67)f(cid:1)W(cid:67)fWdbd(cid:62)eW(cid:1)eaXfiSdW(cid:1)eWdh(cid:62)UW+(cid:1)9VV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:65)k)(cid:1)fZ(cid:62)dV*bSdf",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0917",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\ncid:1)/(cid:1)(cid:65)(cid:62)ST(cid:62)(cid:65)(cid:62)f(cid:62)We(cid:1)i(cid:62)fZ(cid:62)(cid:67)(cid:1)fZW(cid:1)XS(cid:62)d(cid:1)hS(cid:65)gW(cid:1)(cid:66)WSegdW(cid:66)W(cid:67)f(cid:1)XdS(cid:66)Wiad(cid:64)+ 5/ LZW(cid:1)Ua(cid:67)fdSUfgS(cid:65",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\ncid:1)/(cid:1)(cid:65)(cid:62)ST(cid:62)(cid:65)(cid:62)f(cid:62)We(cid:1)i(cid:62)fZ(cid:62)(cid:67)(cid:1)fZW(cid:1)XS(cid:62)d(cid:1)hS(cid:65)gW(cid:1)(cid:66)WSegdW(cid:66)W(cid:67)f(cid:1)XdS(cid:66)Wiad(cid:64)+ 5/ LZW(cid:1)Ua(cid:67)fdSUfgS(cid:65",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0078",
+      "title": "crm-20250430",
+      "summary": "crm-20250430\n\ng services; the impact of foreign currency exchange rate fluctuations; changing interest rates and inflation; the growing complexity of our business, including the use of multiple pricing and packaging models and the increasing amount of revenue from term software l",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
+      "date": "2025-04-30",
+      "evidence_snippet": "crm-20250430\n\ng services; the impact of foreign currency exchange rate fluctuations; changing interest rates and inflation; the growing complexity of our business, including the use of multiple pricing and packaging models and the increasing amount of revenue from term software l",
+      "confidence": 0.7,
+      "source_domain": "www.sec.gov",
+      "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866"
+    },
+    {
+      "id": "crm::press::2024-10-31::news-details::c5011c5a::chunk0003",
+      "title": "Salesforce.com, Inc. - Salesforce Announces Third Quarter Fiscal 2025 Results",
+      "summary": "Salesforce.com, Inc. - Salesforce Announces Third Quarter Fiscal 2025 Results\n\nevelopment investments made over multiple years, designed to help customers drive cost savings, boost efficiency, and build trust. To view our major product releases and other highlights as part of the",
+      "url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Announces-Third-Quarter-Fiscal-2025-Results",
+      "date": "2024-10-31",
+      "evidence_snippet": "Salesforce.com, Inc. - Salesforce Announces Third Quarter Fiscal 2025 Results\n\nevelopment investments made over multiple years, designed to help customers drive cost savings, boost efficiency, and build trust. To view our major product releases and other highlights as part of the",
+      "confidence": 0.7,
+      "source_domain": "investor.salesforce.com",
+      "doc_id": "crm::press::2024-10-31::news-details::c5011c5a"
+    },
+    {
+      "id": "crm::press::2024-04-25::news-details::65e3c0b7::chunk0003",
+      "title": "Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zer",
+      "summary": "Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zero Copy Integration with Salesforce Data Cloud\n\ning data transfers, Zero Copy lets you seamlessly leverage Heroku Postgres data for powerful insights and innovat",
+      "url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+      "date": "2024-04-25",
+      "evidence_snippet": "Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zero Copy Integration with Salesforce Data Cloud\n\ning data transfers, Zero Copy lets you seamlessly leverage Heroku Postgres data for powerful insights and innovat",
+      "confidence": 0.7,
+      "source_domain": "investor.salesforce.com",
+      "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0440",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n(cid:65)(cid:1)SVhWdeW(cid:1)(cid:62)(cid:66)bSUfe(cid:1)fa(cid:1)agd(cid:1)abWdSf(cid:62)(cid:67)Y(cid:1)USeZ(cid:1)X(cid:65)aie(cid:1)ad(cid:1)dWeg(cid:65)fe(cid:1)aX(cid:1)abWdSf(cid:62)a(cid:67)e(cid:1)Xad(cid:1)S(cid:1)Y(cid:62)hW(cid:67)(cid:1)bWd(ci",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n(cid:65)(cid:1)SVhWdeW(cid:1)(cid:62)(cid:66)bSUfe(cid:1)fa(cid:1)agd(cid:1)abWdSf(cid:62)(cid:67)Y(cid:1)USeZ(cid:1)X(cid:65)aie(cid:1)ad(cid:1)dWeg(cid:65)fe(cid:1)aX(cid:1)abWdSf(cid:62)a(cid:67)e(cid:1)Xad(cid:1)S(cid:1)Y(cid:62)hW(cid:67)(cid:1)bWd(ci",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0608",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nid:67)L(cid:64)d(cid:1)(cid:14))$(cid:1)(cid:13)((cid:13)-(cid:1)LYO(cid:1)(cid:13)((cid:13), 2(cid:33)O(cid:33)GN(cid:33)L (cid:5)TY(cid:1)XTWWT(cid:61)Y(cid:65)(cid:6) KgTeUd(cid:62)bf(cid:62)a(cid:67)(cid:1)S(cid:67)V(cid:1)egbbadf HdaXWee(cid:62)a(cid:",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nid:67)L(cid:64)d(cid:1)(cid:14))$(cid:1)(cid:13)((cid:13)-(cid:1)LYO(cid:1)(cid:13)((cid:13), 2(cid:33)O(cid:33)GN(cid:33)L (cid:5)TY(cid:1)XTWWT(cid:61)Y(cid:65)(cid:6) KgTeUd(cid:62)bf(cid:62)a(cid:67)(cid:1)S(cid:67)V(cid:1)egbbadf HdaXWee(cid:62)a(cid:",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0034",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n(cid:64)L(cid:66)P(cid:1)9(cid:61)aP(cid:64)YLYNP(cid:1)(cid:1)(cid:1)(cid:1)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n(cid:64)L(cid:66)P(cid:1)9(cid:61)aP(cid:64)YLYNP(cid:1)(cid:1)(cid:1)(cid:1)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0026",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid:9)(cid",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0081",
+      "title": "crm-20250131",
+      "summary": "crm-20250131\n\n the change in unearned revenue of $1.6 billion, partially offset by the changes in accounts receivable, net of $659 million and the change in accounts payable and accrued expenses and other liabilities of $478 million. Investing Activities The net cash used in inve",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+      "date": "2025-03-05",
+      "evidence_snippet": "crm-20250131\n\n the change in unearned revenue of $1.6 billion, partially offset by the changes in accounts receivable, net of $659 million and the change in accounts payable and accrued expenses and other liabilities of $478 million. Investing Activities The net cash used in inve",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0426",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nd:1)(cid:65)WSeWe(cid:1)S(cid:67)V(cid:1)agd(cid:1)VSfS(cid:1)UW(cid:67)fWd(cid:1)USbSU(cid:62)fk(cid:1)S(cid:67)V(cid:1)WjbS(cid:67)e(cid:62)a(cid:67)8 f(cid:62)(cid:66)(cid:62)(cid:67)Y(cid:1)aX(cid:1)SVV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:1)(cid:62)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nd:1)(cid:65)WSeWe(cid:1)S(cid:67)V(cid:1)agd(cid:1)VSfS(cid:1)UW(cid:67)fWd(cid:1)USbSU(cid:62)fk(cid:1)S(cid:67)V(cid:1)WjbS(cid:67)e(cid:62)a(cid:67)8 f(cid:62)(cid:66)(cid:62)(cid:67)Y(cid:1)aX(cid:1)SVV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:1)(cid:62)",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0849",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\ncid:1)(cid:31)LY(cid:67)L(cid:64)d(cid:1)(cid:14))$ (cid:13)((cid:13)- (cid:13)((cid:13), (cid:13)((cid:13)(cid:14) (cid:4)(cid:1) 5)0//(cid:1) (cid:4)(cid:1) 4)25-(cid:1) (cid:4)(cid:1) 6)-21(cid:1) 4)/14(cid:1) 2)/5.(cid:1) 2)442(cid:1) 5)/12(cid:1) 3)3.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\ncid:1)(cid:31)LY(cid:67)L(cid:64)d(cid:1)(cid:14))$ (cid:13)((cid:13)- (cid:13)((cid:13), (cid:13)((cid:13)(cid:14) (cid:4)(cid:1) 5)0//(cid:1) (cid:4)(cid:1) 4)25-(cid:1) (cid:4)(cid:1) 6)-21(cid:1) 4)/14(cid:1) 2)/5.(cid:1) 2)442(cid:1) 5)/12(cid:1) 3)3.",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0880",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n:67))(cid:1)ShS(cid:62)(cid:65)ST(cid:65)W(cid:1)fa(cid:1)fZW(cid:1);a(cid:66)bS(cid:67)k(cid:1)Xda(cid:66)(cid:1)(cid:62)(cid:67)hWefWW(cid:1)Ua(cid:66)bS(cid:67)(cid:62)We)(cid:1)(cid:62)e(cid:1) egbb(cid:65)W(cid:66)W(cid:67)fWV(cid:1)i(cid:62)fZ(cid:1)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n:67))(cid:1)ShS(cid:62)(cid:65)ST(cid:65)W(cid:1)fa(cid:1)fZW(cid:1);a(cid:66)bS(cid:67)k(cid:1)Xda(cid:66)(cid:1)(cid:62)(cid:67)hWefWW(cid:1)Ua(cid:66)bS(cid:67)(cid:62)We)(cid:1)(cid:62)e(cid:1) egbb(cid:65)W(cid:66)W(cid:67)fWV(cid:1)i(cid:62)fZ(cid:1)",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0318",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n1)Ugefa(cid:66)Wde(cid:1)S(cid:67)V(cid:1) afZWde(cid:1)S(cid:67)V(cid:1)Xad(cid:1)VWXS(cid:66)Sf(cid:62)a(cid:67)(cid:1)S(cid:67)V(cid:1)afZWd(cid:1)fadfe(cid:1)Sd(cid:62)e(cid:62)(cid:67)Y(cid:1)Xda(cid:66)(cid:1)(cid:62)(cid:67)Xad(cid:66)Sf(cid:62)a(ci",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n1)Ugefa(cid:66)Wde(cid:1)S(cid:67)V(cid:1) afZWde(cid:1)S(cid:67)V(cid:1)Xad(cid:1)VWXS(cid:66)Sf(cid:62)a(cid:67)(cid:1)S(cid:67)V(cid:1)afZWd(cid:1)fadfe(cid:1)Sd(cid:62)e(cid:62)(cid:67)Y(cid:1)Xda(cid:66)(cid:1)(cid:62)(cid:67)Xad(cid:66)Sf(cid:62)a(ci",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0678",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n(cid:1)(cid:62)(cid:66)(cid:66)WV(cid:62)SfW(cid:1)(cid:62)(cid:67)UdWSeW(cid:1)ad(cid:1)VWUdWSeW(cid:1)(cid:62)(cid:67)(cid:1)(cid:62)(cid:67)fWdWef(cid:1)dSfWe(cid:1)aX(cid:1).--(cid:1) TSe(cid:62)e(cid:1)ba(cid:62)(cid:67)fe(cid:1)Sf(cid:1)BS(cid:67)gSd",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n(cid:1)(cid:62)(cid:66)(cid:66)WV(cid:62)SfW(cid:1)(cid:62)(cid:67)UdWSeW(cid:1)ad(cid:1)VWUdWSeW(cid:1)(cid:62)(cid:67)(cid:1)(cid:62)(cid:67)fWdWef(cid:1)dSfWe(cid:1)aX(cid:1).--(cid:1) TSe(cid:62)e(cid:1)ba(cid:62)(cid:67)fe(cid:1)Sf(cid:1)BS(cid:67)gSd",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0121",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nd:1)fZWk(cid:1)dWXWd+(cid:1)OW(cid:1)Ua(cid:67)f(cid:62)(cid:67)gW(cid:1)fa(cid:1)(cid:62)(cid:67)hWef(cid:1)(cid:62)(cid:67)(cid:1)VWhW(cid:65)ab(cid:62)(cid:67)Y(cid:1)SVV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:1) V(cid:62)efd(cid:62)Tgf(cid:62)a(cid:67)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nd:1)fZWk(cid:1)dWXWd+(cid:1)OW(cid:1)Ua(cid:67)f(cid:62)(cid:67)gW(cid:1)fa(cid:1)(cid:62)(cid:67)hWef(cid:1)(cid:62)(cid:67)(cid:1)VWhW(cid:65)ab(cid:62)(cid:67)Y(cid:1)SVV(cid:62)f(cid:62)a(cid:67)S(cid:65)(cid:1) V(cid:62)efd(cid:62)Tgf(cid:62)a(cid:67)",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0410",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n)ge(cid:1)fa(cid:1) eWdh(cid:62)UW(cid:1)agd(cid:1)VWTf(cid:1)ad(cid:1)Ua(cid:67)fdSUfgS(cid:65)(cid:1)aT(cid:65)(cid:62)YSf(cid:62)a(cid:67)e(cid:1)dWeg(cid:65)f(cid:62)(cid:67)Y(cid:1)Xda(cid:66)(cid:1)agd(cid:1)(cid:65)WSeWe+(cid:1)AX(cid:1)iW(cid:1)XS(",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n)ge(cid:1)fa(cid:1) eWdh(cid:62)UW(cid:1)agd(cid:1)VWTf(cid:1)ad(cid:1)Ua(cid:67)fdSUfgS(cid:65)(cid:1)aT(cid:65)(cid:62)YSf(cid:62)a(cid:67)e(cid:1)dWeg(cid:65)f(cid:62)(cid:67)Y(cid:1)Xda(cid:66)(cid:1)agd(cid:1)(cid:65)WSeWe+(cid:1)AX(cid:1)iW(cid:1)XS(",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0684",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\ncid:66)W(cid:67)fe)(cid:1)iZ(cid:62)UZ(cid:1)dWVgUW(cid:1)UdWV(cid:62)f(cid:1)d(cid:62)e(cid:64)(cid:1)Tk(cid:1)bWd(cid:66)(cid:62)ff(cid:62)(cid:67)Y(cid:1)(cid:67)Wf(cid:1)eWff(cid:65)W(cid:66)W(cid:67)f(cid:1)aX(cid:1)fdS(cid:67)eSUf(cid:62)a(cid:67)e(c",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\ncid:66)W(cid:67)fe)(cid:1)iZ(cid:62)UZ(cid:1)dWVgUW(cid:1)UdWV(cid:62)f(cid:1)d(cid:62)e(cid:64)(cid:1)Tk(cid:1)bWd(cid:66)(cid:62)ff(cid:62)(cid:67)Y(cid:1)(cid:67)Wf(cid:1)eWff(cid:65)W(cid:66)W(cid:67)f(cid:1)aX(cid:1)fdS(cid:67)eSUf(cid:62)a(cid:67)e(c",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0087",
+      "title": "crm-20250131",
+      "summary": "crm-20250131\n\nnded January 31, 2025, in conformity with U.S. generally accepted accounting principles. We also have audited, in accordance with the standards of the Public Company Accounting Oversight Board (United States) (PCAOB), the Company's internal control over financial re",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+      "date": "2025-03-05",
+      "evidence_snippet": "crm-20250131\n\nnded January 31, 2025, in conformity with U.S. generally accepted accounting principles. We also have audited, in accordance with the standards of the Public Company Accounting Oversight Board (United States) (PCAOB), the Company's internal control over financial re",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0807",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n)W(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)Ua(cid:67)fS(cid:62)(cid:67)(cid:1)TafZ(cid:1)(cid:65)WSeW(cid:1)S(cid:67)V(cid:1)(cid:67)a(cid:67)*(cid:65)WSeW(cid:1) Ua(cid:66)ba(cid:67)W(cid:67)fe)(cid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)ZSe(cid:1)W(cid:65)WUfWV",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n)W(cid:67)fe(cid:1)iZ(cid:62)UZ(cid:1)Ua(cid:67)fS(cid:62)(cid:67)(cid:1)TafZ(cid:1)(cid:65)WSeW(cid:1)S(cid:67)V(cid:1)(cid:67)a(cid:67)*(cid:65)WSeW(cid:1) Ua(cid:66)ba(cid:67)W(cid:67)fe)(cid:1)iZ(cid:62)UZ(cid:1)(cid:62)f(cid:1)ZSe(cid:1)W(cid:65)WUfWV",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36::chunk0000",
+      "title": "Examples | Agentforce Agents | Agentforce Developer Guide | Salesforce Developers",
+      "summary": "Examples | Agentforce Agents | Agentforce Developer Guide | Salesforce Developers\nAgent API Examples This section provides examples using the Agent API endpoints. To onboard, see Get Started with Agent API . The quickest way to get started with the Agent API is with our Postman c",
+      "url": "https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-examples.html",
+      "date": "2025-09-07",
+      "evidence_snippet": "Examples | Agentforce Agents | Agentforce Developer Guide | Salesforce Developers\nAgent API Examples This section provides examples using the Agent API endpoints. To onboard, see Get Started with Agent API . The quickest way to get started with the Agent API is with our Postman c",
+      "confidence": 0.7,
+      "source_domain": "developer.salesforce.com",
+      "doc_id": "crm::dev_docs::unknown::agent-api-examples::62fd6b36"
+    },
+    {
+      "id": "crm::press::2025-08-28::speaking-ai-why-fluency-is-the-next-essential-skill-for-workers::84dcf885::chunk0001",
+      "title": "Speaking AI: Why Fluency is the Next Essential Skill for Workers",
+      "summary": "Speaking AI: Why Fluency is the Next Essential Skill for Workers\n\ns are legally required to provide expertise and oversight to any automated advice. But most fields will benefit from the ability to weave AI reasoning together with human insight. Take our customer 1-800Accountant.",
+      "url": "https://www.salesforce.com/news/stories/ai-fluency-for-agent-human-collaboration/?bc=DB",
+      "date": "2025-08-28",
+      "evidence_snippet": "Speaking AI: Why Fluency is the Next Essential Skill for Workers\n\ns are legally required to provide expertise and oversight to any automated advice. But most fields will benefit from the ability to weave AI reasoning together with human insight. Take our customer 1-800Accountant.",
+      "confidence": 0.7,
+      "source_domain": "www.salesforce.com",
+      "doc_id": "crm::press::2025-08-28::speaking-ai-why-fluency-is-the-next-essential-skill-for-workers::84dcf885"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0602",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nbWdSf(cid:62)a(cid:67)e DaeeWe(cid:1)a(cid:67)(cid:1)efdSfWY(cid:62)U(cid:1)(cid:62)(cid:67)hWef(cid:66)W(cid:67)fe)(cid:1)(cid:67)Wf(cid:1) GfZWd(cid:1)(cid:62)(cid:67)Ua(cid:66)W(cid:1)%WjbW(cid:67)eW& A(cid:67)Ua(cid:66)W(cid:1)TWXadW(cid:1)bdah(cid:62)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nbWdSf(cid:62)a(cid:67)e DaeeWe(cid:1)a(cid:67)(cid:1)efdSfWY(cid:62)U(cid:1)(cid:62)(cid:67)hWef(cid:66)W(cid:67)fe)(cid:1)(cid:67)Wf(cid:1) GfZWd(cid:1)(cid:62)(cid:67)Ua(cid:66)W(cid:1)%WjbW(cid:67)eW& A(cid:67)Ua(cid:66)W(cid:1)TWXadW(cid:1)bdah(cid:62)",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0076",
+      "title": "crm-20250430",
+      "summary": "crm-20250430\n\nations, and significant changes in the contracting or fiscal policies of such government organizations could adversely affect our business and operating results. Contracting with federal, state, local and foreign governments or state-owned entities subjects us to va",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
+      "date": "2025-04-30",
+      "evidence_snippet": "crm-20250430\n\nations, and significant changes in the contracting or fiscal policies of such government organizations could adversely affect our business and operating results. Contracting with federal, state, local and foreign governments or state-owned entities subjects us to va",
+      "confidence": 0.7,
+      "source_domain": "www.sec.gov",
+      "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866"
+    },
+    {
+      "id": "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37::chunk0002",
+      "title": "Introducing Slack AI, Slack Lists, and New Automation Capabilities that Boost Productivity and Transform How Teams Work",
+      "summary": "Introducing Slack AI, Slack Lists, and New Automation Capabilities that Boost Productivity and Transform How Teams Work\n\ns the main productivity platform for Spotify’s advertising business.” – Spotify Advertising team Analyst reaction to the news: “How we work is rapidly evolving",
+      "url": "https://www.salesforce.com/news/stories/slack-news-dreamforce-2023/?bc=DB",
+      "date": "2023-09-06",
+      "evidence_snippet": "Introducing Slack AI, Slack Lists, and New Automation Capabilities that Boost Productivity and Transform How Teams Work\n\ns the main productivity platform for Spotify’s advertising business.” – Spotify Advertising team Analyst reaction to the news: “How we work is rapidly evolving",
+      "confidence": 0.7,
+      "source_domain": "www.salesforce.com",
+      "doc_id": "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0374",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nd:1)(cid:65)aee(cid:1)aX(cid:1)fdSVW(cid:1)bd(cid:62)h(cid:62)(cid:65)WYWe8(cid:1)X(cid:62)(cid:67)We)(cid:1)iZ(cid:62)UZ(cid:1)(cid:66)Sk(cid:1)TW(cid:1)(cid:62)(cid:66)baeWV(cid:1)a(cid:67)(cid:1) ge(cid:1)S(cid:67)V(cid:1)dWeba(cid:67)e(cid:62)T(cid:65)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nd:1)(cid:65)aee(cid:1)aX(cid:1)fdSVW(cid:1)bd(cid:62)h(cid:62)(cid:65)WYWe8(cid:1)X(cid:62)(cid:67)We)(cid:1)iZ(cid:62)UZ(cid:1)(cid:66)Sk(cid:1)TW(cid:1)(cid:62)(cid:66)baeWV(cid:1)a(cid:67)(cid:1) ge(cid:1)S(cid:67)V(cid:1)dWeba(cid:67)e(cid:62)T(cid:65)",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0495",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n7)V(cid:1)afZWd(cid:1)(cid:65)Sieg(cid:62)fe)(cid:1) S(cid:67)V(cid:1)fZW(cid:1)V(cid:62)ebae(cid:62)f(cid:62)a(cid:67)(cid:1)aX(cid:1)egUZ(cid:1)U(cid:65)S(cid:62)(cid:66)e(cid:1)S(cid:67)V(cid:1)(cid:65)Sieg(cid:62)fe)(cid:1)iZWfZWd(cid:1)fZdagYZ(cid:1)e",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n7)V(cid:1)afZWd(cid:1)(cid:65)Sieg(cid:62)fe)(cid:1) S(cid:67)V(cid:1)fZW(cid:1)V(cid:62)ebae(cid:62)f(cid:62)a(cid:67)(cid:1)aX(cid:1)egUZ(cid:1)U(cid:65)S(cid:62)(cid:66)e(cid:1)S(cid:67)V(cid:1)(cid:65)Sieg(cid:62)fe)(cid:1)iZWfZWd(cid:1)fZdagYZ(cid:1)e",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0483",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nh(cid:62)VW(cid:1) (cid:66)S(cid:67)SYW(cid:66)W(cid:67)f(cid:1)i(cid:62)fZ(cid:1)h(cid:62)e(cid:62)T(cid:62)(cid:65)(cid:62)fk(cid:1)S(cid:67)V(cid:1)bd(cid:62)ad(cid:62)f(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)d(cid:62)e(cid:64)(cid:1)(cid:66)(cid:62",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nh(cid:62)VW(cid:1) (cid:66)S(cid:67)SYW(cid:66)W(cid:67)f(cid:1)i(cid:62)fZ(cid:1)h(cid:62)e(cid:62)T(cid:62)(cid:65)(cid:62)fk(cid:1)S(cid:67)V(cid:1)bd(cid:62)ad(cid:62)f(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)d(cid:62)e(cid:64)(cid:1)(cid:66)(cid:62",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0776",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n)(cid:67)Y(cid:1)aT(cid:63)WUf(cid:62)hWe(cid:1)S(cid:67)V(cid:1)(cid:66)Sd(cid:64)Wf(cid:1)Ua(cid:67)V(cid:62)f(cid:62)a(cid:67)e+(cid:1)K(cid:62)Y(cid:67)(cid:62)X(cid:62)US(cid:67)f(cid:1)bd(cid:62)U(cid:62)(cid:67)Y(cid:1) bdSUf(cid:62)UWe(cid:1)fS(cid",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n)(cid:67)Y(cid:1)aT(cid:63)WUf(cid:62)hWe(cid:1)S(cid:67)V(cid:1)(cid:66)Sd(cid:64)Wf(cid:1)Ua(cid:67)V(cid:62)f(cid:62)a(cid:67)e+(cid:1)K(cid:62)Y(cid:67)(cid:62)X(cid:62)US(cid:67)f(cid:1)bd(cid:62)U(cid:62)(cid:67)Y(cid:1) bdSUf(cid:62)UWe(cid:1)fS(cid",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    }
+  ],
+  "insight_cards": [
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0256",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n67)V(cid:1)VWbW(cid:67)V(cid:1)a(cid:67)(cid:1)agd(cid:1)egbbadf(cid:1)adYS(cid:67)(cid:62)lSf(cid:62)a(cid:67)(cid:1)fa(cid:1)dWea(cid:65)hW(cid:1)fWUZ(cid:67)(cid:62)US(cid:65)(cid:1)(cid:62)eegWe(cid:1)dW(cid:65)Sf(cid:62)(cid:67)Y(cid:1)fa(cid:1)agd(ci",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n67)V(cid:1)VWbW(cid:67)V(cid:1)a(cid:67)(cid:1)agd(cid:1)egbbadf(cid:1)adYS(cid:67)(cid:62)lSf(cid:62)a(cid:67)(cid:1)fa(cid:1)dWea(cid:65)hW(cid:1)fWUZ(cid:67)(cid:62)US(cid:65)(cid:1)(cid:62)eegWe(cid:1)dW(cid:65)Sf(cid:62)(cid:67)Y(cid:1)fa(cid:1)agd(ci",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0604",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\n:67)fe(cid:1)dW(cid:65)SfWV(cid:1)fa(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)(cid:62)(cid:67)fS(cid:67)Y(cid:62)T(cid:65)W(cid:1)SeeWfe(cid:1)SUcg(cid:62)dWV(cid:1)fZdagYZ(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)Ua(cid:66)T(cid:62)(cid:67)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\n:67)fe(cid:1)dW(cid:65)SfWV(cid:1)fa(cid:1)S(cid:66)adf(cid:62)lSf(cid:62)a(cid:67)(cid:1)aX(cid:1)(cid:62)(cid:67)fS(cid:67)Y(cid:62)T(cid:65)W(cid:1)SeeWfe(cid:1)SUcg(cid:62)dWV(cid:1)fZdagYZ(cid:1)Tge(cid:62)(cid:67)Wee(cid:1)Ua(cid:66)T(cid:62)(cid:67)",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::press::2025-01-31::news-details::9711c8f6::chunk0009",
+      "title": "Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results",
+      "summary": "Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results\n\ns 132 0 156 4 Unearned revenue, end of period $ 20,743 $ 19,003 $ 20,743 $ 19,003 (1) Other includes, for example, the impact of foreign currency translation. Disaggregation of Revenue Subscription an",
+      "url": "https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Results",
+      "date": "2025-01-31",
+      "evidence_snippet": "Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results\n\ns 132 0 156 4 Unearned revenue, end of period $ 20,743 $ 19,003 $ 20,743 $ 19,003 (1) Other includes, for example, the impact of foreign currency translation. Disaggregation of Revenue Subscription an",
+      "confidence": 0.7,
+      "source_domain": "investor.salesforce.com",
+      "doc_id": "crm::press::2025-01-31::news-details::9711c8f6"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0372",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nd:43)NE(cid:32)(cid:1)BFI(cid:29)B(cid:46)(cid:1)(cid:43)N(cid:46)(cid:1)(cid:29)(cid:30)BEBMR(cid:1)M(cid:43)(cid:1)(cid:31)(cid:43)FI(cid:33)M(cid:33)(cid:1)BG(cid:1) BGM(cid:33)(cid:46)G(cid:29)MB(cid:43)G(cid:29)E(cid:1)F(cid:29)(cid:46)D(cid:33)ML(cid",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nd:43)NE(cid:32)(cid:1)BFI(cid:29)B(cid:46)(cid:1)(cid:43)N(cid:46)(cid:1)(cid:29)(cid:30)BEBMR(cid:1)M(cid:43)(cid:1)(cid:31)(cid:43)FI(cid:33)M(cid:33)(cid:1)BG(cid:1) BGM(cid:33)(cid:46)G(cid:29)MB(cid:43)G(cid:29)E(cid:1)F(cid:29)(cid:46)D(cid:33)ML(cid",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    },
+    {
+      "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0487",
+      "title": "Fy25 Annual Report Pdf",
+      "summary": "Fy25 Annual Report Pdf\n\nk(cid:1)aX(cid:1) efS(cid:64)WZa(cid:65)VWde)(cid:1)(cid:62)(cid:67)U(cid:65)gV(cid:62)(cid:67)Y(cid:1)bWdea(cid:67)(cid:67)W(cid:65)(cid:1)bdah(cid:62)V(cid:62)(cid:67)Y(cid:1)fWUZ(cid:67)(cid:62)US(cid:65))(cid:1)abWdSf(cid:62)a(cid:67)S(cid:65))(cid:1)W",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf",
+      "date": "2025-09-07",
+      "evidence_snippet": "Fy25 Annual Report Pdf\n\nk(cid:1)aX(cid:1) efS(cid:64)WZa(cid:65)VWde)(cid:1)(cid:62)(cid:67)U(cid:65)gV(cid:62)(cid:67)Y(cid:1)bWdea(cid:67)(cid:67)W(cid:65)(cid:1)bdah(cid:62)V(cid:62)(cid:67)Y(cid:1)fWUZ(cid:67)(cid:62)US(cid:65))(cid:1)abWdSf(cid:62)a(cid:67)S(cid:65))(cid:1)W",
+      "confidence": 0.7,
+      "source_domain": "sec.gov",
+      "doc_id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f"
+    }
+  ],
+  "email_draft": {
+    "subject": "Ideas for improving CX at Salesforce",
+    "body": "Hi there,\n\nBased on recent updates, here are a few insights that may help your CX agenda:\n\n- Fy25 Annual Report Pdf (2025-09-07) — https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf\n- Fy25 Annual Report Pdf (2025-09-07) — https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf\n- Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results (2025-01-31) — https://investor.salesforce.com/news/news-details/2025/Salesforce-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Results\n- Fy25 Annual Report Pdf (2025-09-07) — https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf\n- Fy25 Annual Report Pdf (2025-09-07) — https://www.sec.gov/Archives/edgar/data/1108524/000110852425000019/salesforce_fy25annualreport.pdf\n\nWould you be open to a quick chat to explore?\n",
+    "unsubscribe_block": "You can unsubscribe at any time by replying 'unsubscribe'.",
+    "company_info_block": "Sent by ACME AI, 123 Market St, San Francisco, CA.",
+    "proof_points": [
+      {
+        "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0256",
+        "title": "Fy25 Annual Report Pdf"
+      },
+      {
+        "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0604",
+        "title": "Fy25 Annual Report Pdf"
+      },
+      {
+        "id": "crm::press::2025-01-31::news-details::9711c8f6::chunk0009",
+        "title": "Salesforce.com, Inc. - Salesforce Announces Fourth Quarter Fiscal 2025 Results"
+      },
+      {
+        "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0372",
+        "title": "Fy25 Annual Report Pdf"
+      },
+      {
+        "id": "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f::chunk0487",
+        "title": "Fy25 Annual Report Pdf"
+      }
+    ]
+  },
+  "compliance_flags": [],
+  "metrics": {
+    "nodes_executed": [
+      "Intake",
+      "Planner",
+      "Retriever",
+      "Synthesizer",
+      "Consolidator",
+      "Stylist",
+      "A2A",
+      "Assembler"
+    ],
+    "timings": {
+      "Intake": 0.0,
+      "Planner": 0.76,
+      "Retriever": 1478.46,
+      "Synthesizer": 0.07,
+      "Consolidator": 0.01,
+      "Stylist": 0.0,
+      "A2A": 0.0,
+      "Assembler": 0.01
+    }
+  },
+  "route_decisions": [
+    {
+      "query": "What does this document say about crm-20250430?",
+      "backend": "faiss",
+      "reasons": [
+        "PERSONA_BIAS"
+      ]
+    },
+    {
+      "query": "What does this document say about fy25?",
+      "backend": "faiss",
+      "reasons": [
+        "PERSONA_BIAS"
+      ]
+    },
+    {
+      "query": "Summarize key points regarding fy25",
+      "backend": "faiss",
+      "reasons": [
+        "PERSONA_BIAS"
+      ]
+    },
+    {
+      "query": "What does this document say about salesforce.com,?",
+      "backend": "faiss",
+      "reasons": [
+        "PERSONA_BIAS"
+      ]
+    },
+    {
+      "query": "Summarize key points regarding salesforce.com,",
+      "backend": "faiss",
+      "reasons": [
+        "PERSONA_BIAS"
+      ]
+    }
+  ],
+  "errors": [],
+  "timestamp": "2025-09-11T19:14:32.832014+00:00",
+  "session_id": "285932fdd50c"
+}
