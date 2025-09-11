@@ -1,0 +1,42 @@
+weights:
+  similarity: 0.5
+  recency: 0.3
+  diversity: 0.2
+
+# Optional bias per persona key (must match personas used in eval/prompts)
+persona_bias:
+  vp_sales_ops: pinecone
+  cio: weaviate
+  vp_customer_experience: faiss
+
+# Simple keyword rules. First matching rule wins.
+# Rule shape:
+# - if:
+#     has_keywords: [list of lowercase tokens to search in query]
+#   then:
+#     backend: faiss|weaviate|pinecone
+#     reason: string code
+rules:
+  # Press/financial results → pinecone
+  - if:
+      has_keywords: [results, earnings, fiscal, guidance, gaap, non-gaap, rpo, 10-k, 10-q, 8-k]
+    then:
+      backend: pinecone
+      reason: PR_QUERY
+
+  # Developer/doc/API → weaviate (filtering/schema-friendly)
+  - if:
+      has_keywords: [api, apis, endpoint, schema, developer, example]
+    then:
+      backend: weaviate
+      reason: FILTER_MATCH
+
+  # Definitional / product overview → faiss
+  - if:
+      has_keywords: [definition, what is, overview]
+    then:
+      backend: faiss
+      reason: DEFINITION
+
+fallback_order: [faiss, weaviate, pinecone]
+top_k_default: 10
