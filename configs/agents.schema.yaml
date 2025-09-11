@@ -1,0 +1,12 @@
+roles:
+  - Sales
+  - Legal
+message_schema:
+  fields:
+    - role
+    - content
+    - flags
+    - timestamp
+limits:
+  max_rounds: 2
+

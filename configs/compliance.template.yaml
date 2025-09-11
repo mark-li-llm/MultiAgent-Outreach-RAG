@@ -1,0 +1,33 @@
+critical_rules:
+  - id: MISSING_UNSUBSCRIBE
+    desc: Email must contain an unsubscribe section
+    check: unsubscribe_block_present
+  - id: MISSING_COMPANY_INFO
+    desc: Email must contain sender company information block
+    check: company_info_block_present
+  - id: UNCITED_CLAIM
+    desc: Email body contains quantitative/absolute claims without supporting proof points
+    check: uncited_claims_present
+  - id: PROHIBITED_PHRASE
+    desc: Email body contains prohibited phrases
+    check: prohibited_phrases_present
+
+warning_rules:
+  - id: EXCESS_LENGTH
+    desc: Email body exceeds maximum word count
+    check: body_length_exceeds
+    params:
+      max_words: 160
+  - id: READABILITY
+    desc: Email body readability exceeds target grade level
+    check: readability_exceeds
+    params:
+      max_grade: 10
+
+prohibited_phrases:
+  - guaranteed
+  - free money
+  - no strings attached
+  - risk-free
+  - 100% safe
+
