@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Tuple
 
 from common import ensure_dir, now_iso
+from embedding_utils import embed_text
 
 try:
     import yaml
@@ -188,19 +189,9 @@ def run_sanity_search(vecs: List[List[float]], rows: List[Dict[str, Any]]):
     import numpy as np
     xb = np.array(vecs, dtype="float32")
     def embed_query(q: str) -> np.ndarray:
-        # Simple deterministic embedding using same hash approach as step01
-        import random, math
-        rnd = random.Random()
-        h = 0
-        for ch in q:
-            h = (h * 1315423911) ^ ord(ch)
-            h &= 0xFFFFFFFFFFFFFFFF
-        rnd.seed(h)
         dim = xb.shape[1]
-        vals = [rnd.uniform(-1.0, 1.0) for _ in range(dim)]
-        s2 = sum(v*v for v in vals) or 1.0
-        inv = 1.0 / math.sqrt(s2)
-        return np.array([v*inv for v in vals], dtype="float32").reshape(1, -1)
+        v = embed_text(q, dim)
+        return __import__("numpy").array(v, dtype="float32").reshape(1, -1)
 
     def search(q: str, topk: int = 10) -> List[int]:
         qv = embed_query(q)
@@ -211,7 +202,7 @@ def run_sanity_search(vecs: List[List[float]], rows: List[Dict[str, Any]]):
 
     queries = [
         "latest earnings results",
-        "Agentforce product announcement",
+        "agentforce product announcement",
         "remaining performance obligation definition",
     ]
     # Load chunk texts for non-empty snippet validation
@@ -226,19 +217,32 @@ def run_sanity_search(vecs: List[List[float]], rows: List[Dict[str, Any]]):
                 chunk_text[j.get("chunk_id")] = (j.get("text") or "").strip()
 
     results = {}
+    kw_sets = {
+        "latest earnings results": {"earnings", "results", "gaap", "guidance", "rpo"},
+        "agentforce product announcement": {"agentforce", "product", "announce", "ai"},
+        "remaining performance obligation definition": {"remaining", "performance", "obligation", "rpo", "definition"},
+    }
     backends = ["pinecone", "weaviate", "faiss"]
     for b in backends:
         min_topk = 10
+        kw_hit_min = 999
         for q in queries:
             ids = search(q, topk=10)
             nonempty = 0
+            kw_hits_for_q = 0
+            kws = kw_sets[q]
             for rid in ids:
                 ck = rows[rid].get("chunk_id")
-                txt = chunk_text.get(ck, "")
+                txt = (chunk_text.get(ck, "") or "").lower()
                 if txt:
                     nonempty += 1
+                hits = sum(1 for k in kws if k in txt)
+                kw_hits_for_q = max(kw_hits_for_q, hits)
             min_topk = min(min_topk, nonempty)
-        results[b] = {"min_topk": min_topk}
+            kw_hit_min = min(kw_hit_min, kw_hits_for_q)
+        if kw_hit_min == 999:
+            kw_hit_min = 0
+        results[b] = {"min_topk": min_topk, "keyword_hit_min_top10": kw_hit_min}
     return results
 
 
@@ -288,6 +292,7 @@ def main():
     # Sanity search (3×3 backends)
     sanity = run_sanity_search(vecs, rows)
     sanity_min_topk = min(v["min_topk"] for v in sanity.values()) if sanity else 0
+    sanity_kw_min = min(v.get("keyword_hit_min_top10", 0) for v in sanity.values()) if sanity else 0
 
     # Combined health summary
     health = {
@@ -296,6 +301,7 @@ def main():
         "faiss": {"count": faiss_count, "roundtrip_error_max": round(faiss_err, 8)},
         "metadata": {"pct_missing_required": round(pct_missing, 6)},
         "sanity_search": sanity,
+        "sanity_keyword_hit_min_top10": sanity_kw_min,
         "baseline_chunks": baseline_chunks,
         "embedding_rows": embedding_rows,
     }
@@ -313,6 +319,7 @@ def main():
     checks.append({"id": "G2-04", "metric": "pct_missing_required_metadata", "actual": round(pct_missing, 6), "threshold": "<=0.02", "status": "PASS" if pct_missing <= 0.02 else ("WARN" if pct_missing <= 0.03 else "FAIL"), "evidence": HEALTH_PATH})
     checks.append({"id": "G2-05", "metric": "faiss_roundtrip_error_max", "actual": round(faiss_err, 8), "threshold": "<=0.001", "status": "PASS" if faiss_err <= 0.001 else ("WARN" if faiss_err <= 0.01 else "FAIL"), "evidence": FAISS_MANIFEST_PATH})
     checks.append({"id": "G2-06", "metric": "sanity_search_min_topk", "actual": sanity_min_topk, "threshold": ">=3", "status": "PASS" if sanity_min_topk >= 3 else ("WARN" if sanity_min_topk == 2 else "FAIL"), "evidence": HEALTH_PATH})
+    checks.append({"id": "G2-07", "metric": "sanity_keyword_hit_min_top10", "actual": sanity_kw_min, "threshold": ">=1", "status": "PASS" if sanity_kw_min >= 1 else "FAIL", "evidence": HEALTH_PATH})
 
     # Status logic
     pass_map = {c["id"]: c for c in checks}
@@ -369,4 +376,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

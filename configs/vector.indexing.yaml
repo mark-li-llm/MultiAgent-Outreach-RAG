@@ -1,5 +1,5 @@
 embedding:
-  model: hash-embed
+  model: hashlex-v1
   dim: 768
   batch_size: 256
   notes: deterministic hash-based embedding for QA

@@ -10,6 +10,7 @@ from statistics import median
 from typing import Any, Dict, List, Tuple
 
 from common import ensure_dir, now_iso
+from embedding_utils import embed_text
 
 try:
     import yaml
@@ -37,23 +38,8 @@ def read_yaml_dim(path: str) -> int:
 
 
 def hash_vec(seed: str, dim: int) -> List[float]:
-    # Deterministic pseudo-random vector with near-unit norm, no zeros/NaNs
-    rnd = random.Random()
-    # Use a stable hash to seed
-    h = 0
-    for ch in seed:
-        h = (h * 1315423911) ^ ord(ch)
-        h &= 0xFFFFFFFFFFFFFFFF
-    rnd.seed(h)
-    vals = [rnd.uniform(-1.0, 1.0) for _ in range(dim)]
-    # Normalize to unit-ish length to keep IQR small
-    s2 = sum(v * v for v in vals)
-    if s2 <= 0:
-        # fallback to small non-zero vector
-        vals = [1.0 / math.sqrt(dim)] * dim
-        s2 = 1.0
-    inv = 1.0 / math.sqrt(s2)
-    return [v * inv for v in vals]
+    # Deprecated path kept for compatibility if ever referenced; prefer embed_text
+    return embed_text(seed, dim)
 
 
 def l2_norm(v: List[float]) -> float:
@@ -148,8 +134,8 @@ def main():
                 token_count = j.get("token_count") or 0
                 text = j.get("text") or ""
 
-                seed = f"{chunk_id}::{len(text)}::{token_count}"
-                v = hash_vec(seed, dim)
+                # Text-based deterministic embedding (shared with queries)
+                v = embed_text(text, dim)
                 n = l2_norm(v)
 
                 if n == 0.0:
@@ -274,4 +260,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

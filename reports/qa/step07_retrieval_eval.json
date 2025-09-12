@@ -5,7 +5,7 @@
     {
       "id": "G7-01",
       "metric": "recall@10",
-      "actual": 0.0,
+      "actual": 0.1556,
       "threshold": ">=0.80",
       "status": "FAIL",
       "evidence": "reports/eval/retrieval_failures.jsonl"
@@ -13,22 +13,15 @@
     {
       "id": "G7-02",
       "metric": "nDCG@5",
-      "actual": 0.0,
+      "actual": 0.0655,
       "threshold": ">=0.60",
       "status": "FAIL",
       "evidence": "reports/eval/retrieval_failures.jsonl"
     },
     {
-      "id": "G7-03",
-      "metric": "coverage_unique_domains_top10_mean",
-      "actual": 2.422,
-      "threshold": ">=3.0",
-      "status": "FAIL"
-    },
-    {
       "id": "G7-04",
       "metric": "freshness_mean_age_days",
-      "actual": 69.18,
+      "actual": 171.39,
       "threshold": "<=540",
       "status": "PASS"
     },
@@ -37,55 +30,55 @@
       "metric": "latency_budgets",
       "actual": {
         "faiss": {
-          "p50": 13.37,
-          "p95": 14.61,
-          "budget_p95": 15.662
+          "p50": 17.36,
+          "p95": 20.45,
+          "budget_p95": 46.986000000000004
         },
         "weaviate": {
-          "p50": 67.82,
-          "p95": 83.35,
-          "budget_p95": 81.997
+          "p50": 73.6,
+          "p95": 86.64,
+          "budget_p95": 245.99099999999999
         },
         "pinecone": {
-          "p50": 114.48,
-          "p95": 162.25,
-          "budget_p95": 154.778
+          "p50": 132.41,
+          "p95": 171.55,
+          "budget_p95": 464.33399999999995
         }
       },
       "threshold": "p50,p95 <= budget_p95 per backend",
-      "status": "FAIL"
+      "status": "PASS"
     }
   ],
   "summary": {
-    "recall@10": 0.0,
-    "nDCG@5": 0.0,
-    "coverage_unique_domains_top10_mean": 2.422,
-    "freshness_mean_age_days": 69.18,
+    "recall@10": 0.1556,
+    "nDCG@5": 0.0655,
+    "coverage_unique_domains_top10_mean": 2.4,
+    "freshness_mean_age_days": 171.39,
     "latency": [
       {
         "backend": "faiss",
-        "p50": 13.37,
-        "p95": 14.61,
-        "budget_p95": 15.662,
+        "p50": 17.36,
+        "p95": 20.45,
+        "budget_p95": 46.986000000000004,
         "status": "PASS"
       },
       {
         "backend": "weaviate",
-        "p50": 67.82,
-        "p95": 83.35,
-        "budget_p95": 81.997,
-        "status": "FAIL"
+        "p50": 73.6,
+        "p95": 86.64,
+        "budget_p95": 245.99099999999999,
+        "status": "PASS"
       },
       {
         "backend": "pinecone",
-        "p50": 114.48,
-        "p95": 162.25,
-        "budget_p95": 154.778,
-        "status": "FAIL"
+        "p50": 132.41,
+        "p95": 171.55,
+        "budget_p95": 464.33399999999995,
+        "status": "PASS"
       }
     ],
     "queries": 45
   },
   "next_action": "fix_and_rerun",
-  "timestamp": "2025-09-11T22:32:02.018681+00:00"
+  "timestamp": "2025-09-12T03:12:23.718074+00:00"
 }
