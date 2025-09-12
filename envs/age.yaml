@@ -1,0 +1,14 @@
+name: age
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - aiohttp
+  - pyyaml
+  - pyarrow>=21
+  - numpy>=2.3
+  - certifi
+  - openblas
+  - llvm-openmp
+  # IMPORTANT: Do NOT install pip faiss-cpu in this env to avoid duplicate libomp.
+

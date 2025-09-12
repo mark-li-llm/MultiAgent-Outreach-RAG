@@ -7,9 +7,18 @@ This repo uses two Python environments to avoid OpenMP conflicts while keeping F
 
 ## Create environments
 
+You can create them from the provided YAMLs (recommended):
+
+```
+conda env create -f envs/age.yaml
+conda env create -f envs/ageFaiss.yaml
+```
+
+Or create them manually:
+
 ```
 # Main env (already present in your setup)
-conda create -n age -y -c conda-forge python=3.13 aiohttp pyyaml pyarrow numpy
+conda create -n age -y -c conda-forge python=3.13 aiohttp pyyaml pyarrow numpy openblas llvm-openmp certifi
 
 # FAISS env (Python 3.12 for conda‑forge FAISS bindings)
 conda create -n ageFaiss -y -c conda-forge \
@@ -26,4 +35,3 @@ conda create -n ageFaiss -y -c conda-forge \
   `conda run -n ageFaiss python scripts/qa_step02_indexes.py`
 
 Rationale: conda‑forge FAISS wheels are currently published for Python ≤ 3.12. Installing pip FAISS into the main env can bundle a separate libomp and cause duplicate OpenMP runtime crashes. Using `ageFaiss` isolates FAISS with a consistent OpenMP/OpenBLAS stack.
-

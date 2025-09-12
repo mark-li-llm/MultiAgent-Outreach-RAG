@@ -1,0 +1,15 @@
+name: ageFaiss
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - faiss-cpu=1.9.*
+  - numpy=1.26.*
+  - scipy
+  - pyarrow=21.*
+  - openblas
+  - llvm-openmp
+  - aiohttp
+  - pyyaml
+  - certifi
+
