@@ -1,7 +1,7 @@
 {
   "step": "step02_indexes",
   "gate": "Gate-2",
-  "status": "GREEN",
+  "status": "RED",
   "checks": [
     {
       "id": "G2-01",
@@ -50,8 +50,16 @@
       "threshold": ">=3",
       "status": "PASS",
       "evidence": "data/final/reports/index_health.json"
+    },
+    {
+      "id": "G2-07",
+      "metric": "sanity_keyword_hit_min_top10",
+      "actual": 0,
+      "threshold": ">=1",
+      "status": "FAIL",
+      "evidence": "data/final/reports/index_health.json"
     }
   ],
-  "next_action": "continue",
-  "timestamp": "2025-09-08T01:25:45.637634+00:00"
+  "next_action": "fix_and_rerun",
+  "timestamp": "2025-09-12T15:39:30.588303+00:00"
 }

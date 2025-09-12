@@ -78,14 +78,39 @@ def load_embeddings() -> Tuple[List[List[float]], List[Dict[str, Any]]]:
 
 
 def build_faiss(vecs: List[List[float]], cfg: Dict[str, Any]) -> Tuple[int, float]:
+    """Build FAISS index if available; otherwise, write a disabled manifest and return counts.
+
+    Set AG2_DISABLE_FAISS=1 to skip importing/using faiss (avoids OpenMP runtime clashes).
+    """
     ensure_dir(FAISS_DIR)
+    import os as _os
+    if (_os.getenv("AG2_DISABLE_FAISS", "0") == "1"):
+        # Write a minimal manifest indicating FAISS was intentionally disabled
+        manifest = {
+            "index_type": str((cfg.get("faiss", {}) or {}).get("type", "HNSW")),
+            "metric": str((cfg.get("faiss", {}) or {}).get("metric", "L2")),
+            "disabled": True,
+            "reason": "AG2_DISABLE_FAISS=1",
+            "count": len(vecs),
+        }
+        with open(FAISS_MANIFEST_PATH, "w", encoding="utf-8") as f:
+            json.dump(manifest, f, ensure_ascii=False, indent=2)
+        return len(vecs), 0.0
+
     try:
         import faiss  # type: ignore
     except Exception:
-        # Install faiss-cpu if missing
-        import subprocess, sys
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "faiss-cpu", "--quiet"])  # noqa: S603,S607
-        import faiss  # type: ignore
+        # Do not auto-install in environments with potential OpenMP conflicts; treat as disabled
+        manifest = {
+            "index_type": str((cfg.get("faiss", {}) or {}).get("type", "HNSW")),
+            "metric": str((cfg.get("faiss", {}) or {}).get("metric", "L2")),
+            "disabled": True,
+            "reason": "faiss_import_failed",
+            "count": len(vecs),
+        }
+        with open(FAISS_MANIFEST_PATH, "w", encoding="utf-8") as f:
+            json.dump(manifest, f, ensure_ascii=False, indent=2)
+        return len(vecs), 0.0
 
     import numpy as np
 

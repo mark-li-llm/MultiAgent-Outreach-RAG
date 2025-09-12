@@ -16,15 +16,19 @@
   },
   "sanity_search": {
     "pinecone": {
-      "min_topk": 10
+      "min_topk": 10,
+      "keyword_hit_min_top10": 0
     },
     "weaviate": {
-      "min_topk": 10
+      "min_topk": 10,
+      "keyword_hit_min_top10": 0
     },
     "faiss": {
-      "min_topk": 10
+      "min_topk": 10,
+      "keyword_hit_min_top10": 0
     }
   },
+  "sanity_keyword_hit_min_top10": 0,
   "baseline_chunks": 1566,
   "embedding_rows": 1566
 }
