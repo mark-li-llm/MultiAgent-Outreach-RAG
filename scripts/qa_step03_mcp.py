@@ -67,18 +67,11 @@ async def start_stub_servers(state: Dict[str, Any], cfg: Dict[str, Any]):
     state["chunk_text"] = chunk_text
 
     def embed_query(q: str) -> Any:
-        import math
-        rnd = random.Random()
-        h = 0
-        for ch in q:
-            h = (h * 1315423911) ^ ord(ch)
-            h &= 0xFFFFFFFFFFFFFFFF
-        rnd.seed(h)
+        # Shared text-based embedding to align query/doc spaces
+        from embedding_utils import embed_text
         dim = xb.shape[1]
-        vals = [rnd.uniform(-1.0, 1.0) for _ in range(dim)]
-        s2 = sum(v*v for v in vals) or 1.0
-        inv = 1.0 / math.sqrt(s2)
-        return np.array([v*inv for v in vals], dtype="float32").reshape(1, -1)
+        v = embed_text(q, dim)
+        return __import__("numpy").array(v, dtype="float32").reshape(1, -1)
 
     state["embed_query"] = embed_query
 
@@ -111,7 +104,9 @@ async def start_stub_servers(state: Dict[str, Any], cfg: Dict[str, Any]):
         qv = state["embed_query"](q)
         import numpy as np
         dists = ((xb - qv)**2).sum(axis=1)
-        idx = np.argsort(dists)[:top_k]
+        # Take a wider candidate set, then apply lightweight lexical rerank
+        cand_k = max(top_k, 100)
+        idx = np.argsort(dists)[:cand_k]
         res = []
         for i in idx:
             row = state["rows"][int(i)]
@@ -119,9 +114,45 @@ async def start_stub_servers(state: Dict[str, Any], cfg: Dict[str, Any]):
             res.append({
                 "chunk_id": ck,
                 "doc_id": row.get("doc_id"),
-                "score": float(-float(dists[int(i)])),
+                "_vec_sim": float(1.0 / (1.0 + float(dists[int(i)]))),
                 "snippet": state["chunk_text"].get(ck, "")[:280],
             })
+        # Lexical boost
+        try:
+            from embedding_utils import tokenize as _tok
+            qset = set(_tok(q)) or set()
+            def lex_boost(snippet: str) -> float:
+                if not qset:
+                    return 0.0
+                sset = set(_tok(snippet))
+                hits = len(qset & sset)
+                return float(hits) / float(max(1, len(qset)))
+            rescored = []
+            for r in res:
+                lb = lex_boost(r.get("snippet") or "")
+                final = 0.7 * r["_vec_sim"] + 0.3 * lb
+                rescored.append((final, r))
+            rescored.sort(key=lambda x: x[0], reverse=True)
+            res = [
+                {
+                    "chunk_id": r["chunk_id"],
+                    "doc_id": r["doc_id"],
+                    "score": float(s),
+                    "snippet": r.get("snippet") or "",
+                }
+                for s, r in rescored[:top_k]
+            ]
+        except Exception:
+            # Fallback: original order with vector score only
+            res2 = []
+            for r in res[:top_k]:
+                res2.append({
+                    "chunk_id": r["chunk_id"],
+                    "doc_id": r["doc_id"],
+                    "score": float(r["_vec_sim"]),
+                    "snippet": r.get("snippet") or "",
+                })
+            res = res2
         return web.json_response({"results": res})
 
     async def handle_invoke_simple(request, required: List[str], method_name: str):
@@ -387,4 +418,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
