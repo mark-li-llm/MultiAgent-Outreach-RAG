@@ -156,6 +156,28 @@ async def main_async(args):
     chunks_index: List[Dict[str, Any]] = []
     vectors: List[List[float]] = []
     dim = int(((load_yaml(os.path.join("configs","vector.indexing.yaml")) or {}).get("embedding") or {}).get("dim") or 768)
+    # Preload chunk metadata for diagnostics (independent of online/offline)
+    # chunk_meta: chunk_id -> {doc_id, seq_no, start_char, text}
+    chunk_meta: Dict[str, Dict[str, Any]] = {}
+    for cf in sorted(glob.glob(os.path.join("data","interim","chunks","*.chunks.jsonl"))):
+        try:
+            with open(cf, "r", encoding="utf-8") as f:
+                for line in f:
+                    try:
+                        ch = json.loads(line)
+                    except Exception:
+                        continue
+                    cid = ch.get("chunk_id")
+                    if not cid:
+                        continue
+                    chunk_meta[cid] = {
+                        "doc_id": ch.get("doc_id"),
+                        "seq_no": int(ch.get("seq_no") or 0),
+                        "start_char": int(ch.get("start_char") or 0),
+                        "text": (ch.get("text") or ""),
+                    }
+        except Exception:
+            continue
     if use_offline:
         from embedding_utils import embed_text as _embed_text
         def embed_query(q: str, d: int) -> List[float]:
@@ -192,13 +214,49 @@ async def main_async(args):
     connector = aiohttp.TCPConnector(limit_per_host=8)
     session = aiohttp.ClientSession(connector=connector) if not use_offline else None
 
+    # Diagnostics configuration (env overrides)
+    try:
+        topk_eval = int(os.getenv("AG7_ANALYZE_TOPK", "10"))
+    except Exception:
+        topk_eval = 10
+    try:
+        near_seq_tol = int(os.getenv("AG7_NEAR_SEQ_TOL", "1"))
+    except Exception:
+        near_seq_tol = 1
+
+    # Helper: simple jaccard on alnum tokens
+    import re as _re
+    def _tok_alnum(s: str) -> List[str]:
+        return _re.findall(r"[a-zA-Z0-9]+", (s or "").lower())
+    def jaccard(a: str, b: str) -> float:
+        sa, sb = set(_tok_alnum(a)), set(_tok_alnum(b))
+        if not sa and not sb:
+            return 0.0
+        return len(sa & sb) / max(1, len(sa | sb))
+
     # Metrics accumulators
     total = 0
     hits = 0
     dcg5_vals: List[float] = []
+    doc_hits = 0
+    doc_dcg5_vals: List[float] = []
+    soft_hits = 0
     uniq_domain_avgs: List[float] = []
     age_avgs: List[float] = []
     lat_by_backend: Dict[str, List[float]] = {"faiss": [], "weaviate": [], "pinecone": []}
+
+    # Per-doctype diagnostics
+    by_dt_counts: Dict[str, Dict[str, int]] = {}
+    def _ensure_dt(dt: str):
+        if dt not in by_dt_counts:
+            by_dt_counts[dt] = {
+                "total": 0,
+                "chunk_hit": 0,
+                "doc_hit": 0,
+                "soft_hit": 0,
+                "doc_miss": 0,
+                "near_miss": 0,
+            }
 
     ensure_dir(os.path.dirname(FAIL_LOG))
     with open(FAIL_LOG, "w", encoding="utf-8") as flog:
@@ -212,7 +270,7 @@ async def main_async(args):
             backend, reasons = decide_backend(q, persona, None)
             # Retrieve
             if not use_offline:
-                res, lat, err = await kb_search(session, backend, q, 10, tools_cfg)
+                res, lat, err = await kb_search(session, backend, q, topk_eval, tools_cfg)
             else:
                 import time as _t
                 t0 = _t.perf_counter()
@@ -224,7 +282,7 @@ async def main_async(args):
                     scored.append((d, i))
                 scored.sort(key=lambda x: x[0])
                 res = []
-                for dist, idx in scored[:10]:
+                for dist, idx in scored[:topk_eval]:
                     ch = chunks_index[idx]
                     res.append({
                         "chunk_id": ch.get("chunk_id"),
@@ -248,6 +306,51 @@ async def main_async(args):
             dcg = (1.0 / math.log2(rank + 1)) if (rank and rank <= 5) else 0.0
             dcg5_vals.append(dcg)
 
+            # Doc-level metrics
+            exp_doc_id = "::".join(exp_cid.split("::")[:-1]) if exp_cid else ""
+            doc_ranks = [r.get("doc_id") for r in res]
+            try:
+                doc_rank = doc_ranks.index(exp_doc_id) + 1
+            except Exception:
+                doc_rank = 0
+            if doc_rank and doc_rank <= topk_eval:
+                doc_hits += 1
+            doc_dcg = (1.0 / math.log2(doc_rank + 1)) if (doc_rank and doc_rank <= 5) else 0.0
+            doc_dcg5_vals.append(doc_dcg)
+
+            # Soft (near-miss) metrics: same doc and close seq/start_char
+            near_hit = False
+            nearest_same_doc = None
+            if (not rank) and exp_doc_id:
+                # find closest candidate in same doc
+                exp_meta = chunk_meta.get(exp_cid) or {}
+                exp_seq = int(exp_meta.get("seq_no") or 0)
+                exp_start = int(exp_meta.get("start_char") or 0)
+                best = None  # (score, payload)
+                for i, r in enumerate(res):
+                    if r.get("doc_id") != exp_doc_id:
+                        continue
+                    cand_meta = chunk_meta.get(r.get("chunk_id", "")) or {}
+                    dseq = abs(int(cand_meta.get("seq_no") or 0) - exp_seq)
+                    dstart = abs(int(cand_meta.get("start_char") or 0) - exp_start)
+                    payload = {
+                        "rank": i + 1,
+                        "chunk_id": r.get("chunk_id"),
+                        "seq_no": int(cand_meta.get("seq_no") or 0),
+                        "delta_seq": int(dseq),
+                        "delta_start": int(dstart),
+                    }
+                    sc = -i  # prefer higher rank
+                    if (best is None) or (sc > best[0]):
+                        best = (sc, payload)
+                    if dseq <= near_seq_tol:
+                        near_hit = True
+                        break
+                if best is not None:
+                    nearest_same_doc = best[1]
+            if near_hit:
+                soft_hits += 1
+
             # Coverage & freshness for this query
             doms = set()
             ages: List[int] = []
@@ -269,7 +372,22 @@ async def main_async(args):
             if ages:
                 age_avgs.append(float(sum(ages) / max(1, len(ages))))
 
-            # Log failures
+            # Determine doctype bucket for diagnostics (by expected doc)
+            dt = (docmeta.get(exp_doc_id, {}) or {}).get("doctype") or (exp_doc_id.split("::")[1] if "::" in exp_doc_id else "unknown")
+            _ensure_dt(dt)
+            by_dt_counts[dt]["total"] += 1
+            if rank and rank <= topk_eval:
+                by_dt_counts[dt]["chunk_hit"] += 1
+            if doc_rank and doc_rank <= topk_eval:
+                by_dt_counts[dt]["doc_hit"] += 1
+            if near_hit:
+                by_dt_counts[dt]["soft_hit"] += 1
+            if not (doc_rank and doc_rank <= topk_eval):
+                by_dt_counts[dt]["doc_miss"] += 1
+            if (not rank) and near_hit:
+                by_dt_counts[dt]["near_miss"] += 1
+
+            # Log failures (chunk-level miss)
             if rank == 0:
                 flog.write(json.dumps({
                     "eval_id": it.get("eval_id"),
@@ -277,6 +395,14 @@ async def main_async(args):
                     "query_text": q,
                     "backend": backend,
                     "expected_chunk_id": exp_cid,
+                    # diagnostic additions
+                    "expected_doc_id": exp_doc_id,
+                    "classification": (
+                        "chunk_miss_doc_miss" if not (doc_rank and doc_rank <= topk_eval) else (
+                            "chunk_miss_doc_hit_near" if near_hit else "chunk_miss_doc_hit_far"
+                        )
+                    ),
+                    "nearest_same_doc": nearest_same_doc or {},
                     "topk": [{
                         "rank": i + 1,
                         "chunk_id": r.get("chunk_id"),
@@ -294,6 +420,11 @@ async def main_async(args):
     # Aggregates
     recall10 = hits / max(1, total)
     ndcg5 = (sum(dcg5_vals) / max(1, len(dcg5_vals)))
+    # Diagnostics metrics
+    doc_recall10 = doc_hits / max(1, total)
+    doc_ndcg5 = (sum(doc_dcg5_vals) / max(1, len(doc_dcg5_vals)))
+    soft_recall10 = soft_hits / max(1, total)
+    near_miss_rate = max(0.0, doc_recall10 - recall10)
     coverage = (sum(uniq_domain_avgs) / max(1, len(uniq_domain_avgs))) if uniq_domain_avgs else 0.0
     freshness = (sum(age_avgs) / max(1, len(age_avgs))) if age_avgs else 365.0
 
@@ -355,6 +486,21 @@ async def main_async(args):
             "freshness_mean_age_days": round(freshness, 2),
             "latency": lat_checks,
             "queries": total,
+            # diagnostics (not used for gating)
+            "doc_recall@10": round(doc_recall10, 4),
+            "soft_recall@10": round(soft_recall10, 4),
+            "doc_nDCG@5": round(doc_ndcg5, 4),
+            "near_miss_rate": round(near_miss_rate, 4),
+            "by_doctype": {
+                k: {
+                    "total": v.get("total", 0),
+                    "chunk_hit": v.get("chunk_hit", 0),
+                    "doc_hit": v.get("doc_hit", 0),
+                    "soft_hit": v.get("soft_hit", 0),
+                    "doc_miss": v.get("doc_miss", 0),
+                    "near_miss": v.get("near_miss", 0),
+                } for k, v in by_dt_counts.items()
+            },
         },
         "next_action": next_action,
         "timestamp": now_iso(),
@@ -367,6 +513,19 @@ async def main_async(args):
     lines.append("")
     for c in checks:
         lines.append(f"- {c['id']}: {c['metric']} = {c['actual']} (threshold {c.get('threshold','')}) -> {c['status']}")
+    lines.append("")
+    # Diagnostics (not gating)
+    lines.append("Diagnostics (not gating):")
+    lines.append(f"- doc_recall@10: {round(doc_recall10,4)}")
+    lines.append(f"- soft_recall@10: {round(soft_recall10,4)}")
+    lines.append(f"- doc_nDCG@5: {round(doc_ndcg5,4)}")
+    lines.append(f"- near_miss_rate: {round(near_miss_rate,4)}")
+    # Top-level by-doctype summary (first few)
+    if by_dt_counts:
+        lines.append("- by_doctype (total/chunk_hit/doc_hit/soft_hit):")
+        for k in sorted(by_dt_counts.keys()):
+            v = by_dt_counts[k]
+            lines.append(f"  - {k}: {v['total']}/{v['chunk_hit']}/{v['doc_hit']}/{v['soft_hit']}")
     lines.append("")
     lines.append("Latency by backend:")
     for c in lat_checks:

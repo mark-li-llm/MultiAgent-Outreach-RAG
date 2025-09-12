@@ -5,7 +5,7 @@
     {
       "id": "G7-01",
       "metric": "recall@10",
-      "actual": 0.1556,
+      "actual": 0.0444,
       "threshold": ">=0.80",
       "status": "FAIL",
       "evidence": "reports/eval/retrieval_failures.jsonl"
@@ -13,15 +13,22 @@
     {
       "id": "G7-02",
       "metric": "nDCG@5",
-      "actual": 0.0655,
+      "actual": 0.014,
       "threshold": ">=0.60",
       "status": "FAIL",
       "evidence": "reports/eval/retrieval_failures.jsonl"
     },
     {
+      "id": "G7-03",
+      "metric": "coverage_unique_domains_top10_mean",
+      "actual": 2.333,
+      "threshold": ">=3.0",
+      "status": "FAIL"
+    },
+    {
       "id": "G7-04",
       "metric": "freshness_mean_age_days",
-      "actual": 171.39,
+      "actual": 123.8,
       "threshold": "<=540",
       "status": "PASS"
     },
@@ -30,55 +37,109 @@
       "metric": "latency_budgets",
       "actual": {
         "faiss": {
-          "p50": 17.36,
-          "p95": 20.45,
-          "budget_p95": 46.986000000000004
+          "p50": 45.7,
+          "p95": 47.21,
+          "budget_p95": 15.662
         },
         "weaviate": {
-          "p50": 73.6,
-          "p95": 86.64,
-          "budget_p95": 245.99099999999999
+          "p50": 45.6,
+          "p95": 46.83,
+          "budget_p95": 81.997
         },
         "pinecone": {
-          "p50": 132.41,
-          "p95": 171.55,
-          "budget_p95": 464.33399999999995
+          "p50": 45.79,
+          "p95": 48.55,
+          "budget_p95": 154.778
         }
       },
       "threshold": "p50,p95 <= budget_p95 per backend",
-      "status": "PASS"
+      "status": "FAIL"
     }
   ],
   "summary": {
-    "recall@10": 0.1556,
-    "nDCG@5": 0.0655,
-    "coverage_unique_domains_top10_mean": 2.4,
-    "freshness_mean_age_days": 171.39,
+    "recall@10": 0.0444,
+    "nDCG@5": 0.014,
+    "coverage_unique_domains_top10_mean": 2.333,
+    "freshness_mean_age_days": 123.8,
     "latency": [
       {
         "backend": "faiss",
-        "p50": 17.36,
-        "p95": 20.45,
-        "budget_p95": 46.986000000000004,
-        "status": "PASS"
+        "p50": 45.7,
+        "p95": 47.21,
+        "budget_p95": 15.662,
+        "status": "FAIL"
       },
       {
         "backend": "weaviate",
-        "p50": 73.6,
-        "p95": 86.64,
-        "budget_p95": 245.99099999999999,
+        "p50": 45.6,
+        "p95": 46.83,
+        "budget_p95": 81.997,
         "status": "PASS"
       },
       {
         "backend": "pinecone",
-        "p50": 132.41,
-        "p95": 171.55,
-        "budget_p95": 464.33399999999995,
+        "p50": 45.79,
+        "p95": 48.55,
+        "budget_p95": 154.778,
         "status": "PASS"
       }
     ],
-    "queries": 45
+    "queries": 45,
+    "doc_recall@10": 0.2667,
+    "soft_recall@10": 0.0222,
+    "doc_nDCG@5": 0.0807,
+    "near_miss_rate": 0.2222,
+    "by_doctype": {
+      "10-Q": {
+        "total": 1,
+        "chunk_hit": 0,
+        "doc_hit": 1,
+        "soft_hit": 0,
+        "doc_miss": 0,
+        "near_miss": 0
+      },
+      "ars_pdf": {
+        "total": 9,
+        "chunk_hit": 0,
+        "doc_hit": 3,
+        "soft_hit": 0,
+        "doc_miss": 6,
+        "near_miss": 0
+      },
+      "press": {
+        "total": 25,
+        "chunk_hit": 1,
+        "doc_hit": 4,
+        "soft_hit": 0,
+        "doc_miss": 21,
+        "near_miss": 0
+      },
+      "product": {
+        "total": 6,
+        "chunk_hit": 0,
+        "doc_hit": 2,
+        "soft_hit": 1,
+        "doc_miss": 4,
+        "near_miss": 1
+      },
+      "dev_docs": {
+        "total": 2,
+        "chunk_hit": 0,
+        "doc_hit": 0,
+        "soft_hit": 0,
+        "doc_miss": 2,
+        "near_miss": 0
+      },
+      "wiki": {
+        "total": 2,
+        "chunk_hit": 1,
+        "doc_hit": 2,
+        "soft_hit": 0,
+        "doc_miss": 0,
+        "near_miss": 0
+      }
+    }
   },
   "next_action": "fix_and_rerun",
-  "timestamp": "2025-09-12T03:12:23.718074+00:00"
+  "timestamp": "2025-09-12T22:10:42.093343+00:00"
 }
