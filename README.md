@@ -2,35 +2,6 @@
 
 Automates trusted‑source research and audit‑ready email generation with step‑level traceability, reducing compliance back‑and‑forth from days to hours. All stages emit machine + human‑readable QA reports so you can replay, inspect, and prove what happened at each step.
 
-## Core Architecture
-
-- Orchestration (State Machine)
-  - 6+ gated stages spanning collection → normalization → embeddings → indexing → retrieval → A2A/compliance → evaluation.
-  - Replayable, traceable transitions: each gate writes JSON + Markdown reports under `reports/qa/` with evidence links.
-  - Node layout is captured declaratively (see `configs/langgraph.nodes.yaml`) and executed by stage scripts under `scripts/`.
-
-- Multi‑Agent Architecture (A2A)
-  - Planner → Retriever → Consolidator → Stylist, with agent‑to‑agent handoffs and guardrails.
-  - Planner: routing + policy selection using heuristics in `configs/router.heuristics.yaml` via `scripts/router_core.py`.
-  - Retriever: MCP `kb.search` tool (local stub) across FAISS/Weaviate/Pinecone in `scripts/qa_step03_mcp.py`.
-  - Consolidator: lightweight lexical rerank + reason capture in `scripts/router_core.py`.
-  - Stylist: A2A + compliance checks for email outputs in `scripts/qa_step06_a2a.py` and `scripts/tool_safety_check_server.py`.
-
-- MCP + Multi‑Index Routing
-  - Policy‑controlled routing across FAISS, Weaviate, and Pinecone backends with budgeted latencies and fallbacks.
-  - Endpoints and timeouts are configured in `configs/mcp.tools.yaml`; router logic in `scripts/router_core.py`.
-  - Gate‑3 validates tool health, contracts, and latency budgets; Gate‑7 evaluates retrieval quality end‑to‑end.
-
-- Shared Embeddings (hashlex‑v1)
-  - `scripts/embedding_utils.py`: normalize → tokenize (words + bigrams) → signed feature hashing (L2‑normalized).
-  - Single `embed_text(text, dim)` used for both documents and queries to preserve a shared space.
-  - Vector settings in `configs/vector.indexing.yaml` (`embedding.model: hashlex-v1`).
-
-- Scale & Performance
-  - Designed and verified on 100+ documents (≈1.6k chunks). Retrieval evaluation reports recall@10, nDCG@5, coverage, freshness, and latency.
-  - Typical local median latency is sub‑second on FAISS.
-  - Stages and services are stateless for horizontal scale; indexes can be sharded externally.
-
 ## 🏗️ System Architecture
 
 ```
@@ -79,6 +50,35 @@ Automates trusted‑source research and audit‑ready email generation with step
                          │ reports/qa/*.md   │
                          └───────────────────┘
 ```
+
+## Core Architecture
+
+- Orchestration (State Machine)
+  - 6+ gated stages spanning collection → normalization → embeddings → indexing → retrieval → A2A/compliance → evaluation.
+  - Replayable, traceable transitions: each gate writes JSON + Markdown reports under `reports/qa/` with evidence links.
+  - Node layout is captured declaratively (see `configs/langgraph.nodes.yaml`) and executed by stage scripts under `scripts/`.
+
+- Multi‑Agent Architecture (A2A)
+  - Planner → Retriever → Consolidator → Stylist, with agent‑to‑agent handoffs and guardrails.
+  - Planner: routing + policy selection using heuristics in `configs/router.heuristics.yaml` via `scripts/router_core.py`.
+  - Retriever: MCP `kb.search` tool (local stub) across FAISS/Weaviate/Pinecone in `scripts/qa_step03_mcp.py`.
+  - Consolidator: lightweight lexical rerank + reason capture in `scripts/router_core.py`.
+  - Stylist: A2A + compliance checks for email outputs in `scripts/qa_step06_a2a.py` and `scripts/tool_safety_check_server.py`.
+
+- MCP + Multi‑Index Routing
+  - Policy‑controlled routing across FAISS, Weaviate, and Pinecone backends with budgeted latencies and fallbacks.
+  - Endpoints and timeouts are configured in `configs/mcp.tools.yaml`; router logic in `scripts/router_core.py`.
+  - Gate‑3 validates tool health, contracts, and latency budgets; Gate‑7 evaluates retrieval quality end‑to‑end.
+
+- Shared Embeddings (hashlex‑v1)
+  - `scripts/embedding_utils.py`: normalize → tokenize (words + bigrams) → signed feature hashing (L2‑normalized).
+  - Single `embed_text(text, dim)` used for both documents and queries to preserve a shared space.
+  - Vector settings in `configs/vector.indexing.yaml` (`embedding.model: hashlex-v1`).
+
+- Scale & Performance
+  - Designed and verified on 100+ documents (≈1.6k chunks). Retrieval evaluation reports recall@10, nDCG@5, coverage, freshness, and latency.
+  - Typical local median latency is sub‑second on FAISS.
+  - Stages and services are stateless for horizontal scale; indexes can be sharded externally.
 
 ## Environments
 
