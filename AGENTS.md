@@ -56,6 +56,9 @@ Artifacts land in `reports/qa/` and `data/final/reports/`.
 - Gate‑7:
   - `AG7_IGNORE_COVERAGE=1` — skip coverage gating.
   - `AG7_LATENCY_MULTIPLIER=<float>` — relax latency budgets.
+  - `AG7_ANALYZE_TOPK=<int>` — set retrieval cut‑off for evaluation (default 10).
+  - `AG7_TOPK_SLICES="1,3,5,10"` — additional @k slices to report (recall curves).
+  - `AG7_NEAR_SEQ_TOL=<int>` — tolerance (chunks) to count near‑miss within same doc (default 1).
 - Gate‑2:
   - Prefer running in `ageFaiss`. Avoid installing pip `faiss-cpu` inside `age`.
 

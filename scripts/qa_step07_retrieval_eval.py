@@ -23,6 +23,9 @@ FAIL_LOG = os.path.join("reports", "eval", "retrieval_failures.jsonl")
 OUT_JSON = os.path.join("reports", "qa", "step07_retrieval_eval.json")
 OUT_MD = os.path.join("reports", "qa", "step07_retrieval_eval.md")
 
+# Optional: look into built embeddings to verify expected chunks exist in the vector space
+EMB_PARQUET = os.path.join("data", "vector", "embeddings", "embeddings.parquet")
+
 
 def load_yaml(path: str) -> Dict[str, Any]:
     try:
@@ -223,6 +226,12 @@ async def main_async(args):
         near_seq_tol = int(os.getenv("AG7_NEAR_SEQ_TOL", "1"))
     except Exception:
         near_seq_tol = 1
+    # Additional top-k slices to analyze (comma-separated), subset of [1,3,5,10,20]
+    _topk_slices_env = os.getenv("AG7_TOPK_SLICES", "1,3,5,10")
+    try:
+        topk_slices = sorted({int(x) for x in _topk_slices_env.split(",") if str(x).strip()})
+    except Exception:
+        topk_slices = [1, 3, 5, 10]
 
     # Helper: simple jaccard on alnum tokens
     import re as _re
@@ -241,9 +250,21 @@ async def main_async(args):
     doc_hits = 0
     doc_dcg5_vals: List[float] = []
     soft_hits = 0
+    # Rank collections for diagnostics
+    chunk_hit_ranks: List[int] = []
+    doc_hit_ranks: List[int] = []
+    # Multi-k hit counters
+    chunk_hits_at_k: Dict[int, int] = {k: 0 for k in topk_slices}
+    doc_hits_at_k: Dict[int, int] = {k: 0 for k in topk_slices}
     uniq_domain_avgs: List[float] = []
     age_avgs: List[float] = []
     lat_by_backend: Dict[str, List[float]] = {"faiss": [], "weaviate": [], "pinecone": []}
+    # Per-backend quality metrics
+    backend_quality: Dict[str, Dict[str, Any]] = {
+        "faiss": {"total": 0, "chunk_hit": 0, "doc_hit": 0, "dcg5": [], "doc_dcg5": [], "near_miss": 0},
+        "weaviate": {"total": 0, "chunk_hit": 0, "doc_hit": 0, "dcg5": [], "doc_dcg5": [], "near_miss": 0},
+        "pinecone": {"total": 0, "chunk_hit": 0, "doc_hit": 0, "dcg5": [], "doc_dcg5": [], "near_miss": 0},
+    }
 
     # Per-doctype diagnostics
     by_dt_counts: Dict[str, Dict[str, int]] = {}
@@ -258,6 +279,19 @@ async def main_async(args):
                 "near_miss": 0,
             }
 
+    # Expected chunk existence checks (optional)
+    exp_in_chunks_index: Dict[str, bool] = {cid: True for cid in chunk_meta.keys()}
+    exp_in_embeddings: Dict[str, bool] = {}
+    if os.path.exists(EMB_PARQUET):
+        try:
+            import pyarrow.parquet as _pq  # type: ignore
+            t = _pq.read_table(EMB_PARQUET, columns=["chunk_id"])  # type: ignore
+            col = t.column("chunk_id")
+            emb_ids = set(col.to_pylist())
+            exp_in_embeddings = {cid: (cid in emb_ids) for cid in chunk_meta.keys()}
+        except Exception:
+            exp_in_embeddings = {}
+
     ensure_dir(os.path.dirname(FAIL_LOG))
     with open(FAIL_LOG, "w", encoding="utf-8") as flog:
         for it in seed:
@@ -268,6 +302,7 @@ async def main_async(args):
                 continue
             total += 1
             backend, reasons = decide_backend(q, persona, None)
+            backend_quality.setdefault(backend, backend_quality.get(backend, {"total": 0, "chunk_hit": 0, "doc_hit": 0, "dcg5": [], "doc_dcg5": [], "near_miss": 0}))
             # Retrieve
             if not use_offline:
                 res, lat, err = await kb_search(session, backend, q, topk_eval, tools_cfg)
@@ -302,9 +337,19 @@ async def main_async(args):
                 rank = 0
             if rank and rank <= 10:
                 hits += 1
+                chunk_hit_ranks.append(rank)
+            # multi-k updates
+            for k in topk_slices:
+                if rank and rank <= k:
+                    chunk_hits_at_k[k] = chunk_hits_at_k.get(k, 0) + 1
             # binary DCG@5
             dcg = (1.0 / math.log2(rank + 1)) if (rank and rank <= 5) else 0.0
             dcg5_vals.append(dcg)
+            # backend quality updates
+            backend_quality[backend]["total"] += 1
+            if rank and rank <= topk_eval:
+                backend_quality[backend]["chunk_hit"] += 1
+            backend_quality[backend]["dcg5"].append(dcg)
 
             # Doc-level metrics
             exp_doc_id = "::".join(exp_cid.split("::")[:-1]) if exp_cid else ""
@@ -315,8 +360,15 @@ async def main_async(args):
                 doc_rank = 0
             if doc_rank and doc_rank <= topk_eval:
                 doc_hits += 1
+                doc_hit_ranks.append(doc_rank)
+            for k in topk_slices:
+                if doc_rank and doc_rank <= k:
+                    doc_hits_at_k[k] = doc_hits_at_k.get(k, 0) + 1
             doc_dcg = (1.0 / math.log2(doc_rank + 1)) if (doc_rank and doc_rank <= 5) else 0.0
             doc_dcg5_vals.append(doc_dcg)
+            if doc_rank and doc_rank <= topk_eval:
+                backend_quality[backend]["doc_hit"] += 1
+            backend_quality[backend]["doc_dcg5"].append(doc_dcg)
 
             # Soft (near-miss) metrics: same doc and close seq/start_char
             near_hit = False
@@ -386,6 +438,7 @@ async def main_async(args):
                 by_dt_counts[dt]["doc_miss"] += 1
             if (not rank) and near_hit:
                 by_dt_counts[dt]["near_miss"] += 1
+                backend_quality[backend]["near_miss"] += 1
 
             # Log failures (chunk-level miss)
             if rank == 0:
@@ -402,6 +455,8 @@ async def main_async(args):
                             "chunk_miss_doc_hit_near" if near_hit else "chunk_miss_doc_hit_far"
                         )
                     ),
+                    "expected_present_in_chunks": bool(exp_in_chunks_index.get(exp_cid, False)),
+                    "expected_present_in_embeddings": (exp_in_embeddings.get(exp_cid) if exp_in_embeddings else None),
                     "nearest_same_doc": nearest_same_doc or {},
                     "topk": [{
                         "rank": i + 1,
@@ -427,6 +482,25 @@ async def main_async(args):
     near_miss_rate = max(0.0, doc_recall10 - recall10)
     coverage = (sum(uniq_domain_avgs) / max(1, len(uniq_domain_avgs))) if uniq_domain_avgs else 0.0
     freshness = (sum(age_avgs) / max(1, len(age_avgs))) if age_avgs else 365.0
+
+    # Multi-k recalls
+    recall_at = {f"@{k}": round((chunk_hits_at_k.get(k, 0) / max(1, total)), 4) for k in sorted(chunk_hits_at_k.keys())}
+    doc_recall_at = {f"@{k}": round((doc_hits_at_k.get(k, 0) / max(1, total)), 4) for k in sorted(doc_hits_at_k.keys())}
+
+    # Rank stats (only on hits)
+    def _rank_stats(ranks: List[int]) -> Dict[str, Any]:
+        if not ranks:
+            return {"count": 0, "p50": None, "p75": None, "p90": None, "max": None}
+        s = sorted(ranks)
+        return {
+            "count": len(s),
+            "p50": int(s[len(s)//2]),
+            "p75": int(s[int(0.75*(len(s)-1))]),
+            "p90": int(s[int(0.90*(len(s)-1))]),
+            "max": int(s[-1]),
+        }
+    chunk_rank_stats = _rank_stats(chunk_hit_ranks)
+    doc_rank_stats = _rank_stats(doc_hit_ranks)
 
     # Latency budgets
     # Apply latency budget relaxation if requested
@@ -475,6 +549,24 @@ async def main_async(args):
 
     # Write reports
     ensure_dir(os.path.dirname(OUT_JSON))
+    # Backend metrics summary
+    backend_summary = {}
+    for b in ("faiss", "weaviate", "pinecone"):
+        q = backend_quality.get(b, {"total": 0, "chunk_hit": 0, "doc_hit": 0, "dcg5": [], "doc_dcg5": [], "near_miss": 0})
+        total_b = max(1, int(q.get("total", 0)))
+        backend_summary[b] = {
+            "queries": int(q.get("total", 0)),
+            "chunk_recall@10": round(q.get("chunk_hit", 0) / total_b, 4),
+            "doc_recall@10": round(q.get("doc_hit", 0) / total_b, 4),
+            "nDCG@5": round((sum(q.get("dcg5", [])) / max(1, len(q.get("dcg5", [])))), 4),
+            "doc_nDCG@5": round((sum(q.get("doc_dcg5", [])) / max(1, len(q.get("doc_dcg5", [])))), 4),
+            "near_miss_count": int(q.get("near_miss", 0)),
+            "latency_ms": {
+                "p50": round(pct(lat_by_backend.get(b, []), 50.0), 2),
+                "p95": round(pct(lat_by_backend.get(b, []), 95.0), 2),
+            },
+        }
+
     machine = {
         "step": "step07_retrieval_eval",
         "status": status,
@@ -487,10 +579,13 @@ async def main_async(args):
             "latency": lat_checks,
             "queries": total,
             # diagnostics (not used for gating)
+            "recall_at": recall_at,
+            "doc_recall_at": doc_recall_at,
             "doc_recall@10": round(doc_recall10, 4),
             "soft_recall@10": round(soft_recall10, 4),
             "doc_nDCG@5": round(doc_ndcg5, 4),
             "near_miss_rate": round(near_miss_rate, 4),
+            "rank_stats": {"chunk": chunk_rank_stats, "doc": doc_rank_stats},
             "by_doctype": {
                 k: {
                     "total": v.get("total", 0),
@@ -501,6 +596,7 @@ async def main_async(args):
                     "near_miss": v.get("near_miss", 0),
                 } for k, v in by_dt_counts.items()
             },
+            "by_backend": backend_summary,
         },
         "next_action": next_action,
         "timestamp": now_iso(),
@@ -516,10 +612,18 @@ async def main_async(args):
     lines.append("")
     # Diagnostics (not gating)
     lines.append("Diagnostics (not gating):")
+    # Recall curves
+    if recall_at:
+        lines.append(f"- recall@k: {recall_at}")
+    if doc_recall_at:
+        lines.append(f"- doc_recall@k: {doc_recall_at}")
     lines.append(f"- doc_recall@10: {round(doc_recall10,4)}")
     lines.append(f"- soft_recall@10: {round(soft_recall10,4)}")
     lines.append(f"- doc_nDCG@5: {round(doc_ndcg5,4)}")
     lines.append(f"- near_miss_rate: {round(near_miss_rate,4)}")
+    # Rank stats
+    lines.append(f"- rank_stats.chunk: {chunk_rank_stats}")
+    lines.append(f"- rank_stats.doc: {doc_rank_stats}")
     # Top-level by-doctype summary (first few)
     if by_dt_counts:
         lines.append("- by_doctype (total/chunk_hit/doc_hit/soft_hit):")
@@ -530,6 +634,11 @@ async def main_async(args):
     lines.append("Latency by backend:")
     for c in lat_checks:
         lines.append(f"- {c['backend']}: p50={c['p50']} p95={c['p95']} budget_p95={c['budget_p95']} -> {c['status']}")
+    # Backend quality snapshot
+    lines.append("")
+    lines.append("Per-backend quality (queries, recall@10, doc_recall@10, nDCG@5, doc_nDCG@5):")
+    for b, q in backend_summary.items():
+        lines.append(f"- {b}: {q['queries']}, {q['chunk_recall@10']}, {q['doc_recall@10']}, {q['nDCG@5']}, {q['doc_nDCG@5']}")
     with open(OUT_MD, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
