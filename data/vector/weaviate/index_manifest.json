@@ -1,9 +1,0 @@
-{
-  "inserted": 1566,
-  "failed": 0,
-  "failed_ids": [],
-  "config": {
-    "class_name": "Doc",
-    "notes": "schema-only manifest (simulated)"
-  }
-}
