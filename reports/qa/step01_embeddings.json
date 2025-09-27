@@ -1,0 +1,49 @@
+{
+  "step": "step01_embeddings",
+  "gate": "Gate-1",
+  "status": "GREEN",
+  "checks": [
+    {
+      "id": "G1-01",
+      "metric": "embedding_rows",
+      "actual": 1566,
+      "threshold": "== baseline_chunks (1566)",
+      "status": "PASS",
+      "evidence": "data/vector/embeddings/embedding_stats.json"
+    },
+    {
+      "id": "G1-02",
+      "metric": "vector_dim",
+      "actual": 768,
+      "threshold": "== 768 (from config)",
+      "status": "PASS",
+      "evidence": "configs/vector.indexing.yaml"
+    },
+    {
+      "id": "G1-03a",
+      "metric": "zero_vectors",
+      "actual": 0,
+      "threshold": "==0",
+      "status": "PASS",
+      "evidence": "data/vector/embeddings/embedding_stats.json"
+    },
+    {
+      "id": "G1-03b",
+      "metric": "nan_vectors",
+      "actual": 0,
+      "threshold": "==0",
+      "status": "PASS",
+      "evidence": "data/vector/embeddings/embedding_stats.json"
+    },
+    {
+      "id": "G1-04",
+      "metric": "pct_norm_outliers",
+      "actual": 0.0,
+      "threshold": "<=0.005",
+      "status": "PASS",
+      "evidence": "data/vector/embeddings/embedding_stats.json"
+    }
+  ],
+  "next_action": "continue",
+  "timestamp": "2025-09-12T03:07:41.261357+00:00"
+}

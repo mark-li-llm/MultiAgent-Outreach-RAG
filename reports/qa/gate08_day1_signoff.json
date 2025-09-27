@@ -1,0 +1,107 @@
+{
+  "gate": "G08_DAY1_SIGNOFF",
+  "computed_at": "2025-09-08T00:45:57.690667+00:00",
+  "summary": {
+    "total_docs": 97,
+    "docs_with_dates": 97,
+    "chunks_total": 1566,
+    "duplicates_removed": 97,
+    "link_ok_pct": 1.0,
+    "inventory_rows": 97,
+    "inventory_doc_id_unique": true,
+    "pr_docs_since_2024": 73,
+    "pr_docs_last_12mo": 67,
+    "required_fields_presence_overall": 0.9897
+  },
+  "checks": [
+    {
+      "id": "FIN-001",
+      "metric": "docs_with_dates",
+      "actual": 97,
+      "threshold": ">=80",
+      "status": "PASS"
+    },
+    {
+      "id": "FIN-002",
+      "metric": "fetched_docs_cap",
+      "actual": 97,
+      "threshold": "<=120",
+      "status": "PASS"
+    },
+    {
+      "id": "FIN-003",
+      "metric": "duplicate_ratio",
+      "actual": 0.0583,
+      "threshold": "<=0.15",
+      "status": "PASS"
+    },
+    {
+      "id": "FIN-004",
+      "metric": "link_ok_pct",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS"
+    },
+    {
+      "id": "FIN-005",
+      "metric": "required_fields_presence_overall",
+      "actual": 0.9897,
+      "threshold": ">=0.98",
+      "status": "PASS"
+    },
+    {
+      "id": "FIN-006",
+      "metric": "pr_docs_since_2024",
+      "actual": 73,
+      "threshold": ">=15",
+      "status": "PASS"
+    },
+    {
+      "id": "FIN-007",
+      "metric": "pr_docs_last_12mo",
+      "actual": 67,
+      "threshold": ">=8",
+      "status": "PASS"
+    },
+    {
+      "id": "FIN-008",
+      "metric": "inventory_row_count_match",
+      "actual": true,
+      "threshold": "==true",
+      "status": "PASS"
+    },
+    {
+      "id": "FIN-009",
+      "metric": "inventory_doc_id_unique",
+      "actual": true,
+      "threshold": "==true",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "evidence": {
+    "failed_checks": [],
+    "domain_breakdown": {
+      "www.salesforce.com": 68,
+      "investor.salesforce.com": 18,
+      "developer.salesforce.com": 4,
+      "www.sec.gov": 1,
+      "sec.gov": 4,
+      "help.salesforce.com": 1,
+      "en.wikipedia.org": 1
+    },
+    "inventory_sample": [
+      "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
+      "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866",
+      "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4",
+      "crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586",
+      "crm::ars_pdf::unknown::fy25-annual-report-pdf::1b31e86f",
+      "crm::dev_docs::unknown::agent-api-developer-guide::6f4b900c",
+      "crm::dev_docs::unknown::agent-api-examples::62fd6b36",
+      "crm::dev_docs::unknown::get-started-with-agentforce-agents::5ac08bad",
+      "crm::dev_docs::unknown::get-started-with-the-agent-api::202f14da",
+      "crm::help_docs::unknown::salesforce-help::d75a8e9c"
+    ],
+    "log_path": "logs/signoff/20250908_004557.log"
+  }
+}

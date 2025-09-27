@@ -1,0 +1,5 @@
+2025-09-07 12:41:57,924 [INFO] Saved meta for crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2 (status 0)
+2025-09-07 12:41:58,039 [INFO] Saved meta for crm::10-Q::unknown::fy26-q1-form-10-q::e16f2866 (status 0)
+2025-09-07 12:41:58,202 [INFO] Saved meta for crm::8-K::2025-02-26::fy25-results-8-k::97457068 (status 0)
+2025-09-07 12:41:58,364 [INFO] Saved meta for crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4 (status 0)
+2025-09-07 12:41:58,365 [INFO] Fetched 4 SEC items. Logs: logs/fetch/20250907_124150.log

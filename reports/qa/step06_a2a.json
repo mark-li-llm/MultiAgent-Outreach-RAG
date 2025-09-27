@@ -1,0 +1,51 @@
+{
+  "step": "step06_a2a",
+  "status": "GREEN",
+  "checks": [
+    {
+      "id": "G6-01",
+      "metric": "negotiation_rounds",
+      "actual": 2,
+      "threshold": "<=2",
+      "status": "PASS",
+      "evidence": "outputs/step6demo/a2a_transcript.jsonl"
+    },
+    {
+      "id": "G6-02",
+      "metric": "critical_flags_count",
+      "actual": 0,
+      "threshold": "==0",
+      "status": "PASS",
+      "evidence": "outputs/step6demo/compliance_report.json"
+    },
+    {
+      "id": "G6-03",
+      "metric": "email_body_words",
+      "actual": 57,
+      "threshold": "<=160",
+      "status": "PASS",
+      "evidence": "outputs/step6demo/email.json"
+    },
+    {
+      "id": "G6-04",
+      "metric": "readability_grade",
+      "actual": 9.53,
+      "threshold": "<=10",
+      "status": "PASS",
+      "evidence": "outputs/step6demo/email.json"
+    },
+    {
+      "id": "G6-05",
+      "metric": "proof_points_reference_ok",
+      "actual": true,
+      "threshold": "==true",
+      "status": "PASS",
+      "evidence": "outputs/step6demo/email.json"
+    }
+  ],
+  "timestamp": "2025-09-11T21:30:17.293005+00:00",
+  "evidence": {
+    "session_id": "step6demo",
+    "out_dir": "outputs/step6demo"
+  }
+}

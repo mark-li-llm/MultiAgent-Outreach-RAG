@@ -1,0 +1,65 @@
+{
+  "step": "step02_indexes",
+  "gate": "Gate-2",
+  "status": "RED",
+  "checks": [
+    {
+      "id": "G2-01",
+      "metric": "pinecone_upsert_rate",
+      "actual": 1.0,
+      "threshold": ">=0.98",
+      "status": "PASS",
+      "evidence": "data/vector/pinecone/index_manifest.json"
+    },
+    {
+      "id": "G2-02",
+      "metric": "weaviate_upsert_rate",
+      "actual": 1.0,
+      "threshold": ">=0.98",
+      "status": "PASS",
+      "evidence": "data/vector/weaviate/index_manifest.json"
+    },
+    {
+      "id": "G2-03",
+      "metric": "faiss_count_ratio",
+      "actual": 1.0,
+      "threshold": ">=0.98",
+      "status": "PASS",
+      "evidence": "data/vector/faiss/faiss_manifest.json"
+    },
+    {
+      "id": "G2-04",
+      "metric": "pct_missing_required_metadata",
+      "actual": 0.0,
+      "threshold": "<=0.02",
+      "status": "PASS",
+      "evidence": "data/final/reports/index_health.json"
+    },
+    {
+      "id": "G2-05",
+      "metric": "faiss_roundtrip_error_max",
+      "actual": 0.0,
+      "threshold": "<=0.001",
+      "status": "PASS",
+      "evidence": "data/vector/faiss/faiss_manifest.json"
+    },
+    {
+      "id": "G2-06",
+      "metric": "sanity_search_min_topk",
+      "actual": 10,
+      "threshold": ">=3",
+      "status": "PASS",
+      "evidence": "data/final/reports/index_health.json"
+    },
+    {
+      "id": "G2-07",
+      "metric": "sanity_keyword_hit_min_top10",
+      "actual": 0,
+      "threshold": ">=1",
+      "status": "FAIL",
+      "evidence": "data/final/reports/index_health.json"
+    }
+  ],
+  "next_action": "fix_and_rerun",
+  "timestamp": "2025-09-12T15:39:30.588303+00:00"
+}

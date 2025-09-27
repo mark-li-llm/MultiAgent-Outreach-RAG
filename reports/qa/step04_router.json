@@ -1,0 +1,73 @@
+{
+  "step": "step04_router",
+  "gate": "Gate-4",
+  "status": "GREEN",
+  "checks": [
+    {
+      "id": "COV-pinecone",
+      "metric": "pinecone_route_share",
+      "actual": 0.3333,
+      "threshold": ">=0.10 or >=1 route",
+      "status": "PASS",
+      "evidence": "reports/router/step04_router_trace.jsonl"
+    },
+    {
+      "id": "COV-weaviate",
+      "metric": "weaviate_route_share",
+      "actual": 0.3333,
+      "threshold": ">=0.10 or >=1 route",
+      "status": "PASS",
+      "evidence": "reports/router/step04_router_trace.jsonl"
+    },
+    {
+      "id": "COV-faiss",
+      "metric": "faiss_route_share",
+      "actual": 0.3333,
+      "threshold": ">=0.10 or >=1 route",
+      "status": "PASS",
+      "evidence": "reports/router/step04_router_trace.jsonl"
+    },
+    {
+      "id": "EMP-001",
+      "metric": "empty_result_rate",
+      "actual": 0.0,
+      "threshold": "<=0.02",
+      "status": "PASS"
+    },
+    {
+      "id": "EMP-002",
+      "metric": "auto_retry_success_rate",
+      "actual": 1.0,
+      "threshold": ">=0.95 (if any empty)",
+      "status": "PASS"
+    },
+    {
+      "id": "FRS-001",
+      "metric": "avg_doc_age_days",
+      "actual": 69.18,
+      "threshold": "<=365",
+      "status": "PASS"
+    },
+    {
+      "id": "DIV-001",
+      "metric": "mean_unique_domains_top10",
+      "actual": 2.422,
+      "threshold": ">=2.4 (AMBER if >=2.3)",
+      "status": "PASS"
+    }
+  ],
+  "metrics": {
+    "total_queries": 45,
+    "route_counts": {
+      "faiss": 15,
+      "weaviate": 15,
+      "pinecone": 15
+    },
+    "empty_result_rate": 0.0,
+    "auto_retry_success_rate": 1.0,
+    "avg_doc_age_days": 69.18,
+    "mean_unique_domains_top10": 2.422
+  },
+  "next_action": "continue",
+  "timestamp": "2025-09-11T19:07:29.374022+00:00"
+}

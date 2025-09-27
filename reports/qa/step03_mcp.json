@@ -1,0 +1,101 @@
+{
+  "step": "step03_mcp",
+  "gate": "Gate-3",
+  "status": "GREEN",
+  "checks": [
+    {
+      "id": "G3-01",
+      "metric": "health_endpoints_ok",
+      "actual": 5,
+      "threshold": "==5 tools",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    },
+    {
+      "id": "G3-02",
+      "metric": "contract_ok_rate_kb.search",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    },
+    {
+      "id": "G3-02-web_fetch",
+      "metric": "contract_ok_rate_web.fetch",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    },
+    {
+      "id": "G3-02-link_resolve",
+      "metric": "contract_ok_rate_link.resolve",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    },
+    {
+      "id": "G3-02-crm_lookup",
+      "metric": "contract_ok_rate_crm.lookup",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    },
+    {
+      "id": "G3-02-safety_check",
+      "metric": "contract_ok_rate_safety.check",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    },
+    {
+      "id": "G3-03-pinecone",
+      "metric": "pinecone_latency_budget",
+      "actual": {
+        "p50": 106.555,
+        "p95": 128.982,
+        "budget_p95": 154.778
+      },
+      "threshold": "p50,p95 <= budget",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    },
+    {
+      "id": "G3-03-weaviate",
+      "metric": "weaviate_latency_budget",
+      "actual": {
+        "p50": 54.323,
+        "p95": 68.331,
+        "budget_p95": 81.997
+      },
+      "threshold": "p50,p95 <= budget",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    },
+    {
+      "id": "G3-03-faiss",
+      "metric": "faiss_latency_budget",
+      "actual": {
+        "p50": 10.249,
+        "p95": 13.052,
+        "budget_p95": 15.662
+      },
+      "threshold": "p50,p95 <= budget",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    },
+    {
+      "id": "G3-04",
+      "metric": "timeout_rate",
+      "actual": 0.0,
+      "threshold": "==0.0",
+      "status": "PASS",
+      "evidence": "logs/mcp/step03_probes.jsonl"
+    }
+  ],
+  "next_action": "continue",
+  "timestamp": "2025-09-11T22:08:21.595245+00:00"
+}
