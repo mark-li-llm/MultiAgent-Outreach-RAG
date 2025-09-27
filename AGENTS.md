@@ -51,6 +51,7 @@ Artifacts land in `reports/qa/` and `data/final/reports/`.
 - Gate‑1: `reports/qa/step01_embeddings.{json,md}`
 - Gate‑2: `reports/qa/step02_indexes.{json,md}` (+ `data/final/reports/index_health.json`)
 - Gate‑7: `reports/qa/step07_retrieval_eval.{json,md}` and failure log `reports/eval/retrieval_failures.jsonl`
+  - Trace (optional when `AG7_TRACE=1`): `reports/router/step07_retrieval_trace.jsonl`
 
 ## Useful toggles
 - Gate‑7:
@@ -59,6 +60,10 @@ Artifacts land in `reports/qa/` and `data/final/reports/`.
   - `AG7_ANALYZE_TOPK=<int>` — set retrieval cut‑off for evaluation (default 10).
   - `AG7_TOPK_SLICES="1,3,5,10"` — additional @k slices to report (recall curves).
   - `AG7_NEAR_SEQ_TOL=<int>` — tolerance (chunks) to count near‑miss within same doc (default 1).
+  - `AG7_TRACE=1` — enable per‑query trace JSONL for step‑07 (default 1).
+  - `AG7_TRACE_TOPK=<int>` — how many top‑K items to capture in trace (default 10).
+  - `AG7_TRACE_SUCCESSES=1` — include successes in trace (default 1; set 0 to log only misses).
+  - `AG7_DEBUG=1` — umbrella switch that enables tracing by default (default 1). Set `AG7_DEBUG=0` or `AG7_TRACE=0` to disable.
 - Gate‑2:
   - Prefer running in `ageFaiss`. Avoid installing pip `faiss-cpu` inside `age`.
 

@@ -302,8 +302,8 @@ async def main_async(args):
                     ok_invalid += 1
             contract_rates[name] = ok_invalid / max(1, len(invalid_list))
 
-        # Latency sampling for kb.search
-        # Load 15 distinct queries from eval seed
+        # Latency sampling for kb.search — gather 15 queries robustly
+        # Load from eval seed; if insufficient, pad with fallback pool
         queries: List[str] = []
         seen = set()
         try:
@@ -315,9 +315,21 @@ async def main_async(args):
                         seen.add(qt)
                         queries.append(qt)
         except Exception:
-            # fallback queries
-            queries = ["latest earnings results", "Agentforce product announcement", "remaining performance obligation definition"] * 5
-        random.Random(42).shuffle(queries)
+            queries = []
+        # Pad to 15 with fallback topics if needed
+        fallback_pool = [
+            "latest earnings results",
+            "Agentforce product announcement",
+            "remaining performance obligation definition",
+            "Salesforce Data Cloud overview",
+            "Einstein Copilot pricing"
+        ]
+        i = 0
+        while len(queries) < 15:
+            queries.append(fallback_pool[i % len(fallback_pool)])
+            i += 1
+        import random as _rnd
+        _rnd.Random(42).shuffle(queries)
         queries = queries[:15]
         backends = ["pinecone", "weaviate", "faiss"]
         latencies: Dict[str, List[float]] = {b: [] for b in backends}
