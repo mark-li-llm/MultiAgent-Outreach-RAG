@@ -22,6 +22,7 @@ FAIL_LOG = os.path.join("reports", "eval", "recovery_failures.jsonl")  # will ov
 FAIL_LOG = os.path.join("reports", "eval", "retrieval_failures.jsonl")
 OUT_JSON = os.path.join("reports", "qa", "step07_retrieval_eval.json")
 OUT_MD = os.path.join("reports", "qa", "step07_retrieval_eval.md")
+TRACE_PATH = os.path.join("reports", "router", "step07_retrieval_trace.jsonl")
 
 # Optional: look into built embeddings to verify expected chunks exist in the vector space
 EMB_PARQUET = os.path.join("data", "vector", "embeddings", "embeddings.parquet")
@@ -116,6 +117,8 @@ async def main_async(args):
     from router_core import load_mcp_map, load_router_config, decide_backend, rerank
     # Try start stubs; fallback offline
     use_offline = False
+    started_internal_stub = False
+    used_external_service = False
     start_stub_servers = None
     stop_stub_servers = None
     try:
@@ -130,6 +133,7 @@ async def main_async(args):
     if not use_offline:
         try:
             await start_stub_servers(state_env, {"tools": tools_cfg})  # type: ignore
+            started_internal_stub = True
         except Exception:
             # Try to use external service before falling back to offline mode
             print("Failed to start internal stub servers, checking external service...")
@@ -147,6 +151,7 @@ async def main_async(args):
                             if "results" in result:
                                 print(f"✓ External service available at {url}")
                                 use_offline = False
+                                used_external_service = True
                             else:
                                 use_offline = True
                         else:
@@ -202,6 +207,7 @@ async def main_async(args):
     # Load seed and metas
     seed = load_seed(SEED_PATH)
     docmeta = load_doc_meta()
+    router_cfg = load_router_config()
     age_p50, baseline_domain_count = read_step0_baseline()
     budgets_p95 = read_step3_budgets()
 
@@ -292,7 +298,29 @@ async def main_async(args):
         except Exception:
             exp_in_embeddings = {}
 
+    # Trace configuration and counters (AG7_DEBUG is an umbrella switch; default ON)
+    debug_flag = (os.getenv("AG7_DEBUG", "1") == "1")
+    _trace_env = os.getenv("AG7_TRACE")
+    # If debug ON, enable trace unless explicitly disabled via AG7_TRACE=0
+    # If debug OFF, only enable when AG7_TRACE=1
+    if debug_flag:
+        trace_enabled = (_trace_env != "0")
+    else:
+        trace_enabled = (_trace_env == "1")
+    try:
+        trace_topk = int(os.getenv("AG7_TRACE_TOPK", "10"))
+    except Exception:
+        trace_topk = 10
+    trace_successes = (os.getenv("AG7_TRACE_SUCCESSES", ("1" if debug_flag else "0")) == "1")
+    route_counts: Dict[str, int] = {}
+    reason_counts: Dict[str, int] = {}
+    fallback_used_total = 0
+    diversity_merge_used_total = 0
+
     ensure_dir(os.path.dirname(FAIL_LOG))
+    if trace_enabled:
+        ensure_dir(os.path.dirname(TRACE_PATH))
+        open(TRACE_PATH, "w", encoding="utf-8").close()
     with open(FAIL_LOG, "w", encoding="utf-8") as flog:
         for it in seed:
             q = (it.get("query_text") or "").strip()
@@ -302,6 +330,9 @@ async def main_async(args):
                 continue
             total += 1
             backend, reasons = decide_backend(q, persona, None)
+            route_counts[backend] = route_counts.get(backend, 0) + 1
+            for rc in reasons:
+                reason_counts[rc] = reason_counts.get(rc, 0) + 1
             backend_quality.setdefault(backend, backend_quality.get(backend, {"total": 0, "chunk_hit": 0, "doc_hit": 0, "dcg5": [], "doc_dcg5": [], "near_miss": 0}))
             # Retrieve
             if not use_offline:
@@ -402,6 +433,40 @@ async def main_async(args):
                     nearest_same_doc = best[1]
             if near_hit:
                 soft_hits += 1
+
+            # Per-query trace
+            if trace_enabled and (trace_successes or rank == 0):
+                try:
+                    retrieval_mode = ("offline" if use_offline else ("online_stub" if started_internal_stub else ("online_external" if used_external_service else "online")))
+                    topk_list = []
+                    for i, r in enumerate(res[: max(1, trace_topk)]):
+                        did = r.get("doc_id")
+                        sd = (docmeta.get(did, {}) or {}).get("source_domain")
+                        topk_list.append({
+                            "rank": i + 1,
+                            "chunk_id": r.get("chunk_id"),
+                            "doc_id": did,
+                            "source_domain": sd,
+                            "score": r.get("score"),
+                        })
+                    trace_obj = {
+                        "eval_id": it.get("eval_id"),
+                        "persona": persona,
+                        "query_text": q,
+                        "router_backend": backend,
+                        "reason_codes": reasons,
+                        "retrieval_mode": retrieval_mode,
+                        "latency_ms": round(float(lat), 3),
+                        "fallback": {"used": False, "tried": []},
+                        "diversity_merge": {"used": False, "from_backends": []},
+                        "rerank": {"used": False},
+                        "topk": topk_list,
+                        "hit": {"chunk_rank": rank or 0, "doc_rank": doc_rank or 0, "near_hit": bool(near_hit)},
+                    }
+                    with open(TRACE_PATH, "a", encoding="utf-8") as tf:
+                        tf.write(json.dumps(trace_obj) + "\n")
+                except Exception:
+                    pass
 
             # Coverage & freshness for this query
             doms = set()
@@ -567,6 +632,39 @@ async def main_async(args):
             },
         }
 
+    # Run context & router summary
+    retrieval_mode = ("offline" if use_offline else ("online_stub" if started_internal_stub else ("online_external" if used_external_service else "online")))
+    run_context = {
+        "mode": retrieval_mode,
+        "mcp": {
+            "kb_search_url": (f"http://{(tools_cfg.get('kb.search') or {}).get('host','127.0.0.1')}:{int((tools_cfg.get('kb.search') or {}).get('port',7801))}/invoke") if not use_offline else None,
+            "started_by_step": started_internal_stub,
+            "ports": {k: int(v.get("port")) for k, v in (tools_cfg or {}).items()} if not use_offline else None,
+        },
+        "router": {
+            "config": os.path.join("configs", "router.heuristics.yaml"),
+            "weights": (router_cfg.get("weights") if 'router_cfg' in locals() else {}),
+            "top_k_default": int((router_cfg.get("top_k_default") if 'router_cfg' in locals() else 10)),
+            "fallback_order": (router_cfg.get("fallback_order") if 'router_cfg' in locals() else []),
+        },
+        "vector": {
+            "config": os.path.join("configs", "vector.indexing.yaml"),
+            "embedding": {"dim": dim, "model": ((load_yaml(os.path.join("configs","vector.indexing.yaml")) or {}).get("embedding") or {}).get("model")},
+        },
+        "eval": {
+            "seed_path": SEED_PATH,
+            "topk_eval": topk_eval,
+            "topk_slices": topk_slices,
+            "near_seq_tol": near_seq_tol,
+        },
+    }
+    router_summary = {
+        "by_backend": route_counts,
+        "by_reason": reason_counts,
+        "fallback_used": fallback_used_total,
+        "diversity_merge_used": diversity_merge_used_total,
+    }
+
     machine = {
         "step": "step07_retrieval_eval",
         "status": status,
@@ -598,6 +696,9 @@ async def main_async(args):
             },
             "by_backend": backend_summary,
         },
+        "run_context": run_context,
+        "trace_path": (TRACE_PATH if trace_enabled else None),
+        "router_summary": router_summary,
         "next_action": next_action,
         "timestamp": now_iso(),
     }

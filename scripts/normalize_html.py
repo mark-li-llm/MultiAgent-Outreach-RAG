@@ -14,7 +14,7 @@ from typing import Dict, List, Optional, Tuple
 
 from bs4 import BeautifulSoup
 
-from common import ensure_dir, now_iso, sha256_hex, build_logger
+from common import ensure_dir, now_iso, sha256_hex, build_logger, coerce_date
 
 
 def load_yaml(path: str) -> Dict:
@@ -204,6 +204,7 @@ def normalize_one(item: Tuple[str, str, Dict], rules: Dict, out_dir: str, log: l
     pdf_page_map = None
     html_title = None
     meta_published_time = None
+    publish_date_iso = ""
 
     try:
         if raw_path.endswith(".pdf"):
@@ -259,6 +260,26 @@ def normalize_one(item: Tuple[str, str, Dict], rules: Dict, out_dir: str, log: l
         log.info(f"DROPPED_NON_EN {doc_id} lang={lang}")
         return doc_id, "DROPPED_NON_EN", lang, before_len, after_len, None
 
+    # Publish date resolution (ISO YYYY-MM-DD)
+    # Priority: HTML meta -> meta.visible_date -> meta.rss_pubdate -> meta.meta_published_time
+    try:
+        # From HTML meta (if present)
+        if (not publish_date_iso) and meta_published_time:
+            d = coerce_date(meta_published_time)
+            if d:
+                publish_date_iso = d
+        # From fetch meta fields
+        if (not publish_date_iso):
+            for k in ("visible_date", "rss_pubdate"):
+                v = (meta.get(k) or "").strip() if isinstance(meta, dict) else ""
+                if v:
+                    d = coerce_date(v)
+                    if d:
+                        publish_date_iso = d
+                        break
+    except Exception:
+        publish_date_iso = publish_date_iso or ""
+
     # Ensure at least one heading marker by prepending html_title if none detected
     if text and ("H1:" not in text and html_title):
         text = f"H1: {html_title}\n\n" + text
@@ -274,7 +295,7 @@ def normalize_one(item: Tuple[str, str, Dict], rules: Dict, out_dir: str, log: l
         "company": "Salesforce",
         "doctype": doctype,
         "title": html_title or "",
-        "publish_date": "",
+        "publish_date": publish_date_iso or "",
         "url": url,
         "final_url": meta.get("final_url") or url,
         "source_domain": source_domain,
