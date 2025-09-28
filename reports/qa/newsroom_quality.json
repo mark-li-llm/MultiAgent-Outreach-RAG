@@ -1,0 +1,206 @@
+{
+  "summary": {
+    "total_meta": 65,
+    "dup_buckets": 20,
+    "unique_buckets": 23
+  },
+  "picked_rule": "fetched_at_desc_then_content_length",
+  "manifest_path": "data/interim/dedup/newsroom_canonical.jsonl",
+  "dup_samples": [
+    {
+      "key": {
+        "date": "2024-12-04",
+        "slug": "salesforce-data-reveals-new-cyber-week-all-time-high-314-9b-in-global-sales"
+      },
+      "count": 2,
+      "canonical": {
+        "doc_id": "crm::press::2024-12-04::salesforce-data-reveals-new-cyber-week-all-time-high-314-9b-in-global-sales::3634781d",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 250771
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2024-12-04::salesforce-data-reveals-new-cyber-week-all-time-high-314-9b-in-global-sales::665ada5f",
+          "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+          "content_length": 250777
+        }
+      ]
+    },
+    {
+      "key": {
+        "date": "2024-12-17",
+        "slug": "introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w"
+      },
+      "count": 3,
+      "canonical": {
+        "doc_id": "crm::press::2024-12-17::introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w::64bc03ee",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 280453
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2024-12-17::introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w::96d74ad9",
+          "fetched_at": "2025-09-07T21:15:00.607917+00:00",
+          "content_length": 280494
+        },
+        {
+          "doc_id": "crm::press::2024-12-17::introducing-agentforce-2-0-the-digital-labor-platform-for-building-a-limitless-w::601f3f45",
+          "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+          "content_length": 280459
+        }
+      ]
+    },
+    {
+      "key": {
+        "date": "2025-01-06",
+        "slug": "holiday-shoppers-spend-a-record-1-2t-online-salesforce-data-shows"
+      },
+      "count": 2,
+      "canonical": {
+        "doc_id": "crm::press::2025-01-06::holiday-shoppers-spend-a-record-1-2t-online-salesforce-data-shows::d9f3e8b8",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 249462
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2025-01-06::holiday-shoppers-spend-a-record-1-2t-online-salesforce-data-shows::63c14f26",
+          "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+          "content_length": 249486
+        }
+      ]
+    },
+    {
+      "key": {
+        "date": "2025-01-10",
+        "slug": "salesforce-unveils-agentforce-for-retail-to-boost-productivity-with-digital-labo"
+      },
+      "count": 2,
+      "canonical": {
+        "doc_id": "crm::press::2025-01-10::salesforce-unveils-agentforce-for-retail-to-boost-productivity-with-digital-labo::afcc9d02",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 248126
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2025-01-10::salesforce-unveils-agentforce-for-retail-to-boost-productivity-with-digital-labo::9a230d93",
+          "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+          "content_length": 248150
+        }
+      ]
+    },
+    {
+      "key": {
+        "date": "2025-02-05",
+        "slug": "salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financ"
+      },
+      "count": 2,
+      "canonical": {
+        "doc_id": "crm::press::2025-02-05::salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financ::a014cf0d",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 227732
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2025-02-05::salesforce-appoints-robin-washington-as-president-and-chief-operating-and-financ::582c6316",
+          "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+          "content_length": 227756
+        }
+      ]
+    },
+    {
+      "key": {
+        "date": "2025-02-10",
+        "slug": "salesforce-announces-500m-investment-in-saudi-arabia-to-drive-ai-innovation-and-"
+      },
+      "count": 2,
+      "canonical": {
+        "doc_id": "crm::press::2025-02-10::salesforce-announces-500m-investment-in-saudi-arabia-to-drive-ai-innovation-and-::0104255e",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 221455
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2025-02-10::salesforce-announces-500m-investment-in-saudi-arabia-to-drive-ai-innovation-and-::a3201e3f",
+          "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+          "content_length": 221461
+        }
+      ]
+    },
+    {
+      "key": {
+        "date": "2025-02-24",
+        "slug": "salesforce-and-google-bring-gemini-to-agentforce-enable-more-customer-choice-in-"
+      },
+      "count": 2,
+      "canonical": {
+        "doc_id": "crm::press::2025-02-24::salesforce-and-google-bring-gemini-to-agentforce-enable-more-customer-choice-in-::9d966f4a",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 258558
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2025-02-24::salesforce-and-google-bring-gemini-to-agentforce-enable-more-customer-choice-in-::d17b9df1",
+          "fetched_at": "2025-09-07T16:44:46.090490+00:00",
+          "content_length": 258564
+        }
+      ]
+    },
+    {
+      "key": {
+        "date": "2025-02-26",
+        "slug": "salesforce-announces-fourth-quarter-and-fiscal-year-2025-results"
+      },
+      "count": 2,
+      "canonical": {
+        "doc_id": "crm::press::2025-02-26::salesforce-announces-fourth-quarter-and-fiscal-year-2025-results::2fbf6534",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 243113
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2025-02-26::salesforce-announces-fourth-quarter-and-fiscal-year-2025-results::360ac7bd",
+          "fetched_at": "2025-09-07T16:46:41.175759+00:00",
+          "content_length": 243118
+        }
+      ]
+    },
+    {
+      "key": {
+        "date": "2025-03-04",
+        "slug": "salesforce-launches-agentexchange-the-trusted-marketplace-for-agentforce"
+      },
+      "count": 2,
+      "canonical": {
+        "doc_id": "crm::press::2025-03-04::salesforce-launches-agentexchange-the-trusted-marketplace-for-agentforce::72c218b5",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 272711
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2025-03-04::salesforce-launches-agentexchange-the-trusted-marketplace-for-agentforce::0b206de3",
+          "fetched_at": "2025-09-07T16:44:46.090490+00:00",
+          "content_length": 272717
+        }
+      ]
+    },
+    {
+      "key": {
+        "date": "2025-03-05",
+        "slug": "salesforce-launches-agentforce-2dx-new-capabilities-embed-proactive-agentic-ai-i"
+      },
+      "count": 2,
+      "canonical": {
+        "doc_id": "crm::press::2025-03-05::salesforce-launches-agentforce-2dx-new-capabilities-embed-proactive-agentic-ai-i::5aab8dce",
+        "fetched_at": "2025-09-08T00:10:55.846348+00:00",
+        "content_length": 284349
+      },
+      "others": [
+        {
+          "doc_id": "crm::press::2025-03-05::salesforce-launches-agentforce-2dx-new-capabilities-embed-proactive-agentic-ai-i::55567343",
+          "fetched_at": "2025-09-07T16:44:46.090490+00:00",
+          "content_length": 284373
+        }
+      ]
+    }
+  ]
+}
