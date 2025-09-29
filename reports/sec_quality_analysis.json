@@ -1,0 +1,101 @@
+{
+  "timestamp": "2025-09-28T18:33:58.503548",
+  "total_documents": 5,
+  "document_types": {
+    "8-K": 3,
+    "10-K": 1,
+    "10-Q": 1
+  },
+  "completeness_check": {
+    "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4": {
+      "issues": [],
+      "stats": {
+        "content_length": 29080
+      },
+      "is_complete": true
+    },
+    "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2": {
+      "issues": [],
+      "stats": {
+        "content_length": 2454201
+      },
+      "is_complete": true
+    },
+    "crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586": {
+      "issues": [],
+      "stats": {
+        "content_length": 63682
+      },
+      "is_complete": true
+    },
+    "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866": {
+      "issues": [],
+      "stats": {
+        "content_length": 1672571
+      },
+      "is_complete": true
+    },
+    "crm::8-K::2025-02-26::fy25-results-8-k::97457068": {
+      "issues": [],
+      "stats": {
+        "content_length": 6356
+      },
+      "is_complete": true
+    }
+  },
+  "similarity_analysis": {
+    "10k_vs_ars_pdf": {
+      "error": "找不到10-K或ars_pdf文档"
+    },
+    "8k_differences": {
+      "doc_count": 3,
+      "documents": {
+        "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4": {
+          "date": "2025-05-28",
+          "title": "crm-20250528",
+          "word_count": 1161,
+          "char_count": 29080,
+          "key_topics": [
+            "executive_changes",
+            "securities",
+            "regulatory"
+          ]
+        },
+        "crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586": {
+          "date": "2025-06-05",
+          "title": "crm-20250605",
+          "word_count": 2404,
+          "char_count": 63682,
+          "key_topics": [
+            "executive_changes",
+            "securities",
+            "regulatory"
+          ]
+        },
+        "crm::8-K::2025-02-26::fy25-results-8-k::97457068": {
+          "date": "2025-02-26",
+          "title": null,
+          "word_count": 533,
+          "char_count": 6356,
+          "key_topics": [
+            "securities",
+            "regulatory"
+          ]
+        }
+      },
+      "similarities": {
+        "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4 vs crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586": 0.52268890874789,
+        "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4 vs crm::8-K::2025-02-26::fy25-results-8-k::97457068": 0.006625980819529207,
+        "crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586 vs crm::8-K::2025-02-26::fy25-results-8-k::97457068": 0.0046559751681324365
+      },
+      "unique_content": {}
+    }
+  },
+  "file_integrity": {},
+  "summary": {
+    "complete_documents": 5,
+    "total_issues": 0,
+    "completion_rate": 1.0,
+    "avg_issues_per_doc": 0.0
+  }
+}
