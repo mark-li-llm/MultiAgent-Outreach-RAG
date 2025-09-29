@@ -1,129 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <title>XBRL Viewer</title>
-    <script language="JavaScript">
-    /* <![CDATA[ */
-        /* Created by staff of the U.S. Securities and Exchange Commission.
-        *  Data and content created by government employees within the scope of their employment
-        *  are not subject to domestic copyright protection. 17 U.S.C. 105.
-        *
-        *  This script checks the accession number of the document requested to determine
-        *  the year and sequence of filing.  If filed after the availability of ixviewer-plus
-        *  this script redirects to that viewer, otherwise to a prior ixviewer in effect
-        *  or deemed compatible with the filing.
-        */
-
-        function loadViewer(ixvUrl) {
-            // load viewer in an iframe so the end user's browser URL is not changed
-            var iFrame = document.getElementById("ixvFrame");
-            iFrame.src = ixvUrl;
-        }
-
-        const url = location.href;
-        // url doc pattern is /Archives/edgar/data/ciknum/{10digits}{YY}{sequence}/{more params}
-        // uncomment one of the following urlPatterns depending on usage:
-        // for SEC.GOV: const urlPattern = /(\?doc=(\/Archives\/edgar\/data\/[0-9]+\/[0-9]{10}([0-9]{8})\/).*$)/;
-        // for Arelle GUI: const urlPattern = /(\?doc=(\/[0-9]+\/).*$)/;
-        const urlPattern = /(\?doc=(\/Archives\/edgar\/data\/[0-9]+\/[0-9]{10}([0-9]{8})\/).*$)/;
-        const ixvPlusNsPattern = /http:\/\/xbrl.sec.gov\/(ffd|sbs)\/.*$/;
-        var ixvUrl = null;
-        
-        if (! urlPattern.test(url)) {
-            alert("Not an EDGAR inline XBRL document viewing request, please check URL");
-            // this hangs: loadViewer("/ixviewer/ix.html" + ixParams);
-        } else {
-            const match = url.match(urlPattern);
-            const ixParams = match[1];
-            const docPath = match[2];
-            const acsnYrSeq = match[3];
-            const acsnYr = Number(match[3].substring(0, 2));
-            let xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        const ml = JSON.parse(this.responseText);
-                        if (!(typeof ml === 'object' && "instance" in ml)) {
-                            console.log("Metalinks does not have instance objects");
-                            // Unable to read MetaLinks.json, use 23.2 ixviewer
-                            loadViewer("/ixviewer/ix.html" + ixParams);
-                        } else {
-                            const numInstances = Object.keys(ml["instance"]).length;
-                            let maxDocsPerInst = 0;
-                            let hasIxvPlusExhibit = false;
-                            Object.keys(ml["instance"]).forEach(instanceNames => {
-                                let docsInInstance = instanceNames.split(" ").length;
-                                if (docsInInstance > maxDocsPerInst)
-                                    maxDocsPerInst = docsInInstance;
-                                if ("baseTaxonomies" in ml["instance"][instanceNames]) {
-                                    Object.keys(ml["instance"][instanceNames]["baseTaxonomies"]).forEach(baseTaxonomyUrl => {
-                                        if (ixvPlusNsPattern.test(baseTaxonomyUrl))
-                                            hasIxvPlusExhibit = true;
-                                    });
-                                }
-                            });
-
-                            if (
-                                (numInstances > 1 || maxDocsPerInst > 1 || hasIxvPlusExhibit || url.includes("&redline=true")) 
-                                || acsnYr >= 25
-                            )
-                                loadViewer("/ixviewer-plus/ix.xhtml" + ixParams);
-                            else
-                                loadViewer("/ixviewer/ix.html" + ixParams);
-                        }
-                    } else {
-                        console.log("Unable to read MetaLinks.json for this accession");
-                        // Unable to read MetaLinks.json, use 23.2 ixviewer
-                        loadViewer("/ixviewer/ix.html" + ixParams);
-                    }
-                }
-            };
-            xhr.ontimeout = function() {
-                console.log("Timeout reading MetaLinks.json for this accession");
-                // Unable to read MetaLinks.json, use 23.2 ixviewer
-                loadViewer("/ixviewer/ix.html" + ixParams);
-            };
-            xhr.open("GET", docPath + 'MetaLinks.json', true);
-            xhr.timeout = 2000; // milliseconds
-            xhr.send();
-
-            /* Arelle GUI usage: set title for tab in browser for when there are multiple tabs */
-            const urlTitleParamPattern = /&title=([^&]+),*$/;
-            if (urlTitleParamPattern.test(url)) {
-                const match = url.match(urlTitleParamPattern);
-                document.title = decodeURIComponent(match[1]);
-            }
-
-            /* alternative select viewer using accession number
-
-            const acsnYrSeq = match[3];
-            if (acsnYrSeq > "24905000") {
-                loadViewer(docPath + "ixbrlviewer.xhtml");
-            } else if (acsnYrSeq > "23905000") {
-                loadViewer("/ixviewer-plus/ix.xhtml" + ixParams);
-            } else {
-                loadViewer("/ixviewer/ix.html" + ixParams);
-            }
-
-            */
-        }
-    /* ]]> */
-    </script>
+    <title>FORM 8-K - Salesforce, Inc.</title>
+    <meta charset="UTF-8">
 </head>
+<body>
 
-<body style="margin: 0">
-    <noscript>
-        Please enable JavaScript to use the EDGAR Inline XBRL Viewer.
-    </noscript>
-    <iframe id="ixvFrame"
-        title="Inline XBRL Viewer"
-        style="position: absolute; height: 100%; width: 100%; border: none"
-    />
+<pre>
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549 
+________________________________________________________ 
+FORM 8-K
+________________________________________________________
+CURRENT REPORT
+Pursuant to Section 13 or 15(d) of the
+Securities Exchange Act of 1934
+February 26, 2025
+Date of Report (date of earliest event reported)
+ _________________________________________________________
+Salesforce, Inc.
+(Exact name of registrant as specified in its charter) 
+__________________________________________________________ 
+  															Delaware		001-32224		94-3320693	(State or other jurisdiction
+of incorporation)		(Commission
+File Number)		(IRS Employer
+Identification No.) 
+Salesforce Tower
+415 Mission Street, 3rd Fl
+San Francisco, California 94105
+(Address of principal executive offices)
+Registrant's telephone number, including area code: (415) 901-7000
+N/A
+(Former name or former address, if changed since last report)
+_________________________________________________________
+Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions (see General Instruction A.2. below): 						☐	Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425) 
+  						☐	Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12) 
+  						☐	Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b)) 
+  						☐	Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240.13e-4(c)) 
+Securities registered pursuant to Section 12(b) of the Act: 																		Title of each class		Trading Symbol(s)		Name of each exchange on which registered	Common Stock, par value $0.001 per share		CRM		New York Stock Exchange 
+Indicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405 of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter). 										Emerging growth company	☐ 
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.	☐ 
+ 
+
+
+
+Section 2 – Financial Information
+Item 2.02 Results of Operations and Financial Condition.
+On February 26, 2025, Salesforce, Inc. (the "Company") issued a press release announcing its results for the fiscal quarter and fiscal year ended January 31, 2025. A copy of the press release is attached as Exhibit 99.1 to this current report on Form 8-K and is incorporated by reference herein.
+The information furnished with this Item 2.02, including Exhibit 99.1 attached hereto, shall not be deemed "filed" for purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the "Exchange Act") or otherwise subject to the liabilities of that section, nor shall it be deemed incorporated by reference in any filing under the Securities Act of 1933, as amended, or the Exchange Act, regardless of any general incorporation language in such filing.
+Section 9 – Financial Statements and Exhibits
+Item 9.01 Financial Statements and Exhibits.
+ 
+(d)Exhibits 									99.1	  	
+Press Release dated February 26, 2025
+104		Cover Page Interactive Data File—the cover page XBRL tags are embedded within the Inline XBRL document 
+
+
+
+
+
+Signature
+Pursuant to the requirements of the Securities Exchange Act of 1934, as amended, the Registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+  												Dated:	February 26, 2025		Salesforce, Inc.							
+/s/ Sundeep Reddy
+Sundeep Reddy
+Executive Vice President,
+Chief Accounting Officer
+(Principal Accounting Officer) 
+</pre>
+
 </body>
 </html>

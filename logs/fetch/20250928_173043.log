@@ -1,0 +1,3 @@
+2025-09-28 17:30:43,217 [INFO] Normalization start phase=A
+2025-09-28 17:30:43,258 [INFO] [DRY] Would normalize crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866 from data/raw/sec/crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866.raw.html
+2025-09-28 17:30:43,258 [INFO] Log: logs/fetch/20250928_173043.log

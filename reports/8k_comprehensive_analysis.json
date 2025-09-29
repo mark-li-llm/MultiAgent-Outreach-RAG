@@ -1,0 +1,90 @@
+{
+  "documents": {
+    "2025-02-26": {
+      "purpose": {
+        "primary_purpose": "financial_results",
+        "secondary_purposes": [],
+        "confidence": 0.30000000000000004,
+        "evidence": [
+          "Contains financial result terms",
+          "Filename suggests results announcement"
+        ]
+      },
+      "key_metrics": {
+        "items_count": 0,
+        "terms_count": 5,
+        "substantive_length": 3115
+      }
+    },
+    "2025-05-28": {
+      "purpose": {
+        "primary_purpose": "financial_results",
+        "secondary_purposes": [],
+        "confidence": 0.30000000000000004,
+        "evidence": [
+          "Contains financial result terms",
+          "Filename suggests results announcement"
+        ]
+      },
+      "key_metrics": {
+        "items_count": 0,
+        "terms_count": 4,
+        "substantive_length": 3232
+      }
+    },
+    "2025-06-05": {
+      "purpose": {
+        "primary_purpose": "financial_results",
+        "secondary_purposes": [],
+        "confidence": 0.6,
+        "evidence": [
+          "Contains financial result terms",
+          "Contains governance terms",
+          "Filename suggests results announcement",
+          "Filename suggests meeting-related content"
+        ]
+      },
+      "key_metrics": {
+        "items_count": 0,
+        "terms_count": 11,
+        "substantive_length": 4631
+      }
+    }
+  },
+  "similarities": {
+    "2025-02-26 vs 2025-05-28": {
+      "items_similarity": 0.0,
+      "terms_similarity": 0.8,
+      "text_similarity": 0.8259631239694198,
+      "overall_similarity": 0.5419877079898067
+    },
+    "2025-02-26 vs 2025-06-05": {
+      "items_similarity": 0.0,
+      "terms_similarity": 0.23076923076923078,
+      "text_similarity": 0.38835192069392815,
+      "overall_similarity": 0.20637371715438632
+    },
+    "2025-05-28 vs 2025-06-05": {
+      "items_similarity": 0.0,
+      "terms_similarity": 0.15384615384615385,
+      "text_similarity": 0.5092511013215859,
+      "overall_similarity": 0.2210324183892466
+    }
+  },
+  "overall_assessment": {
+    "document_diversity": 1,
+    "average_similarity": 0.3231312811778132,
+    "covered_items": [],
+    "missing_common_items": [
+      "1.01",
+      "1.02",
+      "2.01",
+      "2.03",
+      "3.01",
+      "4.01",
+      "7.01",
+      "8.01"
+    ],
+    "recommendation": "needs_review"
+  }
+}
