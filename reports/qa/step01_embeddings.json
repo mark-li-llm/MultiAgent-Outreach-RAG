@@ -6,8 +6,8 @@
     {
       "id": "G1-01",
       "metric": "embedding_rows",
-      "actual": 1566,
-      "threshold": "== baseline_chunks (1566)",
+      "actual": 396,
+      "threshold": "== baseline_chunks (396)",
       "status": "PASS",
       "evidence": "data/vector/embeddings/embedding_stats.json"
     },
@@ -45,5 +45,5 @@
     }
   ],
   "next_action": "continue",
-  "timestamp": "2025-09-12T03:07:41.261357+00:00"
+  "timestamp": "2025-09-29T19:25:24.462443+00:00"
 }

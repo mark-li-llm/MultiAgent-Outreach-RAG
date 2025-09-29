@@ -1,0 +1,17 @@
+{
+  "class": "Doc",
+  "properties": [
+    "doc_id",
+    "text",
+    "doctype",
+    "date",
+    "section",
+    "topic",
+    "url",
+    "title",
+    "company",
+    "persona_tags",
+    "source_domain"
+  ],
+  "notes": "applied minimal schema (simulated)"
+}

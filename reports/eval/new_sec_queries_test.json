@@ -1,0 +1,187 @@
+{
+  "exact_hits": 1,
+  "doc_hits": 7,
+  "total": 15,
+  "details": [
+    {
+      "query": "What was Salesforce's total revenue for Q1 FY26?",
+      "difficulty": "easy",
+      "exact_hit": false,
+      "doc_hit": true,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0004",
+      "top_chunks": [
+        "crm::press::2025-01-31::news-details::9711c8f6::chunk0005",
+        "crm::press::2025-09-03::news-details::2014af2d::chunk0005",
+        "crm::press::2024-04-30::news-details::05db958d::chunk0004"
+      ]
+    },
+    {
+      "query": "How much operating cash flow did Salesforce generate in Q1 FY26?",
+      "difficulty": "easy",
+      "exact_hit": false,
+      "doc_hit": false,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0031",
+      "top_chunks": [
+        "crm::press::2025-05-28::news-details::e526586e::chunk0000",
+        "crm::press::2025-09-03::news-details::2014af2d::chunk0000",
+        "crm::press::2025-01-31::news-details::9711c8f6::chunk0000"
+      ]
+    },
+    {
+      "query": "What is the status of Salesforce's share repurchase program?",
+      "difficulty": "medium",
+      "exact_hit": false,
+      "doc_hit": false,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0032",
+      "top_chunks": [
+        "crm::wiki::unknown::salesforce-wikipedia::6b727edd::chunk0000",
+        "crm::wiki::unknown::salesforce-wikipedia::6b727edd::chunk0002",
+        "crm::wiki::unknown::salesforce-wikipedia::6b727edd::chunk0001"
+      ]
+    },
+    {
+      "query": "When do Salesforce's senior notes mature and what are the interest rates?",
+      "difficulty": "medium",
+      "exact_hit": false,
+      "doc_hit": true,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0019",
+      "top_chunks": [
+        "crm::press::2023-09-06::introducing-slack-ai-slack-lists-and-new-automation-capabilities-that-boost-prod::81c5dd37::chunk0001",
+        "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0059",
+        "crm::press::2025-01-31::news-details::9711c8f6::chunk0008"
+      ]
+    },
+    {
+      "query": "What are the key risks Salesforce identifies related to AI and generative AI technologies?",
+      "difficulty": "hard",
+      "exact_hit": false,
+      "doc_hit": false,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0050",
+      "top_chunks": [
+        "crm::press::2023-09-07::new-ai-usage-data-shows-who-s-using-ai-and-uncovers-a-population-of-super-users::2f093480::chunk0000",
+        "crm::press::2023-08-16::chief-scientist-for-salesforce-ai-offers-a-glimpse-into-the-future-of-generative::5e9a5da9::chunk0000",
+        "crm::press::2025-09-05::why-agentic-ai-requires-a-smarter-cloud-infrastructure::9780ec57::chunk0000"
+      ]
+    },
+    {
+      "query": "What does Salesforce say about its dependence on third-party developers and technology partners?",
+      "difficulty": "medium",
+      "exact_hit": false,
+      "doc_hit": false,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0048",
+      "top_chunks": [
+        "crm::press::2025-09-02::salesforce-quarterly-highlights-fy26-q2-product-releases-and-corporate-announcem::ea02411d::chunk0000",
+        "crm::press::2024-07-31::news-details::9b19c384::chunk0003",
+        "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0008"
+      ]
+    },
+    {
+      "query": "What regulatory compliance requirements does Salesforce face regarding data protection and privacy?",
+      "difficulty": "hard",
+      "exact_hit": true,
+      "doc_hit": true,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0051",
+      "top_chunks": [
+        "crm::press::2024-09-05::news-details::e32cfe52::chunk0000",
+        "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6::chunk0000",
+        "crm::press::2025-05-27::news-details::56b542ba::chunk0000"
+      ]
+    },
+    {
+      "query": "How is Salesforce's revenue distributed across its product segments?",
+      "difficulty": "easy",
+      "exact_hit": false,
+      "doc_hit": false,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0024",
+      "top_chunks": [
+        "crm::wiki::unknown::salesforce-wikipedia::6b727edd::chunk0000",
+        "crm::wiki::unknown::salesforce-wikipedia::6b727edd::chunk0009",
+        "crm::wiki::unknown::salesforce-wikipedia::6b727edd::chunk0001"
+      ]
+    },
+    {
+      "query": "What competitive advantages and disadvantages does Salesforce discuss in its Q1 FY26 filing?",
+      "difficulty": "hard",
+      "exact_hit": false,
+      "doc_hit": true,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0047",
+      "top_chunks": [
+        "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0046",
+        "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0055",
+        "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0027"
+      ]
+    },
+    {
+      "query": "How does Salesforce describe the importance of its brand to its business success?",
+      "difficulty": "medium",
+      "exact_hit": false,
+      "doc_hit": false,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0048",
+      "top_chunks": [
+        "crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586::chunk0000",
+        "crm::wiki::unknown::salesforce-wikipedia::6b727edd::chunk0001",
+        "crm::wiki::unknown::salesforce-wikipedia::6b727edd::chunk0000"
+      ]
+    },
+    {
+      "query": "What are the intellectual property risks and protection strategies mentioned in the 10-Q?",
+      "difficulty": "hard",
+      "exact_hit": false,
+      "doc_hit": true,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0059",
+      "top_chunks": [
+        "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0007",
+        "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0023",
+        "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0021"
+      ]
+    },
+    {
+      "query": "What was Salesforce's unearned revenue balance as of April 30, 2025?",
+      "difficulty": "easy",
+      "exact_hit": false,
+      "doc_hit": true,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0003",
+      "top_chunks": [
+        "crm::press::2025-05-28::news-details::e526586e::chunk0005",
+        "crm::press::2024-07-31::news-details::9b19c384::chunk0005",
+        "crm::press::2024-01-31::news-details::9a8b3ba9::chunk0006"
+      ]
+    },
+    {
+      "query": "How does Salesforce account for stock-based compensation and what were the Q1 FY26 expenses?",
+      "difficulty": "medium",
+      "exact_hit": false,
+      "doc_hit": false,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0014",
+      "top_chunks": [
+        "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0081",
+        "crm::press::2024-04-30::news-details::05db958d::chunk0001",
+        "crm::press::2025-09-03::news-details::2014af2d::chunk0001"
+      ]
+    },
+    {
+      "query": "How is Salesforce's revenue distributed geographically across Americas, Europe, and Asia Pacific?",
+      "difficulty": "easy",
+      "exact_hit": false,
+      "doc_hit": false,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0024",
+      "top_chunks": [
+        "crm::product::unknown::what-is-salesforce::9818feb8::chunk0001",
+        "crm::product::unknown::what-is-salesforce::9818feb8::chunk0000",
+        "crm::wiki::unknown::salesforce-wikipedia::6b727edd::chunk0005"
+      ]
+    },
+    {
+      "query": "What types of securities does Salesforce hold in its investment portfolio and what are the associated risks?",
+      "difficulty": "medium",
+      "exact_hit": false,
+      "doc_hit": true,
+      "expected_chunk": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0034",
+      "top_chunks": [
+        "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0066",
+        "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0008",
+        "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0021"
+      ]
+    }
+  ]
+}
