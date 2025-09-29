@@ -1,34 +1,34 @@
 {
   "pinecone": {
-    "upserted": 1566,
+    "upserted": 396,
     "failed": 0
   },
   "weaviate": {
-    "inserted": 1566,
+    "inserted": 396,
     "failed": 0
   },
   "faiss": {
-    "count": 1566,
+    "count": 396,
     "roundtrip_error_max": 0.0
   },
   "metadata": {
-    "pct_missing_required": 0.0
+    "pct_missing_required": 0.068182
   },
   "sanity_search": {
     "pinecone": {
       "min_topk": 10,
-      "keyword_hit_min_top10": 0
+      "keyword_hit_min_top10": 4
     },
     "weaviate": {
       "min_topk": 10,
-      "keyword_hit_min_top10": 0
+      "keyword_hit_min_top10": 4
     },
     "faiss": {
       "min_topk": 10,
-      "keyword_hit_min_top10": 0
+      "keyword_hit_min_top10": 4
     }
   },
-  "sanity_keyword_hit_min_top10": 0,
-  "baseline_chunks": 1566,
-  "embedding_rows": 1566
+  "sanity_keyword_hit_min_top10": 4,
+  "baseline_chunks": 396,
+  "embedding_rows": 396
 }

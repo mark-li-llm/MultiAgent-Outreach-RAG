@@ -5,7 +5,7 @@
     {
       "id": "G7-01",
       "metric": "recall@10",
-      "actual": 0.1556,
+      "actual": 0.5217,
       "threshold": ">=0.80",
       "status": "FAIL",
       "evidence": "reports/eval/retrieval_failures.jsonl"
@@ -13,15 +13,22 @@
     {
       "id": "G7-02",
       "metric": "nDCG@5",
-      "actual": 0.0655,
+      "actual": 0.2888,
       "threshold": ">=0.60",
       "status": "FAIL",
       "evidence": "reports/eval/retrieval_failures.jsonl"
     },
     {
+      "id": "G7-03",
+      "metric": "coverage_unique_domains_top10_mean",
+      "actual": 2.739,
+      "threshold": ">=3.0",
+      "status": "FAIL"
+    },
+    {
       "id": "G7-04",
       "metric": "freshness_mean_age_days",
-      "actual": 185.39,
+      "actual": 275.9,
       "threshold": "<=540",
       "status": "PASS"
     },
@@ -30,19 +37,19 @@
       "metric": "latency_budgets",
       "actual": {
         "faiss": {
-          "p50": 15.03,
-          "p95": 16.95,
-          "budget_p95": 15.662
+          "p50": 12.55,
+          "p95": 15.4,
+          "budget_p95": 29.699
         },
         "weaviate": {
-          "p50": 73.56,
-          "p95": 79.52,
-          "budget_p95": 81.997
+          "p50": 70.03,
+          "p95": 87.78,
+          "budget_p95": 79.574
         },
         "pinecone": {
-          "p50": 129.85,
-          "p95": 158.88,
-          "budget_p95": 154.778
+          "p50": 127.3,
+          "p95": 162.76,
+          "budget_p95": 198.308
         }
       },
       "threshold": "p50,p95 <= budget_p95 per backend",
@@ -50,102 +57,116 @@
     }
   ],
   "summary": {
-    "recall@10": 0.1556,
-    "nDCG@5": 0.0655,
-    "coverage_unique_domains_top10_mean": 2.4,
-    "freshness_mean_age_days": 185.39,
+    "recall@10": 0.5217,
+    "nDCG@5": 0.2888,
+    "coverage_unique_domains_top10_mean": 2.739,
+    "freshness_mean_age_days": 275.9,
     "latency": [
       {
         "backend": "faiss",
-        "p50": 15.03,
-        "p95": 16.95,
-        "budget_p95": 15.662,
-        "status": "FAIL"
-      },
-      {
-        "backend": "weaviate",
-        "p50": 73.56,
-        "p95": 79.52,
-        "budget_p95": 81.997,
+        "p50": 12.55,
+        "p95": 15.4,
+        "budget_p95": 29.699,
         "status": "PASS"
       },
       {
-        "backend": "pinecone",
-        "p50": 129.85,
-        "p95": 158.88,
-        "budget_p95": 154.778,
+        "backend": "weaviate",
+        "p50": 70.03,
+        "p95": 87.78,
+        "budget_p95": 79.574,
         "status": "FAIL"
+      },
+      {
+        "backend": "pinecone",
+        "p50": 127.3,
+        "p95": 162.76,
+        "budget_p95": 198.308,
+        "status": "PASS"
       }
     ],
-    "queries": 45,
+    "queries": 46,
     "recall_at": {
-      "@1": 0.0222,
-      "@3": 0.0667,
-      "@5": 0.1111,
-      "@10": 0.1556,
-      "@20": 0.1556
+      "@1": 0.1739,
+      "@3": 0.3696,
+      "@5": 0.3696,
+      "@10": 0.5217
     },
     "doc_recall_at": {
-      "@1": 0.1111,
-      "@3": 0.2667,
-      "@5": 0.4444,
-      "@10": 0.5778,
-      "@20": 0.5778
+      "@1": 0.413,
+      "@3": 0.5652,
+      "@5": 0.587,
+      "@10": 0.7174
     },
-    "doc_recall@10": 0.5778,
-    "soft_recall@10": 0.0889,
-    "doc_nDCG@5": 0.2703,
-    "near_miss_rate": 0.4222,
+    "doc_recall@10": 0.7174,
+    "soft_recall@10": 0.1087,
+    "doc_nDCG@5": 0.5061,
+    "near_miss_rate": 0.1957,
     "rank_stats": {
       "chunk": {
-        "count": 7,
-        "p50": 4,
-        "p75": 5,
-        "p90": 7,
-        "max": 8
+        "count": 24,
+        "p50": 2,
+        "p75": 6,
+        "p90": 8,
+        "max": 10
       },
       "doc": {
-        "count": 26,
-        "p50": 5,
-        "p75": 5,
-        "p90": 7,
-        "max": 9
+        "count": 33,
+        "p50": 1,
+        "p75": 3,
+        "p90": 6,
+        "max": 10
       }
     },
     "by_doctype": {
       "10-Q": {
+        "total": 6,
+        "chunk_hit": 1,
+        "doc_hit": 5,
+        "soft_hit": 2,
+        "doc_miss": 1,
+        "near_miss": 2
+      },
+      "10-K": {
+        "total": 3,
+        "chunk_hit": 1,
+        "doc_hit": 1,
+        "soft_hit": 0,
+        "doc_miss": 2,
+        "near_miss": 0
+      },
+      "8-K": {
         "total": 1,
         "chunk_hit": 0,
+        "doc_hit": 0,
+        "soft_hit": 0,
+        "doc_miss": 1,
+        "near_miss": 0
+      },
+      "press": {
+        "total": 26,
+        "chunk_hit": 16,
+        "doc_hit": 20,
+        "soft_hit": 3,
+        "doc_miss": 6,
+        "near_miss": 3
+      },
+      "product": {
+        "total": 6,
+        "chunk_hit": 4,
+        "doc_hit": 5,
+        "soft_hit": 0,
+        "doc_miss": 1,
+        "near_miss": 0
+      },
+      "dev_docs": {
+        "total": 1,
+        "chunk_hit": 1,
         "doc_hit": 1,
         "soft_hit": 0,
         "doc_miss": 0,
         "near_miss": 0
       },
-      "ars_pdf": {
-        "total": 9,
-        "chunk_hit": 0,
-        "doc_hit": 9,
-        "soft_hit": 0,
-        "doc_miss": 0,
-        "near_miss": 0
-      },
-      "press": {
-        "total": 25,
-        "chunk_hit": 6,
-        "doc_hit": 12,
-        "soft_hit": 2,
-        "doc_miss": 13,
-        "near_miss": 2
-      },
-      "product": {
-        "total": 6,
-        "chunk_hit": 0,
-        "doc_hit": 2,
-        "soft_hit": 2,
-        "doc_miss": 4,
-        "near_miss": 2
-      },
-      "dev_docs": {
+      "wiki": {
         "total": 2,
         "chunk_hit": 0,
         "doc_hit": 0,
@@ -153,10 +174,10 @@
         "doc_miss": 2,
         "near_miss": 0
       },
-      "wiki": {
-        "total": 2,
+      "help_docs": {
+        "total": 1,
         "chunk_hit": 1,
-        "doc_hit": 2,
+        "doc_hit": 1,
         "soft_hit": 0,
         "doc_miss": 0,
         "near_miss": 0
@@ -164,43 +185,106 @@
     },
     "by_backend": {
       "faiss": {
-        "queries": 15,
-        "chunk_recall@10": 0.1333,
-        "doc_recall@10": 0.6667,
-        "nDCG@5": 0.0287,
-        "doc_nDCG@5": 0.2224,
-        "near_miss_count": 1,
+        "queries": 10,
+        "chunk_recall@10": 0.7,
+        "doc_recall@10": 0.7,
+        "nDCG@5": 0.4393,
+        "doc_nDCG@5": 0.6387,
+        "near_miss_count": 0,
         "latency_ms": {
-          "p50": 15.03,
-          "p95": 16.95
+          "p50": 12.55,
+          "p95": 15.4
         }
       },
       "weaviate": {
-        "queries": 15,
-        "chunk_recall@10": 0.2,
-        "doc_recall@10": 0.5333,
-        "nDCG@5": 0.1345,
-        "doc_nDCG@5": 0.344,
-        "near_miss_count": 2,
+        "queries": 26,
+        "chunk_recall@10": 0.5769,
+        "doc_recall@10": 0.8077,
+        "nDCG@5": 0.342,
+        "doc_nDCG@5": 0.5485,
+        "near_miss_count": 3,
         "latency_ms": {
-          "p50": 73.56,
-          "p95": 79.52
+          "p50": 70.03,
+          "p95": 87.78
         }
       },
       "pinecone": {
-        "queries": 15,
-        "chunk_recall@10": 0.1333,
-        "doc_recall@10": 0.5333,
-        "nDCG@5": 0.0333,
-        "doc_nDCG@5": 0.2444,
-        "near_miss_count": 1,
+        "queries": 10,
+        "chunk_recall@10": 0.2,
+        "doc_recall@10": 0.5,
+        "nDCG@5": 0.0,
+        "doc_nDCG@5": 0.2631,
+        "near_miss_count": 2,
         "latency_ms": {
-          "p50": 129.85,
-          "p95": 158.88
+          "p50": 127.3,
+          "p95": 162.76
         }
       }
     }
   },
+  "run_context": {
+    "mode": "online_stub",
+    "mcp": {
+      "kb_search_url": "http://127.0.0.1:7801/invoke",
+      "started_by_step": true,
+      "ports": {
+        "kb.search": 7801,
+        "web.fetch": 7802,
+        "link.resolve": 7803,
+        "crm.lookup": 7804,
+        "safety.check": 7805
+      }
+    },
+    "router": {
+      "config": "configs/router.heuristics.yaml",
+      "weights": {
+        "similarity": 0.5,
+        "recency": 0.3,
+        "diversity": 0.2
+      },
+      "top_k_default": 10,
+      "fallback_order": [
+        "faiss",
+        "weaviate",
+        "pinecone"
+      ]
+    },
+    "vector": {
+      "config": "configs/vector.indexing.yaml",
+      "embedding": {
+        "dim": 768,
+        "model": "hashlex-v1"
+      }
+    },
+    "eval": {
+      "seed_path": "data/interim/eval/salesforce_eval_seed.jsonl",
+      "topk_eval": 10,
+      "topk_slices": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "near_seq_tol": 1
+    }
+  },
+  "trace_path": "reports/router/step07_retrieval_trace.jsonl",
+  "router_summary": {
+    "by_backend": {
+      "weaviate": 26,
+      "faiss": 10,
+      "pinecone": 10
+    },
+    "by_reason": {
+      "DEFAULT_WEAVIATE": 23,
+      "DEFINITION": 10,
+      "PERSONA_BIAS": 1,
+      "PR_QUERY": 10,
+      "FILTER_MATCH": 2
+    },
+    "fallback_used": 0,
+    "diversity_merge_used": 0
+  },
   "next_action": "fix_and_rerun",
-  "timestamp": "2025-09-26T15:37:16.685982+00:00"
+  "timestamp": "2025-09-29T20:37:31.396534+00:00"
 }
