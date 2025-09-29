@@ -1,0 +1,19 @@
+{
+  "summary": {
+    "total_items": 65,
+    "clusters_gt1": 20,
+    "total_clustered_items": 42,
+    "singletons": 23
+  },
+  "paths": {
+    "features": "data/interim/dedup/newsroom_text_features.jsonl",
+    "clusters": "data/interim/dedup/newsroom_dupe_clusters.jsonl",
+    "canonical_v2": "data/interim/dedup/newsroom_canonical.v2.jsonl"
+  },
+  "thresholds": {
+    "simhash_exact_hamming": 0,
+    "simhash_near_hamming": 10,
+    "jaccard_near": 0.95
+  },
+  "notes": "No raw files were modified. Use canonical.v2 to filter downstream or to prepare a manual actions script."
+}
