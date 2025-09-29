@@ -77,20 +77,42 @@ def domain_of(url: Optional[str]) -> str:
 
 
 def extract_title(html: str) -> Optional[str]:
-    # Prefer og:title
-    m = re.search(r"<meta[^>]+property=[\"']og:title[\"'][^>]+content=[\"'](.*?)[\"']", html, re.IGNORECASE)
-    if m:
+    """Extract title from HTML with improved og:title parsing"""
+
+    # 1. Prefer og:title - multiple formats
+    og_patterns = [
+        r'<meta\s+property=["\']og:title["\']\s+content=["\']([^"\']*)["\']',
+        r'<meta\s+content=["\']([^"\']*?)["\']\s+property=["\']og:title["\']',
+        r'<meta[^>]+property\s*=\s*["\']og:title["\']\s*content\s*=\s*["\']([^"\']*)["\']',
+        r"<meta[^>]+property=[\"']og:title[\"'][^>]+content=[\"'](.*?)[\"']",
+    ]
+
+    for pattern in og_patterns:
+        m = re.search(pattern, html, re.IGNORECASE)
+        if m and m.group(1).strip():
+            return m.group(1).strip()
+
+    # 2. Twitter title
+    m = re.search(r'<meta[^>]+name=["\']twitter:title["\']\s+content=["\']([^"\']*)["\']', html, re.IGNORECASE)
+    if m and m.group(1).strip():
         return m.group(1).strip()
-    # h1
+
+    # 3. h1 tag
     m = re.search(r"<h1[^>]*>(.*?)</h1>", html, re.IGNORECASE | re.DOTALL)
     if m:
         txt = re.sub(r"<[^>]+>", " ", m.group(1))
-        return re.sub(r"\s+", " ", txt).strip()
-    # title tag
+        title = re.sub(r"\s+", " ", txt).strip()
+        if title:
+            return title
+
+    # 4. title tag (fallback)
     m = re.search(r"<title[^>]*>(.*?)</title>", html, re.IGNORECASE | re.DOTALL)
     if m:
         txt = re.sub(r"<[^>]+>", " ", m.group(1))
-        return re.sub(r"\s+", " ", txt).strip()
+        title = re.sub(r"\s+", " ", txt).strip()
+        if title:
+            return title
+
     return None
 
 
