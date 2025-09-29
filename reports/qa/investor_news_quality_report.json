@@ -1,0 +1,77 @@
+{
+  "summary": {
+    "total_documents": 18,
+    "total_issues_found": 5,
+    "overall_quality_score": 98.0,
+    "assessment_timestamp": "2025-09-29T11:07:03.768415"
+  },
+  "quality_scores": {
+    "duplicate_detection": 100,
+    "completeness": 100,
+    "consistency": 94
+  },
+  "detailed_issues": {
+    "duplicate_titles": [
+      [
+        "crm::press::2025-09-03::news-details::2014af2d",
+        "crm::press::2025-05-28::news-details::e526586e",
+        0.907563025210084
+      ],
+      [
+        "crm::press::2024-04-30::news-details::05db958d",
+        "crm::press::2024-10-31::news-details::c5011c5a",
+        0.9444444444444444
+      ],
+      [
+        "crm::press::2024-07-31::news-details::9b19c384",
+        "crm::press::2024-10-31::news-details::c5011c5a",
+        0.9174311926605505
+      ]
+    ],
+    "date_inconsistencies": [
+      [
+        "crm::press::2025-09-03::news-details::2014af2d",
+        "2025-07-31",
+        "2025-09-03"
+      ],
+      [
+        "crm::press::2025-05-28::news-details::e526586e",
+        "2025-04-30",
+        "2025-05-28"
+      ]
+    ]
+  },
+  "diversity_stats": {
+    "date_distribution": {
+      "2025-09-03": 1,
+      "2025-05-27": 1,
+      "2025-03-21": 1,
+      "2025-05-28": 1,
+      "2025-03-05": 1,
+      "2024-09-17": 1,
+      "2025-01-06": 1,
+      "2025-02-24": 1,
+      "2024-04-30": 1,
+      "2024-07-31": 1,
+      "2024-10-31": 1,
+      "2024-04-25": 1,
+      "2024-05-22": 1,
+      "2024-09-05": 1,
+      "2025-01-31": 1,
+      "2024-01-31": 1,
+      "2024-11-20": 1,
+      "2025-06-23": 1
+    },
+    "content_type_distribution": {
+      "earnings": 18
+    },
+    "length_stats": {
+      "min": 6779,
+      "max": 59608,
+      "avg": 29407.777777777777
+    }
+  },
+  "recommendations": [
+    "发现日期不一致的问题，建议统一日期字段的来源和格式"
+  ]
+}
