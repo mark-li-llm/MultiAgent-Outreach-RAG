@@ -1,0 +1,131 @@
+{
+  "crm::8-K::2025-02-26::fy25-results-8-k::97457068": {
+    "file_path": "data/raw/sec/crm::8-K::2025-02-26::fy25-results-8-k::97457068.raw.html",
+    "total_chars": 4068,
+    "content_type": "proper_8k_form",
+    "is_xbrl_viewer": false,
+    "substantive_content": {
+      "earnings_related": false,
+      "governance_related": false,
+      "acquisition_related": false,
+      "key_dates": [
+        "February 26, 2025",
+        "January 31, 2025"
+      ],
+      "financial_figures": [
+        "$0.001 "
+      ],
+      "executive_names": [
+        "S"
+      ],
+      "substantive_paragraphs": 5
+    },
+    "document_structure": {
+      "has_proper_header": true,
+      "has_signature": true,
+      "sections_found": [
+        "13",
+        "12",
+        "18",
+        "9",
+        "2"
+      ],
+      "items_found": [
+        "2.02",
+        "9.01"
+      ],
+      "exhibits_found": [
+        "99.1"
+      ]
+    },
+    "quality_issues": [
+      "文档内容过短: 4068字符",
+      "未识别出明确的业务主题"
+    ]
+  },
+  "crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4": {
+    "file_path": "data/raw/sec/crm::8-K::2025-05-28::q1-fy26-results-8-k::35792ff4.raw.html",
+    "total_chars": 29080,
+    "content_type": "unknown",
+    "is_xbrl_viewer": false,
+    "substantive_content": {
+      "earnings_related": false,
+      "governance_related": false,
+      "acquisition_related": false,
+      "key_dates": [
+        "May 28, 2025",
+        "April 30, 2025"
+      ],
+      "financial_figures": [
+        "$0.001 "
+      ],
+      "executive_names": [
+        "SUNDEEP REDDY"
+      ],
+      "substantive_paragraphs": 1
+    },
+    "document_structure": {
+      "has_proper_header": true,
+      "has_signature": true,
+      "sections_found": [
+        "13",
+        "12",
+        "18"
+      ],
+      "items_found": [
+        "2.02"
+      ],
+      "exhibits_found": [
+        "99.1"
+      ]
+    },
+    "quality_issues": [
+      "实质性内容段落过少: 1个",
+      "未识别出明确的业务主题"
+    ]
+  },
+  "crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586": {
+    "file_path": "data/raw/sec/crm::8-K::2025-06-05::proxy-meeting-results-2025-06-05::47c09586.raw.html",
+    "total_chars": 63682,
+    "content_type": "unknown",
+    "is_xbrl_viewer": false,
+    "substantive_content": {
+      "earnings_related": false,
+      "governance_related": true,
+      "acquisition_related": false,
+      "key_dates": [
+        "June 9, 2025",
+        "March 27, 2035",
+        "April 24, 2025",
+        "June 5, 2025",
+        "January 31, 2026"
+      ],
+      "financial_figures": [
+        "$0.001 "
+      ],
+      "executive_names": [
+        "S"
+      ],
+      "substantive_paragraphs": 1
+    },
+    "document_structure": {
+      "has_proper_header": true,
+      "has_signature": true,
+      "sections_found": [
+        "13",
+        "12"
+      ],
+      "items_found": [
+        "5.07",
+        "5.02",
+        "9.01"
+      ],
+      "exhibits_found": [
+        "10.1"
+      ]
+    },
+    "quality_issues": [
+      "实质性内容段落过少: 1个"
+    ]
+  }
+}

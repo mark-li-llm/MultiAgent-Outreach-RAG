@@ -1,0 +1,69 @@
+{
+  "documents": {
+    "2025-02-26": {
+      "length_analysis": {
+        "total_chars": 4068,
+        "total_lines": 74,
+        "words": 558,
+        "non_whitespace_chars": 3354,
+        "substantive_text": 3808
+      },
+      "structure_analysis": {
+        "form_8k_mentions": 4,
+        "items_found": 3,
+        "sections_found": 6,
+        "exhibits_found": 2,
+        "has_signature": true,
+        "has_date": true,
+        "has_salesforce": true
+      }
+    },
+    "2025-05-28": {
+      "length_analysis": {
+        "total_chars": 29080,
+        "total_lines": 8,
+        "words": 1161,
+        "non_whitespace_chars": 27917,
+        "substantive_text": 4605
+      },
+      "structure_analysis": {
+        "form_8k_mentions": 2,
+        "items_found": 1,
+        "sections_found": 3,
+        "exhibits_found": 2,
+        "has_signature": true,
+        "has_date": true,
+        "has_salesforce": true
+      }
+    },
+    "2025-06-05": {
+      "length_analysis": {
+        "total_chars": 63682,
+        "total_lines": 8,
+        "words": 2404,
+        "non_whitespace_chars": 61276,
+        "substantive_text": 7259
+      },
+      "structure_analysis": {
+        "form_8k_mentions": 2,
+        "items_found": 3,
+        "sections_found": 2,
+        "exhibits_found": 1,
+        "has_signature": true,
+        "has_date": true,
+        "has_salesforce": true
+      }
+    }
+  },
+  "similarities": {
+    "2025-02-26 vs 2025-05-28": 0.7091289198606272,
+    "2025-02-26 vs 2025-06-05": 0.3580709094913015,
+    "2025-05-28 vs 2025-06-05": 0.49485206459304215
+  },
+  "length_stats": {
+    "min_length": 4068,
+    "max_length": 63682,
+    "avg_length": 32276.666666666668,
+    "length_ratio": 15.654375614552606
+  }
+}
