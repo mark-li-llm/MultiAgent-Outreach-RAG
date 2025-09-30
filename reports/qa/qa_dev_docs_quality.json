@@ -1,0 +1,98 @@
+{
+  "gate": "QA_DEV_DOCS",
+  "computed_at": "2025-09-29T21:35:39.463039+00:00",
+  "status": "FAIL",
+  "metrics": {
+    "total_meta_files": 4,
+    "total_html_files": 4,
+    "file_pair_completeness": 1.0,
+    "http_200_count": 4,
+    "http_200_ratio": 1.0,
+    "title_coverage": 1.0,
+    "missing_title_count": 0,
+    "field_coverage": {
+      "doc_id": 1.0,
+      "source_domain": 1.0,
+      "source_bucket": 1.0,
+      "requested_url": 1.0,
+      "final_url": 1.0,
+      "http_status": 1.0,
+      "content_type": 1.0,
+      "fetched_at": 1.0,
+      "sha256_raw": 1.0,
+      "visible_title": 1.0,
+      "headline": 1.0
+    },
+    "content_size_stats": {
+      "min_bytes": 48292,
+      "max_bytes": 73093,
+      "mean_bytes": 60753,
+      "median_bytes": 60813
+    },
+    "source_domains": {
+      "developer.salesforce.com": 4
+    },
+    "duplicate_sha256_rate": 0.0,
+    "duplicate_count": 0,
+    "missing_html_files": 0
+  },
+  "checks": [
+    {
+      "id": "DEV-001",
+      "metric": "file_pair_completeness",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS",
+      "description": "All meta.json files should have corresponding raw.html files"
+    },
+    {
+      "id": "DEV-002",
+      "metric": "http_200_ratio",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS",
+      "description": "All fetched documents should have HTTP 200 status"
+    },
+    {
+      "id": "DEV-003",
+      "metric": "title_coverage",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS",
+      "description": "All documents should have visible_title or headline"
+    },
+    {
+      "id": "DEV-004",
+      "metric": "required_fields_complete",
+      "actual": true,
+      "threshold": "==True",
+      "status": "PASS",
+      "description": "Required metadata fields must be 100% present: ['doc_id', 'source_domain', 'source_bucket', 'requested_url', 'final_url', 'http_status', 'fetched_at', 'sha256_raw']"
+    },
+    {
+      "id": "DEV-005",
+      "metric": "duplicate_sha256_rate",
+      "actual": 0.0,
+      "threshold": "==0.0",
+      "status": "PASS",
+      "description": "No duplicate content (by SHA256 hash)"
+    },
+    {
+      "id": "DEV-006",
+      "metric": "total_documents",
+      "actual": 4,
+      "threshold": "==8",
+      "status": "FAIL",
+      "description": "Should have exactly 8 dev_docs documents"
+    },
+    {
+      "id": "DEV-007",
+      "metric": "min_content_size",
+      "actual": 48292,
+      "threshold": ">=10000",
+      "status": "PASS",
+      "description": "All documents should have substantial content (>=10KB)"
+    }
+  ],
+  "issues": []
+}
