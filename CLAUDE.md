@@ -2,90 +2,495 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Project Overview
+
+This is a multi-agent RAG (Retrieval-Augmented Generation) system for Sales/IR/PR outreach that automates trusted-source research and audit-ready email generation with step-level traceability. The system implements a gated data pipeline with quality checks at each stage, emitting both machine-readable JSON and human-readable Markdown reports.
+
+## Architecture
+
+### Data Pipeline Stages
+
+The system follows a multi-stage pipeline with quality gates:
+
+1. **Collection** (`fetch_*.py`, `ingest_*.py`): Gather documents from various sources
+2. **Normalization** (`qa_verify_normalization.py`): Apply text cleaning rules
+3. **Metadata Extraction** (`extract_metadata.py`): Extract structured metadata
+4. **Chunking** (`chunk_documents.py`): Split documents into retrievable units
+5. **Deduplication** (`dedupe_chunks.py`): Remove duplicate content
+6. **Embedding** (Gate-1): Generate text vectors using hashlex-v1
+7. **Indexing** (Gate-2): Build FAISS/Weaviate/Pinecone indexes
+8. **MCP Tools** (Gate-3): Validate tool health and contracts
+9. **Routing** (Gate-4): Test query routing heuristics
+10. **Graph Orchestration** (Gate-5): Validate LangGraph workflows
+11. **A2A Compliance** (Gate-6): Agent-to-agent handoffs and compliance checks
+12. **Retrieval Evaluation** (Gate-7): End-to-end retrieval quality assessment
+
+### Multi-Agent Architecture (A2A)
+
+The system uses LangGraph to orchestrate agent-to-agent interactions:
+
+- **Planner**: Routing and policy selection using heuristics from `configs/router.heuristics.yaml`
+- **Retriever**: Executes MCP `kb.search` tool across multiple vector backends
+- **Consolidator**: Lightweight lexical reranking and evidence consolidation
+- **Stylist**: Email generation with compliance checking
+
+Agent nodes and timeouts are defined in `configs/langgraph.nodes.yaml`.
+
+### Text Embedding System (hashlex-v1)
+
+**Location**: `scripts/embedding_utils.py`
+
+**Process**:
+1. Normalize text (lowercase, ASCII, collapse digits, whitespace)
+2. Tokenize (extract words + bigrams for local context)
+3. Signed feature hashing (FNV-1a based, deterministic)
+4. L2 normalization
+
+**Critical**: Both documents and queries MUST use the same `embed_text(text, dim)` function to ensure they exist in the same vector space. Mismatched embeddings will result in recall=0.
+
+**Configuration**: `configs/vector.indexing.yaml` specifies:
+- `embedding.model: hashlex-v1`
+- `embedding.dim: 768`
+- `embedding.batch_size: 256`
+
+### Multi-Index Routing
+
+**Router logic**: `scripts/router_core.py`
+**Heuristics config**: `configs/router.heuristics.yaml`
+
+The router selects between FAISS, Weaviate, and Pinecone backends based on:
+- Keyword matching rules (first match wins)
+- Persona bias (optional per-persona preferences)
+- Weighted scoring (similarity 0.5, recency 0.3, diversity 0.2)
+- Fallback order when no rule matches
+
+### MCP (Model Context Protocol) Tools
+
+**Stub service**: `scripts/qa_step03_mcp.py`
+**Configuration**: `configs/mcp.tools.yaml`
+
+Local stub services run on localhost ports 7801-7805:
+- `kb.search` (7801): Knowledge base search across vector backends
+- `web.fetch` (7802): Web content fetching
+- `link.resolve` (7803): URL resolution
+- `crm.lookup` (7804): CRM data lookup
+- `safety.check` (7805): Compliance and safety validation
+
+These are designed to run offline and can be swapped for production services by updating the config.
+
 ## Environment Setup
 
-This project uses two conda environments to avoid OpenMP runtime conflicts:
+### Two-Environment Architecture
 
-- `age` (Python 3.13): Main environment for most tasks including embeddings, routing, and retrieval evaluation
-- `ageFaiss` (Python 3.12): Dedicated environment for FAISS index builds and health checks
+This project uses **two separate conda environments** to avoid OpenMP runtime conflicts:
 
-Create environments from provided YAMLs:
+#### `age` (Python 3.13) — Primary Environment
+- **Use for**: Most tasks including Gate-1 (embeddings), Gate-7 (retrieval eval), routing, MCP stubs
+- **Critical**: DO NOT install pip `faiss-cpu` in this environment (causes OMP Error #15)
+- **Key packages**: aiohttp, pyyaml, pyarrow>=21, numpy>=2.3, openblas, llvm-openmp
+
+#### `ageFaiss` (Python 3.12) — FAISS-Only Environment
+- **Use for**: Gate-2 (FAISS index builds) and FAISS health checks only
+- **Key packages**: faiss-cpu=1.9.*, numpy=1.26.*, scipy, pyarrow=21.*
+
+### Environment Creation
+
 ```bash
 conda env create -f envs/age.yaml
 conda env create -f envs/ageFaiss.yaml
 ```
 
-**Critical**: Never install pip `faiss-cpu` in the `age` environment as it bundles libomp and causes duplicate OpenMP runtime crashes (OMP Error #15).
+See `docs/envs.md` for detailed environment documentation.
 
 ## Key Commands
 
-### Quality Gates (QA Scripts)
-- Gate-1 (Embeddings): `conda run -n age python scripts/qa_step01_embeddings.py`
-- Gate-2 (FAISS Index): `conda run -n ageFaiss python scripts/qa_step02_indexes.py`
-- Gate-7 (Retrieval Eval): `conda run -n age AG7_IGNORE_COVERAGE=1 AG7_LATENCY_MULTIPLIER=3.0 python scripts/qa_step07_retrieval_eval.py`
+### Quality Gates (Main Pipeline)
 
-### MCP Service
-- Start local stub services: `conda run -n age python scripts/qa_step03_mcp.py`
-- Services run on localhost ports 7801-7805 (configured in `configs/mcp.tools.yaml`)
+Run gates in sequence to validate the pipeline:
 
-### Other Scripts
-- Build inventory: `python3 scripts/build_inventory_csv.py`
-- Day-1 verification: `python3 scripts/verify_day1_milestones.py`
-- Link health check: `python3 scripts/link_health_check.py`
+```bash
+# Gate-0: Baseline checks
+conda run -n age python scripts/qa_step00_baseline.py
 
-## Architecture Overview
+# Gate-1: Generate embeddings (text vectors)
+conda run -n age python scripts/qa_step01_embeddings.py
 
-### Text Embedding System
-- **Core utility**: `scripts/embedding_utils.py` implements `hashlex-v1` embedding model
-- **Process**: normalize → tokenize (words + bigrams) → signed feature hashing → L2 normalization
-- **Function**: Use `embed_text(text, dim)` for both documents and queries
-- **Dimensions**: 768 (configured in `configs/vector.indexing.yaml`)
+# Gate-2: Build and validate FAISS index
+conda run -n ageFaiss python scripts/qa_step02_indexes.py
 
-### Data Pipeline
-1. **Collection**: Fetch and normalize documents from various sources
-2. **Embedding**: Generate text embeddings using hashlex-v1 model (`scripts/qa_step01_embeddings.py`)
-3. **Indexing**: Build FAISS HNSW index for vector search (`scripts/qa_step02_indexes.py`)
-4. **Routing**: Query routing and reranking logic (`scripts/router_core.py`)
-5. **Evaluation**: Retrieval quality assessment with recall@10, nDCG@5 metrics
+# Gate-3: Validate MCP tool health and contracts
+conda run -n age python scripts/qa_step03_mcp.py
 
-### Key Directories
-- `configs/`: YAML configuration files for various components
-- `scripts/`: Main processing scripts and QA gates
-- `data/`: Processed data artifacts (embeddings, indexes, reports)
-- `reports/qa/`: Machine and human-readable QA reports
-- `logs/`: Runtime logs organized by component
+# Gate-4: Test router heuristics
+conda run -n age python scripts/qa_step04_router.py
 
-### Configuration Files
-- `configs/vector.indexing.yaml`: Embedding and index settings
-- `configs/router.heuristics.yaml`: Query routing logic
-- `configs/mcp.tools.yaml`: MCP service endpoints and ports
-- `configs/metadata.dictionary.yaml`: Metadata extraction rules
+# Gate-5: Validate LangGraph orchestration
+conda run -n age python scripts/qa_step05_graph.py
+
+# Gate-6: Agent-to-agent compliance checks
+conda run -n age python scripts/qa_step06_a2a.py --session-id <SESSION>
+
+# Gate-7: Retrieval evaluation (recall@10, nDCG@5, latency)
+conda run -n age AG7_IGNORE_COVERAGE=1 AG7_LATENCY_MULTIPLIER=3.0 python scripts/qa_step07_retrieval_eval.py
+```
+
+### Data Collection
+
+```bash
+# Fetch from various sources
+python3 scripts/fetch_sec_filings.py
+python3 scripts/fetch_product_docs.py
+python3 scripts/fetch_dev_docs.py
+python3 scripts/fetch_help_docs.py
+python3 scripts/fetch_wikipedia.py
+python3 scripts/fetch_newsroom_rss.py
+python3 scripts/fetch_investor_news.py
+
+# Manual ingestion (HTML files in data/manual_inbox/)
+python3 scripts/ingest_manual_html.py
+python3 scripts/ingest_manual_ir_html.py
+```
+
+### Data Processing
+
+```bash
+# Parse SEC filing structures
+python3 scripts/parse_sec_structures.py
+
+# Extract metadata
+python3 scripts/extract_metadata.py
+
+# Chunk documents
+python3 scripts/chunk_documents.py
+
+# Deduplicate chunks
+python3 scripts/dedupe_chunks.py
+
+# Build evaluation seed
+python3 scripts/build_eval_seed.py
+```
+
+### Verification & Utilities
+
+```bash
+# Verify individual pipeline stages
+python3 scripts/qa_verify_collection.py
+python3 scripts/qa_verify_normalization.py
+python3 scripts/qa_verify_metadata.py
+python3 scripts/qa_verify_chunking.py
+python3 scripts/qa_verify_dedupe.py
+python3 scripts/qa_verify_link_health.py
+python3 scripts/qa_verify_eval_seed.py
+python3 scripts/qa_verify_day1_signoff.py
+
+# Build inventory CSV
+python3 scripts/build_inventory_csv.py
+
+# Check link health
+python3 scripts/link_health_check.py
+
+# Day-1 milestone verification
+python3 scripts/verify_day1_milestones.py
+```
+
+### MCP & Agent Services
+
+```bash
+# Start local MCP stub services
+conda run -n age python scripts/qa_step03_mcp.py
+
+# Run tool safety check server
+python3 scripts/tool_safety_check_server.py
+
+# Execute LangGraph workflow
+python3 scripts/run_graph.py
+```
+
+## Directory Structure
+
+```
+ag3/
+├── configs/                      # YAML configuration files
+│   ├── vector.indexing.yaml      # Embedding and index settings
+│   ├── router.heuristics.yaml    # Query routing logic
+│   ├── mcp.tools.yaml            # MCP service endpoints
+│   ├── langgraph.nodes.yaml      # Agent graph orchestration
+│   ├── metadata.dictionary.yaml  # Metadata extraction rules
+│   ├── normalization.rules.yaml  # Text normalization rules
+│   ├── eval.prompts.yaml         # Evaluation prompt templates
+│   ├── agents.schema.yaml        # Agent schema definitions
+│   ├── compliance.template.yaml  # Compliance check templates
+│   └── chunking.config.json      # Document chunking parameters
+│
+├── scripts/                      # Processing and QA scripts (41 total)
+│   ├── embedding_utils.py        # Core hashlex-v1 embedding implementation
+│   ├── router_core.py            # Query routing and reranking logic
+│   ├── qa_step*.py               # Quality gate scripts (Gates 0-7)
+│   ├── fetch_*.py                # Data collection scripts
+│   ├── ingest_*.py               # Manual data ingestion
+│   ├── qa_verify_*.py            # Individual stage verification
+│   └── [other utilities]
+│
+├── data/                         # Data artifacts (organized by stage)
+│   ├── raw/                      # Original fetched documents
+│   │   ├── sec/                  # SEC filings
+│   │   ├── product/              # Product documentation
+│   │   ├── dev_docs/             # Developer documentation
+│   │   ├── help_docs/            # Help articles
+│   │   ├── newsroom/             # Press releases
+│   │   ├── investor_news/        # Investor news
+│   │   └── wikipedia/            # Wikipedia articles
+│   ├── manual_inbox/             # Manual HTML ingestion staging
+│   ├── interim/                  # Intermediate processing artifacts
+│   │   ├── normalized/           # Normalized documents
+│   │   ├── chunks/               # Chunked documents
+│   │   ├── dedup/                # Deduplicated chunks
+│   │   └── eval/                 # Evaluation datasets
+│   ├── vector/                   # Vector embeddings and indexes
+│   │   ├── embeddings/           # Generated embeddings (Parquet)
+│   │   ├── faiss/                # FAISS indexes
+│   │   ├── weaviate/             # Weaviate manifests
+│   │   └── pinecone/             # Pinecone manifests
+│   ├── final/                    # Production-ready artifacts
+│   │   ├── reports/              # Index health reports
+│   │   ├── inventory/            # Document inventory
+│   │   ├── dictionaries/         # Metadata dictionaries
+│   │   └── rules/                # Normalization rules
+│   └── backup/                   # Backups and historical data
+│
+├── reports/                      # Quality assurance reports
+│   ├── qa/                       # Gate reports (JSON + Markdown)
+│   │   ├── step0*.{json,md}      # Gate outputs (dual format)
+│   │   └── [other gates]
+│   ├── eval/                     # Evaluation artifacts
+│   │   └── retrieval_failures.jsonl  # Failed retrieval traces
+│   └── router/                   # Router trace logs
+│       └── step07_retrieval_trace.jsonl
+│
+├── logs/                         # Runtime logs (organized by component)
+│
+├── outputs/                      # Generated outputs (emails, etc.)
+│
+├── state/                        # Persistent state
+│
+├── envs/                         # Conda environment definitions
+│   ├── age.yaml                  # Primary environment (Python 3.13)
+│   └── ageFaiss.yaml             # FAISS environment (Python 3.12)
+│
+├── docs/                         # Documentation
+│   ├── envs.md                   # Environment setup details
+│   └── README.md
+│
+├── icl/                          # In-context learning templates
+│   ├── persona/                  # Persona definitions
+│   └── templates/                # Prompt templates
+│
+├── worktrees/                    # Git worktrees (IGNORED by .gitignore)
+│
+├── README.md                     # Main project documentation
+├── README_DAY1.md                # Day-1 milestone documentation
+├── AGENTS.md                     # Agent/automation guidelines
+└── CLAUDE.md                     # This file (Claude Code guidance)
+```
+
+## Configuration Files
+
+### `configs/vector.indexing.yaml`
+Defines embedding and index settings:
+- Embedding model (`hashlex-v1`), dimensions (768), batch size
+- FAISS HNSW parameters (M=32, efConstruction=200, efSearch=128)
+- Pinecone and Weaviate manifests (simulated, no network)
+
+### `configs/router.heuristics.yaml`
+Query routing heuristics:
+- Weighting: similarity (0.5), recency (0.3), diversity (0.2)
+- Keyword-based routing rules (press/financial → Pinecone, developer → Weaviate, definitions → FAISS)
+- Persona bias (optional per-role preferences)
+- Fallback order: [faiss, weaviate, pinecone]
+
+### `configs/mcp.tools.yaml`
+MCP service endpoints:
+- Localhost ports 7801-7805
+- Timeout budgets (2000ms default)
+
+### `configs/langgraph.nodes.yaml`
+Agent graph configuration:
+- Node list: Intake → Planner → Retriever → Synthesizer → Consolidator → Stylist → A2A → Assembler
+- Per-node timeout budgets (2s to 10s)
+
+### `configs/metadata.dictionary.yaml`
+Metadata extraction rules for structured fields
+
+### `configs/normalization.rules.yaml`
+Text cleaning and normalization patterns
+
+### `configs/eval.prompts.yaml`
+Evaluation prompt templates for quality assessment
+
+### `configs/agents.schema.yaml`
+Agent schema definitions and validation rules
+
+### `configs/compliance.template.yaml`
+Compliance check templates for generated content
 
 ## Important Environment Variables
-- `AG7_IGNORE_COVERAGE=1`: Skip coverage gating in Gate-7
-- `AG7_LATENCY_MULTIPLIER=<float>`: Relax latency budgets for retrieval eval
+
+### Gate-7 (Retrieval Evaluation)
+- `AG7_IGNORE_COVERAGE=1`: Skip coverage gating (recommended for initial runs)
+- `AG7_LATENCY_MULTIPLIER=<float>`: Relax latency budgets (e.g., 3.0 for 3x tolerance)
+- `AG7_ANALYZE_TOPK=<int>`: Retrieval cut-off for evaluation (default: 10)
+- `AG7_TOPK_SLICES="1,3,5,10"`: Additional @k slices for recall curves
+- `AG7_NEAR_SEQ_TOL=<int>`: Near-miss tolerance in chunks within same doc (default: 1)
+- `AG7_TRACE=1`: Enable per-query trace JSONL (default: enabled)
+- `AG7_TRACE_TOPK=<int>`: Number of top-K items to capture in trace (default: 10)
+- `AG7_TRACE_SUCCESSES=1`: Include successes in trace (default: enabled; set 0 for misses only)
+- `AG7_DEBUG=1`: Umbrella debug switch enabling tracing (default: enabled)
+
+### General
 - `AR_USER_AGENT`: Custom user agent for web requests
-- `AR_GLOBAL_RPS`: Rate limiting for HTTP requests
+- `AR_GLOBAL_RPS`: Rate limiting for HTTP requests (requests per second)
 
 ## Troubleshooting
 
-### OpenMP Conflicts
-- **Symptom**: OMP Error #15 or segfault during FAISS operations
-- **Cause**: Mixing pip `faiss-cpu` with conda OpenBLAS+OpenMP
-- **Fix**: Always run Gate-2 in `ageFaiss` environment, never install pip FAISS in `age`
+### OpenMP Runtime Conflicts
+**Symptom**: `OMP Error #15` or segfault during FAISS operations
 
-### Recall Issues
-- **Symptom**: recall=0 in Gate-7 evaluation
-- **Cause**: Mismatched embeddings between documents and queries
-- **Fix**: Ensure both use the same `embed_text()` function from `embedding_utils.py`
+**Cause**: Mixing pip `faiss-cpu` (which bundles libomp) with conda OpenBLAS+OpenMP in the same environment
+
+**Fix**:
+1. Always run Gate-2 (FAISS index builds) in the `ageFaiss` environment
+2. NEVER install pip `faiss-cpu` in the `age` environment
+3. If already installed, recreate the environment from scratch: `conda env remove -n age && conda env create -f envs/age.yaml`
+
+### Recall=0 in Gate-7
+**Symptom**: Retrieval evaluation shows 0% recall despite having indexed documents
+
+**Cause**: Mismatched embeddings between documents and queries (e.g., using different embedding functions or random vectors)
+
+**Fix**: Ensure both document indexing (Gate-1) and query processing use `embed_text()` from `scripts/embedding_utils.py` with the same dimensionality (768)
 
 ### Port Conflicts
-- **Symptom**: "Port busy" errors for MCP services
-- **Fix**: Stop existing stub services or check running processes on ports 7801-7805
+**Symptom**: "Port busy" errors when starting MCP services on ports 7801-7805
+
+**Fix**:
+1. Check for existing stub services: `lsof -i :7801-7805`
+2. Stop existing services or kill processes using these ports
+3. Alternatively, update `configs/mcp.tools.yaml` to use different ports
+
+### PDF Glyph Noise
+**Symptom**: Chunks contain CID-like tokens or rendering artifacts from PDF extraction
+
+**Impact**: Partial mitigation via tokenization and bigrams in hashlex-v1; may still affect retrieval quality
+
+**Mitigation**: Consider implementing a PDF-specific preprocessing step or enhancing the reranker
+
+### JSONL Parse Errors
+**Symptom**: Errors reading intermediate JSONL files
+
+**Fix**: Ensure UTF-8 encoding and valid JSON on each line; check logs for corrupted entries
+
+### Missing Dependencies
+**Symptom**: Import errors for packages like `yaml`, `pyarrow`, `aiohttp`
+
+**Fix**: Recreate the conda environment from the appropriate YAML file
+
+## Quality Gates & Outputs
+
+Each quality gate produces dual-format reports (JSON for machines, Markdown for humans):
+
+| Gate | Script | JSON Report | Markdown Report | Additional Artifacts |
+|------|--------|-------------|-----------------|---------------------|
+| Gate-0 | `qa_step00_baseline.py` | `reports/qa/step00_baseline.json` | `reports/qa/step00_baseline.md` | N/A |
+| Gate-1 | `qa_step01_embeddings.py` | `reports/qa/step01_embeddings.json` | `reports/qa/step01_embeddings.md` | `data/vector/embeddings/embeddings.parquet` |
+| Gate-2 | `qa_step02_indexes.py` | `reports/qa/step02_indexes.json` | `reports/qa/step02_indexes.md` | `data/final/reports/index_health.json`, FAISS indexes |
+| Gate-3 | `qa_step03_mcp.py` | `reports/qa/step03_mcp.json` | `reports/qa/step03_mcp.md` | N/A |
+| Gate-4 | `qa_step04_router.py` | `reports/qa/step04_router.json` | `reports/qa/step04_router.md` | N/A |
+| Gate-5 | `qa_step05_graph.py` | `reports/qa/step05_graph.json` | `reports/qa/step05_graph.md` | N/A |
+| Gate-6 | `qa_step06_a2a.py` | `reports/qa/step06_a2a.json` | `reports/qa/step06_a2a.md` | N/A |
+| Gate-7 | `qa_step07_retrieval_eval.py` | `reports/qa/step07_retrieval_eval.json` | `reports/qa/step07_retrieval_eval.md` | `reports/eval/retrieval_failures.jsonl`, `reports/router/step07_retrieval_trace.jsonl` |
+
+**Report Locations**:
+- Machine-readable: `reports/qa/step*.json`
+- Human-readable: `reports/qa/step*.md`
+- Evaluation traces: `reports/eval/` and `reports/router/`
+
+## Evaluation Metrics (Gate-7)
+
+The retrieval evaluation (Gate-7) computes:
+
+- **recall@10**: Proportion of relevant documents retrieved in top 10 results
+- **nDCG@5**: Normalized Discounted Cumulative Gain at rank 5 (ranking quality)
+- **coverage**: Optional check that all indexed documents are reachable
+- **freshness**: Time-based relevance of retrieved documents
+- **latency**: Response time budgets (median, p95, p99) per backend
+
+Failures are logged to `reports/eval/retrieval_failures.jsonl` with full query context and retrieved results for debugging.
+
+## Scale & Performance
+
+- **Current scale**: Designed and verified on 100+ documents (~1.6k chunks)
+- **FAISS latency**: Median sub-second local retrieval
+- **Weaviate/Pinecone**: Simulated manifests (no network required for development)
+- **Horizontal scaling**: Stateless stages and services; indexes can be sharded externally
 
 ## Code Conventions
-- Use existing embedding utilities (`scripts/embedding_utils.py`) for all text vectorization
-- Follow configuration patterns in `configs/` directory
-- Output QA reports to `reports/qa/` with both JSON and Markdown formats
-- Preserve report schemas used by quality gates
-- Use environment variables for optional behavior changes rather than code modifications
+
+When working with this codebase:
+
+1. **Embedding consistency**: Always use `embed_text()` from `scripts/embedding_utils.py` for both documents and queries
+2. **Environment discipline**: Use `age` for most tasks, `ageFaiss` only for Gate-2 FAISS builds
+3. **Report preservation**: Maintain dual JSON+Markdown report format; don't change schemas without updating consumers
+4. **Config-driven behavior**: Prefer adding environment variables or config options over hardcoding
+5. **Minimal dependencies**: Avoid adding heavyweight packages; keep the system lightweight and portable
+6. **No auto-install**: Don't add automatic package installation to scripts (breaks environment reproducibility)
+7. **Traceability**: Preserve evidence links and provenance chains in reports
+8. **Stateless design**: Keep stages independent and replayable
+
+## Git Worktrees
+
+The `worktrees/` directory contains git worktrees for parallel development branches (e.g., `agent-faiss`, `agent-pinecone`, `agent-weaviate`, `agent-test`). This directory is excluded via `.gitignore` to prevent conflicts.
+
+## Quick Start
+
+1. **Create environments**:
+   ```bash
+   conda env create -f envs/age.yaml
+   conda env create -f envs/ageFaiss.yaml
+   ```
+
+2. **Build embeddings and indexes**:
+   ```bash
+   conda run -n age python scripts/qa_step01_embeddings.py
+   conda run -n ageFaiss python scripts/qa_step02_indexes.py
+   ```
+
+3. **Validate MCP tools**:
+   ```bash
+   conda run -n age python scripts/qa_step03_mcp.py
+   ```
+
+4. **Run retrieval evaluation**:
+   ```bash
+   conda run -n age AG7_IGNORE_COVERAGE=1 python scripts/qa_step07_retrieval_eval.py
+   ```
+
+5. **Inspect results**:
+   ```bash
+   cat reports/qa/step07_retrieval_eval.md
+   ```
+
+## Additional Resources
+
+- **Main documentation**: `README.md` (architecture overview, system design)
+- **Agent guidelines**: `AGENTS.md` (automation-friendly runbook)
+- **Day-1 milestones**: `README_DAY1.md` (initial milestone documentation)
+- **Environment details**: `docs/envs.md` (conda environment deep dive)
+
+## Notes for Claude Code
+
+- This is a research/evaluation system designed for traceability and reproducibility
+- All stages emit dual-format reports (JSON + Markdown) for both machines and humans
+- The hashlex-v1 embedding model is deterministic and requires no external dependencies
+- MCP stubs run locally on localhost (no network required for development)
+- For production use, swap MCP stub endpoints in `configs/mcp.tools.yaml` to point to real services
+- The two-environment architecture is critical: mixing FAISS pip packages into the main environment causes OpenMP crashes
