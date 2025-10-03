@@ -95,29 +95,95 @@ def _days_since(iso_date: Optional[str]) -> Optional[int]:
 
 async def main_async():
     from router_core import load_router_config, load_mcp_map, load_doc_meta, decide_backend, rerank
-    # Try to import/start MCP stubs; fall back to offline search if heavy deps (numpy/pyarrow) are missing
-    use_offline = False
-    start_stub_servers = None
-    stop_stub_servers = None
-    try:
-        from qa_step03_mcp import start_stub_servers as _sss, stop_stub_servers as _sts  # type: ignore
-        start_stub_servers = _sss
-        stop_stub_servers = _sts
-    except Exception:
-        use_offline = True
+    from common import MCPConnectionManager, load_fallback_mode, FallbackMode
 
     ensure_dir(os.path.dirname(QA_JSON))
     ensure_dir(TRACE_DIR)
 
-    # Start stub servers (kb.search, etc.) so this step is self-contained
+    # Load config and fallback mode
     tools_cfg = load_mcp_map()
+    full_cfg = load_yaml(os.path.join("configs", "mcp.tools.yaml"))
+    fallback_mode = load_fallback_mode(full_cfg)
+
+    # Initialize connection manager
+    mgr = MCPConnectionManager(tools_cfg, fallback_mode)
+
+    # Define connection functions
     state: Dict[str, Any] = {}
-    if not use_offline:
-        try:
-            await start_stub_servers(state, {"tools": tools_cfg})  # type: ignore
-        except Exception:
-            # Fallback to offline mode if servers fail to start (e.g., numpy/pyarrow issues)
-            use_offline = True
+    start_stub_servers = None
+    stop_stub_servers = None
+
+    async def start_internal_stub():
+        """Start internal stub servers."""
+        from qa_step03_mcp import start_stub_servers as _sss, stop_stub_servers as _sts  # type: ignore
+        nonlocal start_stub_servers, stop_stub_servers
+        start_stub_servers = _sss
+        stop_stub_servers = _sts
+        await _sss(state, {"tools": tools_cfg})
+
+    async def test_external_service():
+        """Test external MCP service availability."""
+        connector = aiohttp.TCPConnector(limit_per_host=8)
+        async with aiohttp.ClientSession(connector=connector) as test_session:
+            base = tools_cfg.get("kb.search") or {}
+            host = base.get("host", "127.0.0.1")
+            port = int(base.get("port", 7801))
+            url = f"http://{host}:{port}/invoke"
+            payload = {"method": "search", "params": {"query": "test", "backend": "faiss", "top_k": 1}}
+            timeout = full_cfg.get("fallback", {}).get("policy", {}).get("connection_timeout_ms", 2000) / 1000.0
+            async with test_session.post(url, json=payload, timeout=timeout) as resp:
+                if resp.status != 200:
+                    raise RuntimeError(f"External service returned status {resp.status}")
+                result = await resp.json()
+                if "results" not in result:
+                    raise RuntimeError("Invalid response format from external service")
+                print(f"✓ External service available at {url}")
+
+    async def setup_offline():
+        """Setup for offline mode (no-op, actual setup happens later)."""
+        pass
+
+    # Connect with fallback logic
+    use_offline = False
+    service_type = None
+    downgrades = []
+    try:
+        service_type, use_offline, downgrades = await mgr.connect(
+            start_internal_stub,
+            test_external_service,
+            setup_offline
+        )
+        print(f"✓ MCP service mode: {service_type}")
+    except RuntimeError as e:
+        # Strict mode failure
+        print(f"✗ MCP connection failed in strict mode: {e}")
+        machine = {
+            "step": "step04_router",
+            "gate": "Gate-4",
+            "status": "RED",
+            "service_mode": "unavailable",
+            "fallback_mode": fallback_mode.value,
+            "error": {"code": "MCPUnavailable", "message": str(e)},
+            "checks": [],
+            "next_action": "fix_mcp_service",
+            "timestamp": now_iso(),
+        }
+        with open(QA_JSON, "w", encoding="utf-8") as f:
+            json.dump(machine, f, ensure_ascii=False, indent=2)
+
+        lines = [
+            f"# STEP 4 — Router Heuristics (Gate‑4) — RED",
+            "",
+            "⚠️ **MCP Service Unavailable (Strict Mode)**",
+            "",
+            f"Error: {e}",
+            "",
+            "Next action: fix_mcp_service",
+        ]
+        with open(QA_MD, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
+
+        return "RED"
 
     router_cfg = load_router_config()
     fallback_order: List[str] = router_cfg.get("fallback_order", ["faiss", "weaviate", "pinecone"])
@@ -409,10 +475,29 @@ async def main_async():
             status = "AMBER"
             next_action = "increase_recency_diversity_weights"
 
+    # Adjust status for WARN mode if downgrades occurred
+    warnings = []
+    if fallback_mode == FallbackMode.WARN and downgrades:
+        warn_on_offline = full_cfg.get("fallback", {}).get("policy", {}).get("warn_on_offline", True)
+        if warn_on_offline and use_offline:
+            warnings.append("MCP service degraded to offline mode")
+            if status == "GREEN":
+                status = "AMBER"
+                next_action = "investigate_service_health"
+        elif not use_offline:
+            warn_on_external = full_cfg.get("fallback", {}).get("policy", {}).get("warn_on_external", False)
+            if warn_on_external:
+                warnings.append("MCP service using external service (internal stub unavailable)")
+                if status == "GREEN":
+                    status = "AMBER"
+                    next_action = "investigate_service_health"
+
     machine = {
         "step": "step04_router",
         "gate": "Gate-4",
         "status": status,
+        "service_mode": service_type,
+        "fallback_mode": fallback_mode.value,
         "checks": checks,
         "metrics": {
             "total_queries": total,
@@ -426,6 +511,23 @@ async def main_async():
         "timestamp": now_iso(),
     }
 
+    # Add downgrade information if any
+    if downgrades:
+        machine["downgrades"] = [
+            {
+                "from": d.from_service,
+                "to": d.to_service,
+                "reason": d.reason,
+                "timestamp": d.timestamp,
+                "exception": d.exception_type,
+            }
+            for d in downgrades
+        ]
+
+    # Add warnings if any
+    if warnings:
+        machine["warnings"] = warnings
+
     ensure_dir(os.path.dirname(QA_JSON))
     with open(QA_JSON, "w", encoding="utf-8") as f:
         json.dump(machine, f, ensure_ascii=False, indent=2)
@@ -434,6 +536,25 @@ async def main_async():
     lines: List[str] = []
     lines.append(f"# STEP 4 — Router Heuristics & Coverage (Gate‑4) — {status}")
     lines.append("")
+
+    # Add service mode and downgrade information
+    lines.append(f"**Service Mode**: {service_type} (fallback mode: {fallback_mode.value})")
+    lines.append("")
+
+    if downgrades:
+        lines.append("⚠️ **Service Degradation Detected**")
+        lines.append("")
+        lines.append("MCP service degraded through the following chain:")
+        for i, d in enumerate(downgrades, 1):
+            lines.append(f"{i}. {d.from_service} → {d.to_service}: {d.exception_type}: {d.reason}")
+        lines.append("")
+
+    if warnings:
+        for w in warnings:
+            lines.append(f"⚠️ {w}")
+        lines.append("")
+
+    lines.append("**Checks:**")
     for c in checks:
         lines.append(f"- {c['id']}: {c['metric']} = {c['actual']} (threshold {c['threshold']}) -> {c['status']}")
     lines.append("")

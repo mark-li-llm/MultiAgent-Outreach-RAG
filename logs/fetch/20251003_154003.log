@@ -1,0 +1,3 @@
+2025-10-03 15:40:03,460 [INFO] Normalization start phase=A
+2025-10-03 15:40:04,803 [INFO] OK crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866 bytes_before=297499 bytes_after=295417 retention=0.993 lang=en wc=44574 tok=42744
+2025-10-03 15:40:04,803 [INFO] Normalization complete. Log: logs/fetch/20251003_154003.log

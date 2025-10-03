@@ -115,50 +115,93 @@ def read_step3_budgets() -> Dict[str, float]:
 
 async def main_async(args):
     from router_core import load_mcp_map, load_router_config, decide_backend, rerank
-    # Try start stubs; fallback offline
-    use_offline = False
-    started_internal_stub = False
-    used_external_service = False
+    from common import MCPConnectionManager, load_fallback_mode, FallbackMode
+
+    # Load config and fallback mode
+    tools_cfg = load_mcp_map()
+    full_cfg = load_yaml(os.path.join("configs", "mcp.tools.yaml"))
+    fallback_mode = load_fallback_mode(full_cfg)
+
+    # Initialize connection manager
+    mgr = MCPConnectionManager(tools_cfg, fallback_mode)
+
+    # Define connection functions
+    state_env: Dict[str, Any] = {}
     start_stub_servers = None
     stop_stub_servers = None
-    try:
+
+    async def start_internal_stub():
+        """Start internal stub servers."""
         from qa_step03_mcp import start_stub_servers as _sss, stop_stub_servers as _sts  # type: ignore
+        nonlocal start_stub_servers, stop_stub_servers
         start_stub_servers = _sss
         stop_stub_servers = _sts
-    except Exception:
-        use_offline = True
+        await _sss(state_env, {"tools": tools_cfg})
 
-    tools_cfg = load_mcp_map()
-    state_env: Dict[str, Any] = {}
-    if not use_offline:
-        try:
-            await start_stub_servers(state_env, {"tools": tools_cfg})  # type: ignore
-            started_internal_stub = True
-        except Exception:
-            # Try to use external service before falling back to offline mode
-            print("Failed to start internal stub servers, checking external service...")
-            try:
-                connector = aiohttp.TCPConnector(limit_per_host=8)
-                async with aiohttp.ClientSession(connector=connector) as test_session:
-                    base = tools_cfg.get("kb.search") or {}
-                    host = base.get("host", "127.0.0.1")
-                    port = int(base.get("port", 7801))
-                    url = f"http://{host}:{port}/invoke"
-                    payload = {"method": "search", "params": {"query": "test", "backend": "faiss", "top_k": 1}}
-                    async with test_session.post(url, json=payload, timeout=2.0) as resp:
-                        if resp.status == 200:
-                            result = await resp.json()
-                            if "results" in result:
-                                print(f"✓ External service available at {url}")
-                                use_offline = False
-                                used_external_service = True
-                            else:
-                                use_offline = True
-                        else:
-                            use_offline = True
-            except Exception as e:
-                print(f"External service test failed: {e}")
-                use_offline = True
+    async def test_external_service():
+        """Test external MCP service availability."""
+        connector = aiohttp.TCPConnector(limit_per_host=8)
+        async with aiohttp.ClientSession(connector=connector) as test_session:
+            base = tools_cfg.get("kb.search") or {}
+            host = base.get("host", "127.0.0.1")
+            port = int(base.get("port", 7801))
+            url = f"http://{host}:{port}/invoke"
+            payload = {"method": "search", "params": {"query": "test", "backend": "faiss", "top_k": 1}}
+            timeout = full_cfg.get("fallback", {}).get("policy", {}).get("connection_timeout_ms", 2000) / 1000.0
+            async with test_session.post(url, json=payload, timeout=timeout) as resp:
+                if resp.status != 200:
+                    raise RuntimeError(f"External service returned status {resp.status}")
+                result = await resp.json()
+                if "results" not in result:
+                    raise RuntimeError("Invalid response format from external service")
+                print(f"✓ External service available at {url}")
+
+    async def setup_offline():
+        """Setup for offline mode (no-op, actual setup happens later)."""
+        pass
+
+    # Connect with fallback logic
+    use_offline = False
+    service_type = None
+    downgrades = []
+    try:
+        service_type, use_offline, downgrades = await mgr.connect(
+            start_internal_stub,
+            test_external_service,
+            setup_offline
+        )
+        print(f"✓ MCP service mode: {service_type}")
+    except RuntimeError as e:
+        # Strict mode failure
+        print(f"✗ MCP connection failed in strict mode: {e}")
+        ensure_dir(os.path.dirname(OUT_JSON))
+        machine = {
+            "step": "step07_retrieval_eval",
+            "gate": "Gate-7",
+            "status": "RED",
+            "service_mode": "unavailable",
+            "fallback_mode": fallback_mode.value,
+            "error": {"code": "MCPUnavailable", "message": str(e)},
+            "checks": [],
+            "next_action": "fix_mcp_service",
+            "timestamp": now_iso(),
+        }
+        with open(OUT_JSON, "w", encoding="utf-8") as f:
+            json.dump(machine, f, ensure_ascii=False, indent=2)
+
+        lines = [
+            f"# STEP 7 — Retrieval Evaluation (Gate‑7) — RED",
+            "",
+            "⚠️ **MCP Service Unavailable (Strict Mode)**",
+            "",
+            f"Error: {e}",
+            "",
+            "Next action: fix_mcp_service",
+        ]
+        with open(OUT_MD, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
+
+        return "RED"
 
     # Offline index if needed
     chunks_index: List[Dict[str, Any]] = []
@@ -612,6 +655,25 @@ async def main_async(args):
             status = "RED"
             next_action = "fix_and_rerun"
 
+    # Adjust status for WARN mode if downgrades occurred
+    warnings = []
+    if fallback_mode == FallbackMode.WARN and downgrades:
+        # Check if we downgraded to offline (which is more severe)
+        warn_on_offline = full_cfg.get("fallback", {}).get("policy", {}).get("warn_on_offline", True)
+        if warn_on_offline and use_offline:
+            warnings.append("MCP service degraded to offline mode")
+            if status == "GREEN":
+                status = "AMBER"
+                next_action = "investigate_service_health"
+        elif not use_offline:
+            # Downgraded to external service only
+            warn_on_external = full_cfg.get("fallback", {}).get("policy", {}).get("warn_on_external", False)
+            if warn_on_external:
+                warnings.append("MCP service using external service (internal stub unavailable)")
+                if status == "GREEN":
+                    status = "AMBER"
+                    next_action = "investigate_service_health"
+
     # Write reports
     ensure_dir(os.path.dirname(OUT_JSON))
     # Backend metrics summary
@@ -633,12 +695,13 @@ async def main_async(args):
         }
 
     # Run context & router summary
-    retrieval_mode = ("offline" if use_offline else ("online_stub" if started_internal_stub else ("online_external" if used_external_service else "online")))
+    retrieval_mode = service_type if service_type else ("offline" if use_offline else "unknown")
     run_context = {
         "mode": retrieval_mode,
+        "fallback_mode": fallback_mode.value,
         "mcp": {
             "kb_search_url": (f"http://{(tools_cfg.get('kb.search') or {}).get('host','127.0.0.1')}:{int((tools_cfg.get('kb.search') or {}).get('port',7801))}/invoke") if not use_offline else None,
-            "started_by_step": started_internal_stub,
+            "service_type": service_type,
             "ports": {k: int(v.get("port")) for k, v in (tools_cfg or {}).items()} if not use_offline else None,
         },
         "router": {
@@ -667,7 +730,10 @@ async def main_async(args):
 
     machine = {
         "step": "step07_retrieval_eval",
+        "gate": "Gate-7",
         "status": status,
+        "service_mode": service_type,
+        "fallback_mode": fallback_mode.value,
         "checks": checks,
         "summary": {
             "recall@10": round(recall10, 4),
@@ -702,12 +768,48 @@ async def main_async(args):
         "next_action": next_action,
         "timestamp": now_iso(),
     }
+
+    # Add downgrade information if any
+    if downgrades:
+        machine["downgrades"] = [
+            {
+                "from": d.from_service,
+                "to": d.to_service,
+                "reason": d.reason,
+                "timestamp": d.timestamp,
+                "exception": d.exception_type,
+            }
+            for d in downgrades
+        ]
+
+    # Add warnings if any
+    if warnings:
+        machine["warnings"] = warnings
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(machine, f, ensure_ascii=False, indent=2)
 
     lines: List[str] = []
     lines.append(f"# STEP 7 — Retrieval Evaluation (Gate‑7) — {status}")
     lines.append("")
+
+    # Add service mode and downgrade information
+    lines.append(f"**Service Mode**: {service_type} (fallback mode: {fallback_mode.value})")
+    lines.append("")
+
+    if downgrades:
+        lines.append("⚠️ **Service Degradation Detected**")
+        lines.append("")
+        lines.append("MCP service degraded through the following chain:")
+        for i, d in enumerate(downgrades, 1):
+            lines.append(f"{i}. {d.from_service} → {d.to_service}: {d.exception_type}: {d.reason}")
+        lines.append("")
+
+    if warnings:
+        for w in warnings:
+            lines.append(f"⚠️ {w}")
+        lines.append("")
+
+    lines.append("**Checks:**")
     for c in checks:
         lines.append(f"- {c['id']}: {c['metric']} = {c['actual']} (threshold {c.get('threshold','')}) -> {c['status']}")
     lines.append("")

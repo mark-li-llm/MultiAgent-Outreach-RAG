@@ -324,3 +324,162 @@ def build_doc_id(doctype: str, date_str: Optional[str], slug_base: str, url_for_
     slug = slugify(slug_base or "document")
     tail = sha1_8(strip_tracking_params(url_for_hash))
     return f"crm::{doctype}::{date_part}::{slug}::{tail}"
+
+
+# ===== MCP Connection Manager =====
+
+from enum import Enum
+
+
+class FallbackMode(Enum):
+    """Three-mode system for MCP service fallback behavior."""
+    DEFAULT = "default"  # Silent fallback (production)
+    WARN = "warn"        # Log downgrades, mark as WARN
+    STRICT = "strict"    # Fail fast, no fallback
+
+
+@dataclass
+class DowngradeEvent:
+    """Record of a service downgrade event."""
+    from_service: str    # "internal_stub" | "external" | "online"
+    to_service: str      # "external" | "offline"
+    reason: str
+    timestamp: str
+    exception_type: str
+
+
+class MCPConnectionManager:
+    """
+    Manages MCP service connections with three-mode fallback support.
+
+    Modes:
+    - DEFAULT: Silent fallback (internal_stub → external → offline)
+    - WARN: Fallback allowed but logged, triggers WARN status
+    - STRICT: No fallback, fail immediately if service unavailable
+    """
+
+    def __init__(self, config: Dict[str, Any], mode: FallbackMode):
+        self.config = config
+        self.mode = mode
+        self.downgrades: List[DowngradeEvent] = []
+        self.service_type: Optional[str] = None
+
+    async def connect(
+        self,
+        start_stub_fn,
+        test_external_fn,
+        setup_offline_fn
+    ) -> Tuple[str, bool, List[DowngradeEvent]]:
+        """
+        Connect to MCP service with fallback logic.
+
+        Args:
+            start_stub_fn: Async function to start internal stub servers
+            test_external_fn: Async function to test external service
+            setup_offline_fn: Async function to setup offline mode
+
+        Returns:
+            Tuple of (service_type, use_offline, downgrade_events)
+            - service_type: "internal_stub" | "external" | "offline"
+            - use_offline: bool
+            - downgrade_events: List of DowngradeEvent
+
+        Raises:
+            RuntimeError: In STRICT mode if service unavailable
+        """
+        if self.mode == FallbackMode.STRICT:
+            return await self._connect_strict(start_stub_fn)
+        elif self.mode == FallbackMode.WARN:
+            return await self._connect_warn(start_stub_fn, test_external_fn, setup_offline_fn)
+        else:
+            return await self._connect_default(start_stub_fn, test_external_fn, setup_offline_fn)
+
+    async def _connect_strict(self, start_stub_fn) -> Tuple[str, bool, List[DowngradeEvent]]:
+        """Strict mode: fail fast, no fallback."""
+        try:
+            await start_stub_fn()
+            self.service_type = "internal_stub"
+            return "internal_stub", False, []
+        except Exception as e:
+            raise RuntimeError(f"MCP service unavailable in strict mode: {type(e).__name__}: {e}") from e
+
+    async def _connect_warn(
+        self,
+        start_stub_fn,
+        test_external_fn,
+        setup_offline_fn
+    ) -> Tuple[str, bool, List[DowngradeEvent]]:
+        """Warning mode: fallback allowed but logged."""
+        # Try internal stub
+        try:
+            await start_stub_fn()
+            self.service_type = "internal_stub"
+            return "internal_stub", False, []
+        except Exception as e:
+            self.downgrades.append(DowngradeEvent(
+                from_service="internal_stub",
+                to_service="external",
+                reason=str(e),
+                timestamp=now_iso(),
+                exception_type=type(e).__name__
+            ))
+
+        # Try external service
+        try:
+            await test_external_fn()
+            self.service_type = "external"
+            return "external", False, self.downgrades
+        except Exception as e:
+            self.downgrades.append(DowngradeEvent(
+                from_service="external",
+                to_service="offline",
+                reason=str(e),
+                timestamp=now_iso(),
+                exception_type=type(e).__name__
+            ))
+
+        # Fall back to offline
+        await setup_offline_fn()
+        self.service_type = "offline"
+        return "offline", True, self.downgrades
+
+    async def _connect_default(
+        self,
+        start_stub_fn,
+        test_external_fn,
+        setup_offline_fn
+    ) -> Tuple[str, bool, List[DowngradeEvent]]:
+        """Default mode: silent fallback (backward compatible)."""
+        # Try internal stub
+        try:
+            await start_stub_fn()
+            self.service_type = "internal_stub"
+            return "internal_stub", False, []
+        except Exception:
+            pass
+
+        # Try external service
+        try:
+            await test_external_fn()
+            self.service_type = "external"
+            return "external", False, []
+        except Exception:
+            pass
+
+        # Fall back to offline
+        await setup_offline_fn()
+        self.service_type = "offline"
+        return "offline", True, []
+
+
+def load_fallback_mode(config: Dict[str, Any]) -> FallbackMode:
+    """
+    Load fallback mode from config or environment.
+    Environment variable AG_MCP_FALLBACK_MODE takes precedence.
+    """
+    mode_str = os.getenv("AG_MCP_FALLBACK_MODE") or (config.get("fallback") or {}).get("mode") or "default"
+    try:
+        return FallbackMode(mode_str.lower())
+    except ValueError:
+        print(f"⚠ Invalid fallback mode '{mode_str}', using 'default'")
+        return FallbackMode.DEFAULT

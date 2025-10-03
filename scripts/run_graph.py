@@ -147,27 +147,75 @@ async def main_async(args) -> str:
 
     # Retriever
     t0 = time.perf_counter()
+    from common import MCPConnectionManager, load_fallback_mode, FallbackMode
+
     tools_cfg = load_mcp_map()
     router_cfg = load_router_config()
     weights = router_cfg.get("weights") or {}
     docmeta = load_doc_meta()
 
-    # Try to use MCP stubs; if fail, offline search
-    use_offline = False
+    # Load fallback mode
+    full_cfg = load_yaml(os.path.join("configs", "mcp.tools.yaml"))
+    fallback_mode = load_fallback_mode(full_cfg)
+
+    # Initialize connection manager
+    mgr = MCPConnectionManager(tools_cfg, fallback_mode)
+
+    # Define connection functions
+    state_env: Dict[str, Any] = {}
     start_stub_servers = None
     stop_stub_servers = None
-    try:
+
+    async def start_internal_stub():
+        """Start internal stub servers."""
         from qa_step03_mcp import start_stub_servers as _sss, stop_stub_servers as _sts  # type: ignore
+        nonlocal start_stub_servers, stop_stub_servers
         start_stub_servers = _sss
         stop_stub_servers = _sts
-    except Exception:
-        use_offline = True
-    state_env: Dict[str, Any] = {}
-    if not use_offline:
-        try:
-            await start_stub_servers(state_env, {"tools": tools_cfg})  # type: ignore
-        except Exception:
-            use_offline = True
+        await _sss(state_env, {"tools": tools_cfg})
+
+    async def test_external_service():
+        """Test external MCP service availability."""
+        connector = aiohttp.TCPConnector(limit_per_host=8)
+        async with aiohttp.ClientSession(connector=connector) as test_session:
+            base = tools_cfg.get("kb.search") or {}
+            host = base.get("host", "127.0.0.1")
+            port = int(base.get("port", 7801))
+            url = f"http://{host}:{port}/invoke"
+            payload = {"method": "search", "params": {"query": "test", "backend": "faiss", "top_k": 1}}
+            timeout = full_cfg.get("fallback", {}).get("policy", {}).get("connection_timeout_ms", 2000) / 1000.0
+            async with test_session.post(url, json=payload, timeout=timeout) as resp:
+                if resp.status != 200:
+                    raise RuntimeError(f"External service returned status {resp.status}")
+                result = await resp.json()
+                if "results" not in result:
+                    raise RuntimeError("Invalid response format from external service")
+                print(f"✓ External service available at {url}")
+
+    async def setup_offline():
+        """Setup for offline mode (no-op, actual setup happens later)."""
+        pass
+
+    # Connect with fallback logic
+    use_offline = False
+    service_type = None
+    downgrades = []
+    try:
+        service_type, use_offline, downgrades = await mgr.connect(
+            start_internal_stub,
+            test_external_service,
+            setup_offline
+        )
+        print(f"✓ MCP service mode: {service_type}")
+        if downgrades:
+            print(f"⚠️  Service degraded: {len(downgrades)} downgrade(s)")
+            for d in downgrades:
+                print(f"  - {d.from_service} → {d.to_service}: {d.exception_type}")
+    except RuntimeError as e:
+        # Strict mode failure
+        print(f"✗ MCP connection failed in strict mode: {e}")
+        print(f"  Graph execution aborted. Please fix MCP service or use a different fallback mode.")
+        return None
 
     # Offline index setup
     chunks_index: List[Dict[str, Any]] = []

@@ -1,6 +1,9 @@
 {
   "step": "step07_retrieval_eval",
+  "gate": "Gate-7",
   "status": "RED",
+  "service_mode": "internal_stub",
+  "fallback_mode": "strict",
   "checks": [
     {
       "id": "G7-01",
@@ -28,7 +31,7 @@
     {
       "id": "G7-04",
       "metric": "freshness_mean_age_days",
-      "actual": 275.9,
+      "actual": 276.74,
       "threshold": "<=540",
       "status": "PASS"
     },
@@ -37,18 +40,18 @@
       "metric": "latency_budgets",
       "actual": {
         "faiss": {
-          "p50": 12.55,
-          "p95": 15.4,
+          "p50": 13.58,
+          "p95": 16.94,
           "budget_p95": 29.699
         },
         "weaviate": {
-          "p50": 70.03,
-          "p95": 87.78,
+          "p50": 60.62,
+          "p95": 81.2,
           "budget_p95": 79.574
         },
         "pinecone": {
-          "p50": 127.3,
-          "p95": 162.76,
+          "p50": 128.78,
+          "p95": 153.29,
           "budget_p95": 198.308
         }
       },
@@ -60,26 +63,26 @@
     "recall@10": 0.5217,
     "nDCG@5": 0.2888,
     "coverage_unique_domains_top10_mean": 2.739,
-    "freshness_mean_age_days": 275.9,
+    "freshness_mean_age_days": 276.74,
     "latency": [
       {
         "backend": "faiss",
-        "p50": 12.55,
-        "p95": 15.4,
+        "p50": 13.58,
+        "p95": 16.94,
         "budget_p95": 29.699,
         "status": "PASS"
       },
       {
         "backend": "weaviate",
-        "p50": 70.03,
-        "p95": 87.78,
+        "p50": 60.62,
+        "p95": 81.2,
         "budget_p95": 79.574,
         "status": "FAIL"
       },
       {
         "backend": "pinecone",
-        "p50": 127.3,
-        "p95": 162.76,
+        "p50": 128.78,
+        "p95": 153.29,
         "budget_p95": 198.308,
         "status": "PASS"
       }
@@ -192,8 +195,8 @@
         "doc_nDCG@5": 0.6387,
         "near_miss_count": 0,
         "latency_ms": {
-          "p50": 12.55,
-          "p95": 15.4
+          "p50": 13.58,
+          "p95": 16.94
         }
       },
       "weaviate": {
@@ -204,8 +207,8 @@
         "doc_nDCG@5": 0.5485,
         "near_miss_count": 3,
         "latency_ms": {
-          "p50": 70.03,
-          "p95": 87.78
+          "p50": 60.62,
+          "p95": 81.2
         }
       },
       "pinecone": {
@@ -216,17 +219,18 @@
         "doc_nDCG@5": 0.2631,
         "near_miss_count": 2,
         "latency_ms": {
-          "p50": 127.3,
-          "p95": 162.76
+          "p50": 128.78,
+          "p95": 153.29
         }
       }
     }
   },
   "run_context": {
-    "mode": "online_stub",
+    "mode": "internal_stub",
+    "fallback_mode": "strict",
     "mcp": {
       "kb_search_url": "http://127.0.0.1:7801/invoke",
-      "started_by_step": true,
+      "service_type": "internal_stub",
       "ports": {
         "kb.search": 7801,
         "web.fetch": 7802,
@@ -286,5 +290,5 @@
     "diversity_merge_used": 0
   },
   "next_action": "fix_and_rerun",
-  "timestamp": "2025-09-29T20:37:31.396534+00:00"
+  "timestamp": "2025-09-30T18:31:23.315531+00:00"
 }

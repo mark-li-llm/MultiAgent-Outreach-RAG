@@ -1,10 +1,13 @@
 # STEP 7 — Retrieval Evaluation (Gate‑7) — RED
 
+**Service Mode**: internal_stub (fallback mode: strict)
+
+**Checks:**
 - G7-01: recall@10 = 0.5217 (threshold >=0.80) -> FAIL
 - G7-02: nDCG@5 = 0.2888 (threshold >=0.60) -> FAIL
 - G7-03: coverage_unique_domains_top10_mean = 2.739 (threshold >=3.0) -> FAIL
-- G7-04: freshness_mean_age_days = 275.9 (threshold <=540) -> PASS
-- G7-05: latency_budgets = {'faiss': {'p50': 12.55, 'p95': 15.4, 'budget_p95': 29.699}, 'weaviate': {'p50': 70.03, 'p95': 87.78, 'budget_p95': 79.574}, 'pinecone': {'p50': 127.3, 'p95': 162.76, 'budget_p95': 198.308}} (threshold p50,p95 <= budget_p95 per backend) -> FAIL
+- G7-04: freshness_mean_age_days = 276.74 (threshold <=540) -> PASS
+- G7-05: latency_budgets = {'faiss': {'p50': 13.58, 'p95': 16.94, 'budget_p95': 29.699}, 'weaviate': {'p50': 60.62, 'p95': 81.2, 'budget_p95': 79.574}, 'pinecone': {'p50': 128.78, 'p95': 153.29, 'budget_p95': 198.308}} (threshold p50,p95 <= budget_p95 per backend) -> FAIL
 
 Diagnostics (not gating):
 - recall@k: {'@1': 0.1739, '@3': 0.3696, '@5': 0.3696, '@10': 0.5217}
@@ -26,9 +29,9 @@ Diagnostics (not gating):
   - wiki: 2/0/0/0
 
 Latency by backend:
-- faiss: p50=12.55 p95=15.4 budget_p95=29.699 -> PASS
-- weaviate: p50=70.03 p95=87.78 budget_p95=79.574 -> FAIL
-- pinecone: p50=127.3 p95=162.76 budget_p95=198.308 -> PASS
+- faiss: p50=13.58 p95=16.94 budget_p95=29.699 -> PASS
+- weaviate: p50=60.62 p95=81.2 budget_p95=79.574 -> FAIL
+- pinecone: p50=128.78 p95=153.29 budget_p95=198.308 -> PASS
 
 Per-backend quality (queries, recall@10, doc_recall@10, nDCG@5, doc_nDCG@5):
 - faiss: 10, 0.7, 0.7, 0.4393, 0.6387
