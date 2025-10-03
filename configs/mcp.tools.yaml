@@ -20,3 +20,14 @@ tools:
     port: 7805
     timeout_ms: 2000
 
+# Fallback policy for MCP service connectivity
+# mode: default (silent fallback) | warn (log downgrades) | strict (fail fast)
+fallback:
+  mode: default
+  policy:
+    log_downgrades: true
+    retry_attempts: 1
+    connection_timeout_ms: 2000
+    # For warn mode: which downgrades trigger warnings
+    warn_on_offline: true
+    warn_on_external: false

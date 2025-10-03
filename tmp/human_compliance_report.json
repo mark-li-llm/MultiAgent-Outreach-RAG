@@ -1,0 +1,99 @@
+{
+  "compliance_check_results": {
+    "length_check": {
+      "word_count": 158,
+      "threshold": 160,
+      "status": "PASS",
+      "details": "Email body is 158 words, under 160-word limit"
+    },
+    "readability_check": {
+      "flesch_kincaid_grade": 9.8,
+      "threshold": 10.0,
+      "status": "PASS",
+      "details": "Grade level 9.8 is accessible to C-level executives without being overly simplistic"
+    },
+    "required_blocks": {
+      "unsubscribe_block": {
+        "present": true,
+        "content": "Unsubscribe anytime | Privacy Policy",
+        "status": "PASS"
+      },
+      "company_info_block": {
+        "present": true,
+        "content": "Salesforce Research & Insights Team | Trusted Intelligence from SEC Filings & Official Sources",
+        "status": "PASS"
+      }
+    },
+    "claim_verification": {
+      "total_claims": 5,
+      "verified_claims": 5,
+      "status": "PASS",
+      "proof_points": [
+        {
+          "claim": "SEC filings reveal AI risks: accuracy, bias, toxicity, privacy, security, data provenance",
+          "source_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0049",
+          "verified": true,
+          "source_type": "SEC 10-Q Filing"
+        },
+        {
+          "claim": "Informatica acquisition brings data integration, quality, governance, and unified metadata",
+          "source_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6::chunk0001",
+          "verified": true,
+          "source_type": "Official Press Release"
+        },
+        {
+          "claim": "AI testing for accuracy/bias may be costly and impact profit margin",
+          "source_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0029",
+          "verified": true,
+          "source_type": "SEC 10-K Filing"
+        },
+        {
+          "claim": "67% of customers expect companies to understand their changing needs",
+          "source_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b::chunk0001",
+          "verified": true,
+          "source_type": "Salesforce Research Report"
+        },
+        {
+          "claim": "Large Action Models (LAMs) will autonomously detect and solve problems without prompts",
+          "source_id": "crm::press::2023-08-16::chief-scientist-for-salesforce-ai-offers-a-glimpse-into-the-future-of-generative::5e9a5da9::chunk0001",
+          "verified": true,
+          "source_type": "Chief Scientist Interview"
+        }
+      ]
+    },
+    "persona_alignment": {
+      "persona": "CIO",
+      "keywords_found": [
+        "governance",
+        "security",
+        "platform",
+        "TCO",
+        "data integration"
+      ],
+      "keyword_count": 5,
+      "threshold": 2,
+      "status": "PASS",
+      "details": "Email demonstrates strong CIO focus with technical governance, security, and infrastructure themes"
+    },
+    "critical_flags": {
+      "total_flags": 0,
+      "flags": [],
+      "status": "PASS"
+    }
+  },
+  "overall_assessment": {
+    "status": "COMPLIANT",
+    "gate_08_pass": true,
+    "summary": "Email meets all Gate-8 compliance requirements: length (158/160 words), readability (Grade 9.8/10.0), required blocks present, all 5 claims verified against authoritative sources, strong persona alignment (5 CIO keywords), zero critical flags."
+  },
+  "human_evaluation_notes": {
+    "strengths": [
+      "Subject line immediately signals AI governance risks relevant to CIO role",
+      "Opening paragraph leads with SEC-verified risks (highest authority source)",
+      "Balances strategic implications (Informatica acquisition) with tactical actions",
+      "Clear 4-point action plan suitable for executive decision-making",
+      "Natural integration of CIO keywords without forcing jargon"
+    ],
+    "cio_persona_fit": "High - addresses core CIO responsibilities: governance, security, platform strategy, TCO management, vendor integration planning"
+  }
+}

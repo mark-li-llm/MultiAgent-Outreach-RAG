@@ -1,0 +1,82 @@
+[
+  {
+    "id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866::chunk0049",
+    "title": "Salesforce Identifies Critical AI Risks Requiring Enhanced Governance",
+    "summary": "Latest SEC 10-Q filing details specific generative AI risks that require CIO attention: accuracy/hallucinations, bias, toxicity, privacy breaches, security vulnerabilities, and data provenance tracking. The filing emphasizes that AI content generation brings 'additional risks and responsibility' beyond traditional AI classification. Computing costs for AI systems may also impact margins, requiring careful TCO analysis.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
+    "date": "2025-04-30",
+    "evidence_snippet": "Known risks of generative AI currently include risks related to accuracy, bias, toxicity, privacy and security and data provenance...Developing, testing and deploying AI systems may also increase the cost profile of our offerings due to the nature of the computing costs involved.",
+    "confidence": 0.95,
+    "source_domain": "www.sec.gov",
+    "doc_id": "crm::10-Q::2025-04-30::fy26-q1-form-10-q::e16f2866",
+    "cio_relevance": {
+      "keywords": ["security", "privacy", "governance", "tco"],
+      "impact_areas": ["Risk Management", "Compliance", "Budget Planning"],
+      "action_required": "Establish AI governance framework addressing each identified risk category"
+    }
+  },
+  {
+    "id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6::chunk0001",
+    "title": "Salesforce-Informatica Merger: Strategic Play for Data Governance at Scale",
+    "summary": "Salesforce's acquisition of Informatica brings enterprise-grade data integration, quality, governance, and unified metadata management directly into the platform. Key quote from CTO: 'AI agents need the most comprehensive understanding of their data...origin, transformation, quality, and governance.' This creates a 'system of understanding' critical for reliable AI-driven decisions and MDM on Data Cloud.",
+    "url": "https://www.salesforce.com/news/press-releases/2025/05/27/salesforce-signs-definitive-agreement-to-acquire-informatica/?bc=OTH",
+    "date": "2025-05-27",
+    "evidence_snippet": "The combination of Informatica's advanced catalog and metadata capabilities with our Agentforce platform...unified Salesforce and Informatica solution will allow all types of businesses to automate more complex processes and make more reliable AI-driven decisions.",
+    "confidence": 0.9,
+    "source_domain": "www.salesforce.com",
+    "doc_id": "crm::press::2025-05-27::salesforce-signs-definitive-agreement-to-acquire-informatica::a8a077f6",
+    "cio_relevance": {
+      "keywords": ["data integration", "governance", "platform", "metadata"],
+      "impact_areas": ["Platform Strategy", "Data Governance", "MDM"],
+      "action_required": "Assess integration roadmap and governance framework alignment"
+    }
+  },
+  {
+    "id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b::chunk0001",
+    "title": "Customer Trust Gap: Ethical AI as Competitive Differentiator",
+    "summary": "Salesforce research reveals that 'leading with strong values and ethical use of emerging technologies like generative AI will be a key indicator of future success.' 80% of customers say experience is as important as products, with 67% expecting companies to understand their changing needs. Trust and ethics in AI deployment directly impact customer experience and competitive positioning.",
+    "url": "https://www.salesforce.com/news/stories/customer-engagement-research-2023/?bc=DB",
+    "date": "2023-08-28",
+    "evidence_snippet": "Leading with strong values and ethical use of emerging technologies like generative AI will be a key indicator of future success...experience a company provides is just as important as its products and services.",
+    "confidence": 0.85,
+    "source_domain": "www.salesforce.com",
+    "doc_id": "crm::press::2023-08-28::businesses-adopting-ai-risk-a-039-trust-gap-039-with-customers-salesforce-report::76fed41b",
+    "cio_relevance": {
+      "keywords": ["security", "governance", "ethical AI"],
+      "impact_areas": ["Risk Management", "Customer Trust", "Compliance"],
+      "action_required": "Define and communicate ethical AI principles to customers"
+    }
+  },
+  {
+    "id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2::chunk0029",
+    "title": "AI Development Costs and Legal Liability Concerns Rising",
+    "summary": "10-K filing warns that testing AI for 'accuracy, bias and other variables...may be costly and could impact our profit margin.' Additionally, if generative AI creates flawed or copyrighted content used by customers to their detriment, companies face 'brand or reputational harm, competitive harm and/or legal liability.' This elevates AI from technical risk to enterprise risk requiring C-level oversight.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+    "date": "2025-03-05",
+    "evidence_snippet": "test for accuracy, bias and other variables, which are often complex, may be costly and could impact our profit margin...if our customers or others use this flawed or protected content to their detriment...we may be exposed to brand or reputational harm, competitive harm and/or legal liability.",
+    "confidence": 0.9,
+    "source_domain": "sec.gov",
+    "doc_id": "crm::10-K::2025-03-05::fy25-form-10-k::4c26cea2",
+    "cio_relevance": {
+      "keywords": ["tco", "governance", "legal risk"],
+      "impact_areas": ["Budget Planning", "Legal Compliance", "Risk Management"],
+      "action_required": "Budget for comprehensive AI testing and establish liability mitigation protocols"
+    }
+  },
+  {
+    "id": "crm::press::2023-08-16::chief-scientist-for-salesforce-ai-offers-a-glimpse-into-the-future-of-generative::5e9a5da9::chunk0001",
+    "title": "Evolution to Large Action Models: Platform Architecture Implications",
+    "summary": "Salesforce Chief Scientist reveals next-generation AI architecture shift: from reactive generative AI to proactive Large Action Models (LAMs) that 'detect and solve problems autonomously—all on their own, without prompts.' LAMs will handle tasks like code testing/debugging and data collection automatically. This represents a fundamental platform architecture change requiring infrastructure planning.",
+    "url": "https://www.salesforce.com/news/stories/generative-ai-research-team-salesforce/?bc=DB",
+    "date": "2023-08-16",
+    "evidence_snippet": "The next generation of generative assistants will focus on proactive large action models (LAMs) that detect and solve problems autonomously—all on their own, without prompts...poised to unleash a sea change in generative AI.",
+    "confidence": 0.8,
+    "source_domain": "www.salesforce.com",
+    "doc_id": "crm::press::2023-08-16::chief-scientist-for-salesforce-ai-offers-a-glimpse-into-the-future-of-generative::5e9a5da9",
+    "cio_relevance": {
+      "keywords": ["platform", "architecture", "automation"],
+      "impact_areas": ["Technology Strategy", "Infrastructure Planning", "Automation"],
+      "action_required": "Assess infrastructure requirements for autonomous AI agents"
+    }
+  }
+]
