@@ -1,0 +1,49 @@
+{
+  "step": "step08_generation_eval",
+  "gate": "Gate-8",
+  "status": "AMBER",
+  "service_mode": "internal_stub",
+  "fallback_mode": "default",
+  "checks": [
+    {
+      "id": "G8-01",
+      "metric": "structural_pass_rate",
+      "actual": 1.0,
+      "threshold": "==1.0",
+      "status": "PASS",
+      "evidence": "reports/eval/generation_metrics.json"
+    },
+    {
+      "id": "G8-02",
+      "metric": "critical_flags_total",
+      "actual": 0,
+      "threshold": "==0",
+      "status": "PASS",
+      "evidence": "reports/eval/compliance_metrics.json"
+    },
+    {
+      "id": "G8-03",
+      "metric": "length_readability_pass_runs",
+      "actual": 10,
+      "threshold": ">=9",
+      "status": "PASS",
+      "evidence": "reports/eval/compliance_metrics.json"
+    },
+    {
+      "id": "G8-04",
+      "metric": "persona_keyword_hits_avg",
+      "actual": 0.0,
+      "threshold": ">=2.0",
+      "status": "FAIL",
+      "evidence": "reports/eval/generation_metrics.json"
+    }
+  ],
+  "summary": {
+    "runs": 10,
+    "structural_pass_rate": 1.0,
+    "critical_flags_total": 0,
+    "length_readability_pass_runs": 10,
+    "persona_keyword_hits_avg": 0.0
+  },
+  "timestamp": "2025-10-04T03:16:44.687784+00:00"
+}

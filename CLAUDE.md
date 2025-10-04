@@ -24,6 +24,7 @@ The system follows a multi-stage pipeline with quality gates:
 10. **Graph Orchestration** (Gate-5): Validate LangGraph workflows
 11. **A2A Compliance** (Gate-6): Agent-to-agent handoffs and compliance checks
 12. **Retrieval Evaluation** (Gate-7): End-to-end retrieval quality assessment
+13. **Generation Evaluation** (Gate-8): End-to-end email generation quality and compliance validation
 
 ### Multi-Agent Architecture (A2A)
 
@@ -80,6 +81,12 @@ These are designed to run offline and can be swapped for production services by 
 
 ## Environment Setup
 
+### Conda Path Configuration
+
+**Conda executable**: `/Users/liyunxiao/anaconda3/bin/conda`
+
+All `conda` commands in this document should use the full path above.
+
 ### Two-Environment Architecture
 
 This project uses **two separate conda environments** to avoid OpenMP runtime conflicts:
@@ -132,6 +139,9 @@ conda run -n age python scripts/qa_step06_a2a.py --session-id <SESSION>
 
 # Gate-7: Retrieval evaluation (recall@10, nDCG@5, latency)
 conda run -n age AG7_IGNORE_COVERAGE=1 AG7_LATENCY_MULTIPLIER=3.0 python scripts/qa_step07_retrieval_eval.py
+
+# Gate-8: Generation & compliance evaluation (10 runs across ≥3 personas)
+conda run -n age python scripts/qa_step08_generation_eval.py
 ```
 
 ### Data Collection
@@ -408,6 +418,7 @@ Each quality gate produces dual-format reports (JSON for machines, Markdown for 
 | Gate-5 | `qa_step05_graph.py` | `reports/qa/step05_graph.json` | `reports/qa/step05_graph.md` | N/A |
 | Gate-6 | `qa_step06_a2a.py` | `reports/qa/step06_a2a.json` | `reports/qa/step06_a2a.md` | N/A |
 | Gate-7 | `qa_step07_retrieval_eval.py` | `reports/qa/step07_retrieval_eval.json` | `reports/qa/step07_retrieval_eval.md` | `reports/eval/retrieval_failures.jsonl`, `reports/router/step07_retrieval_trace.jsonl` |
+| Gate-8 | `qa_step08_generation_eval.py` | `reports/qa/step08_generation_eval.json` | `reports/qa/step08_generation_eval.md` | `reports/eval/generation_metrics.json`, `reports/eval/compliance_metrics.json` |
 
 **Report Locations**:
 - Machine-readable: `reports/qa/step*.json`
@@ -425,6 +436,25 @@ The retrieval evaluation (Gate-7) computes:
 - **latency**: Response time budgets (median, p95, p99) per backend
 
 Failures are logged to `reports/eval/retrieval_failures.jsonl` with full query context and retrieved results for debugging.
+
+## Evaluation Metrics (Gate-8)
+
+The generation evaluation (Gate-8) validates end-to-end email generation quality:
+
+- **structural_pass_rate**: All runs must produce exactly 5 insights, ≥4 distinct sources, ≥2 recent items (within 12 months), valid email schema, and resolvable proof points
+- **critical_flags_total**: Must be 0 (no critical compliance violations)
+- **length_readability_pass_runs**: ≥9 out of 10 runs must pass (≤160 words, grade ≤10.0)
+- **persona_keyword_hits_avg**: Average ≥2.0 persona-specific keywords per email
+
+**Thresholds**:
+- G8-01: structural_pass_rate == 1.0
+- G8-02: critical_flags_total == 0
+- G8-03: length_readability_pass_runs >= 9
+- G8-04: persona_keyword_hits_avg >= 2.0
+
+**Status**: GREEN (all pass), AMBER (only G8-03 or G8-04 fails), RED (G8-01 or G8-02 fails, or multiple failures)
+
+Generated outputs are saved per session in `outputs/<session_id>/` with full traceability to source insights.
 
 ## Scale & Performance
 
@@ -488,6 +518,7 @@ The `worktrees/` directory contains git worktrees for parallel development branc
 
 ## Notes for Claude Code
 
+- **Conda path**: Always use `/Users/liyunxiao/anaconda3/bin/conda` as the conda executable
 - This is a research/evaluation system designed for traceability and reproducibility
 - All stages emit dual-format reports (JSON + Markdown) for both machines and humans
 - The hashlex-v1 embedding model is deterministic and requires no external dependencies

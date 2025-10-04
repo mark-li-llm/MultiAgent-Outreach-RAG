@@ -16,7 +16,9 @@ import time
 from datetime import date, datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
-from common import ensure_dir, now_iso
+import aiohttp
+
+from common import ensure_dir, now_iso, MCPConnectionManager, load_fallback_mode, FallbackMode
 
 
 # Paths
@@ -184,39 +186,6 @@ def readability_grade(text: str) -> float:
     syllables = max(1, sum(len(re.findall(r"[aeiouyAEIOUY]", w)) or 1
                            for w in re.findall(r"\b\w+\b", text or "")))
     return 0.39 * (words / sents) + 11.8 * (syllables / words) - 15.59
-
-
-async def maybe_start_stubs() -> Tuple[bool, str]:
-    """
-    Try to start MCP stub servers using qa_step03_mcp.
-    Returns (started_successfully, service_mode).
-    """
-    try:
-        # Try importing the MCP module
-        import sys
-        import importlib.util
-        spec = importlib.util.spec_from_file_location(
-            "qa_step03_mcp",
-            os.path.join(os.path.dirname(__file__), "qa_step03_mcp.py")
-        )
-        if spec and spec.loader:
-            qa_step03_mcp = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(qa_step03_mcp)
-
-            # Try to start servers
-            cfg = load_yaml(MCP_CONFIG)
-            state = {}
-            servers = await qa_step03_mcp.start_stub_servers(state, cfg)
-            if servers:
-                return True, "mcp_stubs"
-            else:
-                return False, "offline"
-    except Exception as e:
-        # Failed to start stubs, will use offline mode
-        print(f"Note: MCP stubs unavailable ({e}), using offline mode")
-        return False, "offline"
-
-    return False, "offline"
 
 
 async def run_one_prompt(eval_id: str, company: str, persona: str, timeout: int = 30) -> Dict[str, Any]:
@@ -486,7 +455,9 @@ def write_reports(
     status: str,
     checks: List[Dict[str, Any]],
     service_mode: str,
-    total_runs: int
+    total_runs: int,
+    fallback_mode: str,
+    downgrades: List[Any] = None
 ) -> None:
     """Write all report files."""
     # Ensure directories
@@ -507,6 +478,7 @@ def write_reports(
         "gate": "Gate-8",
         "status": status,
         "service_mode": service_mode,
+        "fallback_mode": fallback_mode,
         "checks": checks,
         "summary": {
             "runs": total_runs,
@@ -518,6 +490,19 @@ def write_reports(
         "timestamp": now_iso()
     }
 
+    # Add downgrade information if any
+    if downgrades:
+        machine["downgrades"] = [
+            {
+                "from": d.from_service,
+                "to": d.to_service,
+                "reason": d.reason,
+                "timestamp": d.timestamp,
+                "exception_type": d.exception_type,
+            }
+            for d in downgrades
+        ]
+
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(machine, f, ensure_ascii=False, indent=2)
 
@@ -525,8 +510,16 @@ def write_reports(
     lines = []
     lines.append(f"# STEP 8 — Generation & Compliance Evaluation (Gate‑8) — {status}")
     lines.append("")
-    lines.append(f"**Service Mode**: {service_mode}")
+    lines.append(f"**Service Mode**: {service_mode} (fallback mode: {fallback_mode})")
     lines.append("")
+
+    if downgrades:
+        lines.append("⚠️ **Service Degradation Detected**")
+        lines.append("")
+        lines.append("MCP service degraded through the following chain:")
+        for i, d in enumerate(downgrades, 1):
+            lines.append(f"{i}. {d.from_service} → {d.to_service}: {d.exception_type}: {d.reason}")
+        lines.append("")
     lines.append("**Checks:**")
     for c in checks:
         lines.append(f"- {c['id']}: {c['metric']} = {c['actual']} (threshold {c['threshold']}) -> {c['status']}")
@@ -587,12 +580,86 @@ async def main_async(args) -> None:
 
     print(f"Loaded {len(prompts)} prompts")
 
-    # Try to start MCP stubs
-    started, service_mode = await maybe_start_stubs()
-    if started:
-        print(f"MCP stubs started successfully")
-    else:
-        print(f"Running in {service_mode} mode")
+    # Load MCP config and setup connection manager (following qa_step07 pattern)
+    from router_core import load_mcp_map
+
+    tools_cfg = load_mcp_map()
+    full_cfg = load_yaml(MCP_CONFIG)
+    fallback_mode = load_fallback_mode(full_cfg)
+
+    # Initialize connection manager
+    mgr = MCPConnectionManager(tools_cfg, fallback_mode)
+
+    # Define connection functions
+    state_env: Dict[str, Any] = {}
+    start_stub_servers = None
+    stop_stub_servers = None
+
+    async def start_internal_stub():
+        """Start internal stub servers."""
+        from qa_step03_mcp import start_stub_servers as _sss, stop_stub_servers as _sts  # type: ignore
+        nonlocal start_stub_servers, stop_stub_servers
+        start_stub_servers = _sss
+        stop_stub_servers = _sts
+        await _sss(state_env, {"tools": tools_cfg})
+
+    async def test_external_service():
+        """Test external MCP service availability."""
+        # For Gate-8, external service is not used - skip to offline
+        raise RuntimeError("External service not configured for Gate-8")
+
+    async def setup_offline():
+        """Setup for offline mode (no-op for Gate-8)."""
+        pass
+
+    # Connect with fallback logic
+    use_offline = False
+    service_type = None
+    downgrades = []
+    try:
+        service_type, use_offline, downgrades = await mgr.connect(
+            start_internal_stub,
+            test_external_service,
+            setup_offline
+        )
+        print(f"✓ MCP service mode: {service_type}")
+    except RuntimeError as e:
+        # Strict mode failure
+        print(f"✗ MCP connection failed in strict mode: {e}")
+        ensure_dir(os.path.dirname(OUT_JSON))
+        machine = {
+            "step": "step08_generation_eval",
+            "gate": "Gate-8",
+            "status": "RED",
+            "service_mode": "unavailable",
+            "fallback_mode": fallback_mode.value,
+            "error": {"code": "MCPUnavailable", "message": str(e)},
+            "checks": [],
+            "next_action": "fix_mcp_service",
+            "timestamp": now_iso(),
+        }
+        with open(OUT_JSON, "w", encoding="utf-8") as f:
+            json.dump(machine, f, ensure_ascii=False, indent=2)
+
+        lines = [
+            f"# STEP 8 — Generation & Compliance Evaluation (Gate‑8) — RED",
+            "",
+            "⚠️ **MCP Service Unavailable (Strict Mode)**",
+            "",
+            f"Error: {e}",
+            "",
+            "Next action: fix_mcp_service",
+        ]
+        with open(OUT_MD, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
+
+        raise SystemExit(1)
+
+    # Show downgrade warnings if any
+    if downgrades:
+        print("⚠️ Service Degradation Detected")
+        for d in downgrades:
+            print(f"  {d.from_service} → {d.to_service}: {d.reason}")
 
     # Run each prompt
     runs = []
@@ -618,7 +685,7 @@ async def main_async(args) -> None:
     status, checks = compute_gate_status(gen_metrics, comp_metrics)
 
     # Write reports
-    write_reports(gen_metrics, comp_metrics, status, checks, service_mode, len(runs))
+    write_reports(gen_metrics, comp_metrics, status, checks, service_type, len(runs), fallback_mode.value, downgrades)
 
     # Print final status
     print("")
@@ -704,3 +771,7 @@ def main():
 
     # Run main async logic
     asyncio.run(main_async(args))
+
+
+if __name__ == "__main__":
+    main()

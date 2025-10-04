@@ -1,0 +1,99 @@
+{
+  "runs": [
+    {
+      "eval_id": "16f3d239",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    },
+    {
+      "eval_id": "f700aeb9",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    },
+    {
+      "eval_id": "ea49316d",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    },
+    {
+      "eval_id": "e9124d2f",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    },
+    {
+      "eval_id": "008d349a",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    },
+    {
+      "eval_id": "86a8e519",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    },
+    {
+      "eval_id": "774b7c67",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    },
+    {
+      "eval_id": "a1dacc96",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    },
+    {
+      "eval_id": "d6fb66fd",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    },
+    {
+      "eval_id": "76bb4508",
+      "flags": {
+        "critical": [],
+        "warning": []
+      },
+      "word_count": 154,
+      "readability_grade": 9.014369747899163
+    }
+  ],
+  "aggregates": {
+    "critical_flags_total": 0,
+    "length_readability_pass_runs": 10
+  },
+  "timestamp": "2025-10-04T03:16:44.686809+00:00"
+}
