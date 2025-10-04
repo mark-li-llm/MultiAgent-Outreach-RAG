@@ -1,0 +1,159 @@
+{
+  "runs": [
+    {
+      "eval_id": "16f3d239",
+      "persona": "vp_customer_experience",
+      "session_id": "84bdb2946d6b",
+      "out_dir": "outputs/84bdb2946d6b",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6653
+    },
+    {
+      "eval_id": "f700aeb9",
+      "persona": "cio",
+      "session_id": "be978b58c274",
+      "out_dir": "outputs/be978b58c274",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6576
+    },
+    {
+      "eval_id": "ea49316d",
+      "persona": "vp_sales_ops",
+      "session_id": "0927ce454c14",
+      "out_dir": "outputs/0927ce454c14",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6642
+    },
+    {
+      "eval_id": "e9124d2f",
+      "persona": "vp_customer_experience",
+      "session_id": "76e474712834",
+      "out_dir": "outputs/76e474712834",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6629
+    },
+    {
+      "eval_id": "008d349a",
+      "persona": "cio",
+      "session_id": "252c7579af51",
+      "out_dir": "outputs/252c7579af51",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6603
+    },
+    {
+      "eval_id": "86a8e519",
+      "persona": "vp_sales_ops",
+      "session_id": "4f20b1ccb013",
+      "out_dir": "outputs/4f20b1ccb013",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6638
+    },
+    {
+      "eval_id": "774b7c67",
+      "persona": "vp_customer_experience",
+      "session_id": "0bbdd468b4a4",
+      "out_dir": "outputs/0bbdd468b4a4",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6646
+    },
+    {
+      "eval_id": "a1dacc96",
+      "persona": "cio",
+      "session_id": "4ac2b75838ec",
+      "out_dir": "outputs/4ac2b75838ec",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6589
+    },
+    {
+      "eval_id": "d6fb66fd",
+      "persona": "vp_sales_ops",
+      "session_id": "425b583df9c0",
+      "out_dir": "outputs/425b583df9c0",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6690
+    },
+    {
+      "eval_id": "76bb4508",
+      "persona": "vp_customer_experience",
+      "session_id": "1fce33da59aa",
+      "out_dir": "outputs/1fce33da59aa",
+      "structural": {
+        "insights_count": 5,
+        "distinct_sources": 4,
+        "recent_count": 5,
+        "email_schema_ok": true,
+        "proof_points_resolve": true,
+        "persona_keyword_hits": 0
+      },
+      "perf_ms": 6775
+    }
+  ],
+  "aggregates": {
+    "structural_pass_rate": 1.0,
+    "persona_keyword_hits_avg": 0.0
+  },
+  "timestamp": "2025-10-04T03:16:44.686755+00:00"
+}

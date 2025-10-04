@@ -1,0 +1,11 @@
+{
+  "total_runtime_ms": 160.48,
+  "Intake": 0.0,
+  "Planner": 0.2,
+  "Retriever": 154.73,
+  "Synthesizer": 0.04,
+  "Consolidator": 0.01,
+  "Stylist": 0.0,
+  "A2A": 5.29,
+  "Assembler": 0.01
+}
