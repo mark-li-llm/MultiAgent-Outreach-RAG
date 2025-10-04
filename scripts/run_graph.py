@@ -11,12 +11,77 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import aiohttp
 import re
+from langchain_openai import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
 
 from common import ensure_dir, now_iso
 
 
 NODES_CONF = os.path.join("configs", "langgraph.nodes.yaml")
 SEED_PATH = os.path.join("data", "interim", "eval", "salesforce_eval_seed.jsonl")
+
+# LLM Prompt Templates
+CONSOLIDATOR_SYSTEM_PROMPT = """You are a B2B research analyst consolidating RAG chunks into persona-aware insight cards.
+- Preserve factual grounding strictly to the provided candidates.
+- Do NOT invent IDs or sources.
+- Write concise, executive-friendly copy.
+- Tailor emphasis to the persona:
+  * vp_customer_experience: NPS, CSAT, contact center, omnichannel, agent productivity, self-service, first contact resolution
+  * cio: data integration, governance, security, TCO, platform, APIs, real-time
+  * vp_sales_ops: pipeline, forecast accuracy, win rate, productivity, automation
+"""
+
+CONSOLIDATOR_USER_PROMPT = """Company: {company}
+Persona: {persona}
+Persona keywords to weave in naturally (only when relevant): {persona_keywords}
+
+From these candidates (JSON), select exactly the same items (DO NOT add/remove), and for each:
+- Improve 'title' (≤ 12 words) and 'summary' (1–2 sentences) with persona relevance.
+- Keep 'id' exactly as given to preserve traceability.
+- You may rephrase 'summary' but stay within the evidence.
+- Add fields:
+  persona_relevance: {{ "why_it_matters": str, "relevance_score": 1-5, "keywords_hit": [str] }}
+  metric_impact: {{ "metric": str, "direction": "increase|decrease", "magnitude": "low|med|high" }}
+  action_suggestion: str (1 actionable step for the recipient)
+
+Return ONLY a JSON array of 5 objects with fields:
+[id, title, summary, persona_relevance, metric_impact, action_suggestion]
+(The original URL/date/doc_id/source_domain/evidence_snippet/confidence are preserved elsewhere via id.)
+
+Candidates JSON:
+{candidates_json}
+"""
+
+STYLIST_SYSTEM_PROMPT = """You are a senior B2B outbound email copywriter.
+Write concise, evidence-based emails grounded ONLY in provided insight cards.
+Compliance:
+- No guarantees, no unsupported claims, no negative competitor statements.
+- Keep an opt-out line and company info block as provided.
+Style:
+- 100–140 words, respectful, plain language.
+- 1–3 bullets that paraphrase the insights.
+- Subject ≤ 12 words, concrete and benefit-oriented.
+Persona voice:
+- vp_customer_experience: customer-first, CX outcomes (NPS, CSAT, FCR), omnichannel & self-service.
+- cio: technically credible, platform/integration/security/TCO focus.
+- vp_sales_ops: outcome/metrics-forward (pipeline, forecast accuracy, win rate, productivity).
+"""
+
+STYLIST_USER_PROMPT = """Company: {company}
+Persona: {persona}
+Persona keywords to weave in naturally (2–5 total, only if relevant): {persona_keywords}
+
+Use ONLY these insight cards (JSON) as evidence:
+{insight_cards}
+
+Write the final email fields as compact JSON with keys:
+- subject: str (≤ 12 words)
+- body: str (100–140 words, 1–3 bullets summarizing the insights, include a soft CTA for a short call)
+- unsubscribe_block: str (use exactly: "You can unsubscribe at any time by replying 'unsubscribe'.")
+- company_info_block: str (use exactly: "Sent by ACME AI, 123 Market St, San Francisco, CA.")
+
+Return ONLY the JSON object.
+"""
 
 
 def load_yaml(path: str) -> Dict[str, Any]:
@@ -100,6 +165,11 @@ async def main_async(args) -> str:
         "timestamp": now_iso(),
         "session_id": session_id,
     }
+
+    # Initialize LLM and persona keywords
+    llm = ChatOpenAI(temperature=0.3, model="gpt-5-nano")
+    eval_cfg = load_yaml(os.path.join("configs", "eval.prompts.yaml"))
+    state["persona_keywords"] = (eval_cfg.get("personas", {}) or {}).get(args.persona, [])
 
     def mark(node: str, start_ms: float, end_ms: float):
         state["metrics"]["nodes_executed"].append(node)
@@ -263,17 +333,58 @@ async def main_async(args) -> str:
                     vectors.append(hash_vec(seed, dim))
 
     connector = aiohttp.TCPConnector(limit_per_host=8)
-    session = aiohttp.ClientSession(connector=connector) if not use_offline else None
-
     router_trace_path = os.path.join(out_dir, "router_trace.jsonl")
-    with open(router_trace_path, "w", encoding="utf-8") as tf:
-        for q in queries:
-            backend, reasons = decide_backend(q, args.persona, None)
-            state["route_decisions"].append({"query": q, "backend": backend, "reasons": reasons})
-            # Retrieve
-            if not use_offline:
-                res, lat, err = await kb_search(session, backend, q, 12, tools_cfg)
-            else:
+
+    if not use_offline:
+        # Use async context manager for proper cleanup
+        async with aiohttp.ClientSession(connector=connector) as session:
+            with open(router_trace_path, "w", encoding="utf-8") as tf:
+                for q in queries:
+                    backend, reasons = decide_backend(q, args.persona, None)
+                    state["route_decisions"].append({"query": q, "backend": backend, "reasons": reasons})
+
+                    # Retrieve
+                    res, lat, err = await kb_search(session, backend, q, 12, tools_cfg)
+
+                    # Re-rank + attach meta
+                    res = rerank(res, {k: type("DM", (), v) for k, v in docmeta.items()}, top_k=12, domain_cap=2)  # type: ignore
+
+                    # Log trace
+                    uniq_domains = len(set((docmeta.get(r.get("doc_id"), {}).get("source_domain") or "") for r in res[:10]))
+                    ages = []
+                    for r in res[:10]:
+                        iso = (docmeta.get(r.get("doc_id"), {}) or {}).get("publish_date")
+                        try:
+                            if iso:
+                                d0 = date.fromisoformat(iso)
+                                ages.append((datetime.now(timezone.utc).date() - d0).days)
+                        except Exception:
+                            pass
+                    avg_age = (sum(ages)/max(1,len(ages))) if ages else None
+
+                    tf.write(json.dumps({
+                        "timestamp": now_iso(),
+                        "query_text": q,
+                        "decision_backend": backend,
+                        "reason_codes": reasons,
+                        "latency_ms": round(lat, 3),
+                        "top_k": 10,
+                        "n_unique_domains": uniq_domains,
+                        "avg_doc_age_days": round(avg_age, 2) if avg_age is not None else None,
+                        "empty_result": (len(res) == 0),
+                    }) + "\n")
+
+                    # Extend retrieved
+                    state["retrieval_logs"].append({"query": q, "results": res[:10]})
+                    state["retrieved_chunks"].extend(res[:10])
+    else:
+        # Offline mode - no session needed
+        with open(router_trace_path, "w", encoding="utf-8") as tf:
+            for q in queries:
+                backend, reasons = decide_backend(q, args.persona, None)
+                state["route_decisions"].append({"query": q, "backend": backend, "reasons": reasons})
+
+                # Offline retrieval logic
                 import time as _t
                 tstart = _t.perf_counter()
                 qv = embed_query(q, dim)
@@ -294,38 +405,37 @@ async def main_async(args) -> str:
                 lat = (_t.perf_counter() - tstart) * 1000.0
                 err = None
 
-            # Re-rank + attach meta
-            res = rerank(res, {k: type("DM", (), v) for k, v in docmeta.items()}, top_k=12, domain_cap=2)  # type: ignore
-            # log trace
-            uniq_domains = len(set((docmeta.get(r.get("doc_id"), {}).get("source_domain") or "") for r in res[:10]))
-            ages = []
-            for r in res[:10]:
-                iso = (docmeta.get(r.get("doc_id"), {}) or {}).get("publish_date")
-                try:
-                    if iso:
-                        d0 = date.fromisoformat(iso)
-                        ages.append((datetime.now(timezone.utc).date() - d0).days)
-                except Exception:
-                    pass
-            avg_age = (sum(ages)/max(1,len(ages))) if ages else None
-            tf.write(json.dumps({
-                "timestamp": now_iso(),
-                "query_text": q,
-                "decision_backend": backend,
-                "reason_codes": reasons,
-                "latency_ms": round(lat, 3),
-                "top_k": 10,
-                "n_unique_domains": uniq_domains,
-                "avg_doc_age_days": round(avg_age, 2) if avg_age is not None else None,
-                "empty_result": (len(res) == 0),
-            }) + "\n")
+                # Re-rank + attach meta
+                res = rerank(res, {k: type("DM", (), v) for k, v in docmeta.items()}, top_k=12, domain_cap=2)  # type: ignore
 
-            # extend retrieved
-            state["retrieval_logs"].append({"query": q, "results": res[:10]})
-            state["retrieved_chunks"].extend(res[:10])
+                # Log trace (same logic as online mode)
+                uniq_domains = len(set((docmeta.get(r.get("doc_id"), {}).get("source_domain") or "") for r in res[:10]))
+                ages = []
+                for r in res[:10]:
+                    iso = (docmeta.get(r.get("doc_id"), {}) or {}).get("publish_date")
+                    try:
+                        if iso:
+                            d0 = date.fromisoformat(iso)
+                            ages.append((datetime.now(timezone.utc).date() - d0).days)
+                    except Exception:
+                        pass
+                avg_age = (sum(ages)/max(1,len(ages))) if ages else None
 
-    if session is not None:
-        await session.close()
+                tf.write(json.dumps({
+                    "timestamp": now_iso(),
+                    "query_text": q,
+                    "decision_backend": backend,
+                    "reason_codes": reasons,
+                    "latency_ms": round(lat, 3),
+                    "top_k": 10,
+                    "n_unique_domains": uniq_domains,
+                    "avg_doc_age_days": round(avg_age, 2) if avg_age is not None else None,
+                    "empty_result": (len(res) == 0),
+                }) + "\n")
+
+                # Extend retrieved
+                state["retrieval_logs"].append({"query": q, "results": res[:10]})
+                state["retrieved_chunks"].extend(res[:10])
     if not use_offline and stop_stub_servers is not None:
         await stop_stub_servers(state_env)  # type: ignore
     mark("Retriever", t0, time.perf_counter())
@@ -443,13 +553,57 @@ async def main_async(args) -> str:
                         cards.append(synth)
                 if len(set((x.get("source_domain") or "") for x in cards)) >= 4:
                     break
-    state["insight_cards"] = cards
+
+    # --- LLM Consolidator: rewrite + annotate the selected cards persona-aware ---
+    consolidator_tmpl = ChatPromptTemplate.from_messages([
+        ("system", CONSOLIDATOR_SYSTEM_PROMPT),
+        ("user", CONSOLIDATOR_USER_PROMPT),
+    ])
+
+    consolidator_vars = {
+        "company": args.company,
+        "persona": args.persona,
+        "persona_keywords": ", ".join(state.get("persona_keywords") or []),
+        "candidates_json": json.dumps(cards, ensure_ascii=False),
+    }
+
+    # ASYNC CALL - Critical for non-blocking
+    resp = await llm.ainvoke(consolidator_tmpl.format_messages(**consolidator_vars))
+    cards_llm = json.loads(resp.content)
+
+    # Merge LLM fields back onto the selected cards, preserving traceability fields
+    by_id = {c["id"]: c for c in cards}
+    cards_final = []
+    for item in cards_llm:
+        base = by_id[item["id"]]
+        base["title"] = item.get("title") or base["title"]
+        base["summary"] = item.get("summary") or base["summary"]
+        base["persona_relevance"] = item.get("persona_relevance")
+        base["metric_impact"] = item.get("metric_impact")
+        base["action_suggestion"] = item.get("action_suggestion")
+        cards_final.append(base)
+
+    state["insight_cards"] = cards_final
     mark("Consolidator", t0, time.perf_counter())
 
-    # Stylist: (no-op stylistic polish)
+    # Stylist: LLM-based email generation (persona-aware)
     t0 = time.perf_counter()
-    for c in state["insight_cards"]:
-        c["summary"] = c.get("summary", "").strip()
+    stylist_tmpl = ChatPromptTemplate.from_messages([
+        ("system", STYLIST_SYSTEM_PROMPT),
+        ("user", STYLIST_USER_PROMPT),
+    ])
+
+    stylist_vars = {
+        "company": args.company,
+        "persona": args.persona,
+        "persona_keywords": ", ".join(state.get("persona_keywords") or []),
+        "insight_cards": json.dumps(state["insight_cards"], ensure_ascii=False),
+    }
+
+    # ASYNC CALL - Critical for non-blocking
+    resp = await llm.ainvoke(stylist_tmpl.format_messages(**stylist_vars))
+    email_fields = json.loads(resp.content)
+    state["email_draft"] = email_fields
     mark("Stylist", t0, time.perf_counter())
 
     # A2A: negotiation with safety.check (up to 2 rounds)
@@ -543,23 +697,18 @@ async def main_async(args) -> str:
         json.dump(compliance, f, ensure_ascii=False, indent=2)
     mark("A2A", t0, time.perf_counter())
 
-    # Assembler: build email.json
+    # Assembler: build email.json (package LLM output and attach proof points)
     t0 = time.perf_counter()
-    subject = f"Ideas for improving CX at {args.company}"
-    bullets = "\n".join([f"- {c['title']} ({c.get('date') or 'n/a'}) — {c.get('url') or ''}" for c in cards])
-    body = (
-        f"Hi there,\n\nBased on recent updates, here are a few insights that may help your CX agenda:\n\n"
-        f"{bullets}\n\nWould you be open to a quick chat to explore?\n"
-    )
-    unsub = "You can unsubscribe at any time by replying 'unsubscribe'."
-    company_info = "Sent by ACME AI, 123 Market St, San Francisco, CA."
-    email = {
-        "subject": subject,
-        "body": body,
-        "unsubscribe_block": unsub,
-        "company_info_block": company_info,
-        "proof_points": [{"id": c["id"], "title": c["title"]} for c in cards],
-    }
+    email = dict(state.get("email_draft") or {})
+
+    # Safety defaults if LLM omitted them
+    email.setdefault("unsubscribe_block", "You can unsubscribe at any time by replying 'unsubscribe'.")
+    email.setdefault("company_info_block", "Sent by ACME AI, 123 Market St, San Francisco, CA.")
+
+    # Proof points from insight cards (traceability)
+    cards = state.get("insight_cards") or []
+    email["proof_points"] = [{"id": c["id"], "title": c["title"]} for c in cards[:5]]
+
     state["email_draft"] = email
     mark("Assembler", t0, time.perf_counter())
 
