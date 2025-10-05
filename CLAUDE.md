@@ -32,10 +32,12 @@ The system uses LangGraph to orchestrate agent-to-agent interactions:
 
 - **Planner**: Routing and policy selection using heuristics from `configs/router.heuristics.yaml`
 - **Retriever**: Executes MCP `kb.search` tool across multiple vector backends
-- **Consolidator**: Lightweight lexical reranking and evidence consolidation
-- **Stylist**: Email generation with compliance checking
+- **Consolidator**: LLM-enhanced persona-aware insight card generation (uses ChatOpenAI with model="gpt-5-nano")
+- **Stylist**: LLM-based email generation with compliance checking (uses ChatOpenAI with model="gpt-5-nano")
 
 Agent nodes and timeouts are defined in `configs/langgraph.nodes.yaml`.
+
+**LLM Configuration**: The system uses `gpt-5-nano` as the LLM model for both Consolidator and Stylist agents. This model name is intentionally set to `gpt-5-nano` in `scripts/run_graph.py` (line 170).
 
 ### Text Embedding System (hashlex-v1)
 

@@ -1,0 +1,50 @@
+{
+  "gate": "Gate-8-Debug",
+  "timestamp": "2025-10-05T16:25:22.560386+00:00",
+  "configuration": {
+    "mode": "debug_single_run",
+    "mcp_mode": "strict",
+    "company": "Salesforce",
+    "persona": "vp_customer_experience",
+    "session_id": "test123"
+  },
+  "execution_timeline": [],
+  "total_runtime_ms": 0,
+  "node_validations": {},
+  "state_transitions": [],
+  "llm_usage": {},
+  "llm_interactions_count": 0,
+  "quality_metrics": {
+    "structural": {
+      "insights_count": 0,
+      "distinct_sources": 0,
+      "recent_count": 0,
+      "email_schema_valid": false
+    },
+    "compliance": {
+      "word_count": 0,
+      "readability_grade": -3.4
+    },
+    "persona_alignment": {
+      "keyword_hits": 0,
+      "persona": ""
+    }
+  },
+  "issues_detected": [
+    {
+      "severity": "ERROR",
+      "node": "Pipeline",
+      "issue": "ERROR",
+      "details": "The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable",
+      "timestamp": "2025-10-05T16:25:22.560160+00:00"
+    }
+  ],
+  "artifacts": {
+    "session_dir": "outputs/test123",
+    "trace_files": [
+      "reports/debug/node_states.jsonl",
+      "reports/debug/llm_interactions.jsonl",
+      "reports/debug/validation_trace.jsonl"
+    ]
+  }
+}
