@@ -934,6 +934,18 @@ class LangGraphDebugger:
         if self.capture_llm:
             self.llm_monitor.instrument_llm()
 
+        # Start MCP stub servers (minimal fix for MCP connection issue)
+        from router_core import load_mcp_map
+
+        tools_cfg = load_mcp_map()
+        state_env: Dict[str, Any] = {}
+
+        # Import and start MCP stubs
+        from qa_step03_mcp import start_stub_servers, stop_stub_servers
+
+        await start_stub_servers(state_env, {"tools": tools_cfg})
+        print("✓ MCP stub servers started")
+
         try:
             # Import run_graph directly
             sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -942,11 +954,7 @@ class LangGraphDebugger:
             # Track overall execution
             t0 = time.perf_counter()
 
-            # Run with strict MCP mode (no fallback)
-            # We'll override the environment to force strict mode
-            os.environ["MCP_FALLBACK_MODE"] = "strict"
-
-            # Execute pipeline
+            # Execute pipeline (run_graph will detect external MCP is running)
             session_id = await main_async(args)
 
             duration_ms = (time.perf_counter() - t0) * 1000
@@ -960,6 +968,13 @@ class LangGraphDebugger:
             return session_id
 
         finally:
+            # Stop MCP stub servers
+            try:
+                await stop_stub_servers(state_env)
+                print("✓ MCP stub servers stopped")
+            except Exception as e:
+                print(f"⚠ Failed to stop MCP servers: {e}")
+
             # Restore LLM
             if self.capture_llm:
                 self.llm_monitor.restore_llm()
