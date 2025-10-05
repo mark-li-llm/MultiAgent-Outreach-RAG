@@ -18,6 +18,7 @@ This project follows an **audit-ready, traceable documentation** approach:
 docs/
 ├── fixes/           # Bug fix archives (post-mortem)
 ├── features/        # Feature development archives (lifecycle)
+├── milestones/      # Project milestone records (system-wide validation)
 ├── tools/           # User-facing tool guides (active)
 ├── envs.md          # Environment setup
 ├── README.md        # General documentation
@@ -29,7 +30,7 @@ data/backup/
 
 ---
 
-## Three-Category System
+## Four-Category System
 
 ### 1. `docs/fixes/` - Bug Fix Archives
 
@@ -139,14 +140,68 @@ docs/tools/
 
 ---
 
+### 4. `docs/milestones/` - Project Milestone Records
+
+**Purpose**: Capture complete system-wide validation at specific points in time
+
+**When to use**:
+- You validated the entire pipeline end-to-end
+- Multiple quality gates passed simultaneously
+- System achieved a notable state of completeness
+- Need to prove system readiness at a specific date
+- External sign-off or approval was obtained
+
+**Structure**:
+```
+docs/milestones/
+├── README.md                    # Milestone index
+└── {name}-YYYY-MM-DD.md         # Individual milestone record
+```
+
+**Template for milestone document**:
+```markdown
+# {Milestone Name}
+
+## Status
+✅ Complete / 🔄 In Progress / ⚠️ Partial
+
+## Summary
+[Executive overview]
+
+## Key Results
+- Metric 1: value (target: X)
+- Metric 2: value (target: Y)
+
+## Artifacts
+- File 1: path
+- File 2: path
+
+## Reproducibility
+[Commands to re-verify]
+
+## Related Work
+[Links to features/fixes involved]
+```
+
+**Example**: `day1-signoff-2025-09-08.md`
+- **Milestone**: Complete pipeline validation (Gates G01-G08)
+- **Results**: 97 docs indexed, 100% link health, all gates passing
+- **Artifacts**: Inventory CSV, eval seed, gate reports
+- **Commands**: Full reproducibility sequence documented
+
+**Update**: Add entry to `docs/milestones/README.md`
+
+---
+
 ## Decision Framework
 
-### Question 1: Is this a bug fix or new feature?
+### Question 1: Is this a bug fix, feature, or milestone?
 
 | Type | → Directory |
 |------|-------------|
 | Bug fix (correcting wrong behavior) | `docs/fixes/` |
 | New feature (adding capability) | `docs/features/` |
+| System-wide validation (multiple gates passing) | `docs/milestones/` |
 
 ### Question 2: Is this documentation still "active"?
 
@@ -588,15 +643,29 @@ If you find yourself creating many similar files that don't fit `fixes/`, `featu
 
 ---
 
-## Summary: The Three Rules
+## Summary: The Four Rules
 
-1. **Separate active from archive**: Users need `docs/tools/`, developers need `docs/features/` and `docs/fixes/`
+1. **Separate active from archive**: Users need `docs/tools/`, developers need `docs/features/`, `docs/fixes/`, and `docs/milestones/`
 
 2. **Keep code directories clean**: `scripts/` = active code only, backups go to `data/backup/`
 
-3. **Archive together**: All files for one fix/feature go in one dated directory
+3. **Archive together**: All files for one fix/feature/milestone go in one dated directory
+
+4. **Distinguish scope**: Use `milestones/` for system-wide validation, `features/` for new capabilities, `fixes/` for bug corrections
+
+---
+
+## Category Comparison
+
+| Aspect | Milestones | Features | Fixes | Tools |
+|--------|-----------|----------|-------|-------|
+| **Scope** | System-wide | Single capability | Bug correction | Usage guide |
+| **Audience** | Stakeholders, PMs | Developers | Maintainers | Users |
+| **Frequency** | Monthly/quarterly | Weekly | As needed | One-time creation |
+| **Active?** | No (historical) | No (historical) | No (historical) | Yes (referenced often) |
+| **Example** | Day-1 sign-off | Gate-8 debug tool | Assembler fix | gate8-debug.md |
 
 ---
 
 **Last Updated**: 2025-10-05
-**Established By**: File organization sessions for assembler-fix and gate8-debug-tool
+**Established By**: File organization sessions for assembler-fix, gate8-debug-tool, llm-integration, and day1-milestone
