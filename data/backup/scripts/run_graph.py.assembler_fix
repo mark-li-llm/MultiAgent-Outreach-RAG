@@ -11,14 +11,10 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import aiohttp
 import re
-from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 
 from common import ensure_dir, now_iso
-
-# Load environment variables from .env file
-load_dotenv()
 
 
 NODES_CONF = os.path.join("configs", "langgraph.nodes.yaml")
@@ -740,51 +736,10 @@ async def main_async(args) -> str:
         bullets = bullets[:3]
         nb = "\n".join([ln for ln in head if ln.strip()] + bullets)
         return nb
-    # Plan 1: Trust A2A with safeguards (lines 739-789)
-    # Decision tree:
-    # 1. Word count > 160 → Must truncate (hard limit)
-    # 2. Grade > 15 → Check A2A
-    #    - A2A passed (critical=[]) → Trust A2A, no truncation
-    #    - A2A failed (critical≠[]) → Try truncation with safeguard
-    # 3. Else → No truncation needed
-
-    current_wc = _word_count(state["email_draft"]["body"])
-    current_grade = _grade(state["email_draft"]["body"])
-
-    # Priority 1: Word count hard limit
-    if current_wc > 160:
-        iterations = 0
-        while current_wc > 160 and iterations < 3:
-            state["email_draft"]["body"] = _shorten_body(state["email_draft"]["body"])
-            current_wc = _word_count(state["email_draft"]["body"])
-            iterations += 1
-
-    # Priority 2: Readability grade with A2A trust
-    elif current_grade > 15:  # Relaxed from 10 to 15
-        # Check A2A result
-        if compliance["flags"]["critical"] == []:
-            # A2A passed - trust it, no truncation
-            pass
-        else:
-            # A2A also flagged issues - try truncation with safeguard
-            iterations = 0
-            prev_grade = current_grade
-
-            while current_grade > 10 and iterations < 3:
-                new_body = _shorten_body(state["email_draft"]["body"])
-                new_grade = _grade(new_body)
-
-                # Safeguard: stop if grade gets worse
-                if new_grade >= prev_grade:
-                    break
-
-                # Apply effective truncation
-                state["email_draft"]["body"] = new_body
-                prev_grade = new_grade
-                current_grade = new_grade
-                iterations += 1
-
-    # else: grade ≤ 15 and wc ≤ 160, no action needed
+    iterations = 0
+    while (_grade(state["email_draft"]["body"]) > 10 or _word_count(state["email_draft"]["body"]) > 160) and iterations < 3:
+        state["email_draft"]["body"] = _shorten_body(state["email_draft"]["body"])
+        iterations += 1
 
     # Timings and writes
     total_ms = round((time.perf_counter() - t_total0) * 1000.0, 2)
