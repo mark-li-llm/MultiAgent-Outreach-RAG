@@ -1,0 +1,40 @@
+{
+  "gate": "Gate-8-Debug",
+  "timestamp": "2025-10-05T19:45:33.758515+00:00",
+  "configuration": {
+    "mode": "debug_single_run",
+    "mcp_mode": "strict",
+    "company": "Salesforce",
+    "persona": "vp_customer_experience",
+    "session_id": "test123"
+  },
+  "execution_timeline": [],
+  "node_validations": {},
+  "state_transitions": [],
+  "llm_usage": {
+    "Unknown": {
+      "prompt_tokens": 3903,
+      "completion_tokens": 13171,
+      "total_tokens": 17074
+    }
+  },
+  "quality_metrics": {
+    "insights_count": 0,
+    "email_word_count": 0
+  },
+  "validation_summary": {
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0
+  },
+  "issues_detected": [],
+  "total_runtime_ms": 69169.93725000066,
+  "artifacts": {
+    "session_dir": "outputs/test123/",
+    "trace_files": [
+      "reports/debug/test123/node_states.jsonl",
+      "reports/debug/test123/llm_interactions.jsonl",
+      "reports/debug/test123/validation_trace.jsonl"
+    ]
+  }
+}
