@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./hack/spec_metadata.sh)",
+      "Bash(hack/spec_metadata.sh)",
+      "Bash(bash hack/spec_metadata.sh)",
+      "Bash(git worktree:*)",
+      "Read(//Users/liyunxiao/repo/ag3/worktrees/agent-faiss/**)",
+      "Read(//Users/liyunxiao/repo/ag3/worktrees/agent-pinecone/**)",
+      "Bash(git reset:*)",
+      "Bash(git clean:*)",
+      "Bash(git push:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": false
+}
