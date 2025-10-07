@@ -1,11 +1,11 @@
 {
-  "embedding_rows": 396,
+  "embedding_rows": 565,
   "zero_vectors": 0,
   "nan_vectors": 0,
   "median_norm": 1.0,
   "iqr": 0.0,
   "pct_norm_outliers": 0.0,
-  "vector_dim": 768,
-  "baseline_chunks": 396,
+  "vector_dim": 1536,
+  "baseline_chunks": 565,
   "parquet_path": "data/vector/embeddings/embeddings.parquet"
 }

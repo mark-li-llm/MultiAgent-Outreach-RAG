@@ -5,12 +5,14 @@ import math
 import os
 import random
 import re
+import sys
+import time
 from dataclasses import dataclass
 from statistics import median
 from typing import Any, Dict, List, Tuple
 
 from common import ensure_dir, now_iso
-from embedding_utils import embed_text
+from embedding_utils import embed_text, embed_batch, estimate_embedding_cost
 
 try:
     import yaml
@@ -115,44 +117,89 @@ def main():
     dim = read_yaml_dim(CONF)
     baseline_chunks = load_baseline_chunks()
 
-    rows: List[Dict[str, Any]] = []
-    embedding_rows = 0
-    zero_vectors = 0
-    nan_vectors = 0
-    norms: List[float] = []
+    # Load batch size from config
+    try:
+        with open(CONF, "r", encoding="utf-8") as f:
+            cfg = yaml.safe_load(f)
+        batch_size = int(cfg.get("embedding", {}).get("batch_size") or 100)
+    except Exception:
+        batch_size = 100
 
+    # Collect all chunks
+    all_chunks: List[Dict[str, Any]] = []
     for path in sorted(glob.glob(CHUNK_GLOB)):
         with open(path, "r", encoding="utf-8") as f:
             for line in f:
                 try:
                     j = json.loads(line)
+                    all_chunks.append(j)
                 except Exception:
                     continue
-                chunk_id = j.get("chunk_id") or ""
-                doc_id = j.get("doc_id") or ""
-                seq_no = j.get("seq_no") or 0
-                token_count = j.get("token_count") or 0
-                text = j.get("text") or ""
 
-                # Text-based deterministic embedding (shared with queries)
-                v = embed_text(text, dim)
-                n = l2_norm(v)
+    # Cost estimation
+    print(f"=== Pre-flight Cost Estimation ===")
+    if all_chunks:
+        sample_lengths = [len(c.get("text") or "") for c in all_chunks[:100]]
+        avg_len = int(median(sample_lengths)) if sample_lengths else 500
 
-                if n == 0.0:
-                    zero_vectors += 1
-                if any((x != x) for x in v):  # NaN check
-                    nan_vectors += 1
+        cost_estimate = estimate_embedding_cost(len(all_chunks), avg_len)
+        print(f"  Total chunks: {cost_estimate['num_texts']}")
+        print(f"  Already cached: {cost_estimate['cached_texts']}")
+        print(f"  Need to embed: {cost_estimate['uncached_texts']}")
+        print(f"  Estimated cost: ${cost_estimate['estimated_total_cost_usd']:.4f} USD")
+        print(f"  ({cost_estimate['note']})")
 
-                rows.append({
-                    "chunk_id": chunk_id,
-                    "doc_id": doc_id,
-                    "seq_no": seq_no,
-                    "token_count": token_count,
-                    "l2_norm": n,
-                    "vector": [float(x) for x in v],
-                })
-                norms.append(n)
-                embedding_rows += 1
+        if cost_estimate['uncached_texts'] > 0:
+            # Allow auto-confirm via environment variable
+            auto_confirm = os.getenv("AG1_AUTO_CONFIRM", "").lower() in ["1", "true", "yes", "y"]
+            if auto_confirm:
+                print("\n✅ Auto-confirmed via AG1_AUTO_CONFIRM")
+            else:
+                response = input(f"\nProceed with embedding generation? [y/N]: ")
+                if response.lower() != 'y':
+                    print("Aborted by user.")
+                    sys.exit(0)
+
+    print(f"\n=== Starting Embedding Generation ===")
+    print(f"  Model: openai-ada-002")
+    print(f"  Dimension: {dim}")
+    print(f"  Batch size: {batch_size}")
+    print(f"  Total chunks: {len(all_chunks)}")
+
+    # Extract texts and generate embeddings
+    texts = [chunk.get("text") or "" for chunk in all_chunks]
+
+    start_time = time.time()
+    vectors = embed_batch(texts, dim, batch_size)
+    elapsed = time.time() - start_time
+
+    print(f"  Completed in {elapsed:.1f}s ({len(texts)/elapsed:.1f} chunks/sec)")
+
+    # Process results
+    rows: List[Dict[str, Any]] = []
+    zero_vectors = 0
+    nan_vectors = 0
+    norms: List[float] = []
+
+    for chunk, v in zip(all_chunks, vectors):
+        n = l2_norm(v)
+
+        if n == 0.0:
+            zero_vectors += 1
+        if any((x != x) for x in v):  # NaN check
+            nan_vectors += 1
+
+        rows.append({
+            "chunk_id": chunk.get("chunk_id") or "",
+            "doc_id": chunk.get("doc_id") or "",
+            "seq_no": chunk.get("seq_no") or 0,
+            "token_count": chunk.get("token_count") or 0,
+            "l2_norm": n,
+            "vector": [float(x) for x in v],
+        })
+        norms.append(n)
+
+    embedding_rows = len(rows)
 
     # Stats
     q1, med, q3 = quartiles(norms)

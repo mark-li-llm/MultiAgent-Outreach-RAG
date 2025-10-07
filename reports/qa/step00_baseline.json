@@ -1,7 +1,7 @@
 {
   "step": "step00_baseline",
   "gate": "Gate-0",
-  "status": "RED",
+  "status": "GREEN",
   "checks": [
     {
       "id": "G0-01",
@@ -22,15 +22,15 @@
     {
       "id": "G0-03",
       "metric": "seed_eval_size",
-      "actual": 0,
+      "actual": 46,
       "threshold": ">=40",
-      "status": "FAIL",
+      "status": "PASS",
       "evidence": "data/interim/eval/salesforce_eval_seed.jsonl"
     },
     {
       "id": "G0-04",
       "metric": "baseline_chunks",
-      "actual": 396,
+      "actual": 565,
       "threshold": ">=baseline_docs (97)",
       "status": "PASS",
       "evidence": "data/interim/chunks"
@@ -55,8 +55,8 @@
       "www.sec.gov"
     ],
     "age_days": {
-      "p50": 192,
-      "p90": 749
+      "p50": 200,
+      "p90": 757
     },
     "age_buckets": {
       "<=90d": 26,
@@ -65,10 +65,10 @@
       ">365d": 17
     },
     "token_count": {
-      "p50": 814,
-      "p90": 892
+      "p50": 771,
+      "p90": 1009
     }
   },
-  "next_action": "stop",
-  "timestamp": "2025-09-29T19:25:15.437158+00:00"
+  "next_action": "continue",
+  "timestamp": "2025-10-07T16:27:52.268465+00:00"
 }

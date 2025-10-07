@@ -10,5 +10,10 @@ dependencies:
   - certifi
   - openblas
   - llvm-openmp
+  - pip
+  - pip:
+      - openai>=1.0.0
+      - python-dotenv>=1.0.0
+      - tenacity>=8.2.0  # For retry logic
   # IMPORTANT: Do NOT install pip faiss-cpu in this env to avoid duplicate libomp.
 

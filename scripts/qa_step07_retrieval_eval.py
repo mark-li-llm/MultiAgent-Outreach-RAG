@@ -206,7 +206,7 @@ async def main_async(args):
     # Offline index if needed
     chunks_index: List[Dict[str, Any]] = []
     vectors: List[List[float]] = []
-    dim = int(((load_yaml(os.path.join("configs","vector.indexing.yaml")) or {}).get("embedding") or {}).get("dim") or 768)
+    dim = int(((load_yaml(os.path.join("configs","vector.indexing.yaml")) or {}).get("embedding") or {}).get("dim") or 1536)
     # Preload chunk metadata for diagnostics (independent of online/offline)
     # chunk_meta: chunk_id -> {doc_id, seq_no, start_char, text}
     chunk_meta: Dict[str, Dict[str, Any]] = {}
