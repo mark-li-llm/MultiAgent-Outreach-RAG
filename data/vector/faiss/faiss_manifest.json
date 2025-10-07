@@ -1,8 +1,8 @@
 {
   "index_type": "HNSW",
   "metric": "L2",
-  "dim": 768,
-  "count": 396,
+  "dim": 1536,
+  "count": 565,
   "roundtrip_error_max": 0.0,
   "paths": {
     "index": "data/vector/faiss/index.faiss",

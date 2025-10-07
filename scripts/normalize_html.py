@@ -127,7 +127,7 @@ def normalize_html_bytes(html_bytes: bytes, rules: Dict) -> Tuple[str, int, int,
     strip_tracking_params_from_links(kept)
 
     text = kept.get_text("\n")
-    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"[ \t]+", " ", text)  # Only collapse spaces/tabs, preserve newlines
     text = re.sub(r"(\s*\n\s*)+", "\n", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = text.strip()
@@ -229,7 +229,7 @@ def normalize_one(item: Tuple[str, str, Dict], rules: Dict, out_dir: str, log: l
                     from bs4 import BeautifulSoup
                     soup_all = BeautifulSoup(html_str, "html.parser")
                     full_text = soup_all.get_text("\n")
-                    full_text = re.sub(r"\s+", " ", full_text)
+                    full_text = re.sub(r"[ \t]+", " ", full_text)  # Only collapse spaces/tabs, preserve newlines
                     full_text = re.sub(r"(\s*\n\s*)+", "\n", full_text)
                     full_text = re.sub(r"\n{3,}", "\n\n", full_text).strip()
                     text = full_text

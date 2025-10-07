@@ -3,12 +3,12 @@
   "gate": "Gate-7",
   "status": "RED",
   "service_mode": "internal_stub",
-  "fallback_mode": "strict",
+  "fallback_mode": "default",
   "checks": [
     {
       "id": "G7-01",
       "metric": "recall@10",
-      "actual": 0.5217,
+      "actual": 0.6522,
       "threshold": ">=0.80",
       "status": "FAIL",
       "evidence": "reports/eval/retrieval_failures.jsonl"
@@ -16,22 +16,15 @@
     {
       "id": "G7-02",
       "metric": "nDCG@5",
-      "actual": 0.2888,
+      "actual": 0.3441,
       "threshold": ">=0.60",
       "status": "FAIL",
       "evidence": "reports/eval/retrieval_failures.jsonl"
     },
     {
-      "id": "G7-03",
-      "metric": "coverage_unique_domains_top10_mean",
-      "actual": 2.739,
-      "threshold": ">=3.0",
-      "status": "FAIL"
-    },
-    {
       "id": "G7-04",
       "metric": "freshness_mean_age_days",
-      "actual": 276.74,
+      "actual": 341.22,
       "threshold": "<=540",
       "status": "PASS"
     },
@@ -40,19 +33,19 @@
       "metric": "latency_budgets",
       "actual": {
         "faiss": {
-          "p50": 13.58,
-          "p95": 16.94,
-          "budget_p95": 29.699
+          "p50": 199.18,
+          "p95": 329.43,
+          "budget_p95": 89.09700000000001
         },
         "weaviate": {
-          "p50": 60.62,
-          "p95": 81.2,
-          "budget_p95": 79.574
+          "p50": 320.27,
+          "p95": 933.6,
+          "budget_p95": 238.72199999999998
         },
         "pinecone": {
-          "p50": 128.78,
-          "p95": 153.29,
-          "budget_p95": 198.308
+          "p50": 368.54,
+          "p95": 839.48,
+          "budget_p95": 594.924
         }
       },
       "threshold": "p50,p95 <= budget_p95 per backend",
@@ -60,78 +53,78 @@
     }
   ],
   "summary": {
-    "recall@10": 0.5217,
-    "nDCG@5": 0.2888,
-    "coverage_unique_domains_top10_mean": 2.739,
-    "freshness_mean_age_days": 276.74,
+    "recall@10": 0.6522,
+    "nDCG@5": 0.3441,
+    "coverage_unique_domains_top10_mean": 2.13,
+    "freshness_mean_age_days": 341.22,
     "latency": [
       {
         "backend": "faiss",
-        "p50": 13.58,
-        "p95": 16.94,
-        "budget_p95": 29.699,
-        "status": "PASS"
+        "p50": 199.18,
+        "p95": 329.43,
+        "budget_p95": 89.09700000000001,
+        "status": "FAIL"
       },
       {
         "backend": "weaviate",
-        "p50": 60.62,
-        "p95": 81.2,
-        "budget_p95": 79.574,
+        "p50": 320.27,
+        "p95": 933.6,
+        "budget_p95": 238.72199999999998,
         "status": "FAIL"
       },
       {
         "backend": "pinecone",
-        "p50": 128.78,
-        "p95": 153.29,
-        "budget_p95": 198.308,
-        "status": "PASS"
+        "p50": 368.54,
+        "p95": 839.48,
+        "budget_p95": 594.924,
+        "status": "FAIL"
       }
     ],
     "queries": 46,
     "recall_at": {
-      "@1": 0.1739,
-      "@3": 0.3696,
-      "@5": 0.3696,
-      "@10": 0.5217
+      "@1": 0.1957,
+      "@3": 0.3913,
+      "@5": 0.5,
+      "@10": 0.6522
     },
     "doc_recall_at": {
-      "@1": 0.413,
-      "@3": 0.5652,
-      "@5": 0.587,
-      "@10": 0.7174
+      "@1": 0.6087,
+      "@3": 0.7609,
+      "@5": 0.7609,
+      "@10": 0.8261
     },
-    "doc_recall@10": 0.7174,
-    "soft_recall@10": 0.1087,
-    "doc_nDCG@5": 0.5061,
-    "near_miss_rate": 0.1957,
+    "doc_recall@10": 0.8261,
+    "soft_recall@10": 0.0435,
+    "doc_nDCG@5": 0.6933,
+    "near_miss_rate": 0.1739,
     "rank_stats": {
       "chunk": {
-        "count": 24,
-        "p50": 2,
-        "p75": 6,
-        "p90": 8,
+        "count": 30,
+        "p50": 3,
+        "p75": 5,
+        "p90": 7,
         "max": 10
       },
       "doc": {
-        "count": 33,
+        "count": 38,
         "p50": 1,
-        "p75": 3,
-        "p90": 6,
-        "max": 10
+        "p75": 1,
+        "p90": 3,
+        "max": 7
       }
     },
     "by_doctype": {
       "10-Q": {
         "total": 6,
-        "chunk_hit": 1,
-        "doc_hit": 5,
-        "soft_hit": 2,
-        "doc_miss": 1,
-        "near_miss": 2
+        "chunk_hit": 0,
+        "doc_hit": 3,
+        "soft_hit": 0,
+        "doc_miss": 3,
+        "near_miss": 0
       },
       "10-K": {
         "total": 3,
-        "chunk_hit": 1,
+        "chunk_hit": 0,
         "doc_hit": 1,
         "soft_hit": 0,
         "doc_miss": 2,
@@ -139,26 +132,26 @@
       },
       "8-K": {
         "total": 1,
-        "chunk_hit": 0,
-        "doc_hit": 0,
+        "chunk_hit": 1,
+        "doc_hit": 1,
         "soft_hit": 0,
-        "doc_miss": 1,
+        "doc_miss": 0,
         "near_miss": 0
       },
       "press": {
         "total": 26,
-        "chunk_hit": 16,
-        "doc_hit": 20,
-        "soft_hit": 3,
-        "doc_miss": 6,
-        "near_miss": 3
+        "chunk_hit": 20,
+        "doc_hit": 23,
+        "soft_hit": 2,
+        "doc_miss": 3,
+        "near_miss": 2
       },
       "product": {
         "total": 6,
-        "chunk_hit": 4,
-        "doc_hit": 5,
+        "chunk_hit": 6,
+        "doc_hit": 6,
         "soft_hit": 0,
-        "doc_miss": 1,
+        "doc_miss": 0,
         "near_miss": 0
       },
       "dev_docs": {
@@ -171,10 +164,10 @@
       },
       "wiki": {
         "total": 2,
-        "chunk_hit": 0,
-        "doc_hit": 0,
+        "chunk_hit": 1,
+        "doc_hit": 2,
         "soft_hit": 0,
-        "doc_miss": 2,
+        "doc_miss": 0,
         "near_miss": 0
       },
       "help_docs": {
@@ -189,45 +182,45 @@
     "by_backend": {
       "faiss": {
         "queries": 10,
-        "chunk_recall@10": 0.7,
-        "doc_recall@10": 0.7,
-        "nDCG@5": 0.4393,
-        "doc_nDCG@5": 0.6387,
+        "chunk_recall@10": 0.8,
+        "doc_recall@10": 1.0,
+        "nDCG@5": 0.5131,
+        "doc_nDCG@5": 0.95,
         "near_miss_count": 0,
         "latency_ms": {
-          "p50": 13.58,
-          "p95": 16.94
+          "p50": 199.18,
+          "p95": 329.43
         }
       },
       "weaviate": {
         "queries": 26,
-        "chunk_recall@10": 0.5769,
-        "doc_recall@10": 0.8077,
-        "nDCG@5": 0.342,
-        "doc_nDCG@5": 0.5485,
-        "near_miss_count": 3,
+        "chunk_recall@10": 0.6538,
+        "doc_recall@10": 0.7308,
+        "nDCG@5": 0.3922,
+        "doc_nDCG@5": 0.6204,
+        "near_miss_count": 0,
         "latency_ms": {
-          "p50": 60.62,
-          "p95": 81.2
+          "p50": 320.27,
+          "p95": 933.6
         }
       },
       "pinecone": {
         "queries": 10,
-        "chunk_recall@10": 0.2,
-        "doc_recall@10": 0.5,
-        "nDCG@5": 0.0,
-        "doc_nDCG@5": 0.2631,
+        "chunk_recall@10": 0.5,
+        "doc_recall@10": 0.9,
+        "nDCG@5": 0.05,
+        "doc_nDCG@5": 0.6262,
         "near_miss_count": 2,
         "latency_ms": {
-          "p50": 128.78,
-          "p95": 153.29
+          "p50": 368.54,
+          "p95": 839.48
         }
       }
     }
   },
   "run_context": {
     "mode": "internal_stub",
-    "fallback_mode": "strict",
+    "fallback_mode": "default",
     "mcp": {
       "kb_search_url": "http://127.0.0.1:7801/invoke",
       "service_type": "internal_stub",
@@ -256,8 +249,8 @@
     "vector": {
       "config": "configs/vector.indexing.yaml",
       "embedding": {
-        "dim": 768,
-        "model": "hashlex-v1"
+        "dim": 1536,
+        "model": "openai-ada-002"
       }
     },
     "eval": {
@@ -290,5 +283,5 @@
     "diversity_merge_used": 0
   },
   "next_action": "fix_and_rerun",
-  "timestamp": "2025-09-30T18:31:23.315531+00:00"
+  "timestamp": "2025-10-07T16:32:31.896718+00:00"
 }
