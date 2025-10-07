@@ -9,6 +9,14 @@ remove_selectors:
   - '.sidebar'
   - script
   - style
+  # XBRL Inline format metadata removal (SEC filings)
+  # Note: Colon escaped as \3A (hex code) for CSS selector compatibility
+  - 'ix\3A header'       # XBRL header container (removes all nested children)
+  - 'ix\3A hidden'       # Hidden metadata section
+  - 'ix\3A resources'    # Context/unit definitions
+  - 'ix\3A references'   # Schema references
+  - 'xbrli\3A context'   # Individual context definitions
+  - 'xbrli\3A unit'      # Unit definitions
 preserve_selectors:
   - article
   - main

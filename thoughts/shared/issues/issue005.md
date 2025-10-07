@@ -1,0 +1,1 @@
+SEC 10-K/10-Q filings achieve 0% chunk-level recall (0/9 successful queries) in Gate-7 evaluation, while maintaining 44.4% document-level recall (4/9). 

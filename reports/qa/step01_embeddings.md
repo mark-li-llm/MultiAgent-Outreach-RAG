@@ -1,14 +1,14 @@
-# STEP 1 — Embeddings Quality (Gate‑1) — GREEN
+# STEP 1 — Embeddings Quality (Gate‑1) — RED
 
 Checks:
-- G1-01: embedding_rows = 565 (threshold == baseline_chunks (565)) -> PASS
+- G1-01: embedding_rows = 536 (threshold == baseline_chunks (565)) -> FAIL
 - G1-02: vector_dim = 1536 (threshold == 1536 (from config)) -> PASS
 - G1-03a: zero_vectors = 0 (threshold ==0) -> PASS
 - G1-03b: nan_vectors = 0 (threshold ==0) -> PASS
 - G1-04: pct_norm_outliers = 0.0 (threshold <=0.005) -> PASS
 
 Stats:
-- embedding_rows: 565
+- embedding_rows: 536
 - vector_dim: 1536
 - zero_vectors: 0
 - nan_vectors: 0
@@ -16,4 +16,4 @@ Stats:
 - iqr: 0.0
 - pct_norm_outliers: 0.0
 
-Go/No-Go: Go
+Go/No-Go: No-Go
