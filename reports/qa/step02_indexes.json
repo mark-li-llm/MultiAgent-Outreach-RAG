@@ -6,31 +6,31 @@
     {
       "id": "G2-01",
       "metric": "pinecone_upsert_rate",
-      "actual": 1.0,
+      "actual": 0.948673,
       "threshold": ">=0.98",
-      "status": "PASS",
+      "status": "FAIL",
       "evidence": "data/vector/pinecone/index_manifest.json"
     },
     {
       "id": "G2-02",
       "metric": "weaviate_upsert_rate",
-      "actual": 1.0,
+      "actual": 0.948673,
       "threshold": ">=0.98",
-      "status": "PASS",
+      "status": "FAIL",
       "evidence": "data/vector/weaviate/index_manifest.json"
     },
     {
       "id": "G2-03",
       "metric": "faiss_count_ratio",
-      "actual": 1.0,
+      "actual": 0.948673,
       "threshold": ">=0.98",
-      "status": "PASS",
+      "status": "FAIL",
       "evidence": "data/vector/faiss/faiss_manifest.json"
     },
     {
       "id": "G2-04",
       "metric": "pct_missing_required_metadata",
-      "actual": 0.077876,
+      "actual": 0.08209,
       "threshold": "<=0.02",
       "status": "FAIL",
       "evidence": "data/final/reports/index_health.json"
@@ -61,5 +61,5 @@
     }
   ],
   "next_action": "fix_and_rerun",
-  "timestamp": "2025-10-07T16:30:30.252399+00:00"
+  "timestamp": "2025-10-07T20:17:44.997439+00:00"
 }

@@ -5,7 +5,7 @@
     "metric": "cosine",
     "notes": "simulated manifest only (no network)"
   },
-  "upserted": 565,
+  "upserted": 536,
   "failed": 0,
   "failed_ids": []
 }
