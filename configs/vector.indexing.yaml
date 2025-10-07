@@ -1,8 +1,8 @@
 embedding:
-  model: hashlex-v1
-  dim: 768
-  batch_size: 256
-  notes: deterministic hash-based embedding for QA
+  model: openai-ada-002
+  dim: 1536
+  batch_size: 100
+  notes: OpenAI text-embedding-ada-002 with caching and retry logic
 
 faiss:
   type: HNSW

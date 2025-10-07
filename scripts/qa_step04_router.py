@@ -211,14 +211,11 @@ async def main_async():
     # Offline search primitives (hash-embed) if needed
     chunks_index: List[Dict[str, Any]] = []
     vectors: List[List[float]] = []
-    dim = 768
+    # Read embedding dim from vector config
+    cfg = load_yaml(os.path.join("configs", "vector.indexing.yaml"))
+    dim = cfg.get("embedding", {}).get("dim", 1536)
     if use_offline:
-        # Read embedding dim from vector config if available
-        try:
-            cfg = load_yaml(os.path.join("configs", "vector.indexing.yaml"))
-            dim = int(((cfg or {}).get("embedding") or {}).get("dim") or 768)
-        except Exception:
-            dim = 768
+        pass  # dim already set above
         # Load chunks and build vectors deterministically, same logic as qa_step01_embeddings.hash_vec
         import random, math
         def hash_vec(seed: str, d: int) -> List[float]:

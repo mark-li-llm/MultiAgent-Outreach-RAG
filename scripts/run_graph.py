@@ -4,12 +4,14 @@ import asyncio
 import glob
 import json
 import os
+import sys
 import time
 import uuid
 from datetime import datetime, timezone, date
 from typing import Any, Dict, List, Optional, Tuple
 
 import aiohttp
+import pyarrow.parquet as pq
 import re
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
@@ -294,47 +296,41 @@ async def main_async(args) -> str:
     # Offline index setup
     chunks_index: List[Dict[str, Any]] = []
     vectors: List[List[float]] = []
-    dim = int(((load_yaml(os.path.join("configs","vector.indexing.yaml")) or {}).get("embedding") or {}).get("dim") or 768)
+    dim = int(((load_yaml(os.path.join("configs","vector.indexing.yaml")) or {}).get("embedding") or {}).get("dim") or 1536)
+
     if use_offline:
-        import random, math
-        def hash_vec(seed: str, d: int) -> List[float]:
-            rnd = random.Random()
-            h = 0
-            for ch in seed:
-                h = (h * 1315423911) ^ ord(ch)
-                h &= 0xFFFFFFFFFFFFFFFF
-            rnd.seed(h)
-            vals = [rnd.uniform(-1.0, 1.0) for _ in range(d)]
-            s2 = sum(v*v for v in vals) or 1.0
-            inv = 1.0 / math.sqrt(s2)
-            return [v*inv for v in vals]
-        def embed_query(q: str, d: int) -> List[float]:
-            import random, math
-            rnd = random.Random()
-            h = 0
-            for ch in q:
-                h = (h * 1315423911) ^ ord(ch)
-                h &= 0xFFFFFFFFFFFFFFFF
-            rnd.seed(h)
-            vals = [rnd.uniform(-1.0, 1.0) for _ in range(d)]
-            s2 = sum(v*v for v in vals) or 1.0
-            inv = 1.0 / math.sqrt(s2)
-            return [v*inv for v in vals]
-        def l2(a: List[float], b: List[float]) -> float:
-            return sum((x-y)*(x-y) for x,y in zip(a,b))
-        # Load chunks
-        for cf in sorted(glob.glob(os.path.join("data","interim","chunks","*.chunks.jsonl"))):
-            with open(cf, "r", encoding="utf-8") as f:
-                for line in f:
-                    try:
-                        j = json.loads(line)
-                    except Exception:
-                        continue
-                    if not j.get("chunk_id"):
-                        continue
-                    chunks_index.append(j)
-                    seed = f"{j.get('chunk_id')}::{len(j.get('text') or '')}::{int(j.get('token_count') or 0)}"
-                    vectors.append(hash_vec(seed, dim))
+        print("ERROR: Offline mode is not supported with OpenAI embeddings.")
+        print("Offline mode requires API calls for query embedding which defeats the purpose.")
+        print("Please run with online mode (MCP services) instead.")
+        sys.exit(1)
+
+    # Load pre-computed embeddings from parquet for graph execution
+    emb_path = os.path.join("data", "vector", "embeddings", "embeddings.parquet")
+    if not os.path.exists(emb_path):
+        print(f"ERROR: Embeddings not found at {emb_path}")
+        print("Please run Gate-1 first: conda run -n age python scripts/qa_step01_embeddings.py")
+        sys.exit(1)
+
+    print(f"Loading embeddings from {emb_path}...")
+    emb_table = pq.read_table(emb_path)
+    chunk_ids = emb_table["chunk_id"].to_pylist()
+    emb_vectors = emb_table["vector"].to_pylist()
+    chunk_to_vec = dict(zip(chunk_ids, emb_vectors))
+
+    # Load chunks and match with embeddings
+    for cf in sorted(glob.glob(os.path.join("data","interim","chunks","*.chunks.jsonl"))):
+        with open(cf, "r", encoding="utf-8") as f:
+            for line in f:
+                try:
+                    j = json.loads(line)
+                    chunk_id = j.get("chunk_id")
+                    if chunk_id and chunk_id in chunk_to_vec:
+                        chunks_index.append(j)
+                        vectors.append(chunk_to_vec[chunk_id])
+                except Exception:
+                    continue
+
+    print(f"Loaded {len(chunks_index)} chunks with embeddings")
 
     connector = aiohttp.TCPConnector(limit_per_host=8)
     router_trace_path = os.path.join(out_dir, "router_trace.jsonl")
