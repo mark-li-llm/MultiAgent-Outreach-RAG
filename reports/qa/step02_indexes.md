@@ -1,19 +1,19 @@
 # STEP 2 — Index Build & Integrity (Gate‑2) — RED
 
 Checks:
-- G2-01: pinecone_upsert_rate = 1.0 (threshold >=0.98) -> PASS
-- G2-02: weaviate_upsert_rate = 1.0 (threshold >=0.98) -> PASS
-- G2-03: faiss_count_ratio = 1.0 (threshold >=0.98) -> PASS
-- G2-04: pct_missing_required_metadata = 0.077876 (threshold <=0.02) -> FAIL
+- G2-01: pinecone_upsert_rate = 0.948673 (threshold >=0.98) -> FAIL
+- G2-02: weaviate_upsert_rate = 0.948673 (threshold >=0.98) -> FAIL
+- G2-03: faiss_count_ratio = 0.948673 (threshold >=0.98) -> FAIL
+- G2-04: pct_missing_required_metadata = 0.08209 (threshold <=0.02) -> FAIL
 - G2-05: faiss_roundtrip_error_max = 0.0 (threshold <=0.001) -> PASS
 - G2-06: sanity_search_min_topk = 10 (threshold >=3) -> PASS
 - G2-07: sanity_keyword_hit_min_top10 = 4 (threshold >=1) -> PASS
 
 Summary:
-- pinecone_upserted: 565 failed: 0
-- weaviate_inserted: 565 failed: 0
-- faiss_count: 565 roundtrip_error_max: 0.0
-- pct_missing_required_metadata: 0.077876
+- pinecone_upserted: 536 failed: 0
+- weaviate_inserted: 536 failed: 0
+- faiss_count: 536 roundtrip_error_max: 0.0
+- pct_missing_required_metadata: 0.08209
 - sanity_search_min_topk: 10
 
 Go/No-Go: No-Go

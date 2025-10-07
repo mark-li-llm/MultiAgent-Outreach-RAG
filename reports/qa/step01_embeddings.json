@@ -1,14 +1,14 @@
 {
   "step": "step01_embeddings",
   "gate": "Gate-1",
-  "status": "GREEN",
+  "status": "RED",
   "checks": [
     {
       "id": "G1-01",
       "metric": "embedding_rows",
-      "actual": 565,
+      "actual": 536,
       "threshold": "== baseline_chunks (565)",
-      "status": "PASS",
+      "status": "FAIL",
       "evidence": "data/vector/embeddings/embedding_stats.json"
     },
     {
@@ -44,6 +44,6 @@
       "evidence": "data/vector/embeddings/embedding_stats.json"
     }
   ],
-  "next_action": "continue",
-  "timestamp": "2025-10-07T16:28:07.068098+00:00"
+  "next_action": "fix_and_rerun",
+  "timestamp": "2025-10-07T20:16:26.275338+00:00"
 }
