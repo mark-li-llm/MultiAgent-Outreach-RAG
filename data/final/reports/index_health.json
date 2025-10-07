@@ -1,18 +1,18 @@
 {
   "pinecone": {
-    "upserted": 396,
+    "upserted": 565,
     "failed": 0
   },
   "weaviate": {
-    "inserted": 396,
+    "inserted": 565,
     "failed": 0
   },
   "faiss": {
-    "count": 396,
+    "count": 565,
     "roundtrip_error_max": 0.0
   },
   "metadata": {
-    "pct_missing_required": 0.068182
+    "pct_missing_required": 0.077876
   },
   "sanity_search": {
     "pinecone": {
@@ -29,6 +29,6 @@
     }
   },
   "sanity_keyword_hit_min_top10": 4,
-  "baseline_chunks": 396,
-  "embedding_rows": 396
+  "baseline_chunks": 565,
+  "embedding_rows": 565
 }

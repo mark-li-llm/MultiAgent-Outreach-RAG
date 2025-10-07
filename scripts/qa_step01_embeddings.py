@@ -150,10 +150,15 @@ def main():
         print(f"  ({cost_estimate['note']})")
 
         if cost_estimate['uncached_texts'] > 0:
-            response = input(f"\nProceed with embedding generation? [y/N]: ")
-            if response.lower() != 'y':
-                print("Aborted by user.")
-                sys.exit(0)
+            # Allow auto-confirm via environment variable
+            auto_confirm = os.getenv("AG1_AUTO_CONFIRM", "").lower() in ["1", "true", "yes", "y"]
+            if auto_confirm:
+                print("\n✅ Auto-confirmed via AG1_AUTO_CONFIRM")
+            else:
+                response = input(f"\nProceed with embedding generation? [y/N]: ")
+                if response.lower() != 'y':
+                    print("Aborted by user.")
+                    sys.exit(0)
 
     print(f"\n=== Starting Embedding Generation ===")
     print(f"  Model: openai-ada-002")

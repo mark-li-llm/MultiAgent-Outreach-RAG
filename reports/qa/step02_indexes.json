@@ -30,7 +30,7 @@
     {
       "id": "G2-04",
       "metric": "pct_missing_required_metadata",
-      "actual": 0.068182,
+      "actual": 0.077876,
       "threshold": "<=0.02",
       "status": "FAIL",
       "evidence": "data/final/reports/index_health.json"
@@ -61,5 +61,5 @@
     }
   ],
   "next_action": "fix_and_rerun",
-  "timestamp": "2025-09-29T19:25:32.302440+00:00"
+  "timestamp": "2025-10-07T16:30:30.252399+00:00"
 }

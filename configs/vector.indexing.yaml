@@ -1,8 +1,8 @@
 embedding:
   model: openai-ada-002
   dim: 1536
-  batch_size: 100
-  notes: OpenAI text-embedding-ada-002 with caching and retry logic
+  batch_size: 20
+  notes: OpenAI text-embedding-ada-002 with caching and retry logic (batch_size reduced to avoid 8192 token limit)
 
 faiss:
   type: HNSW

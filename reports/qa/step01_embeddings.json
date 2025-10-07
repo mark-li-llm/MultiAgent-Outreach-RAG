@@ -6,16 +6,16 @@
     {
       "id": "G1-01",
       "metric": "embedding_rows",
-      "actual": 396,
-      "threshold": "== baseline_chunks (396)",
+      "actual": 565,
+      "threshold": "== baseline_chunks (565)",
       "status": "PASS",
       "evidence": "data/vector/embeddings/embedding_stats.json"
     },
     {
       "id": "G1-02",
       "metric": "vector_dim",
-      "actual": 768,
-      "threshold": "== 768 (from config)",
+      "actual": 1536,
+      "threshold": "== 1536 (from config)",
       "status": "PASS",
       "evidence": "configs/vector.indexing.yaml"
     },
@@ -45,5 +45,5 @@
     }
   ],
   "next_action": "continue",
-  "timestamp": "2025-09-29T19:25:24.462443+00:00"
+  "timestamp": "2025-10-07T16:28:07.068098+00:00"
 }
