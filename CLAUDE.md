@@ -17,7 +17,7 @@ The system follows a multi-stage pipeline with quality gates:
 3. **Metadata Extraction** (`extract_metadata.py`): Extract structured metadata
 4. **Chunking** (`chunk_documents.py`): Split documents into retrievable units
 5. **Deduplication** (`dedupe_chunks.py`): Remove duplicate content
-6. **Embedding** (Gate-1): Generate text vectors using hashlex-v1
+6. **Embedding** (Gate-1): Generate text vectors using OpenAI text-embedding-ada-002
 7. **Indexing** (Gate-2): Build FAISS/Weaviate/Pinecone indexes
 8. **MCP Tools** (Gate-3): Validate tool health and contracts
 9. **Routing** (Gate-4): Test query routing heuristics
@@ -37,24 +37,124 @@ The system uses LangGraph to orchestrate agent-to-agent interactions:
 
 Agent nodes and timeouts are defined in `configs/langgraph.nodes.yaml`.
 
-**LLM Configuration**: The system uses `gpt-5-nano` as the LLM model for both Consolidator and Stylist agents. This model name is intentionally set to `gpt-5-nano` in `scripts/run_graph.py` (line 170).
+**LLM Configuration**: The system uses `gpt-5-nano` as the LLM model for both Consolidator and Stylist agents. This model name is intentionally set to `gpt-5-nano` in `scripts/run_graph.py` (line 176).
 
-### Text Embedding System (hashlex-v1)
+### LangGraph Orchestration
+
+The system provides **two implementations** for agent orchestration:
+
+1. **Original**: `scripts/run_graph.py` - Custom sequential orchestration
+2. **LangGraph**: `scripts/run_graph_langgraph.py` - Full LangGraph StateGraph implementation
+
+Both implementations maintain 100% backward compatibility with identical output formats and quality gate thresholds.
+
+#### LangGraph Architecture
+
+**Implementation Files**:
+- `scripts/run_graph_langgraph.py` - Main graph builder and execution
+- `scripts/langgraph_nodes.py` - 8 agent node implementations
+- `scripts/langgraph_state.py` - Typed state schema (AgentState TypedDict)
+- `scripts/visualize_graph.py` - Graph visualization generator
+
+**StateGraph Structure**: Type-safe state management with field-level accumulators
+
+```python
+class AgentState(TypedDict):
+    # Input fields
+    company: str
+    persona: str
+    session_id: str
+
+    # Accumulated fields (using Annotated[..., add])
+    retrieved_chunks: Annotated[List[Dict], add]
+    compliance_flags: Annotated[List[str], add]
+    errors: Annotated[List[str], add]
+
+    # Replaced fields
+    queries: List[str]
+    insight_cards: List[Dict]
+    email_draft: Dict
+    a2a_rounds: int
+```
+
+**Graph Topology**: 8 nodes with conditional A2A routing
+
+```
+Intake → Planner → Retriever → Synthesizer → Consolidator → Stylist → A2A
+                                                                        ↓
+                                                            (no critical flags)
+                                                                        ↓
+                                                                   Assembler → END
+                                                                        ↑
+                                                              (critical flags & rounds<2)
+                                                                        ↓
+                                                      ← ← ← ← ← ← Stylist (Round 2)
+```
+
+**Conditional Edges**:
+- **A2A → Stylist** (revise): If critical compliance flags exist AND rounds < 2
+- **A2A → Assembler** (assemble): Otherwise
+
+**Node Functions** (`scripts/langgraph_nodes.py`):
+1. **intake_node**: Input validation (company, persona)
+2. **planner_node**: Generate 5 persona-specific queries from eval seed
+3. **retriever_node**: Execute MCP kb.search across FAISS/Weaviate/Pinecone backends
+4. **synthesizer_node**: Convert chunks to candidate insight objects
+5. **consolidator_node**: LLM-enhanced persona-aware insight refinement (ChatOpenAI, gpt-5-nano)
+6. **stylist_node**: LLM-based email generation (ChatOpenAI, gpt-5-nano)
+7. **a2a_node**: Compliance negotiation with MCP safety.check (up to 2 rounds with revision logic)
+8. **assembler_node**: Attach proof points and finalize output
+
+**Graph Visualization**:
+```bash
+conda run -n age python scripts/visualize_graph.py
+# Generates: reports/graphs/agent_workflow.{mmd,png}
+```
+
+**Execution**:
+```bash
+# LangGraph implementation
+conda run -n age python scripts/run_graph_langgraph.py \
+  --company Salesforce \
+  --persona vp_customer_experience \
+  --session-id my-session
+
+# Original implementation
+conda run -n age python scripts/run_graph.py \
+  --company Salesforce \
+  --persona vp_customer_experience \
+  --session-id my-session
+```
+
+**Output Artifacts** (identical format for both implementations):
+- `outputs/<session-id>/insights.json` - 5 enhanced insight cards
+- `outputs/<session-id>/email.json` - Generated email with proof points
+- `outputs/<session-id>/compliance_report.json` - A2A negotiation results
+- `outputs/<session-id>/timing.json` - Per-node execution times
+- `outputs/<session-id>/router_trace.jsonl` - Query routing decisions
+- `state/session-<session-id>.json` - Full state snapshot
+
+**Quality Gates**: Both implementations pass Gates 5, 6, and 8 with identical thresholds.
+
+### Text Embedding System (OpenAI ada-002)
 
 **Location**: `scripts/embedding_utils.py`
 
 **Process**:
-1. Normalize text (lowercase, ASCII, collapse digits, whitespace)
-2. Tokenize (extract words + bigrams for local context)
-3. Signed feature hashing (FNV-1a based, deterministic)
-4. L2 normalization
+1. Uses OpenAI `text-embedding-ada-002` API
+2. Implements caching (SHA-256 keys) in `data/cache/embeddings/` to minimize API calls
+3. Retry logic with exponential backoff (3 attempts) for API failures
+4. Returns 1536-dimensional vectors (normalized by OpenAI)
 
-**Critical**: Both documents and queries MUST use the same `embed_text(text, dim)` function to ensure they exist in the same vector space. Mismatched embeddings will result in recall=0.
+**Critical**:
+- Both documents and queries MUST use the same `embed_text(text, dim)` function to ensure they exist in the same vector space. Mismatched embeddings will result in recall=0.
+- Requires `OPENAI_API_KEY` in `.env` file (create manually: `echo "OPENAI_API_KEY=your-key" > .env`)
+- Batch processing available via `embed_batch()` to reduce API costs
 
 **Configuration**: `configs/vector.indexing.yaml` specifies:
-- `embedding.model: hashlex-v1`
-- `embedding.dim: 768`
-- `embedding.batch_size: 256`
+- `embedding.model: openai-ada-002`
+- `embedding.dim: 1536`
+- `embedding.batch_size: 20` (reduced to avoid 8192 token limit)
 
 ### Multi-Index Routing
 
@@ -235,7 +335,7 @@ ag3/
 │   └── chunking.config.json      # Document chunking parameters
 │
 ├── scripts/                      # Processing and QA scripts (41 total)
-│   ├── embedding_utils.py        # Core hashlex-v1 embedding implementation
+│   ├── embedding_utils.py        # OpenAI ada-002 embedding with caching and retry logic
 │   ├── router_core.py            # Query routing and reranking logic
 │   ├── qa_step*.py               # Quality gate scripts (Gates 0-7)
 │   ├── fetch_*.py                # Data collection scripts
@@ -263,6 +363,8 @@ ag3/
 │   │   ├── faiss/                # FAISS indexes
 │   │   ├── weaviate/             # Weaviate manifests
 │   │   └── pinecone/             # Pinecone manifests
+│   ├── cache/                    # Caching layer
+│   │   └── embeddings/           # OpenAI API response cache (SHA-256 keys)
 │   ├── final/                    # Production-ready artifacts
 │   │   ├── reports/              # Index health reports
 │   │   ├── inventory/            # Document inventory
@@ -309,7 +411,7 @@ ag3/
 
 ### `configs/vector.indexing.yaml`
 Defines embedding and index settings:
-- Embedding model (`hashlex-v1`), dimensions (768), batch size
+- Embedding model (`openai-ada-002`), dimensions (1536), batch size (20)
 - FAISS HNSW parameters (M=32, efConstruction=200, efSearch=128)
 - Pinecone and Weaviate manifests (simulated, no network)
 
@@ -358,6 +460,10 @@ Compliance check templates for generated content
 - `AG7_TRACE_SUCCESSES=1`: Include successes in trace (default: enabled; set 0 for misses only)
 - `AG7_DEBUG=1`: Umbrella debug switch enabling tracing (default: enabled)
 
+### Gate-1 (Embedding Generation)
+- `AG1_AUTO_CONFIRM=1`: Skip cost confirmation prompt (auto-proceed with embedding generation)
+- `OPENAI_API_KEY`: OpenAI API key (required, set in `.env` file)
+
 ### General
 - `AR_USER_AGENT`: Custom user agent for web requests
 - `AR_GLOBAL_RPS`: Rate limiting for HTTP requests (requests per second)
@@ -379,7 +485,18 @@ Compliance check templates for generated content
 
 **Cause**: Mismatched embeddings between documents and queries (e.g., using different embedding functions or random vectors)
 
-**Fix**: Ensure both document indexing (Gate-1) and query processing use `embed_text()` from `scripts/embedding_utils.py` with the same dimensionality (768)
+**Fix**: Ensure both document indexing (Gate-1) and query processing use `embed_text()` from `scripts/embedding_utils.py` with the same dimensionality (1536)
+
+### OpenAI API Errors
+**Symptom**: Embedding generation fails with API errors or rate limits
+
+**Cause**: Missing or invalid `OPENAI_API_KEY`, network issues, or rate limiting
+
+**Fix**:
+1. Ensure `.env` file exists with valid `OPENAI_API_KEY` (create with: `echo "OPENAI_API_KEY=your-key" > .env`)
+2. Check network connection to OpenAI API
+3. For rate limits, the retry logic will handle transient errors (3 attempts with exponential backoff)
+4. Use cached embeddings when possible (cache stored in `data/cache/embeddings/`)
 
 ### Port Conflicts
 **Symptom**: "Port busy" errors when starting MCP services on ports 7801-7805
@@ -392,7 +509,7 @@ Compliance check templates for generated content
 ### PDF Glyph Noise
 **Symptom**: Chunks contain CID-like tokens or rendering artifacts from PDF extraction
 
-**Impact**: Partial mitigation via tokenization and bigrams in hashlex-v1; may still affect retrieval quality
+**Impact**: May affect retrieval quality and embedding generation
 
 **Mitigation**: Consider implementing a PDF-specific preprocessing step or enhancing the reranker
 
@@ -469,7 +586,7 @@ Generated outputs are saved per session in `outputs/<session_id>/` with full tra
 
 When working with this codebase:
 
-1. **Embedding consistency**: Always use `embed_text()` from `scripts/embedding_utils.py` for both documents and queries
+1. **Embedding consistency**: Always use `embed_text()` from `scripts/embedding_utils.py` for both documents and queries (requires `OPENAI_API_KEY` in `.env`)
 2. **Environment discipline**: Use `age` for most tasks, `ageFaiss` only for Gate-2 FAISS builds
 3. **Report preservation**: Maintain dual JSON+Markdown report format; don't change schemas without updating consumers
 4. **Config-driven behavior**: Prefer adding environment variables or config options over hardcoding
@@ -486,27 +603,36 @@ The `worktrees/` directory contains git worktrees for parallel development branc
 
 1. **Create environments**:
    ```bash
-   conda env create -f envs/age.yaml
-   conda env create -f envs/ageFaiss.yaml
+   /Users/liyunxiao/anaconda3/bin/conda env create -f envs/age.yaml
+   /Users/liyunxiao/anaconda3/bin/conda env create -f envs/ageFaiss.yaml
    ```
 
-2. **Build embeddings and indexes**:
+2. **Set up environment variables**:
    ```bash
-   conda run -n age python scripts/qa_step01_embeddings.py
-   conda run -n ageFaiss python scripts/qa_step02_indexes.py
+   # Create .env file with your OpenAI API key
+   echo "OPENAI_API_KEY=your-api-key-here" > .env
    ```
 
-3. **Validate MCP tools**:
+3. **Build embeddings and indexes**:
    ```bash
-   conda run -n age python scripts/qa_step03_mcp.py
+   # Gate-1: Generate embeddings (requires OPENAI_API_KEY in .env)
+   /Users/liyunxiao/anaconda3/bin/conda run -n age python scripts/qa_step01_embeddings.py
+
+   # Gate-2: Build FAISS index
+   /Users/liyunxiao/anaconda3/bin/conda run -n ageFaiss python scripts/qa_step02_indexes.py
    ```
 
-4. **Run retrieval evaluation**:
+4. **Validate MCP tools**:
    ```bash
-   conda run -n age AG7_IGNORE_COVERAGE=1 python scripts/qa_step07_retrieval_eval.py
+   /Users/liyunxiao/anaconda3/bin/conda run -n age python scripts/qa_step03_mcp.py
    ```
 
-5. **Inspect results**:
+5. **Run retrieval evaluation**:
+   ```bash
+   /Users/liyunxiao/anaconda3/bin/conda run -n age AG7_IGNORE_COVERAGE=1 python scripts/qa_step07_retrieval_eval.py
+   ```
+
+6. **Inspect results**:
    ```bash
    cat reports/qa/step07_retrieval_eval.md
    ```
@@ -523,7 +649,8 @@ The `worktrees/` directory contains git worktrees for parallel development branc
 - **Conda path**: Always use `/Users/liyunxiao/anaconda3/bin/conda` as the conda executable
 - This is a research/evaluation system designed for traceability and reproducibility
 - All stages emit dual-format reports (JSON + Markdown) for both machines and humans
-- The hashlex-v1 embedding model is deterministic and requires no external dependencies
+- The OpenAI ada-002 embedding model requires an API key (set in `.env`) and implements caching to minimize costs
+- Dependencies: `openai`, `python-dotenv`, `tenacity` (for retry logic)
 - MCP stubs run locally on localhost (no network required for development)
 - For production use, swap MCP stub endpoints in `configs/mcp.tools.yaml` to point to real services
 - The two-environment architecture is critical: mixing FAISS pip packages into the main environment causes OpenMP crashes

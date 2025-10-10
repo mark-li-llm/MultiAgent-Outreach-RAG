@@ -15,7 +15,7 @@ import pyarrow.parquet as pq
 import re
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 
 from common import ensure_dir, now_iso
 
