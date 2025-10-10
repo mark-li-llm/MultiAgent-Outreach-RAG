@@ -1,6 +1,6 @@
 {
   "step": "step05_graph",
-  "status": "GREEN",
+  "status": "RED",
   "checks": [
     {
       "id": "G5-01",
@@ -17,15 +17,15 @@
       ],
       "threshold": "== all 8 in order",
       "status": "PASS",
-      "evidence": "state/session-05b1a905f6f9.json"
+      "evidence": "state/session-10c81d5e096c.json"
     },
     {
       "id": "G5-02",
       "metric": "total_runtime_ms",
-      "actual": 1434,
+      "actual": 86202,
       "threshold": "<=30000",
-      "status": "PASS",
-      "evidence": "outputs/05b1a905f6f9/timing.json"
+      "status": "FAIL",
+      "evidence": "outputs/10c81d5e096c/timing.json"
     },
     {
       "id": "G5-03",
@@ -33,7 +33,7 @@
       "actual": 5,
       "threshold": "==5",
       "status": "PASS",
-      "evidence": "outputs/05b1a905f6f9/insights.json"
+      "evidence": "outputs/10c81d5e096c/insights.json"
     },
     {
       "id": "G5-04",
@@ -41,7 +41,7 @@
       "actual": 4,
       "threshold": ">=4",
       "status": "PASS",
-      "evidence": "outputs/05b1a905f6f9/insights.json"
+      "evidence": "outputs/10c81d5e096c/insights.json"
     },
     {
       "id": "G5-05",
@@ -49,7 +49,7 @@
       "actual": 5,
       "threshold": ">=2",
       "status": "PASS",
-      "evidence": "outputs/05b1a905f6f9/insights.json"
+      "evidence": "outputs/10c81d5e096c/insights.json"
     },
     {
       "id": "G5-06",
@@ -57,7 +57,7 @@
       "actual": true,
       "threshold": "==true",
       "status": "PASS",
-      "evidence": "outputs/05b1a905f6f9/email.json"
+      "evidence": "outputs/10c81d5e096c/email.json"
     },
     {
       "id": "G5-07",
@@ -65,13 +65,13 @@
       "actual": true,
       "threshold": "==true",
       "status": "PASS",
-      "evidence": "outputs/05b1a905f6f9/email.json"
+      "evidence": "outputs/10c81d5e096c/email.json"
     }
   ],
-  "timestamp": "2025-09-11T19:53:18.222639+00:00",
+  "timestamp": "2025-10-10T16:15:21.133865+00:00",
   "evidence": {
-    "session_id": "05b1a905f6f9",
-    "out_dir": "outputs/05b1a905f6f9",
-    "state": "state/session-05b1a905f6f9.json"
+    "session_id": "10c81d5e096c",
+    "out_dir": "outputs/10c81d5e096c",
+    "state": "state/session-10c81d5e096c.json"
   }
 }
