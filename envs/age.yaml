@@ -15,5 +15,12 @@ dependencies:
       - openai>=1.0.0
       - python-dotenv>=1.0.0
       - tenacity>=8.2.0  # For retry logic
+      # LangGraph dependencies
+      - langgraph>=0.2.20
+      - langgraph-checkpoint-sqlite>=1.0.0  # REQUIRED for checkpointing (Phase 5)
+      - langchain-core>=0.3.0
+      - langchain-openai>=0.2.0
+      - langsmith>=0.1.0  # Optional, for tracing
+      - aiosqlite>=0.19.0  # REQUIRED for AsyncSqliteSaver (async checkpointing)
   # IMPORTANT: Do NOT install pip faiss-cpu in this env to avoid duplicate libomp.
 
