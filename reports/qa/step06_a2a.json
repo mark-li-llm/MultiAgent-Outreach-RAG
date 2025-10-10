@@ -1,14 +1,14 @@
 {
   "step": "step06_a2a",
-  "status": "GREEN",
+  "status": "RED",
   "checks": [
     {
       "id": "G6-01",
       "metric": "negotiation_rounds",
-      "actual": 2,
+      "actual": 1,
       "threshold": "<=2",
       "status": "PASS",
-      "evidence": "outputs/step6demo/a2a_transcript.jsonl"
+      "evidence": "outputs/10c81d5e096c/a2a_transcript.jsonl"
     },
     {
       "id": "G6-02",
@@ -16,23 +16,23 @@
       "actual": 0,
       "threshold": "==0",
       "status": "PASS",
-      "evidence": "outputs/step6demo/compliance_report.json"
+      "evidence": "outputs/10c81d5e096c/compliance_report.json"
     },
     {
       "id": "G6-03",
       "metric": "email_body_words",
-      "actual": 57,
+      "actual": 121,
       "threshold": "<=160",
       "status": "PASS",
-      "evidence": "outputs/step6demo/email.json"
+      "evidence": "outputs/10c81d5e096c/email.json"
     },
     {
       "id": "G6-04",
       "metric": "readability_grade",
-      "actual": 9.53,
+      "actual": 18.81,
       "threshold": "<=10",
-      "status": "PASS",
-      "evidence": "outputs/step6demo/email.json"
+      "status": "FAIL",
+      "evidence": "outputs/10c81d5e096c/email.json"
     },
     {
       "id": "G6-05",
@@ -40,12 +40,12 @@
       "actual": true,
       "threshold": "==true",
       "status": "PASS",
-      "evidence": "outputs/step6demo/email.json"
+      "evidence": "outputs/10c81d5e096c/email.json"
     }
   ],
-  "timestamp": "2025-09-11T21:30:17.293005+00:00",
+  "timestamp": "2025-10-10T16:17:24.937840+00:00",
   "evidence": {
-    "session_id": "step6demo",
-    "out_dir": "outputs/step6demo"
+    "session_id": "10c81d5e096c",
+    "out_dir": "outputs/10c81d5e096c"
   }
 }
