@@ -91,6 +91,27 @@ def load_yaml(path: str) -> Dict[str, Any]:
         return {}
 
 
+def log_llm_retry_event(session_id: str, attempt: int, error_id: str, input_ids: List[str], synth_count: int):
+    """Log LLM retry event to JSONL for debugging (see docs/langgraph/001-llm-id-hallucination.md)."""
+    from common import ensure_dir
+    event = {
+        "timestamp": now_iso(),
+        "session_id": session_id,
+        "node": "consolidator",
+        "attempt": attempt,
+        "max_attempts": 3,
+        "error_type": "KeyError",
+        "hallucinated_ids": [error_id],
+        "expected_ids": input_ids,
+        "synth_card_count": synth_count,
+        "retry_reason": "LLM_ID_MISMATCH"
+    }
+    log_path = os.path.join("logs", "langgraph", "llm_retry_events.jsonl")
+    ensure_dir(os.path.dirname(log_path))
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(event, ensure_ascii=False) + "\n")
+
+
 def load_doc_meta() -> Dict[str, Dict[str, Any]]:
     m: Dict[str, Dict[str, Any]] = {}
     for p in glob.glob(os.path.join("data", "interim", "normalized", "*.json")):
@@ -332,34 +353,71 @@ async def consolidator_node(state: AgentState) -> dict:
     if len(cards) != 5:
         raise AssertionError(f"consolidator_node: Expected exactly 5 cards before LLM, got {len(cards)}")
 
-    # LLM enhancement
-    llm = ChatOpenAI(temperature=0.3, model="gpt-5-nano")
-    consolidator_tmpl = ChatPromptTemplate.from_messages([
-        ("system", CONSOLIDATOR_SYSTEM_PROMPT),
-        ("user", CONSOLIDATOR_USER_PROMPT),
-    ])
-
-    consolidator_vars = {
-        "company": state["company"],
-        "persona": state["persona"],
-        "persona_keywords": ", ".join(state.get("persona_keywords") or []),
-        "candidates_json": json.dumps(cards, ensure_ascii=False),
-    }
-
-    resp = await llm.ainvoke(consolidator_tmpl.format_messages(**consolidator_vars))
-    cards_llm = json.loads(resp.content)
-
-    # Merge LLM fields back
-    by_id = {c["id"]: c for c in cards}
+    # Defensive retry mechanism for LLM ID hallucination (see docs/langgraph/001-llm-id-hallucination.md)
+    import sys
+    input_ids = [c["id"] for c in cards]
+    synth_count = sum(1 for cid in input_ids if cid.startswith("synth::"))
+    MAX_ATTEMPTS = 3
     cards_final = []
-    for item in cards_llm:
-        base = by_id[item["id"]]
-        base["title"] = item.get("title") or base["title"]
-        base["summary"] = item.get("summary") or base["summary"]
-        base["persona_relevance"] = item.get("persona_relevance")
-        base["metric_impact"] = item.get("metric_impact")
-        base["action_suggestion"] = item.get("action_suggestion")
-        cards_final.append(base)
+
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        try:
+            # LLM enhancement
+            llm = ChatOpenAI(temperature=0.3, model="gpt-5-nano")
+            consolidator_tmpl = ChatPromptTemplate.from_messages([
+                ("system", CONSOLIDATOR_SYSTEM_PROMPT),
+                ("user", CONSOLIDATOR_USER_PROMPT),
+            ])
+
+            consolidator_vars = {
+                "company": state["company"],
+                "persona": state["persona"],
+                "persona_keywords": ", ".join(state.get("persona_keywords") or []),
+                "candidates_json": json.dumps(cards, ensure_ascii=False),
+            }
+
+            resp = await llm.ainvoke(consolidator_tmpl.format_messages(**consolidator_vars))
+            cards_llm = json.loads(resp.content)
+
+            # Merge LLM fields back (KeyError occurs here if ID mismatch)
+            by_id = {c["id"]: c for c in cards}
+            cards_final = []
+            for item in cards_llm:
+                base = by_id[item["id"]]  # KeyError if LLM hallucinated ID
+                base["title"] = item.get("title") or base["title"]
+                base["summary"] = item.get("summary") or base["summary"]
+                base["persona_relevance"] = item.get("persona_relevance")
+                base["metric_impact"] = item.get("metric_impact")
+                base["action_suggestion"] = item.get("action_suggestion")
+                cards_final.append(base)
+
+            # Success - break out of retry loop
+            break
+
+        except KeyError as e:
+            # LLM hallucinated an ID not in input
+            hallucinated_id = str(e).strip("'")
+
+            if attempt < MAX_ATTEMPTS:
+                # Log retry event
+                log_llm_retry_event(
+                    session_id=state.get("session_id", "unknown"),
+                    attempt=attempt,
+                    error_id=hallucinated_id,
+                    input_ids=input_ids,
+                    synth_count=synth_count
+                )
+
+                # Warn user
+                print(f"⚠️  LLM retry {attempt}/{MAX_ATTEMPTS}: ID mismatch detected (hallucinated: {hallucinated_id[:80]}...), retrying...", file=sys.stderr)
+
+                continue  # Retry
+            else:
+                # All attempts exhausted
+                raise AssertionError(
+                    f"consolidator_node: LLM ID hallucination after {MAX_ATTEMPTS} retries. "
+                    f"Hallucinated ID: {hallucinated_id}. Expected one of: {input_ids[:3]}..."
+                ) from e
 
     # Validation: Must have exactly 5 cards after LLM merge
     if len(cards_final) != 5:
