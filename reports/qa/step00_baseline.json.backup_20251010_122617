@@ -30,7 +30,7 @@
     {
       "id": "G0-04",
       "metric": "baseline_chunks",
-      "actual": 536,
+      "actual": 565,
       "threshold": ">=baseline_docs (97)",
       "status": "PASS",
       "evidence": "data/interim/chunks"
@@ -55,20 +55,20 @@
       "www.sec.gov"
     ],
     "age_days": {
-      "p50": 203,
-      "p90": 760
+      "p50": 200,
+      "p90": 757
     },
     "age_buckets": {
-      "<=90d": 24,
+      "<=90d": 26,
       "<=180d": 48,
       "<=365d": 80,
       ">365d": 17
     },
     "token_count": {
-      "p50": 776,
-      "p90": 985
+      "p50": 771,
+      "p90": 1009
     }
   },
   "next_action": "continue",
-  "timestamp": "2025-10-10T16:26:44.691116+00:00"
+  "timestamp": "2025-10-07T16:27:52.268465+00:00"
 }
