@@ -38,7 +38,7 @@ Automates trusted‑source research and audit‑ready email generation with step
 │     FAISS       │    │    Weaviate     │    │    Pinecone     │
 │   Local Vector  │    │  Cloud Vector   │    │ Managed Vector  │
 │   <1s latency   │    │ Semantic Search │    │  Scale Ready    │
-│   hashlex-v1    │    │   Multi-tenant  │    │   Production    │
+│ OpenAI ada-002  │    │   Multi-tenant  │    │   Production    │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
             │                      │                      │
             └──────────────────────┼──────────────────────┘
@@ -70,10 +70,12 @@ Automates trusted‑source research and audit‑ready email generation with step
   - Endpoints and timeouts are configured in `configs/mcp.tools.yaml`; router logic in `scripts/router_core.py`.
   - Gate‑3 validates tool health, contracts, and latency budgets; Gate‑7 evaluates retrieval quality end‑to‑end.
 
-- Shared Embeddings (hashlex‑v1)
-  - `scripts/embedding_utils.py`: normalize → tokenize (words + bigrams) → signed feature hashing (L2‑normalized).
+- Shared Embeddings (OpenAI ada-002)
+  - `scripts/embedding_utils.py`: OpenAI `text-embedding-ada-002` API with caching and retry logic.
   - Single `embed_text(text, dim)` used for both documents and queries to preserve a shared space.
-  - Vector settings in `configs/vector.indexing.yaml` (`embedding.model: hashlex-v1`).
+  - Implements SHA-256 caching in `data/cache/embeddings/` to minimize API costs.
+  - Requires `OPENAI_API_KEY` in `.env` file.
+  - Vector settings in `configs/vector.indexing.yaml` (`embedding.model: openai-ada-002`, `dim: 1536`).
 
 - Scale & Performance
   - Designed and verified on 100+ documents (≈1.6k chunks). Retrieval evaluation reports recall@10, nDCG@5, coverage, freshness, and latency.
@@ -142,14 +144,16 @@ Artifacts land in `reports/qa/` and `data/final/reports/`.
 ## Quick Start
 
 1) Create environments: `conda env create -f envs/age.yaml` and `conda env create -f envs/ageFaiss.yaml`.
-2) Build embeddings and indexes:
-   - `conda run -n age python scripts/qa_step01_embeddings.py`
+2) Set up OpenAI API key: `echo "OPENAI_API_KEY=your-api-key-here" > .env`
+3) Build embeddings and indexes:
+   - `conda run -n age python scripts/qa_step01_embeddings.py` (requires OPENAI_API_KEY)
    - `conda run -n ageFaiss python scripts/qa_step02_indexes.py`
-3) Validate MCP tools: `conda run -n age python scripts/qa_step03_mcp.py`
-4) Run retrieval eval: `conda run -n age AG7_IGNORE_COVERAGE=1 python scripts/qa_step07_retrieval_eval.py`
-5) Inspect results in `reports/qa/`.
+4) Validate MCP tools: `conda run -n age python scripts/qa_step03_mcp.py`
+5) Run retrieval eval: `conda run -n age AG7_IGNORE_COVERAGE=1 python scripts/qa_step07_retrieval_eval.py`
+6) Inspect results in `reports/qa/`.
 
 ## Notes
 
-- This repo ships local MCP stubs so you can run everything offline. Swap stubs for real services by pointing `configs/mcp.tools.yaml` to production endpoints.
+- **OpenAI API Key Required**: Embedding generation (Gate-1) requires `OPENAI_API_KEY` in `.env` file. The system uses OpenAI `text-embedding-ada-002` with caching to minimize costs.
+- This repo ships local MCP stubs so you can run everything offline (after embeddings are generated). Swap stubs for real services by pointing `configs/mcp.tools.yaml` to production endpoints.
 - For a Day‑1 milestone summary, see `README_DAY1.md`.
