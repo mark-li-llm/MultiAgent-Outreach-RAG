@@ -1,0 +1,9 @@
+{
+  "rounds": 1,
+  "flags": {
+    "critical": [],
+    "warning": [
+      "READABILITY"
+    ]
+  }
+}

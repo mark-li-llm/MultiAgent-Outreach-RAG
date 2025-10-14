@@ -1,0 +1,28 @@
+{
+  "subject": "Improve forecast cadence and productivity",
+  "body": "Dear VP of Sales Operations, I recognize your mandate to optimize pipeline health, forecast accuracy, and quota attainment. The following insights suggest practical levers:\n\n- Q2 FY2026 results exceeded guidance; subscription revenue up year over year. Consider aligning forecast cadence and quota targets to boost revenue predictability.\n- Zero Copy Partner Network enables secure, bidirectional data flows with Salesforce Data Cloud. Better data integration can speed opportunity progression, improving pipeline velocity and forecast accuracy when mapped to CRM processes.\n- Agentforce Agents guide highlights APIs to boost automation and productivity. Identify top 5 sales-support use cases and prototype automation to quantify productivity impact.\n\nOptional next steps: I can share a deeper summary or continue via email, or we can schedule a time if helpful.",
+  "unsubscribe_block": "You can unsubscribe at any time by replying 'unsubscribe'.",
+  "company_info_block": "Sent by ACME AI, 123 Market St, San Francisco, CA.",
+  "proof_points": [
+    {
+      "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+      "title": "Salesforce Q2 FY2026 Results Exceed Guidance"
+    },
+    {
+      "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+      "title": "Salesforce Unveils Zero Copy Partner Network"
+    },
+    {
+      "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+      "title": "Agentforce Agents Developer Guide"
+    },
+    {
+      "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+      "title": "Salesforce Help"
+    },
+    {
+      "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+      "title": "Salesforce – Company Overview"
+    }
+  ]
+}

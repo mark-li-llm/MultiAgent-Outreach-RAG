@@ -1,0 +1,5 @@
+{"timestamp": "2025-10-14T02:15:02.271775+00:00", "query_text": "Agentforce product announcement", "decision_backend": "faiss", "reason_codes": ["PERSONA_BIAS"]}
+{"timestamp": "2025-10-14T02:15:02.271775+00:00", "query_text": "latest earnings results", "decision_backend": "pinecone", "reason_codes": ["PR_QUERY"]}
+{"timestamp": "2025-10-14T02:15:02.271775+00:00", "query_text": "remaining performance obligation definition", "decision_backend": "faiss", "reason_codes": ["DEFINITION"]}
+{"timestamp": "2025-10-14T02:15:02.271775+00:00", "query_text": "customer experience AI", "decision_backend": "faiss", "reason_codes": ["PERSONA_BIAS"]}
+{"timestamp": "2025-10-14T02:15:02.271775+00:00", "query_text": "Data Cloud recent updates", "decision_backend": "faiss", "reason_codes": ["PERSONA_BIAS"]}

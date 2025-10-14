@@ -10,8 +10,8 @@ __pycache__/
 worktrees/
 
 # Test outputs and temporary files
-outputs/
-state/
-*.backup.*
-test_*.py
+# outputs/
+# state/
+# *.backup.*
+# test_*.py
 # logs/
