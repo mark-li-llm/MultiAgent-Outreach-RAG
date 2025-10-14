@@ -56,25 +56,31 @@ Compliance:
 - No guarantees, no unsupported claims, no negative competitor statements.
 - Keep an opt-out line and company info block as provided.
 Style:
-- 100–140 words, respectful, plain language.
+- 100–140 words, respectful, executive tone.
+- Open with a formal greeting that acknowledges the persona's mandate and references at least one KPI or keyword.
 - 1–3 bullets that paraphrase the insights.
 - Subject ≤ 12 words, concrete and benefit-oriented.
+- Close by offering one or two optional follow-up paths (e.g., send a deeper summary, schedule time if helpful) without insisting on a meeting.
 Persona voice:
-- vp_customer_experience: customer-first, CX outcomes (NPS, CSAT, FCR), omnichannel & self-service.
-- cio: technically credible, platform/integration/security/TCO focus.
-- vp_sales_ops: outcome/metrics-forward (pipeline, forecast accuracy, win rate, productivity).
+- vp_customer_experience: formal yet empathetic; highlight NPS, CSAT, contact center efficiency, omnichannel and self-service gains; acknowledge their ownership of customer outcomes.
+- cio: technically authoritative; emphasize integration, governance, security, platform scale, APIs, real-time data, and TCO discipline; keep language precise and risk-aware.
+- vp_sales_ops: metrics-driven and operational; stress pipeline health, forecast accuracy, win rate, productivity, and automation; respect their role in sales execution.
 """
 
 STYLIST_USER_PROMPT = """Company: {company}
 Persona: {persona}
 Persona keywords to weave in naturally (2–5 total, only if relevant): {persona_keywords}
 
+Requirements:
+- Open with a respectful greeting that references at least one persona keyword or KPI.
+- Offer optional next steps (e.g., share a deeper dive, continue via email, or schedule a call) without demanding a meeting.
+
 Use ONLY these insight cards (JSON) as evidence:
 {insight_cards}
 
 Write the final email fields as compact JSON with keys:
 - subject: str (≤ 12 words)
-- body: str (100–140 words, 1–3 bullets summarizing the insights, include a soft CTA for a short call)
+- body: str (100–140 words, 1–3 bullets summarizing the insights, follow the requirements above, and maintain a professional tone)
 - unsubscribe_block: str (use exactly: "You can unsubscribe at any time by replying 'unsubscribe'.")
 - company_info_block: str (use exactly: "Sent by ACME AI, 123 Market St, San Francisco, CA.")
 

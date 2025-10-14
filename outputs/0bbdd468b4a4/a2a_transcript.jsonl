@@ -1,4 +1,0 @@
-{"role": "Sales", "content": {}, "timestamp": "2025-10-04T03:16:20.553041+00:00"}
-{"role": "Legal", "content": {"flags": {"critical": ["MISSING_UNSUBSCRIBE", "MISSING_COMPANY_INFO"], "warning": []}}, "timestamp": "2025-10-04T03:16:22.561826+00:00"}
-{"role": "Sales", "content": {"unsubscribe_block": "You can unsubscribe at any time by replying 'unsubscribe'.", "company_info_block": "Sent by ACME AI, 123 Market St, San Francisco, CA.", "body": ""}, "timestamp": "2025-10-04T03:16:22.561877+00:00"}
-{"role": "Legal", "content": {"flags": {"critical": [], "warning": []}}, "timestamp": "2025-10-04T03:16:24.575281+00:00"}

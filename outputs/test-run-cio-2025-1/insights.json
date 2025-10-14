@@ -1,0 +1,130 @@
+[
+  {
+    "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+    "title": "Salesforce Reports Record Q2 FY2026 Results",
+    "summary": "Salesforce reports record Q2 FY2026 results with subscription and support revenue up 11% year over year (9% in CC). The release underscores strong performance for the AI CRM platform.",
+    "url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=OTH",
+    "date": "2025-09-03",
+    "evidence_snippet": "Earnings\nH1: Salesforce Reports Record Second Quarter Fiscal 2026 Results\nMedia Library\nExceeds Guidance Across All Metrics; Subscription & Support Revenue up 11% Y/Y, 9% in CC\nSAN FRANCISCO, Calif. – September 3, 2025 –\nSalesforce (NYSE: CRM), the world’s #1 AI CRM, today announced results for its second quarter fisca",
+    "confidence": 0.6,
+    "source_domain": "www.salesforce.com",
+    "doc_id": "crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c",
+    "persona_relevance": {
+      "why_it_matters": "Demonstrates Salesforce platform performance and enterprise traction, informing CIOs on platform governance and budgeting for ongoing investments.",
+      "relevance_score": 4,
+      "keywords_hit": [
+        "AI CRM",
+        "subscription revenue",
+        "platform"
+      ]
+    },
+    "metric_impact": {
+      "metric": "subscription & support revenue (YoY)",
+      "direction": "increase",
+      "magnitude": "high"
+    },
+    "action_suggestion": "Review Q2 performance to validate alignment of governance and budgeting with ongoing platform investments."
+  },
+  {
+    "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+    "title": "Salesforce Unveils Secure Zero Copy Partner Network",
+    "summary": "Salesforce unveils a Zero Copy Partner Network enabling secure, bidirectional zero-copy integration with Salesforce Data Cloud.",
+    "url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+    "date": "2024-04-25",
+    "evidence_snippet": "H1: Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zero Copy Integration with Salesforce Data Cloud\n\nOverview\nFinancials\nQuarterly Results\nAnnual Reports\nSEC Filings\nTax Forms\nSafe Harbor\nIAC\nFinancials\nEvents\nNews\nStock Quote\nGovernance\nGovernance\nC",
+    "confidence": 0.6,
+    "source_domain": "investor.salesforce.com",
+    "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
+    "persona_relevance": {
+      "why_it_matters": "Demonstrates enhanced data integration and security capabilities to support CIO governance and cross-organizational data sharing.",
+      "relevance_score": 4,
+      "keywords_hit": [
+        "data integration",
+        "secure",
+        "Data Cloud"
+      ]
+    },
+    "metric_impact": {
+      "metric": "partner data integration adoption",
+      "direction": "increase",
+      "magnitude": "med"
+    },
+    "action_suggestion": "Map partner data flows to leverage zero-copy integration and update governance policies."
+  },
+  {
+    "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+    "title": "Agentforce Agents: Developer Guide",
+    "summary": "Get started with Agentforce agents and accelerate integration through APIs and developer resources.",
+    "url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
+    "date": "",
+    "evidence_snippet": "H1: Get Started with Agentforce Agents\nBring the power of conversational AI to your business with Agentforce agents. Build a trusted and customizable AI assistant that empowers your users to get more done in Salesforce. Accelerate your Agentforce integration with our APIs and other developer resources.\nFeature or API\nD",
+    "confidence": 0.6,
+    "source_domain": "developer.salesforce.com",
+    "doc_id": "crm::help_docs::developer::get-started-agents::0ef2421d",
+    "persona_relevance": {
+      "why_it_matters": "APIs and developer resources enable CIOs to govern platform integrations and drive cost-effective, standardized deployment.",
+      "relevance_score": 5,
+      "keywords_hit": [
+        "APIs",
+        "developer resources",
+        "Agentforce"
+      ]
+    },
+    "metric_impact": {
+      "metric": "API adoption rate",
+      "direction": "increase",
+      "magnitude": "med"
+    },
+    "action_suggestion": "Audit existing APIs and publish onboarding guidelines to accelerate Agentforce integration."
+  },
+  {
+    "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+    "title": "Salesforce Help Center Overview",
+    "summary": "Salesforce Help is currently loading with a CSS error. This highlights a reliability issue affecting internal knowledge access.",
+    "url": "https://help.salesforce.com/s/",
+    "date": "",
+    "evidence_snippet": "H1: Salesforce Help\n\nSalesforce Help Loading × Sorry to interrupt CSS Error Refresh",
+    "confidence": 0.6,
+    "source_domain": "help.salesforce.com",
+    "doc_id": "crm::help_docs::unknown::salesforce-help::d75a8e9c",
+    "persona_relevance": {
+      "why_it_matters": "Reliability of self-service and internal resources matters for IT teams controlling knowledge access and support.",
+      "relevance_score": 2,
+      "keywords_hit": [
+        "Help",
+        "CSS error"
+      ]
+    },
+    "metric_impact": {
+      "metric": "help center uptime",
+      "direction": "increase",
+      "magnitude": "low"
+    },
+    "action_suggestion": "Coordinate with IT to fix the CSS error and implement ongoing monitoring for Help access."
+  },
+  {
+    "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+    "title": "Salesforce Wikipedia Overview",
+    "summary": "Overview of Salesforce as a global CRM leader with 31 languages.",
+    "url": "https://en.wikipedia.org/wiki/Salesforce",
+    "date": "",
+    "evidence_snippet": "H1: Salesforce\n31 languages\nالعربية\nБеларуская\nČeština\nDansk\nDeutsch\nEspañol\nفارسی\nFrançais\n한국어\nहिन्दी\nBahasa Indonesia\nItaliano\nעברית\nҚазақша\nمصرى\nBahasa Melayu\nNederlands\n日本語\nNorsk bokmål\nPolski\nPortuguês\nРусский\nSlovenčina\nСрпски / srpski\nSuomi\nTaqbaylit\nTürkçe\nУкраїнська\nTiếng Việt\n粵語\n中文\nEdit links\nFrom Wikipedia, ",
+    "confidence": 0.6,
+    "source_domain": "en.wikipedia.org",
+    "doc_id": "crm::wiki::unknown::salesforce-wikipedia::6b727edd",
+    "persona_relevance": {
+      "why_it_matters": "Public company information informs governance and external communications about Salesforce’s scale and reach.",
+      "relevance_score": 3,
+      "keywords_hit": [
+        "languages",
+        "global"
+      ]
+    },
+    "metric_impact": {
+      "metric": "brand awareness",
+      "direction": "increase",
+      "magnitude": "low"
+    },
+    "action_suggestion": "Cross-check Wikipedia content against official Salesforce docs to ensure governance-aligned messaging."
+  }
+]

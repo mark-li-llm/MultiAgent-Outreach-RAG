@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Widget - Embeddable Version</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <style>
+        .qr-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .qr-toggle {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .qr-toggle:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        .qr-modal {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: slideUp 0.3s ease;
+        }
+
+        .qr-modal.active {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .qr-modal-header {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .qr-modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-modal-close:hover {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .qr-code-container {
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .qr-instructions {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .qr-widget {
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .qr-modal {
+                right: 10px;
+                left: 10px;
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- This widget can be embedded in any page -->
+    <div class="qr-widget">
+        <button class="qr-toggle" onclick="toggleQR()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+            </svg>
+            Scan QR
+        </button>
+
+        <div class="qr-modal" id="qrModal">
+            <button class="qr-modal-close" onclick="toggleQR()">×</button>
+            <div class="qr-modal-header">Scan to Access Demo</div>
+            <div class="qr-code-container">
+                <div id="qrCodeWidget"></div>
+            </div>
+            <div class="qr-instructions">
+                Use your phone camera to scan<br>
+                Access AI B2B Email Generator
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let qrGenerated = false;
+        let qrModalOpen = false;
+
+        function toggleQR() {
+            const modal = document.getElementById('qrModal');
+            qrModalOpen = !qrModalOpen;
+
+            if (qrModalOpen) {
+                modal.classList.add('active');
+                if (!qrGenerated) {
+                    generateQRWidget();
+                    qrGenerated = true;
+                }
+            } else {
+                modal.classList.remove('active');
+            }
+        }
+
+        function generateQRWidget() {
+            new QRCode(document.getElementById("qrCodeWidget"), {
+                text: "https://mark-li-llm.github.io/MultiAgent-Outreach-RAG/",
+                width: 200,
+                height: 200,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const widget = document.querySelector('.qr-widget');
+            if (!widget.contains(event.target) && qrModalOpen) {
+                toggleQR();
+            }
+        });
+    </script>
+</body>
+</html>

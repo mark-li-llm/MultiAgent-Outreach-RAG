@@ -1,0 +1,28 @@
+{
+  "subject": "Scale omnichannel CX and self-service for FCR",
+  "body": "Hi there,\n\nSalesforce's Q2 FY2026 results show momentum for CX initiatives: 9% growth in the contact center and an 11% rise in Subscription & Support revenue. This progress can underpin scale in omnichannel and self-service programs to improve first contact resolution.\n\nKey moves to consider:\n- Momentum from Q2: leverage omnichannel and self-service projects to lift FCR.\n- Zero Copy Partner Network: secure, bidirectional integration with Data Cloud to unify experiences across channels.\n- Agentforce Agents: AI-powered assistants to boost agent productivity and self-service, with pilot plans to improve FCR in a subset of the contact center.\n\nIf you’re open, I’d love to schedule a short call to map a practical pilot aligned with your CX goals this quarter.\n\nBest regards,\nACME AI team",
+  "unsubscribe_block": "You can unsubscribe at any time by replying 'unsubscribe'.",
+  "company_info_block": "Sent by ACME AI, 123 Market St, San Francisco, CA.",
+  "proof_points": [
+    {
+      "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+      "title": "Q2 FY2026 Highlights for Salesforce"
+    },
+    {
+      "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+      "title": "Salesforce Launches Zero Copy Partner Network"
+    },
+    {
+      "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+      "title": "Agentforce Agents: Salesforce Developers Guide"
+    },
+    {
+      "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+      "title": "Salesforce Help Center"
+    },
+    {
+      "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+      "title": "Salesforce Overview (Wikipedia)"
+    }
+  ]
+}

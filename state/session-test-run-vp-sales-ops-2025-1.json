@@ -1,0 +1,259 @@
+{
+  "company": "Salesforce",
+  "persona": "vp_sales_ops",
+  "session_id": "test-run-vp-sales-ops-2025-1",
+  "timestamp": "2025-10-14T02:41:28.217716+00:00",
+  "queries": [
+    "Agentforce product announcement",
+    "latest earnings results",
+    "remaining performance obligation definition",
+    "customer experience AI",
+    "Data Cloud recent updates"
+  ],
+  "persona_keywords": [
+    "pipeline",
+    "forecast accuracy",
+    "win rate",
+    "productivity",
+    "automation",
+    "quota attainment",
+    "deal velocity",
+    "pipeline hygiene",
+    "revenue predictability",
+    "sales cycle length",
+    "forecast cadence"
+  ],
+  "retrieved_chunks": [],
+  "retrieval_logs": [
+    {
+      "query": "Agentforce product announcement",
+      "results": []
+    },
+    {
+      "query": "latest earnings results",
+      "results": []
+    },
+    {
+      "query": "remaining performance obligation definition",
+      "results": []
+    },
+    {
+      "query": "customer experience AI",
+      "results": []
+    },
+    {
+      "query": "Data Cloud recent updates",
+      "results": []
+    }
+  ],
+  "route_decisions": [
+    {
+      "query": "Agentforce product announcement",
+      "backend": "pinecone",
+      "reasons": [
+        "PERSONA_BIAS"
+      ]
+    },
+    {
+      "query": "latest earnings results",
+      "backend": "pinecone",
+      "reasons": [
+        "PR_QUERY"
+      ]
+    },
+    {
+      "query": "remaining performance obligation definition",
+      "backend": "faiss",
+      "reasons": [
+        "DEFINITION"
+      ]
+    },
+    {
+      "query": "customer experience AI",
+      "backend": "pinecone",
+      "reasons": [
+        "PERSONA_BIAS"
+      ]
+    },
+    {
+      "query": "Data Cloud recent updates",
+      "backend": "pinecone",
+      "reasons": [
+        "PERSONA_BIAS"
+      ]
+    }
+  ],
+  "insight_candidates": [],
+  "insight_cards": [
+    {
+      "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+      "title": "Salesforce Q2 FY2026 Results Exceed Guidance",
+      "summary": "Salesforce reports Q2 FY2026 results that exceed guidance across all metrics. Subscription and support revenue rose 11% year over year, with 9% in constant currency.",
+      "url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=OTH",
+      "date": "2025-09-03",
+      "evidence_snippet": "Earnings\nH1: Salesforce Reports Record Second Quarter Fiscal 2026 Results\nMedia Library\nExceeds Guidance Across All Metrics; Subscription & Support Revenue up 11% Y/Y, 9% in CC\nSAN FRANCISCO, Calif. – September 3, 2025 –\nSalesforce (NYSE: CRM), the world’s #1 AI CRM, today announced results for its second quarter fisca",
+      "confidence": 0.6,
+      "source_domain": "www.salesforce.com",
+      "doc_id": "crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c",
+      "persona_relevance": {
+        "why_it_matters": "Strong quarterly performance can influence forecast cadence, quota attainment planning, and revenue predictability.",
+        "relevance_score": 4,
+        "keywords_hit": [
+          "forecast cadence",
+          "quota attainment",
+          "revenue predictability"
+        ]
+      },
+      "metric_impact": {
+        "metric": "subscription & support revenue",
+        "direction": "increase",
+        "magnitude": "high"
+      },
+      "action_suggestion": "Review Q2 results and adjust forecast cadence and quota attainment targets accordingly."
+    },
+    {
+      "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+      "title": "Salesforce Unveils Zero Copy Partner Network",
+      "summary": "Announces Zero Copy Partner Network enabling secure, bidirectional zero-copy integration with Salesforce Data Cloud.",
+      "url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+      "date": "2024-04-25",
+      "evidence_snippet": "H1: Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zero Copy Integration with Salesforce Data Cloud\n\nOverview\nFinancials\nQuarterly Results\nAnnual Reports\nSEC Filings\nTax Forms\nSafe Harbor\nIAC\nFinancials\nEvents\nNews\nStock Quote\nGovernance\nGovernance\nC",
+      "confidence": 0.6,
+      "source_domain": "investor.salesforce.com",
+      "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
+      "persona_relevance": {
+        "why_it_matters": "Improved data integration and governance can speed deal velocity and improve forecast accuracy.",
+        "relevance_score": 3,
+        "keywords_hit": [
+          "data integration",
+          "forecast accuracy",
+          "deal velocity",
+          "partner network"
+        ]
+      },
+      "metric_impact": {
+        "metric": "pipeline velocity",
+        "direction": "increase",
+        "magnitude": "med"
+      },
+      "action_suggestion": "Coordinate with data and sales ops to map Zero Copy data flows to key CRM processes to accelerate opportunity progression."
+    },
+    {
+      "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+      "title": "Agentforce Agents Developer Guide",
+      "summary": "Get started with Agentforce agents to bring conversational AI to Salesforce and boost automation and productivity. The guide highlights APIs and developer resources to accelerate integration.",
+      "url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
+      "date": "",
+      "evidence_snippet": "H1: Get Started with Agentforce Agents\nBring the power of conversational AI to your business with Agentforce agents. Build a trusted and customizable AI assistant that empowers your users to get more done in Salesforce. Accelerate your Agentforce integration with our APIs and other developer resources.\nFeature or API\nD",
+      "confidence": 0.6,
+      "source_domain": "developer.salesforce.com",
+      "doc_id": "crm::help_docs::developer::get-started-agents::0ef2421d",
+      "persona_relevance": {
+        "why_it_matters": "AI-powered automation can boost agent productivity and accelerate resolution of sales-support tasks.",
+        "relevance_score": 4,
+        "keywords_hit": [
+          "automation",
+          "APIs",
+          "dev resources",
+          "integration",
+          "Agentforce"
+        ]
+      },
+      "metric_impact": {
+        "metric": "agent productivity",
+        "direction": "increase",
+        "magnitude": "high"
+      },
+      "action_suggestion": "Identify top 5 sales-support use cases and prototype Agentforce automation to measure impact on productivity."
+    },
+    {
+      "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+      "title": "Salesforce Help",
+      "summary": "Salesforce Help page loading shows a CSS error during load; users encounter a loading state.",
+      "url": "https://help.salesforce.com/s/",
+      "date": "",
+      "evidence_snippet": "H1: Salesforce Help\n\nSalesforce Help Loading × Sorry to interrupt CSS Error Refresh",
+      "confidence": 0.6,
+      "source_domain": "help.salesforce.com",
+      "doc_id": "crm::help_docs::unknown::salesforce-help::d75a8e9c",
+      "persona_relevance": {
+        "why_it_matters": "Self-service resources and knowledge bases help reduce support load; a CSS issue can impede productivity.",
+        "relevance_score": 3,
+        "keywords_hit": [
+          "help center",
+          "self-service",
+          "CSS error"
+        ]
+      },
+      "metric_impact": {
+        "metric": "customer support efficiency",
+        "direction": "decrease",
+        "magnitude": "med"
+      },
+      "action_suggestion": "Escalate the CSS loading issue to the web team and provide a temporary workaround for users."
+    },
+    {
+      "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+      "title": "Salesforce – Company Overview",
+      "summary": "Provides a general overview of Salesforce, including its platform, ecosystem, and global presence.",
+      "url": "https://en.wikipedia.org/wiki/Salesforce",
+      "date": "",
+      "evidence_snippet": "H1: Salesforce\n31 languages\nالعربية\nБеларуская\nČeština\nDansk\nDeutsch\nEspañol\nفارسی\nFrançais\n한국어\nहिन्दी\nBahasa Indonesia\nItaliano\nעברית\nҚазақша\nمصرى\nBahasa Melayu\nNederlands\n日本語\nNorsk bokmål\nPolski\nPortuguês\nРусский\nSlovenčina\nСрпски / srpski\nSuomi\nTaqbaylit\nTürkçe\nУкраїнська\nTiếng Việt\n粵語\n中文\nEdit links\nFrom Wikipedia, ",
+      "confidence": 0.6,
+      "source_domain": "en.wikipedia.org",
+      "doc_id": "crm::wiki::unknown::salesforce-wikipedia::6b727edd",
+      "persona_relevance": {
+        "why_it_matters": "Context on market position and ecosystem informs sales strategy, pipeline planning, and revenue planning.",
+        "relevance_score": 2,
+        "keywords_hit": [
+          "platform",
+          "ecosystem",
+          "market position"
+        ]
+      },
+      "metric_impact": {
+        "metric": "brand awareness",
+        "direction": "increase",
+        "magnitude": "low"
+      },
+      "action_suggestion": "Cross-check facts with official Salesforce materials when sharing company context in sales communications."
+    }
+  ],
+  "email_draft": {
+    "subject": "Improve forecast cadence and productivity",
+    "body": "Dear VP of Sales Operations, I recognize your mandate to optimize pipeline health, forecast accuracy, and quota attainment. The following insights suggest practical levers:\n\n- Q2 FY2026 results exceeded guidance; subscription revenue up year over year. Consider aligning forecast cadence and quota targets to boost revenue predictability.\n- Zero Copy Partner Network enables secure, bidirectional data flows with Salesforce Data Cloud. Better data integration can speed opportunity progression, improving pipeline velocity and forecast accuracy when mapped to CRM processes.\n- Agentforce Agents guide highlights APIs to boost automation and productivity. Identify top 5 sales-support use cases and prototype automation to quantify productivity impact.\n\nOptional next steps: I can share a deeper summary or continue via email, or we can schedule a time if helpful.",
+    "unsubscribe_block": "You can unsubscribe at any time by replying 'unsubscribe'.",
+    "company_info_block": "Sent by ACME AI, 123 Market St, San Francisco, CA.",
+    "proof_points": [
+      {
+        "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+        "title": "Salesforce Q2 FY2026 Results Exceed Guidance"
+      },
+      {
+        "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+        "title": "Salesforce Unveils Zero Copy Partner Network"
+      },
+      {
+        "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+        "title": "Agentforce Agents Developer Guide"
+      },
+      {
+        "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+        "title": "Salesforce Help"
+      },
+      {
+        "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+        "title": "Salesforce – Company Overview"
+      }
+    ]
+  },
+  "compliance_flags": [
+    "WARN:READABILITY"
+  ],
+  "a2a_rounds": 1,
+  "metrics": {
+    "nodes_executed": [],
+    "timings": {}
+  },
+  "errors": []
+}
