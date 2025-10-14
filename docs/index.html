@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Email Demo - Original Content</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .persona-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .persona-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .persona-card.active {
+            border-color: #0066cc;
+            background: #f0f8ff;
+        }
+
+        .persona-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .persona-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Email Preview Section */
+        .email-preview-wrapper {
+            margin-top: 20px;
+        }
+
+        .email-preview-label {
+            text-align: center;
+            margin-bottom: 0;
+            padding: 12px;
+            background: linear-gradient(135deg, #0066cc, #0052a3);
+            color: white;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        .email-container {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 0 0 8px 8px;
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .email-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .email-meta {
+            display: grid;
+            gap: 8px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .email-meta-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .email-meta-label {
+            font-weight: 600;
+            min-width: 60px;
+            color: #495057;
+        }
+
+        .email-subject {
+            font-size: 1.15em;
+            font-weight: bold;
+            color: #212529;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .email-body {
+            padding: 25px;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #212529;
+        }
+
+        .email-intro {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .email-bullet {
+            margin: 15px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-left: 3px solid #0066cc;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .bullet-text {
+            color: #333;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .source-link {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 3px 8px;
+            background: white;
+            border: 1px solid #0066cc;
+            border-radius: 4px;
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.8em;
+            transition: all 0.2s;
+        }
+
+        .source-link:hover {
+            background: #0066cc;
+            color: white;
+        }
+
+        .email-cta {
+            margin-top: 20px;
+            padding: 12px;
+            background: #e6f3ff;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+
+        .compliance-section {
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 0 0 8px 8px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        .compliance-section div {
+            margin: 5px 0;
+        }
+
+        /* States Section */
+        .states-container {
+            margin-top: 40px;
+        }
+
+        .states-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .states-header h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .states-header p {
+            opacity: 0.9;
+        }
+
+        .state-section {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .state-header {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .state-header:hover {
+            background: #e9ecef;
+        }
+
+        .state-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .state-icon {
+            font-size: 1.2em;
+        }
+
+        .state-toggle {
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+
+        .state-toggle.expanded {
+            transform: rotate(180deg);
+        }
+
+        .state-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .state-content.show {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+            padding: 20px;
+        }
+
+        .query-item, .route-item {
+            padding: 10px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-left: 3px solid #0066cc;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .insight-card-detail {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .insight-card-detail h4 {
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+
+        .insight-meta-detail {
+            display: grid;
+            gap: 8px;
+            font-size: 0.95em;
+            margin-top: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .metric-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #e6f3ff;
+            color: #0066cc;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 10px;
+        }
+
+        .compliance-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px;
+        }
+
+        .compliance-badge.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .compliance-badge.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .timing-display {
+            font-size: 2em;
+            font-weight: bold;
+            color: #0066cc;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Email Personalization Demo - Original Content</h1>
+
+        <div class="persona-grid">
+            <div class="persona-card" onclick="showEmail('vp_sales')" id="card-vp_sales">
+                <div class="persona-icon">📊</div>
+                <div class="persona-title">VP Sales Operations</div>
+                <div>Pipeline, Forecast, Win Rates</div>
+            </div>
+
+            <div class="persona-card" onclick="showEmail('vp_cx')" id="card-vp_cx">
+                <div class="persona-icon">💬</div>
+                <div class="persona-title">VP Customer Experience</div>
+                <div>CSAT, FCR, Agent Productivity</div>
+            </div>
+
+            <div class="persona-card" onclick="showEmail('cfo')" id="card-cfo">
+                <div class="persona-icon">💰</div>
+                <div class="persona-title">Chief Financial Officer</div>
+                <div>Revenue, TCO, ROI</div>
+            </div>
+        </div>
+
+        <div id="email-display"></div>
+
+        <div id="states-display"></div>
+    </div>
+
+    <script>
+        // State data for each persona
+        const stateData = {
+            vp_sales: {
+                queries: [
+                    "Agentforce product announcement",
+                    "latest earnings results",
+                    "remaining performance obligation definition",
+                    "customer experience AI",
+                    "Data Cloud recent updates"
+                ],
+                route_decisions: [
+                    { query: "Agentforce product announcement", backend: "faiss", reason: "DEFAULT_SHORT_FAISS" },
+                    { query: "latest earnings results", backend: "pinecone", reason: "PR_QUERY" },
+                    { query: "remaining performance obligation definition", backend: "faiss", reason: "DEFINITION" },
+                    { query: "customer experience AI", backend: "faiss", reason: "DEFAULT_SHORT_FAISS" },
+                    { query: "Data Cloud recent updates", backend: "faiss", reason: "DEFAULT_SHORT_FAISS" }
+                ],
+                insights: [
+                    { title: "Salesforce Q2 FY2026 Results Hit Guidance", summary: "Exceeds guidance across metrics; subscription & support revenue up 11% YoY, 9% in constant currency." },
+                    { title: "Salesforce Unveils Zero Copy Partner Network", summary: "Unveils bidirectional zero-copy integration with Salesforce Data Cloud." },
+                    { title: "Agentforce Agents Developer Guide", summary: "Get started with Agentforce Agents to empower users with a customizable AI assistant." },
+                    { title: "Salesforce Help Center", summary: "Salesforce Help page listed as a resource." },
+                    { title: "Salesforce on Wikipedia", summary: "Overview of Salesforce as listed on Wikipedia." }
+                ],
+                compliance: ["WARN:READABILITY"],
+                a2a_rounds: 1
+            },
+            vp_cx: {
+                queries: [
+                    "Agentforce product announcement",
+                    "latest earnings results",
+                    "remaining performance obligation definition",
+                    "customer experience AI",
+                    "Data Cloud recent updates"
+                ],
+                persona_keywords: [
+                    "nps", "csat", "contact center", "omnichannel",
+                    "agent productivity", "self-service", "first contact resolution"
+                ],
+                route_decisions: [
+                    { query: "Agentforce product announcement", backend: "faiss", reason: "PERSONA_BIAS" },
+                    { query: "latest earnings results", backend: "pinecone", reason: "PR_QUERY" },
+                    { query: "remaining performance obligation definition", backend: "faiss", reason: "DEFINITION" },
+                    { query: "customer experience AI", backend: "faiss", reason: "PERSONA_BIAS" },
+                    { query: "Data Cloud recent updates", backend: "faiss", reason: "PERSONA_BIAS" }
+                ],
+                insights: [
+                    { title: "Salesforce Q2 FY2026 Results Exceed Guidance", summary: "Record Q2 FY2026 results with subscription and support revenue up 11% YoY." },
+                    { title: "Salesforce Unveils Zero Copy Partner Network", summary: "Secure, bidirectional zero-copy integration with Salesforce Data Cloud." },
+                    { title: "Getting Started with Agentforce Agents", summary: "Learn how Agentforce agents bring conversational AI to Salesforce." },
+                    { title: "Salesforce Help Center", summary: "Salesforce Help is loading with a CSS error." },
+                    { title: "Salesforce Overview on Wikipedia", summary: "Wikipedia notes Salesforce supports 31 languages." }
+                ],
+                compliance: ["WARN:READABILITY"],
+                a2a_rounds: 1
+            },
+            cfo: {
+                queries: [
+                    "What was Salesforce's total revenue for Q1 FY26?",
+                    "How much operating cash flow did Salesforce generate in Q1 FY26?",
+                    "What was Salesforce's full year FY25 financial performance?"
+                ],
+                route_decisions: [
+                    { query: "What was Salesforce's total revenue for Q1 FY26?", backend: "weaviate", reason: "DEFAULT_WEAVIATE" },
+                    { query: "How much operating cash flow did Salesforce generate in Q1 FY26?", backend: "weaviate", reason: "DEFAULT_WEAVIATE" },
+                    { query: "What was Salesforce's full year FY25 financial performance?", backend: "weaviate", reason: "DEFAULT_WEAVIATE" }
+                ],
+                insights: [
+                    { title: "Salesforce Reports Record Q2 Fiscal 2026 Results", summary: "Exceeded guidance across metrics. Subscription and support revenue rose 11% YoY." },
+                    { title: "Salesforce Unveils Zero Copy Partner Network", summary: "Secure, bidirectional zero-copy partner network for integration with Data Cloud." },
+                    { title: "Agentforce Agents Developer Guide", summary: "Get started with Agentforce Agents to build customizable AI assistants." },
+                    { title: "Salesforce Help Center Overview", summary: "Help Center entry currently loads with a CSS error." },
+                    { title: "Salesforce – Wikipedia", summary: "Overview of Salesforce as presented on the Wikipedia page." }
+                ],
+                compliance: ["WARN:READABILITY"],
+                a2a_rounds: 1
+            }
+        };
+
+        // Enhanced email data with inline sources
+        const emailData = {
+            vp_sales: {
+                subject: "Forecast momentum and data-driven selling gains",
+                intro: "Here are a few signals aligned to sales ops outcomes for forecast accuracy, cycle time, and productivity.",
+                bullets: [
+                    {
+                        text: "Q2 FY2026 results beat guidance, with subscription & support revenue up 11% YoY (9% CC). Use this momentum to refresh the H2 forecast and quota planning.",
+                        source: "Salesforce Q2 FY2026 Results",
+                        date: "Sept 3, 2025",
+                        url: "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/"
+                    },
+                    {
+                        text: "Zero Copy Partner Network enables secure, bidirectional data sharing with Salesforce Data Cloud, improving data fidelity for data-driven selling. Pilot one or two partner integrations to gauge cycle-time impact.",
+                        source: "Zero Copy Partner Network",
+                        date: "Apr 25, 2024",
+                        url: "https://investor.salesforce.com/news/zero-copy-partner-network"
+                    },
+                    {
+                        text: "Agentforce AI agents accelerate sales workflows; a targeted pilot can help measure effects on activity time and conversion rates.",
+                        source: "Agentforce Developer Guide",
+                        date: "2025",
+                        url: "https://developer.salesforce.com/docs/agentforce"
+                    }
+                ],
+                cta: "Would you have 15 minutes for a quick call to align on forecast, data integrations, and pilot outcomes?",
+                unsubscribe_block: "You can unsubscribe at any time by replying 'unsubscribe'.",
+                company_info_block: "Sent by ACME AI, 123 Market St, San Francisco, CA."
+            },
+
+            vp_cx: {
+                subject: "Scale CX with real-time data and AI",
+                intro: "Hi there,\n\nThree evidence-backed areas where Salesforce can boost CX outcomes:",
+                bullets: [
+                    {
+                        text: "Real-time, unified data across systems via Zero Copy Partner Network enables omnichannel CX and faster resolutions, supported by Salesforce Data Cloud.",
+                        source: "Zero Copy Partner Network",
+                        date: "Apr 25, 2024",
+                        url: "https://investor.salesforce.com/news/zero-copy-partner-network"
+                    },
+                    {
+                        text: "Agentforce AI agents boost self-service and agent productivity, with strong potential to shorten resolution times. Consider a 4-week pilot in a core support channel.",
+                        source: "Getting Started with Agentforce",
+                        date: "2025",
+                        url: "https://developer.salesforce.com/docs/agentforce"
+                    },
+                    {
+                        text: "Strong CC growth in Q2 FY2026 suggests capacity to scale CX; map CX workflows to Salesforce capabilities to translate growth into improved first contact resolution (FCR). The global reach (31 languages) can further scale omnichannel programs regionally.",
+                        source: "Salesforce Q2 FY2026 Results",
+                        date: "Sept 3, 2025",
+                        url: "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/"
+                    }
+                ],
+                cta: "Could we schedule a 15-minute call to discuss a quick pilot plan?",
+                unsubscribe_block: "You can unsubscribe at any time by replying 'unsubscribe'.",
+                company_info_block: "Sent by ACME AI, 123 Market St, San Francisco, CA."
+            },
+
+            cfo: {
+                subject: "Q2 results: revenue growth and data integration gains",
+                intro: "Hello,\n\nHere are three concise takeaways grounded in Salesforce insights you can use for planning and forecasting:",
+                bullets: [
+                    {
+                        text: "Q2 fiscal 2026 results exceeded guidance across all metrics, with Subscription and Support revenue up 11% year over year (9% in constant currency). This supports a higher revenue trajectory in FP&A models and cash flow assumptions.",
+                        source: "Salesforce Q2 Fiscal 2026 Results",
+                        date: "Sept 3, 2025",
+                        url: "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/"
+                    },
+                    {
+                        text: "Salesforce's Zero Copy Partner Network can reduce data movement costs and deliver faster, fresher data for forecasting, suggesting a potential data integration efficiency benefit to TCO.",
+                        source: "Zero Copy Partner Network",
+                        date: "Apr 25, 2024",
+                        url: "https://investor.salesforce.com/news/zero-copy-partner-network"
+                    },
+                    {
+                        text: "Agentforce Agents enable AI-powered automation to boost productivity and reduce support costs; a pilot ROI assessment for high-volume workflows could quantify benefits.",
+                        source: "Agentforce Platform Guide",
+                        date: "2025",
+                        url: "https://developer.salesforce.com/docs/agentforce"
+                    }
+                ],
+                cta: "Would you be open to a 15-minute call to review implications for your forecast and capital planning?",
+                unsubscribe_block: "You can unsubscribe at any time by replying 'unsubscribe'.",
+                company_info_block: "Sent by ACME AI, 123 Market St, San Francisco, CA."
+            }
+        };
+
+        function toggleState(stateId) {
+            const content = document.getElementById(`content-${stateId}`);
+            const toggle = document.getElementById(`toggle-${stateId}`);
+
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                toggle.classList.remove('expanded');
+            } else {
+                content.classList.add('show');
+                toggle.classList.add('expanded');
+            }
+        }
+
+        function showEmail(persona) {
+            // Update active state
+            document.querySelectorAll('.persona-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            document.getElementById(`card-${persona}`).classList.add('active');
+
+            // Get persona data
+            const data = emailData[persona];
+            const states = stateData[persona];
+
+            // Get persona display name
+            const personaNames = {
+                'vp_sales': 'VP Sales Operations',
+                'vp_cx': 'VP Customer Experience',
+                'cfo': 'Chief Financial Officer'
+            };
+
+            // Get current date
+            const currentDate = new Date().toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Render email with inline sources
+            const emailHtml = `
+                <div class="email-preview-wrapper">
+                    <div class="email-preview-label">
+                        📧 Generated Email Preview
+                    </div>
+                    <div class="email-container">
+                        <div class="email-header">
+                            <div class="email-meta">
+                                <div class="email-meta-row">
+                                    <span class="email-meta-label">From:</span>
+                                    <span>AI Sales Assistant &lt;ai@acme-sales.com&gt;</span>
+                                </div>
+                                <div class="email-meta-row">
+                                    <span class="email-meta-label">To:</span>
+                                    <span>${personaNames[persona]} &lt;executive@salesforce.com&gt;</span>
+                                </div>
+                                <div class="email-meta-row">
+                                    <span class="email-meta-label">Date:</span>
+                                    <span>${currentDate}</span>
+                                </div>
+                            </div>
+                            <div class="email-subject">${data.subject}</div>
+                        </div>
+
+                        <div class="email-body">
+                            <div class="email-intro">${data.intro.replace(/\n/g, '<br>')}</div>
+
+                            ${data.bullets.map(bullet => `
+                                <div class="email-bullet">
+                                    <div class="bullet-text">${bullet.text}</div>
+                                    <a href="${bullet.url}" target="_blank" class="source-link">
+                                        📎 ${bullet.source} • ${bullet.date}
+                                    </a>
+                                </div>
+                            `).join('')}
+
+                            <div class="email-cta">${data.cta}</div>
+                        </div>
+
+                        <div class="compliance-section">
+                            <div>${data.unsubscribe_block}</div>
+                            <div>${data.company_info_block}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Render states sections
+            const statesHtml = `
+                <div class="states-container">
+                    <div class="states-header">
+                        <h2>🔬 Behind the AI: Processing Steps</h2>
+                        <p>Click to explore how the AI generated this personalized email</p>
+                    </div>
+
+                    <!-- Queries Generated -->
+                    <div class="state-section">
+                        <div class="state-header" onclick="toggleState('queries')">
+                            <div class="state-title">
+                                <span class="state-icon">🔍</span>
+                                <span>Queries Generated (${states.queries.length})</span>
+                            </div>
+                            <span class="state-toggle" id="toggle-queries">⌄</span>
+                        </div>
+                        <div class="state-content" id="content-queries">
+                            ${states.queries.map(query => `
+                                <div class="query-item">${query}</div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Route Decisions -->
+                    <div class="state-section">
+                        <div class="state-header" onclick="toggleState('routes')">
+                            <div class="state-title">
+                                <span class="state-icon">🗺️</span>
+                                <span>Route Decisions</span>
+                            </div>
+                            <span class="state-toggle" id="toggle-routes">⌄</span>
+                        </div>
+                        <div class="state-content" id="content-routes">
+                            ${states.route_decisions.map(route => `
+                                <div class="route-item">
+                                    <strong>${route.query}</strong><br>
+                                    <span class="metric-badge">📂 ${route.backend.toUpperCase()}</span>
+                                    <span class="metric-badge">🔧 ${route.reason}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Insights Found -->
+                    <div class="state-section">
+                        <div class="state-header" onclick="toggleState('insights')">
+                            <div class="state-title">
+                                <span class="state-icon">💡</span>
+                                <span>Insights Found (${states.insights.length})</span>
+                            </div>
+                            <span class="state-toggle" id="toggle-insights">⌄</span>
+                        </div>
+                        <div class="state-content" id="content-insights">
+                            ${states.insights.map(insight => `
+                                <div class="insight-card-detail">
+                                    <h4>${insight.title}</h4>
+                                    <p>${insight.summary}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Compliance Status -->
+                    <div class="state-section">
+                        <div class="state-header" onclick="toggleState('compliance')">
+                            <div class="state-title">
+                                <span class="state-icon">✅</span>
+                                <span>Compliance Status</span>
+                            </div>
+                            <span class="state-toggle" id="toggle-compliance">⌄</span>
+                        </div>
+                        <div class="state-content" id="content-compliance">
+                            <div style="padding: 10px;">
+                                ${states.compliance.length > 0 ?
+                                    states.compliance.map(flag => `
+                                        <span class="compliance-badge warning">${flag}</span>
+                                    `).join('') :
+                                    '<span class="compliance-badge success">All checks passed</span>'
+                                }
+                                <div style="margin-top: 15px;">
+                                    <strong>A2A Rounds:</strong> ${states.a2a_rounds}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processing Timing -->
+                    ${states.persona_keywords ? `
+                    <div class="state-section">
+                        <div class="state-header" onclick="toggleState('keywords')">
+                            <div class="state-title">
+                                <span class="state-icon">🏷️</span>
+                                <span>Persona Keywords</span>
+                            </div>
+                            <span class="state-toggle" id="toggle-keywords">⌄</span>
+                        </div>
+                        <div class="state-content" id="content-keywords">
+                            <div style="padding: 10px;">
+                                ${states.persona_keywords.map(kw => `
+                                    <span class="metric-badge">${kw}</span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+
+            document.getElementById('email-display').innerHTML = emailHtml;
+            document.getElementById('states-display').innerHTML = statesHtml;
+        }
+
+        // Initialize with VP Sales on load
+        window.addEventListener('DOMContentLoaded', () => {
+            showEmail('vp_sales');
+        });
+    </script>
+</body>
+</html>
