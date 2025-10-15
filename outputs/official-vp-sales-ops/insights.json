@@ -1,0 +1,134 @@
+[
+  {
+    "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+    "title": "Record FY26 Q2 Results — Subscription Revenue Growth",
+    "summary": "Salesforce reported record second-quarter fiscal 2026 results, noting subscription and support revenue growth of 11% year-over-year (9% in constant currency) and that it exceeded guidance across all metrics.",
+    "url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=OTH",
+    "date": "2025-09-03",
+    "evidence_snippet": "Earnings\nH1: Salesforce Reports Record Second Quarter Fiscal 2026 Results\nMedia Library\nExceeds Guidance Across All Metrics; Subscription & Support Revenue up 11% Y/Y, 9% in CC\nSAN FRANCISCO, Calif. – September 3, 2025 –\nSalesforce (NYSE: CRM), the world’s #1 AI CRM, today announced results for its second quarter fisca",
+    "confidence": 0.6,
+    "source_domain": "www.salesforce.com",
+    "doc_id": "crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c",
+    "persona_relevance": {
+      "why_it_matters": "Stronger subscription revenue and exceeded guidance signal sustained customer demand and healthy renewals, which supports larger pipeline volumes and more predictable revenue for forecasting and quota planning.",
+      "relevance_score": 5,
+      "keywords_hit": [
+        "pipeline",
+        "forecast accuracy",
+        "renewals",
+        "win rate"
+      ]
+    },
+    "metric_impact": {
+      "metric": "pipeline size",
+      "direction": "increase",
+      "magnitude": "med"
+    },
+    "action_suggestion": "Reallocate reps and enablement resources toward top-growing product lines and update forecast models to reflect the higher subscription growth baseline."
+  },
+  {
+    "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+    "title": "Zero Copy Partner Network for Data Cloud Integrations",
+    "summary": "Salesforce unveiled the Zero Copy Partner Network to enable secure, bidirectional zero-copy integrations with Salesforce Data Cloud, designed to streamline data sharing between partners and the platform.",
+    "url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+    "date": "2024-04-25",
+    "evidence_snippet": "H1: Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zero Copy Integration with Salesforce Data Cloud\n\nOverview\nFinancials\nQuarterly Results\nAnnual Reports\nSEC Filings\nTax Forms\nSafe Harbor\nIAC\nFinancials\nEvents\nNews\nStock Quote\nGovernance\nGovernance\nC",
+    "confidence": 0.6,
+    "source_domain": "investor.salesforce.com",
+    "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
+    "persona_relevance": {
+      "why_it_matters": "Bidirectional, zero-copy integrations reduce manual data reconciliation and latency, improving the timeliness and accuracy of opportunity and pipeline data used in forecasting and territory planning.",
+      "relevance_score": 5,
+      "keywords_hit": [
+        "forecast accuracy",
+        "automation",
+        "pipeline",
+        "data integration"
+      ]
+    },
+    "metric_impact": {
+      "metric": "forecast accuracy",
+      "direction": "increase",
+      "magnitude": "med"
+    },
+    "action_suggestion": "Pilot Zero Copy integration with a strategic partner to auto-sync opportunity and revenue signals into your forecasting dataset and measure improvement in forecast variance."
+  },
+  {
+    "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+    "title": "Agentforce Agents — Conversational AI for Salesforce Productivity",
+    "summary": "Agentforce agents bring conversational AI to Salesforce, letting teams build customizable AI assistants and accelerate integrations via APIs to help users get more done in-platform.",
+    "url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
+    "date": "",
+    "evidence_snippet": "H1: Get Started with Agentforce Agents\nBring the power of conversational AI to your business with Agentforce agents. Build a trusted and customizable AI assistant that empowers your users to get more done in Salesforce. Accelerate your Agentforce integration with our APIs and other developer resources.\nFeature or API\nD",
+    "confidence": 0.6,
+    "source_domain": "developer.salesforce.com",
+    "doc_id": "crm::help_docs::developer::get-started-agents::0ef2421d",
+    "persona_relevance": {
+      "why_it_matters": "Conversational AI can automate routine sales tasks (data entry, meeting summaries, lead triage), freeing reps to sell more and improving throughput, conversion, and pipeline velocity.",
+      "relevance_score": 5,
+      "keywords_hit": [
+        "productivity",
+        "automation",
+        "pipeline",
+        "win rate"
+      ]
+    },
+    "metric_impact": {
+      "metric": "rep productivity",
+      "direction": "increase",
+      "magnitude": "high"
+    },
+    "action_suggestion": "Run a pilot to deploy Agentforce assistants for a top sales pod to automate CRM updates and meeting summaries, and track time saved and uplift in opportunities per rep."
+  },
+  {
+    "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+    "title": "Salesforce Help — Platform Documentation Status",
+    "summary": "The Salesforce Help landing page is shown with a loading/CSS error message in the snippet, indicating potential access or content delivery issues for documentation.",
+    "url": "https://help.salesforce.com/s/",
+    "date": "",
+    "evidence_snippet": "H1: Salesforce Help\n\nSalesforce Help Loading × Sorry to interrupt CSS Error Refresh",
+    "confidence": 0.6,
+    "source_domain": "help.salesforce.com",
+    "doc_id": "crm::help_docs::unknown::salesforce-help::d75a8e9c",
+    "persona_relevance": {
+      "why_it_matters": "Documentation or access interruptions can slow onboarding and enablement, increase ramp time, and reduce rep productivity—negatively impacting pipeline coverage and forecast reliability.",
+      "relevance_score": 2,
+      "keywords_hit": [
+        "productivity",
+        "forecast accuracy",
+        "enablement"
+      ]
+    },
+    "metric_impact": {
+      "metric": "time-to-ramp",
+      "direction": "increase",
+      "magnitude": "low"
+    },
+    "action_suggestion": "Confirm internal access to key enablement docs and distribute a cached quick-start playbook to reps while public help issues are resolved."
+  },
+  {
+    "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+    "title": "Salesforce Company Overview (Wikipedia)",
+    "summary": "The Wikipedia entry provides a general overview of Salesforce as a company (multi-language page), useful for high-level context on the vendor and market positioning.",
+    "url": "https://en.wikipedia.org/wiki/Salesforce",
+    "date": "",
+    "evidence_snippet": "H1: Salesforce\n31 languages\nالعربية\nБеларуская\nČeština\nDansk\nDeutsch\nEspañol\nفارسی\nFrançais\n한국어\nहिन्दी\nBahasa Indonesia\nItaliano\nעברית\nҚазақша\nمصرى\nBahasa Melayu\nNederlands\n日本語\nNorsk bokmål\nPolski\nPortuguês\nРусский\nSlovenčina\nСрпски / srpski\nSuomi\nTaqbaylit\nTürkçe\nУкраїнська\nTiếng Việt\n粵語\n中文\nEdit links\nFrom Wikipedia, ",
+    "confidence": 0.6,
+    "source_domain": "en.wikipedia.org",
+    "doc_id": "crm::wiki::unknown::salesforce-wikipedia::6b727edd",
+    "persona_relevance": {
+      "why_it_matters": "Having a concise, accurate vendor overview supports deal-room credibility checks and competitive messaging alignment for reps when positioning against alternatives.",
+      "relevance_score": 2,
+      "keywords_hit": [
+        "win rate",
+        "competitive messaging"
+      ]
+    },
+    "metric_impact": {
+      "metric": "win rate",
+      "direction": "increase",
+      "magnitude": "low"
+    },
+    "action_suggestion": "Ensure sales playbooks and battlecards reference the latest, verified company positioning so reps use consistent messaging in competitive situations."
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "subject": "Plan API capacity and governance for rising Salesforce adoption",
+  "body": "I noticed Salesforce's record FY26 Q2 results and wanted to share platform‑integration implications worth reviewing.\n\nGiven stronger platform adoption, a brief alignment on integration capacity, API governance, and security controls can help manage scale and TCO.\n\n- Record FY26 Q2 growth: subscription and platform momentum often translates into increased API usage and integration load—plan capacity, rate limits, and security posture accordingly.\n- Zero‑Copy Partner Network for Data Cloud: reduces data duplication and synchronization overhead, which can simplify governance boundaries and lower TCO; pilot a high‑value dataset.\n- Agentforce conversational APIs: enable real‑time assistants but merit an architecture and security review; also confirm availability of critical vendor docs for runbooks.\n\nIf helpful, I can send a short technical summary, continue this via email, or schedule a brief call.",
+  "unsubscribe_block": "You can unsubscribe at any time by replying 'unsubscribe'.",
+  "company_info_block": "Sent by ACME AI, 123 Market St, San Francisco, CA.",
+  "proof_points": [
+    {
+      "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+      "title": "FY26 Q2 Results: Record Revenue and Platform Growth"
+    },
+    {
+      "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+      "title": "Zero Copy Partner Network for Salesforce Data Cloud"
+    },
+    {
+      "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+      "title": "Agentforce Agents: Conversational AI with Developer APIs"
+    },
+    {
+      "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+      "title": "Salesforce Help Portal — Support Access Note"
+    },
+    {
+      "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+      "title": "Salesforce Company Overview (Wikipedia)"
+    }
+  ]
+}

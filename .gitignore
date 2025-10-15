@@ -9,6 +9,9 @@ __pycache__/
 .env
 worktrees/
 
+# Backup directory
+backup/
+
 # Test outputs and temporary files
 # outputs/
 # state/

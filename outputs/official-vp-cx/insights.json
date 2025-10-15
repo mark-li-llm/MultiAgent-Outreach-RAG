@@ -1,0 +1,134 @@
+[
+  {
+    "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+    "title": "Q2 FY26 Results: Subscription Growth Enables CX Investment",
+    "summary": "Salesforce reported record Q2 FY26 results, noting Subscription & Support revenue up 11% year‑over‑year and '9% in CC' in the release.",
+    "url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=OTH",
+    "date": "2025-09-03",
+    "evidence_snippet": "Earnings\nH1: Salesforce Reports Record Second Quarter Fiscal 2026 Results\nMedia Library\nExceeds Guidance Across All Metrics; Subscription & Support Revenue up 11% Y/Y, 9% in CC\nSAN FRANCISCO, Calif. – September 3, 2025 –\nSalesforce (NYSE: CRM), the world’s #1 AI CRM, today announced results for its second quarter fisca",
+    "confidence": 0.6,
+    "source_domain": "www.salesforce.com",
+    "doc_id": "crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c",
+    "persona_relevance": {
+      "why_it_matters": "Stronger subscription revenue expands funding capacity for contact center, omnichannel and self‑service improvements that drive CSAT, agent productivity and FCR.",
+      "relevance_score": 4,
+      "keywords_hit": [
+        "contact center",
+        "agent productivity",
+        "self-service",
+        "first contact resolution"
+      ]
+    },
+    "metric_impact": {
+      "metric": "agent productivity",
+      "direction": "increase",
+      "magnitude": "med"
+    },
+    "action_suggestion": "Prepare a business case to allocate incremental subscription revenue toward prioritized omnichannel/contact center projects, forecasting impacts on handle time and CSAT."
+  },
+  {
+    "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+    "title": "Zero Copy Partner Network: Real‑Time Data Integration",
+    "summary": "Salesforce unveiled a Zero Copy Partner Network for secure, bidirectional zero‑copy integration with Data Cloud to enable faster access to unified customer data.",
+    "url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+    "date": "2024-04-25",
+    "evidence_snippet": "H1: Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zero Copy Integration with Salesforce Data Cloud\n\nOverview\nFinancials\nQuarterly Results\nAnnual Reports\nSEC Filings\nTax Forms\nSafe Harbor\nIAC\nFinancials\nEvents\nNews\nStock Quote\nGovernance\nGovernance\nC",
+    "confidence": 0.6,
+    "source_domain": "investor.salesforce.com",
+    "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
+    "persona_relevance": {
+      "why_it_matters": "Real‑time, bidirectional access to unified customer records reduces agent context switching, supports omnichannel consistency, and can improve first contact resolution and CSAT.",
+      "relevance_score": 5,
+      "keywords_hit": [
+        "first contact resolution",
+        "omnichannel",
+        "contact center",
+        "nps"
+      ]
+    },
+    "metric_impact": {
+      "metric": "first contact resolution",
+      "direction": "increase",
+      "magnitude": "high"
+    },
+    "action_suggestion": "Pilot Zero Copy integration for a key contact center queue to measure reductions in repeat contacts and improvements in FCR and CSAT."
+  },
+  {
+    "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+    "title": "Agentforce Conversational AI: Empower Agents & Self‑Service",
+    "summary": "Agentforce enables building customizable conversational AI assistants with APIs to automate tasks and help agents get more done within Salesforce.",
+    "url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
+    "date": "",
+    "evidence_snippet": "H1: Get Started with Agentforce Agents\nBring the power of conversational AI to your business with Agentforce agents. Build a trusted and customizable AI assistant that empowers your users to get more done in Salesforce. Accelerate your Agentforce integration with our APIs and other developer resources.\nFeature or API\nD",
+    "confidence": 0.6,
+    "source_domain": "developer.salesforce.com",
+    "doc_id": "crm::help_docs::developer::get-started-agents::0ef2421d",
+    "persona_relevance": {
+      "why_it_matters": "Conversational AI can automate repetitive requests, accelerate agent workflows, expand self‑service options and improve CSAT and first contact resolution.",
+      "relevance_score": 5,
+      "keywords_hit": [
+        "agent productivity",
+        "self-service",
+        "first contact resolution",
+        "contact center"
+      ]
+    },
+    "metric_impact": {
+      "metric": "agent productivity",
+      "direction": "increase",
+      "magnitude": "high"
+    },
+    "action_suggestion": "Run a focused proof‑of‑concept using Agentforce for high‑volume intents and measure impacts on handle time, FCR and CSAT."
+  },
+  {
+    "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+    "title": "Salesforce Help Portal: Knowledge Base & Self‑Service",
+    "summary": "Salesforce Help is the platform’s central support and knowledge portal (snippet shows a loading/CSS error), which underpins both customer self‑service and agent support.",
+    "url": "https://help.salesforce.com/s/",
+    "date": "",
+    "evidence_snippet": "H1: Salesforce Help\n\nSalesforce Help Loading × Sorry to interrupt CSS Error Refresh",
+    "confidence": 0.6,
+    "source_domain": "help.salesforce.com",
+    "doc_id": "crm::help_docs::unknown::salesforce-help::d75a8e9c",
+    "persona_relevance": {
+      "why_it_matters": "A reliable, well‑maintained help portal is critical for effective self‑service and agent troubleshooting; availability or content issues can directly affect CSAT and FCR.",
+      "relevance_score": 3,
+      "keywords_hit": [
+        "self-service",
+        "csat",
+        "first contact resolution"
+      ]
+    },
+    "metric_impact": {
+      "metric": "CSAT",
+      "direction": "decrease",
+      "magnitude": "med"
+    },
+    "action_suggestion": "Audit Help portal availability and top‑viewed knowledge articles for contact center use cases; fix outages and update articles for the highest‑volume issues."
+  },
+  {
+    "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+    "title": "Salesforce Company Overview: Public Reference",
+    "summary": "Wikipedia provides a general public overview of Salesforce; useful for high‑level benchmarking but not a substitute for operational CX data.",
+    "url": "https://en.wikipedia.org/wiki/Salesforce",
+    "date": "",
+    "evidence_snippet": "H1: Salesforce\n31 languages\nالعربية\nБеларуская\nČeština\nDansk\nDeutsch\nEspañol\nفارسی\nFrançais\n한국어\nहिन्दी\nBahasa Indonesia\nItaliano\nעברית\nҚазақша\nمصرى\nBahasa Melayu\nNederlands\n日本語\nNorsk bokmål\nPolski\nPortuguês\nРусский\nSlovenčina\nСрпски / srpski\nSuomi\nTaqbaylit\nTürkçe\nУкраїнська\nTiếng Việt\n粵語\n中文\nEdit links\nFrom Wikipedia, ",
+    "confidence": 0.6,
+    "source_domain": "en.wikipedia.org",
+    "doc_id": "crm::wiki::unknown::salesforce-wikipedia::6b727edd",
+    "persona_relevance": {
+      "why_it_matters": "High‑level company context can inform competitive benchmarking and stakeholder briefings, but it offers limited actionable detail for contact center operations or CX metrics.",
+      "relevance_score": 2,
+      "keywords_hit": [
+        "nps",
+        "csat"
+      ]
+    },
+    "metric_impact": {
+      "metric": "benchmarking context",
+      "direction": "increase",
+      "magnitude": "low"
+    },
+    "action_suggestion": "Use Wikipedia as a starting point for executive summaries, then validate competitive CX claims with primary sources and customer research."
+  }
+]
