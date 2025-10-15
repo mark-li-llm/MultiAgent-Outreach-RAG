@@ -1,0 +1,5 @@
+{"timestamp": "2025-10-15T02:35:09.190083+00:00", "query_text": "What are the key risks Salesforce identifies related to AI and generative AI?", "decision_backend": "weaviate", "reason_codes": ["PERSONA_BIAS"]}
+{"timestamp": "2025-10-15T02:35:09.190083+00:00", "query_text": "How does Salesforce Data Cloud enable real-time data integration and unified customer profiles?", "decision_backend": "weaviate", "reason_codes": ["PERSONA_BIAS"]}
+{"timestamp": "2025-10-15T02:35:09.190083+00:00", "query_text": "What APIs and developer tools does Salesforce provide for platform integration and customization?", "decision_backend": "weaviate", "reason_codes": ["FILTER_MATCH"]}
+{"timestamp": "2025-10-15T02:35:09.190083+00:00", "query_text": "What security and governance capabilities does Salesforce offer for enterprise data protection?", "decision_backend": "weaviate", "reason_codes": ["PERSONA_BIAS"]}
+{"timestamp": "2025-10-15T02:35:09.190083+00:00", "query_text": "How does Salesforce ensure platform scalability and performance for enterprise workloads?", "decision_backend": "weaviate", "reason_codes": ["PERSONA_BIAS"]}

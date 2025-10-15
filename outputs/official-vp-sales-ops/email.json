@@ -1,0 +1,28 @@
+{
+  "subject": "Tighten forecasts and boost rep productivity",
+  "body": "I noticed Salesforce's recent FY26 Q2 results and wanted to share some timely observations. With subscription growth and predictable renewals, aligning coverage and forecast models is likely top of mind.\n\n- Q2 results show subscription & support revenue up ~11% Y/Y and performance above guidance.\n- Zero Copy Partner Network enables secure, bidirectional zero-copy integrations to reduce reconciliation and surface fresher opportunity signals.\n- Agentforce conversational agents can automate CRM tasks (data entry, meeting summaries, lead triage) to increase rep productivity and throughput.\n\nIf helpful, I can send a one-page pilot outline to test zero-copy syncs and Agentforce for a top pod, continue this via email, or schedule a brief call.",
+  "unsubscribe_block": "You can unsubscribe at any time by replying 'unsubscribe'.",
+  "company_info_block": "Sent by ACME AI, 123 Market St, San Francisco, CA.",
+  "proof_points": [
+    {
+      "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+      "title": "Record FY26 Q2 Results — Subscription Revenue Growth"
+    },
+    {
+      "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+      "title": "Zero Copy Partner Network for Data Cloud Integrations"
+    },
+    {
+      "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+      "title": "Agentforce Agents — Conversational AI for Salesforce Productivity"
+    },
+    {
+      "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+      "title": "Salesforce Help — Platform Documentation Status"
+    },
+    {
+      "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+      "title": "Salesforce Company Overview (Wikipedia)"
+    }
+  ]
+}

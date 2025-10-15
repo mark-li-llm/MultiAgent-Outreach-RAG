@@ -1,0 +1,28 @@
+{
+  "subject": "Improve CSAT and FCR with targeted CX pilots",
+  "body": "I noticed Salesforce's Q2 FY26 results and thought these CX insights could inform your upcoming initiatives. With rising subscription and support revenue, there's an opportunity to channel incremental budget into contact center, omnichannel, and self‑service improvements that support CSAT, agent productivity, and first contact resolution.\n\n- Record Q2 FY26: Subscription & Support growth broadens funding for CX priorities, including contact center investments.\n- Zero Copy Partner Network: real‑time, bidirectional Data Cloud integration reduces agent context switching and supports omnichannel consistency to improve FCR.\n- Agentforce Conversational AI: customizable assistants and APIs can automate routine intents, extend self‑service, and accelerate agent workflows.\n\nIf useful, I can send a one‑page brief on quick pilots or continue via email — or schedule a short call.",
+  "unsubscribe_block": "You can unsubscribe at any time by replying 'unsubscribe'.",
+  "company_info_block": "Sent by ACME AI, 123 Market St, San Francisco, CA.",
+  "proof_points": [
+    {
+      "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+      "title": "Q2 FY26 Results: Subscription Growth Enables CX Investment"
+    },
+    {
+      "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+      "title": "Zero Copy Partner Network: Real‑Time Data Integration"
+    },
+    {
+      "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+      "title": "Agentforce Conversational AI: Empower Agents & Self‑Service"
+    },
+    {
+      "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+      "title": "Salesforce Help Portal: Knowledge Base & Self‑Service"
+    },
+    {
+      "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+      "title": "Salesforce Company Overview: Public Reference"
+    }
+  ]
+}

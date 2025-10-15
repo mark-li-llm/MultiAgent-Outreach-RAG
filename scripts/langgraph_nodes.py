@@ -57,14 +57,25 @@ Compliance:
 - Keep an opt-out line and company info block as provided.
 Style:
 - 100–140 words, respectful, executive tone.
-- Open with a formal greeting that acknowledges the persona's mandate and references at least one KPI or keyword.
+- CRITICAL OPENING REQUIREMENTS:
+  * Start with a natural, contextual greeting (10-20 words)
+  * Reference recent business developments or timely insights first
+  * Implicitly acknowledge their priorities WITHOUT stating their job title
+  * Create smooth transition to value proposition
+  * Good opening examples:
+    - "I noticed Salesforce's latest quarterly results and thought these insights might be relevant for your planning."
+    - "Recent developments at Salesforce suggest opportunities that align with operational excellence priorities."
+  * AVOID these patterns:
+    - "Dear [Job Title]" or "Hi there"
+    - "As [Job Title] focused on..."
+    - "I recognize your mandate to..."
 - 1–3 bullets that paraphrase the insights.
 - Subject ≤ 12 words, concrete and benefit-oriented.
 - Close by offering one or two optional follow-up paths (e.g., send a deeper summary, schedule time if helpful) without insisting on a meeting.
 Persona voice:
-- vp_customer_experience: formal yet empathetic; highlight NPS, CSAT, contact center efficiency, omnichannel and self-service gains; acknowledge their ownership of customer outcomes.
+- vp_customer_experience: formal yet empathetic; highlight NPS, CSAT, contact center efficiency, omnichannel and self-service gains; naturally reference customer experience priorities without stating title.
 - cio: technically authoritative; emphasize integration, governance, security, platform scale, APIs, real-time data, and TCO discipline; keep language precise and risk-aware.
-- vp_sales_ops: metrics-driven and operational; stress pipeline health, forecast accuracy, win rate, productivity, and automation; respect their role in sales execution.
+- vp_sales_ops: metrics-driven and operational; stress pipeline health, forecast accuracy, win rate, productivity, and automation; reference sales operations priorities without stating title.
 """
 
 STYLIST_USER_PROMPT = """Company: {company}
@@ -72,7 +83,8 @@ Persona: {persona}
 Persona keywords to weave in naturally (2–5 total, only if relevant): {persona_keywords}
 
 Requirements:
-- Open with a respectful greeting that references at least one persona keyword or KPI.
+- Start with a natural, contextual opening (NO "Dear [Title]" or "Hi there") that references recent developments or insights
+- Implicitly acknowledge their priorities through context, NEVER explicitly state their job title
 - Offer optional next steps (e.g., share a deeper dive, continue via email, or schedule a call) without demanding a meeting.
 
 Use ONLY these insight cards (JSON) as evidence:
@@ -369,7 +381,7 @@ async def consolidator_node(state: AgentState) -> dict:
     for attempt in range(1, MAX_ATTEMPTS + 1):
         try:
             # LLM enhancement
-            llm = ChatOpenAI(temperature=0.3, model="gpt-5-nano")
+            llm = ChatOpenAI(temperature=0.3, model="gpt-5-mini")
             consolidator_tmpl = ChatPromptTemplate.from_messages([
                 ("system", CONSOLIDATOR_SYSTEM_PROMPT),
                 ("user", CONSOLIDATOR_USER_PROMPT),
@@ -437,7 +449,7 @@ async def consolidator_node(state: AgentState) -> dict:
 
 async def stylist_node(state: AgentState) -> dict:
     """Generate email copy via LLM (run_graph.py lines 589-607)."""
-    llm = ChatOpenAI(temperature=0.3, model="gpt-5-nano")
+    llm = ChatOpenAI(temperature=0.3, model="gpt-5-mini")
     stylist_tmpl = ChatPromptTemplate.from_messages([
         ("system", STYLIST_SYSTEM_PROMPT),
         ("user", STYLIST_USER_PROMPT),
