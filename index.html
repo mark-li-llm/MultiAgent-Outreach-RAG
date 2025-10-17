@@ -18,6 +18,74 @@
             line-height: 1.6;
         }
 
+        /* Workflow Comparison */
+        .workflow-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px;
+            border-radius: 12px;
+            margin: 0 auto 40px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .workflow-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .workflow-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 20px 0;
+            font-size: 1.1em;
+            gap: 15px;
+        }
+
+        .workflow-label {
+            font-weight: 700;
+            min-width: 100px;
+            text-align: left;
+            font-size: 1.15em;
+        }
+
+        .workflow-steps {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            text-align: left;
+        }
+
+        .workflow-arrow {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2em;
+        }
+
+        .workflow-time {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-left: 20px;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .workflow-time.fast {
+            background: #4ade80;
+            color: #052e16;
+        }
+
+        .workflow-time.slow {
+            background: #f87171;
+            color: #450a0a;
+        }
+
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -38,46 +106,57 @@
             font-size: 1.1em;
         }
 
-        .persona-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+        /* Persona Selector */
+        .persona-selector {
+            margin: 0 auto 40px;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
         }
 
-        .persona-card {
-            background: white;
-            border: 2px solid #ddd;
+        .persona-selector label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .persona-dropdown {
+            display: block;
+            padding: 12px 20px;
+            font-size: 1.05em;
+            border: 2px solid #0066cc;
             border-radius: 8px;
-            padding: 20px;
+            background: white;
+            color: #333;
             cursor: pointer;
             transition: all 0.3s;
+            width: 100%;
+            max-width: 100%;
+            font-weight: 500;
         }
 
-        .persona-card:hover {
-            border-color: #0066cc;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .persona-card.active {
-            border-color: #0066cc;
+        .persona-dropdown:hover {
             background: #f0f8ff;
+            box-shadow: 0 2px 8px rgba(0,102,204,0.2);
         }
 
-        .persona-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+        .persona-dropdown:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0,102,204,0.2);
         }
 
-        .persona-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 5px;
+        .persona-dropdown option {
+            padding: 10px;
         }
 
         /* Email Preview Section */
         .email-preview-wrapper {
-            margin-top: 20px;
+            margin: 20px auto 0;
+            max-width: 800px;
+            width: 100%;
         }
 
         .email-preview-label {
@@ -202,7 +281,9 @@
 
         /* States Section */
         .states-container {
-            margin-top: 40px;
+            margin: 40px auto 0;
+            max-width: 800px;
+            width: 100%;
         }
 
         .states-header {
@@ -279,7 +360,7 @@
             padding: 20px;
         }
 
-        .query-item, .route-item {
+        .query-item {
             padding: 10px;
             margin: 8px 0;
             background: #f8f9fa;
@@ -327,6 +408,74 @@
             background: #d4edda;
             color: #155724;
         }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .workflow-section {
+                padding: 16px;
+            }
+
+            .workflow-content {
+                text-align: left;
+            }
+
+            .workflow-item {
+                flex-wrap: wrap;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .workflow-label {
+                min-width: 0;
+            }
+
+            .workflow-steps {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+
+            .workflow-time {
+                margin-left: 0;
+                margin-top: 10px;
+                min-width: 0;
+            }
+
+            .persona-selector {
+                padding: 0 12px;
+            }
+
+            .workflow-steps .workflow-arrow {
+                display: none;
+            }
+
+            .workflow-steps span:not(.workflow-arrow) {
+                position: relative;
+                padding-left: 18px;
+            }
+
+            .workflow-steps span:not(.workflow-arrow)::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0.6em;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.85);
+            }
+        }
     </style>
 </head>
 <body>
@@ -334,24 +483,54 @@
         <h1>Multi-Agent RAG: Traceable B2B Email Generation</h1>
         <div class="subtitle">Every claim backed by evidence • Full transparency of AI decision-making</div>
 
-        <div class="persona-grid">
-            <div class="persona-card" onclick="showEmail('cio')" id="card-cio">
-                <div class="persona-icon">🔐</div>
-                <div class="persona-title">Chief Information Officer</div>
-                <div>Platform Governance, Security, Integration</div>
-            </div>
+        <!-- Workflow Comparison Section -->
+        <div class="workflow-section">
+            <div class="workflow-content">
+                <div class="workflow-item">
+                    <span class="workflow-label">OLD WAY:</span>
+                    <div class="workflow-steps">
+                        <span>Read 30 tabs</span>
+                        <span class="workflow-arrow">→</span>
+                        <span>Extract insights</span>
+                        <span class="workflow-arrow">→</span>
+                        <span>Write email with sources</span>
+                    </div>
+                    <span class="workflow-time slow">5 hours</span>
+                </div>
 
-            <div class="persona-card" onclick="showEmail('vp_cx')" id="card-vp_cx">
-                <div class="persona-icon">💬</div>
-                <div class="persona-title">VP Customer Experience</div>
-                <div>Omnichannel, FCR, Self-Service</div>
-            </div>
+                <div class="workflow-item">
+                    <span class="workflow-label">OUR WAY:</span>
+                    <div class="workflow-steps">
+                        <span>Paste 30 links</span>
+                        <span class="workflow-arrow">→</span>
+                        <span>Type persona</span>
+                        <span class="workflow-arrow">→</span>
+                        <span>Get email with sources</span>
+                    </div>
+                    <span class="workflow-time fast">30 seconds</span>
+                </div>
 
-            <div class="persona-card" onclick="showEmail('vp_sales_ops')" id="card-vp_sales_ops">
-                <div class="persona-icon">📊</div>
-                <div class="persona-title">VP Sales Operations</div>
-                <div>Forecast, Pipeline, Productivity</div>
+                <div class="workflow-item">
+                    <span class="workflow-label">BONUS:</span>
+                    <div class="workflow-steps">
+                        <span>Fully transparent</span>
+                        <span class="workflow-arrow">•</span>
+                        <span>Edit anywhere</span>
+                        <span class="workflow-arrow">•</span>
+                        <span>Regenerate from any step</span>
+                    </div>
+                    <span class="workflow-time" style="visibility: hidden;">30 seconds</span>
+                </div>
             </div>
+        </div>
+
+        <div class="persona-selector">
+            <label for="persona-select">Select Persona:</label>
+            <select id="persona-select" class="persona-dropdown" onchange="showEmail(this.value)">
+                <option value="cio">🔐 Chief Information Officer (Platform, Security, Integration)</option>
+                <option value="vp_cx">💬 VP Customer Experience (Omnichannel, FCR, Self-Service)</option>
+                <option value="vp_sales_ops">📊 VP Sales Operations (Forecast, Pipeline, Productivity)</option>
+            </select>
         </div>
 
         <div id="email-display"></div>
@@ -536,11 +715,8 @@
         }
 
         function showEmail(persona) {
-            // Update active state
-            document.querySelectorAll('.persona-card').forEach(card => {
-                card.classList.remove('active');
-            });
-            document.getElementById(`card-${persona}`).classList.add('active');
+            // Update dropdown if called programmatically
+            document.getElementById('persona-select').value = persona;
 
             // Get persona data
             const data = emailData[persona];
@@ -613,8 +789,7 @@
             const statesHtml = `
                 <div class="states-container">
                     <div class="states-header">
-                        <h2>Pipeline Checkpoints: Inspect & Restart from Any Node</h2>
-                        <p>Click to explore each processing step • Edit and regenerate from any checkpoint</p>
+                        <h2>Edit & Regenerate from Any Step</h2>
                     </div>
 
                     <!-- Queries Generated -->
@@ -629,26 +804,6 @@
                         <div class="state-content" id="content-queries">
                             ${states.queries.map(query => `
                                 <div class="query-item">${query}</div>
-                            `).join('')}
-                        </div>
-                    </div>
-
-                    <!-- Route Decisions -->
-                    <div class="state-section">
-                        <div class="state-header" onclick="toggleState('routes')">
-                            <div class="state-title">
-                                <span class="state-icon">🗺️</span>
-                                <span>Route Decisions</span>
-                            </div>
-                            <span class="state-toggle" id="toggle-routes">⌄</span>
-                        </div>
-                        <div class="state-content" id="content-routes">
-                            ${states.route_decisions.map(route => `
-                                <div class="route-item">
-                                    <strong>${route.query}</strong><br>
-                                    <span class="metric-badge">📂 ${route.backend.toUpperCase()}</span>
-                                    <span class="metric-badge">🔧 ${route.reason}</span>
-                                </div>
                             `).join('')}
                         </div>
                     </div>

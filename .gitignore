@@ -11,7 +11,7 @@ worktrees/
 
 # Backup directory
 backup/
-
+/实验
 # Test outputs and temporary files
 # outputs/
 # state/
