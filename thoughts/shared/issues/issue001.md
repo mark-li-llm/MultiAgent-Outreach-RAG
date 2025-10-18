@@ -1,1 +1,0 @@
-i need to change the embedding model to : OpenAI ada-002 (1536-dim, requires API key, highest quality)
