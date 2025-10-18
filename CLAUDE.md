@@ -2,6 +2,9 @@
 
 This file provides guidance to Claude Code when working with this repository.
 
+- Always ask clarifying questions if an instruction is ambiguous or open-ended.
+- If context or requirements are missing, ask for further details.
+
 ## Project Overview
 
 Multi-agent RAG system for Sales/IR/PR outreach with audit-ready email generation and step-level traceability. Implements a gated data pipeline with quality checks at each stage, emitting dual-format reports (JSON + Markdown).
