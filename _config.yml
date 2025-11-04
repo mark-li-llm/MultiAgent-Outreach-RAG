@@ -3,4 +3,6 @@ exclude:
   - backup/
   - scripts/
   - data/
+  - roadmap/
+  - docs.archive/
 
