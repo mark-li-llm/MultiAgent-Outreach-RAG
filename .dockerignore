@@ -1,0 +1,15 @@
+# Exclude everything not needed for runtime
+__pycache__/
+*.pyc
+.git/
+.env
+.venv/
+outputs/
+state/
+logs/
+docs/
+roadmap/
+hack/
+*.md
+!CLAUDE.md
+envs/ageFaiss.yaml

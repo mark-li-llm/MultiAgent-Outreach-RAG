@@ -22,5 +22,9 @@ dependencies:
       - langchain-openai>=0.2.0
       - langsmith>=0.1.0  # Optional, for tracing
       - aiosqlite>=0.19.0  # REQUIRED for AsyncSqliteSaver (async checkpointing)
+      # FastAPI dependencies
+      - fastapi>=0.121.0
+      - uvicorn[standard]>=0.38.0
+      - pydantic>=2.0.0
   # IMPORTANT: Do NOT install pip faiss-cpu in this env to avoid duplicate libomp.
 
