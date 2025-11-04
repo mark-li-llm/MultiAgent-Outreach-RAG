@@ -1,0 +1,28 @@
+{
+  "subject": "Boost CSAT and agent productivity",
+  "body": "I noticed Salesforce's record FY26 Q2 results and thought these CX implications might matter. With stronger Subscription & Support revenue, there’s clearer capacity for product and support investments that map to CSAT, NPS and contact‑center improvements.\n\n- Record Q2 growth increases vendor investment capacity — review roadmap visibility for contact center and self‑service rollouts.\n- Zero Copy Partner Network enables secure, bidirectional zero‑copy integrations to create an omnichannel customer profile and help improve first‑contact resolution.\n- Agentforce conversational AI provides APIs to pilot assistants that deflect routine queries, boost agent productivity and expand self‑service.\n\nIf helpful, I can send a one‑page summary mapping these options to measurable CSAT/NPS levers, continue via email, or share a short pilot outline.",
+  "unsubscribe_block": "You can unsubscribe at any time by replying 'unsubscribe'.",
+  "company_info_block": "Sent by ACME AI, 123 Market St, San Francisco, CA.",
+  "proof_points": [
+    {
+      "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+      "title": "FY26 Q2: Salesforce Posts Record Results"
+    },
+    {
+      "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+      "title": "Zero Copy Partner Network for Data Cloud Integration"
+    },
+    {
+      "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+      "title": "Agentforce Agents: Conversational AI to Boost Agent Productivity"
+    },
+    {
+      "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+      "title": "Salesforce Help Portal (Support Resource)"
+    },
+    {
+      "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+      "title": "Salesforce Company Overview (Wikipedia)"
+    }
+  ]
+}

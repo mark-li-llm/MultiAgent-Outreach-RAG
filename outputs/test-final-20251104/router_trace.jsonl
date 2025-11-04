@@ -1,0 +1,4 @@
+{"timestamp": "2025-11-04T18:32:52.289066+00:00", "query_text": "How does Salesforce enable omnichannel customer experiences and unified service delivery?", "decision_backend": "faiss", "reason_codes": ["PERSONA_BIAS"]}
+{"timestamp": "2025-11-04T18:32:52.289066+00:00", "query_text": "What contact center modernization and agent productivity tools does Salesforce offer?", "decision_backend": "faiss", "reason_codes": ["PERSONA_BIAS"]}
+{"timestamp": "2025-11-04T18:32:52.289066+00:00", "query_text": "How can Agentforce AI improve first contact resolution rates and reduce customer effort?", "decision_backend": "faiss", "reason_codes": ["PERSONA_BIAS"]}
+{"timestamp": "2025-11-04T18:32:52.289066+00:00", "query_text": "What self-service capabilities and automation does Salesforce provide for customer support?", "decision_backend": "faiss", "reason_codes": ["PERSONA_BIAS"]}

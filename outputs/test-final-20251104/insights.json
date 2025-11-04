@@ -1,0 +1,136 @@
+[
+  {
+    "id": "synth::crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c::card",
+    "title": "FY26 Q2: Salesforce Posts Record Results",
+    "summary": "Salesforce reported record second-quarter fiscal 2026 results, exceeding guidance across metrics with Subscription & Support revenue up 11% year‑over‑year. The announcement highlights continued commercial strength that underpins product and support investments.",
+    "url": "https://www.salesforce.com/news/press-releases/2025/09/03/fy26-q2-earnings/?bc=OTH",
+    "date": "2025-09-03",
+    "evidence_snippet": "Earnings\nH1: Salesforce Reports Record Second Quarter Fiscal 2026 Results\nMedia Library\nExceeds Guidance Across All Metrics; Subscription & Support Revenue up 11% Y/Y, 9% in CC\nSAN FRANCISCO, Calif. – September 3, 2025 –\nSalesforce (NYSE: CRM), the world’s #1 AI CRM, today announced results for its second quarter fisca",
+    "confidence": 0.6,
+    "source_domain": "www.salesforce.com",
+    "doc_id": "crm::press::2025-09-03::salesforce-reports-record-second-quarter-fiscal-2026-results::d558c08c",
+    "persona_relevance": {
+      "why_it_matters": "Stronger subscription and support revenue increases the vendor’s capacity to invest in CRM, contact center, and support tooling that influence CSAT, NPS, self‑service capabilities and agent productivity.",
+      "relevance_score": 3,
+      "keywords_hit": [
+        "csat",
+        "nps",
+        "agent productivity",
+        "self-service"
+      ]
+    },
+    "metric_impact": {
+      "metric": "CSAT",
+      "direction": "increase",
+      "magnitude": "low"
+    },
+    "action_suggestion": "Map your top CX initiatives to Salesforce subscription/support investments and request visibility into roadmap/timing for contact center and self‑service feature rollouts."
+  },
+  {
+    "id": "synth::crm::press::2024-04-25::news-details::65e3c0b7::card",
+    "title": "Zero Copy Partner Network for Data Cloud Integration",
+    "summary": "Salesforce unveiled the Zero Copy Partner Network to enable secure, bidirectional zero‑copy integrations with Salesforce Data Cloud. The program aims to streamline data connectivity across partner ecosystems.",
+    "url": "https://investor.salesforce.com/news/news-details/2024/Salesforce-Unveils-Zero-Copy-Partner-Network-an-Ecosystem-Committed-to-Secure-Bidirectional-Zero-Copy-Integration-with-Salesforce-Data-Cloud",
+    "date": "2024-04-25",
+    "evidence_snippet": "H1: Salesforce.com, Inc. - Salesforce Unveils Zero Copy Partner Network, an Ecosystem Committed to Secure, Bidirectional Zero Copy Integration with Salesforce Data Cloud\n\nOverview\nFinancials\nQuarterly Results\nAnnual Reports\nSEC Filings\nTax Forms\nSafe Harbor\nIAC\nFinancials\nEvents\nNews\nStock Quote\nGovernance\nGovernance\nC",
+    "confidence": 0.6,
+    "source_domain": "investor.salesforce.com",
+    "doc_id": "crm::press::2024-04-25::news-details::65e3c0b7",
+    "persona_relevance": {
+      "why_it_matters": "Zero‑copy, bidirectional data flows reduce data stitching and latency, enabling a true omnichannel customer profile that helps agents resolve issues faster and improves first contact resolution, CSAT and NPS.",
+      "relevance_score": 4,
+      "keywords_hit": [
+        "omnichannel",
+        "first contact resolution",
+        "csat",
+        "nps"
+      ]
+    },
+    "metric_impact": {
+      "metric": "First Contact Resolution",
+      "direction": "increase",
+      "magnitude": "med"
+    },
+    "action_suggestion": "Pilot Zero Copy integration for a priority channel (e.g., support chat) to measure reduction in repeat contacts and improvements in FCR within a quarter."
+  },
+  {
+    "id": "synth::crm::help_docs::developer::get-started-agents::0ef2421d::card",
+    "title": "Agentforce Agents: Conversational AI to Boost Agent Productivity",
+    "summary": "The Agentforce developer guide explains how to build customizable conversational AI assistants that help users accomplish tasks inside Salesforce, with APIs and resources to accelerate integration.",
+    "url": "https://developer.salesforce.com/docs/einstein/genai/guide/get-started-agents.html",
+    "date": "",
+    "evidence_snippet": "H1: Get Started with Agentforce Agents\nBring the power of conversational AI to your business with Agentforce agents. Build a trusted and customizable AI assistant that empowers your users to get more done in Salesforce. Accelerate your Agentforce integration with our APIs and other developer resources.\nFeature or API\nD",
+    "confidence": 0.6,
+    "source_domain": "developer.salesforce.com",
+    "doc_id": "crm::help_docs::developer::get-started-agents::0ef2421d",
+    "persona_relevance": {
+      "why_it_matters": "Conversational AI assistants can deflect common queries to self‑service, reduce contact center load, and improve agent productivity and first contact resolution—direct drivers of CSAT and NPS.",
+      "relevance_score": 5,
+      "keywords_hit": [
+        "agent productivity",
+        "self-service",
+        "contact center",
+        "first contact resolution",
+        "csat",
+        "nps"
+      ]
+    },
+    "metric_impact": {
+      "metric": "Agent productivity",
+      "direction": "increase",
+      "magnitude": "high"
+    },
+    "action_suggestion": "Run a focused Agentforce pilot on a high‑volume queue to track handle time, deflection rates, and CSAT over 30–60 days."
+  },
+  {
+    "id": "synth::crm::help_docs::unknown::salesforce-help::d75a8e9c::card",
+    "title": "Salesforce Help Portal (Support Resource)",
+    "summary": "The Salesforce Help portal is the central self‑service resource for documentation and support; the snippet shows a loading/CSS error which can signal availability issues for end users.",
+    "url": "https://help.salesforce.com/s/",
+    "date": "",
+    "evidence_snippet": "H1: Salesforce Help\n\nSalesforce Help Loading × Sorry to interrupt CSS Error Refresh",
+    "confidence": 0.6,
+    "source_domain": "help.salesforce.com",
+    "doc_id": "crm::help_docs::unknown::salesforce-help::d75a8e9c",
+    "persona_relevance": {
+      "why_it_matters": "If the primary self‑service portal is unavailable or unreliable, customers and agents lose a key route to answers, increasing contact center volume, lowering first contact resolution and harming CSAT.",
+      "relevance_score": 2,
+      "keywords_hit": [
+        "self-service",
+        "contact center",
+        "csat",
+        "first contact resolution"
+      ]
+    },
+    "metric_impact": {
+      "metric": "Self-service usage",
+      "direction": "decrease",
+      "magnitude": "med"
+    },
+    "action_suggestion": "Verify portal availability and maintain an internal snapshot of key KB articles or an alternate help channel to avoid customer disruption."
+  },
+  {
+    "id": "synth::crm::wiki::unknown::salesforce-wikipedia::6b727edd::card",
+    "title": "Salesforce Company Overview (Wikipedia)",
+    "summary": "The Wikipedia page gives a general public overview of Salesforce and its global presence; it serves as a broad reference but is not an official product or support source.",
+    "url": "https://en.wikipedia.org/wiki/Salesforce",
+    "date": "",
+    "evidence_snippet": "H1: Salesforce\n31 languages\nالعربية\nБеларуская\nČeština\nDansk\nDeutsch\nEspañol\nفارسی\nFrançais\n한국어\nहिन्दी\nBahasa Indonesia\nItaliano\nעברית\nҚазақша\nمصرى\nBahasa Melayu\nNederlands\n日本語\nNorsk bokmål\nPolski\nPortuguês\nРусский\nSlovenčina\nСрпски / srpski\nSuomi\nTaqbaylit\nTürkçe\nУкраїнська\nTiếng Việt\n粵語\n中文\nEdit links\nFrom Wikipedia, ",
+    "confidence": 0.6,
+    "source_domain": "en.wikipedia.org",
+    "doc_id": "crm::wiki::unknown::salesforce-wikipedia::6b727edd",
+    "persona_relevance": {
+      "why_it_matters": "Public information shapes market and customer perceptions; consistent, accurate vendor messaging supports brand trust which can indirectly affect NPS and customer confidence in your CX stack.",
+      "relevance_score": 1,
+      "keywords_hit": [
+        "nps"
+      ]
+    },
+    "metric_impact": {
+      "metric": "NPS",
+      "direction": "increase",
+      "magnitude": "low"
+    },
+    "action_suggestion": "Reference official Salesforce documentation in external communications and correct inaccurate public entries that could mislead customers."
+  }
+]
