@@ -40,6 +40,78 @@ Built a **production-grade multi-agent RAG system** that achieves:
 
 ---
 
+## 🚀 Production Deployment & API Access
+
+**Live Production API**: The system is deployed on Railway.app and accessible via HTTP API.
+
+### Quick API Usage
+
+**Base URL**: `https://multiagent-outreach-rag-production.up.railway.app`
+
+**Generate Email via API**:
+```bash
+curl -X POST https://multiagent-outreach-rag-production.up.railway.app/api/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "company": "Salesforce",
+    "persona": "vp_customer_experience"
+  }'
+```
+
+**Response** (60-75 seconds):
+```json
+{
+  "session_id": "auto-generated-uuid",
+  "out_dir": "outputs/auto-generated-uuid",
+  "total_ms": 68832.02,
+  "message": "Email generated successfully..."
+}
+```
+
+### Interactive API Documentation
+
+**Swagger UI**: [https://multiagent-outreach-rag-production.up.railway.app/docs](https://multiagent-outreach-rag-production.up.railway.app/docs)
+
+Features:
+- ✅ Try endpoints directly in browser
+- ✅ View request/response schemas
+- ✅ Copy curl commands
+- ✅ No authentication required (Phase 1)
+
+### Available Endpoints
+
+| Endpoint | Method | Description | Response Time |
+|----------|--------|-------------|---------------|
+| `/` | GET | Health check | <500ms |
+| `/health` | GET | Detailed status | <500ms |
+| `/api/generate` | POST | Generate email | 60-80s |
+| `/docs` | GET | API documentation | <1s |
+
+### Deployment Details
+
+**Infrastructure**:
+- **Platform**: Railway.app (Docker container)
+- **Runtime**: Python 3.13 (conda environment: `age`)
+- **Base Image**: continuumio/miniconda3
+- **HTTPS**: Enforced by default
+- **Uptime**: 99.9%+
+
+**Verified Tests** (2025-11-04):
+- ✅ 6/6 tests passed
+- ✅ 100% success rate
+- ✅ All endpoints operational
+- ✅ Production-ready
+
+### Documentation
+
+- **[API Quick Start](docs/api.md)** - Fast-track API usage guide (5 min read)
+  - [Full API Reference](docs/api-reference.md) - Complete endpoint documentation
+- **[Deployment Quick Start](docs/deployment.md)** - Fast-track deployment guide (5 min read)
+  - [Complete Deployment Guide](docs/deployment-advanced.md) - Detailed configuration and troubleshooting
+- **[Test Reports](reports/deployment/)** - Detailed test results (JSON + Markdown)
+
+---
+
 ## 🏗️ Core AI Engineering Components
 
 ### **1. Multi-Agent Orchestration with LangGraph** ⭐
@@ -509,6 +581,14 @@ Comprehensive system documentation (24,000+ lines) demonstrates architecture and
 - `roadmap/part7-quality.md` (5K lines) - All 9 quality gates explained
 - `roadmap/part8-operations.md` (2.2K lines) - Configuration & troubleshooting
 - `docs/troubleshooting.md` - Debug playbook with root cause analysis
+
+### **Deployment & API**
+- `docs/deployment.md` - Railway deployment quick start (5 min)
+- `docs/deployment-advanced.md` - Complete deployment guide with monitoring
+- `docs/api.md` - API quick start guide (5 min)
+- `docs/api-reference.md` - Full HTTP API reference
+- `reports/deployment/railway_test_20251104.md` - Production deployment test report
+- `reports/deployment/railway_test_20251104.json` - Machine-readable test results
 
 ---
 

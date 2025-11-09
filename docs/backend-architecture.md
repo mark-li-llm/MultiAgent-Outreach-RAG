@@ -31,7 +31,6 @@
 1. Existing system is Python-native (LangGraph, FAISS, embedding_utils.py, etc.)
 2. Zero migration cost, directly `import` existing modules
 3. Async support matches existing aiohttp/MCP code
-4. 2-3 days to deploy
 
 **Why NOT Next.js for Backend?**
 1. LangGraph has no JavaScript version (core dependency)
